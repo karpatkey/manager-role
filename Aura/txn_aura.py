@@ -1,4 +1,5 @@
-from general.blockchain_functions import *
+from defi_protocols.functions import *
+from defi_protocols.constants import *
 from defi_protocols import Aura
 from defi_protocols import Balancer
 from pathlib import Path

@@ -1,4 +1,5 @@
-from general.blockchain_functions import *
+from defi_protocols.functions import *
+from defi_protocols.constants import *
 from defi_protocols import Curve
 from web3.exceptions import ContractLogicError
 from pathlib import Path

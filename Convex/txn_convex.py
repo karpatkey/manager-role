@@ -1,4 +1,5 @@
-from general.blockchain_functions import *
+from defi_protocols.functions import *
+from defi_protocols.constants import *
 from defi_protocols import Convex
 from pathlib import Path
 import os
