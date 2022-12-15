@@ -1,0 +1,34 @@
+[
+    {
+        "approve": [
+            {
+                "token": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 (TOKEN_ADDRESS)",
+                "spender": "0xc3d688B66703497DAA19211EEdff47f25384cdc3 (COMET)"
+            },
+            {
+                "token": "0xc3d688b66703497daa19211eedff47f25384cdc3 (COMET)",
+                "spender": "0x74a81F84268744a40FEBc48f8b812a1f188D80C3"
+            }
+        ]
+    },
+    {
+        "functions": [
+            {
+                "signature": "supply(address,uint256)",
+                "target address": "0xc3d688B66703497DAA19211EEdff47f25384cdc3",
+                "address[0]": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 (TOKEN_ADDRESS)"
+            },
+            {
+                "signature": "withdraw(address,uint256)",
+                "target address": "0xc3d688B66703497DAA19211EEdff47f25384cdc3",
+                "address[0]": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 (TOKEN_ADDRESS)"
+            },
+            {
+                "signature": "claim(address,address,bool)",
+                "target address": "0x1B0e765F6224C21223AeA2af16c1C46E38885a40",
+                "address[0]": "0xc3d688b66703497daa19211eedff47f25384cdc3 (COMET)",
+                "avatar address arguments": [1]
+            }
+        ]
+    }
+]

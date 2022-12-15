@@ -1,0 +1,49 @@
+[
+    {
+        "approve": [
+            {
+                "token": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84 (TOKEN_ADDRESS)",
+                "spender": "0x34dCd573C5dE4672C8248cd12A99f875Ca112Ad8 (CDO for TOKEN)"
+            },
+            {
+                "token": "0x2688FC68c4eac90d9E5e1B94776cF14eADe8D877 (AA_TOKEN_TRANCH)",
+                "spender": "0x675eC042325535F6e176638Dd2d4994F645502B9 (AA_TOKEN_GAUGE)"
+            }
+        ],
+        "functions": [
+            {
+                "signature": "depositAA(uint256)",
+                "target address": "0x34dCd573C5dE4672C8248cd12A99f875Ca112Ad8 (CDO for TOKEN)"
+            },
+            {
+                "signature": "withdrawAA(uint256)",
+                "target address": "0x34dCd573C5dE4672C8248cd12A99f875Ca112Ad8 (CDO for TOKEN)"
+            },
+            {
+                "signature": "depositBB(uint256)",
+                "target address": "0x34dCd573C5dE4672C8248cd12A99f875Ca112Ad8 (CDO for TOKEN)"
+            },
+            {
+                "signature": "withdrawBB(uint256)",
+                "target address": "0x34dCd573C5dE4672C8248cd12A99f875Ca112Ad8 (CDO for TOKEN)"
+            },
+            {
+                "signature": "deposit(uint256)",
+                "target address": "0x675ec042325535f6e176638dd2d4994f645502b9 (AA_TOKEN_GAUGE)"
+            },
+            {
+                "signature": "withdraw(uint256)",
+                "target address": "0x675ec042325535f6e176638dd2d4994f645502b9 (AA_TOKEN_GAUGE)"
+            },
+            {
+                "signature": "claim_rewards()",
+                "target address": "0x675ec042325535f6e176638dd2d4994f645502b9 (AA_TOKEN_GAUGE)"
+            },
+            {
+                "signature": "distribute(address)",
+                "target address": "0x074306bc6a6fc1bd02b425dd41d742adf36ca9c6 (DISTRIBUTOR_PROXY)",
+                "address[0]": "0x675ec042325535f6e176638dd2d4994f645502b9 (AA_TOKEN_GAUGE)"
+            }
+        ]
+    }
+]

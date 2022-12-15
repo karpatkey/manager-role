@@ -1,0 +1,76 @@
+[
+    {
+        "approve": [
+            {
+                "token": "0xba100000625a3754423978a60c9317c58a424e3D",
+                "spender": "0x68655AD9852a99C87C0934c7290BB62CFa5D4123"
+            },
+            {
+                "token": "0x5c6Ee304399DBdB9C8Ef030aB642B10820DB8F56",
+                "spender": "0xeAd792B55340Aa20181A80d6a16db6A0ECd1b827"
+            },
+            {
+                "token": "0xba100000625a3754423978a60c9317c58a424e3D",
+                "spender": "0x623B83755a39B12161A63748f3f595A530917Ab2"
+            },
+            {
+                "token": "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF",
+                "spender": "0x623B83755a39B12161A63748f3f595A530917Ab2"
+            },
+            {
+                "token": "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF",
+                "spender": "0x3Fa73f1E5d8A792C80F426fc8F84FBF7Ce9bBCAC"
+            }
+        ]
+    },
+    {
+        "functions": [
+            {
+                "signature": "stake(uint256)",
+                "target address": "0x5e5ea2048475854a5702F5B8468A51Ba1296EFcC"
+            },
+            {
+                "signature": "withdraw(uint256,bool)",
+                "target address": "0x5e5ea2048475854a5702F5B8468A51Ba1296EFcC"
+            },
+            {
+                "signature": "deposit(uint256,uint256,bool,address)",
+                "target address": "0x68655AD9852a99C87C0934c7290BB62CFa5D4123"
+            },
+            {
+                "signature": "deposit(uint256,uint256,bool,address)",
+                "target address": "0xeAd792B55340Aa20181A80d6a16db6A0ECd1b827"
+            },
+            {
+                "signature": "claimRewards(address[],address[],address[],address[],uint256,uint256,uint256,uint256)",
+                "target address": "0x623B83755a39B12161A63748f3f595A530917Ab2"
+            },
+            {
+                "signature": "getReward(address)",
+                "target address": "0x3Fa73f1E5d8A792C80F426fc8F84FBF7Ce9bBCAC",
+                "avatar address arguments": [0]
+            },
+            {
+                "signature": "getReward()",
+                "target address": "0x5e5ea2048475854a5702F5B8468A51Ba1296EFcC"
+            },
+            {
+                "signature": "lock(address,uint256)",
+                "target address": "0x3Fa73f1E5d8A792C80F426fc8F84FBF7Ce9bBCAC",
+                "avatar address arguments": [0]
+            },
+            {
+                "signature": "delegate(address)",
+                "target address": "0x3Fa73f1E5d8A792C80F426fc8F84FBF7Ce9bBCAC"
+            },
+            {
+                "signature": "processExpiredLocks(bool)",
+                "target address": "0x3Fa73f1E5d8A792C80F426fc8F84FBF7Ce9bBCAC"
+            },
+            {
+                "signature": "setDelegate(bytes32,address)",
+                "target address": "0x469788fE6E9E9681C6ebF3bF78e7Fd26Fc015446"
+            }
+        ]
+    }
+]

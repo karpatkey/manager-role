@@ -1,0 +1,59 @@
+{
+    "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed": {
+        "approve": [
+            {
+                "token": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+                "spender": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88"
+            },
+            {
+                "token": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                "spender": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88"
+            }
+        ],
+        "functions": [
+            {
+                "signature": "mint((address,address,uint24,int24,int24,uint256,uint256,uint256,uint256,address,uint256))",
+                "target address": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+                "avatar address arguments": [
+                    9
+                ],
+                "use ETH": true
+            },
+            {
+                "signature": "refundETH()",
+                "target address": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+                "use ETH": true
+            },
+            {
+                "signature": "increaseLiquidity((uint256,uint256,uint256,uint256,uint256,uint256))",
+                "target address": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+                "use ETH": true
+            },
+            {
+                "signature": "collect((uint256,address,uint128,uint128))",
+                "target address": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+                "avatar address arguments": [
+                    1
+                ]
+            },
+            {
+                "signature": "unwrapWETH9(uint256,address)",
+                "target address": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+                "avatar address arguments": [
+                    1
+                ]
+            },
+            {
+                "signature": "sweepToken(address,uint256,address)",
+                "target address": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+                "avatar address arguments": [
+                    2
+                ]
+            },
+            {
+                "signature": "decreaseLiquidity((uint256,uint128,uint256,uint256,uint256))",
+                "target address": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88"
+            }
+        ]
+    }
+}

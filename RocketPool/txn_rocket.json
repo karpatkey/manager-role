@@ -1,0 +1,17 @@
+[
+    {
+        "approve": []
+    },
+    {
+        "functions": [
+            {
+                "signature": "deposit()",
+                "target address": "0x2cac916b2A963Bf162f076C0a8a4a8200BCFBfb4"
+            },
+            {
+                "signature": "burn(uint256)",
+                "target address": "0xae78736Cd615f374D3085123A210448E74Fc6393"
+            }
+        ]
+    }
+]

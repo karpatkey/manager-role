@@ -1,0 +1,26 @@
+[
+    {
+        "approve": [
+            {
+                "token": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+                "spender": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+            }
+        ],
+        "functions": [
+            {
+                "signature": "submit(address)",
+                "target address": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+                "address[0]": "0x0000000000000000000000000000000000000000",
+                "valueETH": true
+            },
+            {
+                "signature": "wrap(uint256)",
+                "target address": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"
+            },
+            {
+                "signature": "unwrap(uint256)",
+                "target address": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"
+            }
+        ]
+    }
+]

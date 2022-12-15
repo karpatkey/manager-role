@@ -1,0 +1,55 @@
+[
+    {
+        "approve": [
+            {
+                "token": "0x20bc832ca081b91433ff6c17f85701b6e92486c5",
+                "spender": "0xE592427A0AEce92De3Edee1F18E0157C05861564"
+            },
+            {
+                "token": "0xFe2e637202056d30016725477c5da089Ab0A043A",
+                "spender": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88"
+            },
+            {
+                "token": "0x20bc832ca081b91433ff6c17f85701b6e92486c5",
+                "spender": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88"
+            },
+            {
+                "token": "0x48C3399719B582dD63eB5AADf12A40B4C3f52FA2",
+                "spender": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88"
+            }
+        ],
+        "functions": [
+            {
+                "signature": "stake()",
+                "target address": "0xC874b064f465bdD6411D45734b56fac750Cda29A"
+            },
+            {
+                "signature": "exactInputSingle((address,address,uint24,address,uint256,uint256,uint256,uint160))",
+                "target address": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
+                "avatar address arguments": [3]
+            },
+            {
+                "signature": "claim(uint256,address,address[],uint256[],bytes32[])",
+                "target address": "0xA3F21010e8b9a3930996C8849Df38f9Ca3647c20",
+                "avatar address arguments": [1]
+            },
+            {
+                "signature": "mint((address,address,uint24,int24,int24,uint256,uint256,uint256,uint256,address,uint256))",
+                "target address": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+                "avatar address arguments": [9]
+            },
+            {
+                "signature": "multicall(bytes[])",
+                "target address": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88"
+            },
+            {
+                "signature": "collect((uint256,address,uint128,uint128))",
+                "target address": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88"
+            },
+            {
+                "signature": "increaseLiquidity((uint256,uint256,uint256,uint256,uint256,uint256))",
+                "target address": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88"
+            }        
+        ]
+    }
+]

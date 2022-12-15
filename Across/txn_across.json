@@ -1,0 +1,24 @@
+[
+    {
+        "approve": [
+            {
+                "token": "0xba100000625a3754423978a60c9317c58a424e3D (TOKEN_ADDRESS)",
+                "spender": "0xc186fA914353c44b2E33eBE05f21846F1048bEda"
+            }
+        ]
+    },
+    {
+        "functions": [
+            {
+                "signature": "addLiquidity(address,uint256)",
+                "target address": "0xc186fA914353c44b2E33eBE05f21846F1048bEda",
+                "address[0]": "0xba100000625a3754423978a60c9317c58a424e3D (TOKEN_ADDRESS)"
+            },
+            {
+                "signature": "removeLiquidity(address,uint256,bool)",
+                "target address": "0xc186fA914353c44b2E33eBE05f21846F1048bEda",
+                "address[0]": "0xba100000625a3754423978a60c9317c58a424e3D (TOKEN_ADDRESS)"
+            }
+        ]
+    }
+]
