@@ -8,10 +8,50 @@ from pathlib import Path
 import os
 import time
 
+
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# subgraph_query
+# subgraph_query_pool
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def subgraph_query(min_tvl_usd=0, min_volume_usd=0):
+def subgraph_query_pool(token0, token1, fee):
+
+    subgraph_url = "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
+    uniswapv3_transport=RequestsHTTPTransport(
+        url=subgraph_url,
+        verify=True,
+        retries=3
+    )
+    client = Client(transport=uniswapv3_transport)
+
+    token0 = token0.lower()
+    token1 = token1.lower()
+
+    query_string = '''
+    query {{
+    pools(where: {{token0_:{{id_in:["{token0}""{token1}"]}} token1_:{{id_in:["{token0}""{token1}"]}}feeTier: "{fee}"}})
+        {{
+            id
+            token0{{id}}
+            token1{{id}}
+            feeTier
+            volumeUSD
+            totalValueLockedUSD
+            createdAtTimestamp
+        }}
+    }}
+    '''
+
+    formatted_query_string = query_string.format(token0=token0, token1=token1, fee=fee)
+    response = client.execute(gql(formatted_query_string))
+
+    if response['pools'] != []:
+        return response['pools']
+    else:
+        return None
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# subgraph_query_all_pools
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def subgraph_query_all_pools(min_tvl_usd=0, min_volume_usd=0):
 
     # Initialize subgraph
     subgraph_url = "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
@@ -159,7 +199,7 @@ def subgraph_query(min_tvl_usd=0, min_volume_usd=0):
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def transactions_data(min_tvl_usd=0, min_volume_usd=0):
 
-    pools = subgraph_query(min_tvl_usd=min_tvl_usd, min_volume_usd=min_volume_usd)
+    pools = subgraph_query_all_pools(min_tvl_usd=min_tvl_usd, min_volume_usd=min_volume_usd)
 
     if len(pools) > 0:
         print(len(pools))
@@ -346,37 +386,4 @@ def pool_data(pool_address):
 # with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/uniswapv3_data_final.json', 'w') as uniswapv3_data_file:
 #     json.dump(result, uniswapv3_data_file)
 
-
-subgraph_url = "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
-uniswapv3_transport=RequestsHTTPTransport(
-    url=subgraph_url,
-    verify=True,
-    retries=3
-)
-client = Client(transport=uniswapv3_transport)
-
-token0 = '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599'.lower()
-token1 = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.lower()
-fee = 3000
-
-query_string = '''
-query {{
-pools(where: {{token0_:{{id_in:["{token0}""{token1}"]}} token1_:{{id_in:["{token0}""{token1}"]}}feeTier: "{fee}"}})
-    {{
-        id
-        token0{{id}}
-        token1{{id}}
-        feeTier
-        volumeUSD
-        totalValueLockedUSD
-        createdAtTimestamp
-    }}
-}}
-'''
-
-formatted_query_string = query_string.format(token0=token0, token1=token1, fee=fee)
-response = client.execute(gql(formatted_query_string))
-
-
-for pool in response['pools']:
-    print(pool)
+#print(subgraph_query_pool('0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', WETH_ETH, 0.3))
