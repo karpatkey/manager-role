@@ -212,7 +212,7 @@ def input_nft_position_id():
                             print(f"{bcolors.FAIL}{message}{bcolors.ENDC}")
                             nft_position_id = None
                             break
-                        if position[4] != token1:
+                        if position[4] != fee:
                             print()
                             message = 'ERROR: Fee %.2f%% does not match the one on NFT Position ID: %s' % (fee/10000, nft_position_id)
                             print(f"{bcolors.FAIL}{message}{bcolors.ENDC}")
