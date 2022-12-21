@@ -200,13 +200,13 @@ def input_nft_position_id():
                     nft_position_index = positions_nft_contract.functions.tokenOfOwnerByIndex(avatar_address, i).call()
                     if nft_position_id == nft_position_index:
                         position = positions_nft_contract.functions.positions(nft_position_id).call()
-                        if position[3] != token0:
+                        if position[2] != token0:
                             print()
                             message = 'ERROR: %s not found on NFT Position ID: %s' % (token0_symbol, nft_position_id)
                             print(f"{bcolors.FAIL}{message}{bcolors.ENDC}")
                             nft_position_id = None
                             break
-                        if position[4] != token1:
+                        if position[3] != token1:
                             print()
                             message = 'ERROR: %s not found on NFT Position ID: %s' % (token1_symbol, nft_position_id)
                             print(f"{bcolors.FAIL}{message}{bcolors.ENDC}")

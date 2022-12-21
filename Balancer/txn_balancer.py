@@ -102,121 +102,143 @@ def transactions_data(blockchain):
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# pools_data
+# search_pool
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def pools_data():
+def search_pool(pools_data, lptoken_address):
 
-    result = []
+    for pool_data in pools_data:
+        if pool_data == lptoken_address:
+            return pool_data
+
+    return None
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# pool_data
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def pool_data(lptoken_address):
 
     with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/balancer_data.json', 'r') as balancer_data_file:
         # Reading from json file
         balancer_data = json.load(balancer_data_file)
         balancer_data_file.close()
     
-    for lptoken in balancer_data:
-
-        result_item = {
-            'approve': [],
-            'functions': []
-        }
-
-        for token in balancer_data[lptoken]['tokens']:
-            result_item['approve'].append({
-                'token': token,
-                'spender': Balancer.VAULT
-            })
-        
-        if balancer_data[lptoken]['gauge'] != ZERO_ADDRESS:
-            result_item['approve'].append({
-                'token': balancer_data[lptoken]['gauge'],
-                'spender': lptoken
-            })
-        
-        result_item['functions'].append({
-            'signature': 'joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))',
-            'target address': Balancer.VAULT,
-            'avatar address arguments': [1, 2]
-        })
-
-        result_item['functions'].append({
-            'signature': 'exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))',
-            'target address': Balancer.VAULT,
-            'avatar address arguments': [1, 2]
-        })
-
-        result_item['functions'].append({
-            'signature': 'swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)',
-            'target address': Balancer.VAULT,
-            'avatar address arguments': [[1,0], [1,2]]
-        })
-
-        result_item['functions'].append({
-            'signature': 'batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)',
-            'target address': Balancer.VAULT,
-            'avatar address arguments': [[3,0], [3,2]]
-        })
-
-        if balancer_data[lptoken]['gauge'] != ZERO_ADDRESS:
-            result_item['functions'].append({
-                'signature': 'deposit(uint256)',
-                'target address': balancer_data[lptoken]['gauge'],
-            })
-
-            result_item['functions'].append({
-                'signature': 'withdraw(uint256)',
-                'target address': balancer_data[lptoken]['gauge'],
-            })
-
-            result_item['functions'].append({
-                'signature': 'claim_rewards()',
-                'target address': balancer_data[lptoken]['gauge'],
-            })
-
-            result_item['functions'].append({
-                'signature': 'mint(address)',
-                'target address': '0x239e55f427d44c3cc793f49bfb507ebe76638a2b',
-            })
+    try:
+        with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/txn_balancer.json', 'r') as txn_balancer_file:
+            # Reading from json file
+            txn_balancer = json.load(txn_balancer_file)
+            txn_balancer_file.close()
+    except:
+        txn_balancer = {}
     
-        if lptoken == B_80BAL_20_WETH_ETH:
-            result_item['functions'].append({
-                'signature': 'create_lock(uint256,uint256)',
-                'target address': Balancer.VEBAL,
-            })
-
-            result_item['functions'].append({
-                'signature': 'increase_amount(uint256)',
-                'target address': Balancer.VEBAL,
-            })
-
-            result_item['functions'].append({
-                'signature': 'increase_unlock_time(uint256)',
-                'target address': Balancer.VEBAL,
-            })
-
-            result_item['functions'].append({
-                'signature': 'withdraw()',
-                'target address': Balancer.VEBAL,
-            })
-
-            result_item['functions'].append({
-                'signature': 'claimToken(address,address)',
-                'target address': '0xD3cf852898b21fc233251427c2DC93d3d604F3BB',
-                'avatar address arguments': [0]
-            })
-
-            result_item['functions'].append({
-                'signature': 'claimTokens(address,address[])',
-                'target address': '0xD3cf852898b21fc233251427c2DC93d3d604F3BB',
-                'avatar address arguments': [0]
-            })
+    pool = search_pool(balancer_data, lptoken_address)
+    if pool == None:
+        print('LP Token: %s not found in Balancer Data File' % lptoken_address)
+        return
     
-        result.append(result_item)
+
+    txn_balancer[lptoken_address] = {
+        'approve': [],
+        'functions': []
+    }
+
+    for token in balancer_data[lptoken_address]['tokens']:
+        txn_balancer[lptoken_address]['approve'].append({
+            'token': token,
+            'spender': Balancer.VAULT
+        })
+    
+    if balancer_data[lptoken_address]['gauge'] != ZERO_ADDRESS:
+        txn_balancer[lptoken_address]['approve'].append({
+            'token': balancer_data[lptoken_address]['gauge'],
+            'spender': lptoken_address
+        })
+    
+    txn_balancer[lptoken_address]['functions'].append({
+        'signature': 'joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))',
+        'target address': Balancer.VAULT,
+        'avatar address arguments': [1, 2]
+    })
+
+    txn_balancer[lptoken_address]['functions'].append({
+        'signature': 'exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))',
+        'target address': Balancer.VAULT,
+        'avatar address arguments': [1, 2]
+    })
+
+    # result_item['functions'].append({
+    #     'signature': 'swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)',
+    #     'target address': Balancer.VAULT,
+    #     'avatar address arguments': [[1,0], [1,2]]
+    # })
+
+    # result_item['functions'].append({
+    #     'signature': 'batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)',
+    #     'target address': Balancer.VAULT,
+    #     'avatar address arguments': [[3,0], [3,2]]
+    # })
+
+    if balancer_data[lptoken_address]['gauge'] != ZERO_ADDRESS:
+        txn_balancer[lptoken_address]['functions'].append({
+            'signature': 'deposit(uint256)',
+            'target address': balancer_data[lptoken_address]['gauge'],
+        })
+
+        txn_balancer[lptoken_address]['functions'].append({
+            'signature': 'withdraw(uint256)',
+            'target address': balancer_data[lptoken_address]['gauge'],
+        })
+
+        txn_balancer[lptoken_address]['functions'].append({
+            'signature': 'claim_rewards()',
+            'target address': balancer_data[lptoken_address]['gauge'],
+        })
+
+        txn_balancer[lptoken_address]['functions'].append({
+            'signature': 'mint(address)',
+            'target address': '0x239e55f427d44c3cc793f49bfb507ebe76638a2b',
+        })
+
+    if lptoken_address == B_80BAL_20_WETH_ETH:
+        txn_balancer[lptoken_address]['functions'].append({
+            'signature': 'create_lock(uint256,uint256)',
+            'target address': Balancer.VEBAL,
+        })
+
+        txn_balancer[lptoken_address]['functions'].append({
+            'signature': 'increase_amount(uint256)',
+            'target address': Balancer.VEBAL,
+        })
+
+        txn_balancer[lptoken_address]['functions'].append({
+            'signature': 'increase_unlock_time(uint256)',
+            'target address': Balancer.VEBAL,
+        })
+
+        txn_balancer[lptoken_address]['functions'].append({
+            'signature': 'withdraw()',
+            'target address': Balancer.VEBAL,
+        })
+
+        txn_balancer[lptoken_address]['functions'].append({
+            'signature': 'claimToken(address,address)',
+            'target address': '0xD3cf852898b21fc233251427c2DC93d3d604F3BB',
+            'avatar address arguments': [0]
+        })
+
+        txn_balancer[lptoken_address]['functions'].append({
+            'signature': 'claimTokens(address,address[])',
+            'target address': '0xD3cf852898b21fc233251427c2DC93d3d604F3BB',
+            'avatar address arguments': [0]
+        })
+
     
     with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/txn_balancer.json', 'w') as txn_balancer_file:
-        json.dump(result, txn_balancer_file)
+        json.dump(txn_balancer, txn_balancer_file)
 
 
-
+pool_data('0x432eb5a7e69F0753298f111b0Ce6336423925608')
+pool_data('0xfF083f57A556bfB3BBe46Ea1B4Fa154b2b1FBe88')
 #transactions_data(ETHEREUM)
 
 # result = {}
