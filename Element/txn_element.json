@@ -1,0 +1,44 @@
+[
+    {
+        "approve": [
+            {
+                "token": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+                "spender": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022"
+            },
+            {
+                "token": "0x06325440D014e39736583c165C2963BA99fAf14E",
+                "spender": "0x182B723a58739a9c974cFDB385ceaDb237453c28"
+            },
+            {
+                "token": "0x06325440D014e39736583c165C2963BA99fAf14E",
+                "spender": "0xEe4e158c03A10CBc8242350d74510779A364581C"
+            }
+        ],
+        "functions": [
+            {
+                "signature": "add_liquidity(uint256[2],uint256)",
+                "target address": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022"
+            },
+            {
+                "signature": "remove_liquidity_one_coin(uint256,int128,uint256)",
+                "target address": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022"
+            },
+            {
+                "signature": "remove_liquidity(uint256,uint256[2])",
+                "target address": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022"
+            },
+            {
+                "signature": "remove_liquidity_imbalance(uint256[2],uint256)",
+                "target address": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022"
+            },
+            {
+                "signature": "deposit(uint256)",
+                "target address": "0x182B723a58739a9c974cFDB385ceaDb237453c28"
+            },
+            {
+                "signature": "withdraw(uint256)",
+                "target address": "0x182B723a58739a9c974cFDB385ceaDb237453c28"
+            }
+        ]
+    }
+]

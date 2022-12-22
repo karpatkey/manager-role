@@ -1,110 +1,12 @@
 [
     {
-        "name": "Aura staBAL3",
-        "token": "0x06Df3b2bbB68adc8B0e302443692037ED9f91b42",
+        "name": "Aura 50WETH-50AURA",
+        "token": "0xCfCA23cA9CA720B6E98E3Eb9B6aa0fFC4a5C08B9",
         "tokens": [
-            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF"
         ],
-        "rewarder": "0x08b8a86B9498AC249bF4B86e14C5d4187085a239"
-    },
-    {
-        "name": "Aura B-50SNX-50WETH",
-        "token": "0x072f14B85ADd63488DDaD88f855Fda4A99d6aC9B",
-        "tokens": [
-            "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ],
-        "rewarder": "0x635Bc596948d45fa08a2eD3Bc74c3934780c4fED"
-    },
-    {
-        "name": "Aura B-60WETH-40DAI",
-        "token": "0x0b09deA16768f0799065C475bE02919503cB2a35",
-        "tokens": [
-            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ],
-        "rewarder": "0x125028094B6FF0D6A6f0BD0eB9E9d30E889d72e8"
-    },
-    {
-        "name": "Aura B-stETH-STABLE",
-        "token": "0x32296969Ef14EB0c6d29669C550D4a0449130230",
-        "tokens": [
-            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ],
-        "rewarder": "0xDCee1C640cC270121faF145f231fd8fF1d8d5CD4"
-    },
-    {
-        "name": "Aura bb-a-USD",
-        "token": "0x7B50775383d3D6f0215A8F290f2C9e2eEBBEceb2",
-        "rewarder": "0xCC2F52b57247f2bC58FeC182b9a60dAC5963D010"
-    },
-    {
-        "name": "Aura B-50USDC-50WETH",
-        "token": "0x96646936b91d6B9D7D0c47C496AfBF3D6ec7B6f8",
-        "tokens": [
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ],
-        "rewarder": "0x71c8eA7395999AA2007cA860CE66dafA8d5C44fB"
-    },
-    {
-        "name": "Aura B-50WBTC-50WETH",
-        "token": "0xA6F548DF93de924d73be7D25dC02554c6bD66dB5",
-        "tokens": [
-            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ],
-        "rewarder": "0xbdaDc814DeC8f76832f43a44073Be8354398E9c6"
-    },
-    {
-        "name": "Aura B-80LDO-20WETH",
-        "token": "0xBF96189Eee9357a95C7719f4F5047F76bdE804E5",
-        "tokens": [
-            "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ],
-        "rewarder": "0x6E3B0A191cbCCA3eCe8995cE397c3585fe5dA236"
-    },
-    {
-        "name": "Aura B-80GNO-20WETH",
-        "token": "0xF4C0DD9B82DA36C07605df83c8a416F11724d88b",
-        "tokens": [
-            "0x6810e776880C02933D47DB1b9fc05908e5386b96",
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ],
-        "rewarder": "0x3E6E36021fab48919B65927b7b2f202b4EE378ab"
-    },
-    {
-        "name": "Aura B-50WETH-50YFI",
-        "token": "0x186084fF790C65088BA694Df11758faE4943EE9E",
-        "tokens": [
-            "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ],
-        "rewarder": "0xB0Bb1AAB600efC50Bc726D5bd83ADbf4A5687d8e"
-    },
-    {
-        "name": "Aura 33auraBAL-33graviAURA-33WETH",
-        "token": "0x0578292CB20a443bA1CdE459c985CE14Ca2bDEe5",
-        "tokens": [
-            "0x616e8BfA43F920657B3497DBf40D6b1A02D4608d",
-            "0xBA485b556399123261a5F9c95d413B4f93107407",
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ],
-        "rewarder": "0xbd388844C3F1e969f395a567875fEde8b3Cf6Bb1"
-    },
-    {
-        "name": "Aura FUD",
-        "token": "0x178E029173417b1F9C8bC16DCeC6f697bC323746",
-        "tokens": [
-            "0x586Aa273F262909EEF8fA02d90Ab65F5015e0516",
-            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
-        ],
-        "rewarder": "0x8ae9e3fc8d3CC96583dd2bc9560E36cc8195Dea1"
+        "rewarder": "0x712CC5BeD99aA06fC4D5FB50Aea3750fA5161D0f"
     },
     {
         "name": "Aura B-auraBAL-STABLE",
@@ -113,16 +15,112 @@
             "0x5c6Ee304399DBdB9C8Ef030aB642B10820DB8F56",
             "0x616e8BfA43F920657B3497DBf40D6b1A02D4608d"
         ],
-        "rewarder": "0x2AEF2f950E507A23cc19a882DC9b33c03B55D3f2"
+        "rewarder": "0xACAdA51C320947E7ed1a0D0F6b939b0FF465E4c2"
     },
     {
-        "name": "Aura 50WETH-50AURA",
-        "token": "0xCfCA23cA9CA720B6E98E3Eb9B6aa0fFC4a5C08B9",
+        "name": "Aura bb-a-USD",
+        "token": "0xA13a9247ea42D743238089903570127DdA72fE44",
+        "rewarder": "0xFb6b1c1A1eA5618b3CfC20F81a11A97E930fA46B"
+    },
+    {
+        "name": "Aura 50COW-50GNO",
+        "token": "0x92762B42A06dCDDDc5B7362Cfb01E631c4D44B40",
+        "tokens": [
+            "0x6810e776880C02933D47DB1b9fc05908e5386b96",
+            "0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB"
+        ],
+        "rewarder": "0x6256518aE9a97C408a03AAF1A244989Ce6B937F6"
+    },
+    {
+        "name": "Aura 50COW-50WETH",
+        "token": "0xde8C195Aa41C11a0c4787372deFBbDdAa31306D2",
         "tokens": [
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-            "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF"
+            "0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB"
         ],
-        "rewarder": "0xBA1D6AFAc97f0aA45de2B1C2CEd510e167E9e736"
+        "rewarder": "0x228054e9c056F024FC724F515A2a8764Ae175ED6"
+    },
+    {
+        "name": "Aura 50DFX-50WETH",
+        "token": "0x3F7C10701b14197E2695dEC6428a2Ca4Cf7FC3B8",
+        "tokens": [
+            "0x888888435FDe8e7d4c54cAb67f206e4199454c60",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ],
+        "rewarder": "0x8C83370552e6418242594f997306584eABEdef79"
+    },
+    {
+        "name": "Aura USDC-PAL",
+        "token": "0xA7Ff759DBeF9F3EFDD1d59Beee44b966AcAfe214",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xAB846Fb6C81370327e784Ae7CbB6d6a6af6Ff4BF"
+        ],
+        "rewarder": "0x569676f425c1231F8591bBb215dD53A3ee3C8d12"
+    },
+    {
+        "name": "Aura 80D2D-20USDC",
+        "token": "0x27C9f71cC31464B906E0006d4FcBC8900F48f15f",
+        "tokens": [
+            "0x43D4A3cd90ddD2F8f4f693170C9c8098163502ad",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ],
+        "rewarder": "0x07BD9b4a3E364CD4b3bB49035972af70B2E8961f"
+    },
+    {
+        "name": "Aura DOLA BSP",
+        "token": "0x5b3240B6BE3E7487d61cd1AFdFC7Fe4Fa1D81e64",
+        "rewarder": "0xa0E1D9619979f06Ff375251AfE90de2801B009d8"
+    },
+    {
+        "name": "Aura 50wstETH-50bb-a-USD",
+        "token": "0x25Accb7943Fd73Dda5E23bA6329085a3C24bfb6a",
+        "tokens": [
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "0xA13a9247ea42D743238089903570127DdA72fE44"
+        ],
+        "rewarder": "0x8c9E4a04aDb0D543B33cAb644135BFcA523c40C8"
+    },
+    {
+        "name": "Aura 50rETH-50bb-a-USD",
+        "token": "0x334C96d792e4b26B841d28f53235281cec1be1F2",
+        "tokens": [
+            "0xA13a9247ea42D743238089903570127DdA72fE44",
+            "0xae78736Cd615f374D3085123A210448E74Fc6393"
+        ],
+        "rewarder": "0xB0A2fec539Aed6cF01FdfE38F318C1B20742Ca92"
+    },
+    {
+        "name": "Aura 50BADGER-50rETH",
+        "token": "0xe340EBfcAA544da8bB1Ee9005F1a346D50Ec422e",
+        "tokens": [
+            "0x3472A5A71965499acd81997a54BBA8D852C6E53d",
+            "0xae78736Cd615f374D3085123A210448E74Fc6393"
+        ],
+        "rewarder": "0x4E867c6c76173539538B7a9335E89b00434Aec10"
+    },
+    {
+        "name": "Aura 50STG-50bb-a-USD",
+        "token": "0x4ce0BD7deBf13434d3ae127430e9BD4291bfB61f",
+        "tokens": [
+            "0xA13a9247ea42D743238089903570127DdA72fE44",
+            "0xAf5191B0De278C7286d6C7CC6ab6BB8A73bA2Cd6"
+        ],
+        "rewarder": "0xaa8D332531B5B953938AA412730e7536178b4783"
+    },
+    {
+        "name": "Aura sfrxETH-stETH-rETH-BPT",
+        "token": "0x8e85e97ed19C0fa13B2549309965291fbbc0048b",
+        "rewarder": "0x60CF485394E83d3879998281faAC6a1c3cf218c7"
+    },
+    {
+        "name": "Aura 80palStkAAVE-20AAVE",
+        "token": "0xae7bFd6fA54259fC477879712Eebe34164d3A84F",
+        "tokens": [
+            "0x24E79e946dEa5482212c38aaB2D0782F04cdB0E0",
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9"
+        ],
+        "rewarder": "0xde6226Bda2f6C516486936D9b19Ec4b0d88BF025"
     },
     {
         "name": "Aura B-rETH-STABLE",
@@ -131,7 +129,7 @@
             "0xae78736Cd615f374D3085123A210448E74Fc6393",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ],
-        "rewarder": "0x6eBDC53B2C07378662940A7593Ad39Fb67778457"
+        "rewarder": "0x001B78CEC62DcFdc660E06A91Eb1bC966541d758"
     },
     {
         "name": "Aura 50WETH-50FOLD",
@@ -140,17 +138,7 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xd084944d3c05CD115C09d072B9F44bA3E0E45921"
         ],
-        "rewarder": "0x629D32Eab1c1a1C131A0181C089df1844De5180a"
-    },
-    {
-        "name": "Aura 50OHM-25DAI-25WETH",
-        "token": "0xc45D42f801105e861e86658648e3678aD7aa70f9",
-        "tokens": [
-            "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
-            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ],
-        "rewarder": "0xF01e29461f1FCEdD82f5258Da006295E23b4Fab3"
+        "rewarder": "0x2c5b78610D69447Ded2A0B60a565c947f17A1668"
     },
     {
         "name": "Aura 20WETH-80WNCG",
@@ -159,16 +147,7 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xf203Ca1769ca8e9e8FE1DA9D147DB68B6c919817"
         ],
-        "rewarder": "0x1CA1C8fa11A1e79f7dc7d038DbeeC6F0d91161B7"
-    },
-    {
-        "name": "Aura B-50COMP-50WETH",
-        "token": "0xEFAa1604e82e1B3AF8430b90192c1B9e8197e377",
-        "tokens": [
-            "0xc00e94Cb662C3520282E6f5717214004A7f26888",
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ],
-        "rewarder": "0x724C6D29f23F6Bd671B0d9305AAB6e7d9d8b8bE0"
+        "rewarder": "0x330F5e309b0F925e7594E8C9e2E24879e9146DE4"
     },
     {
         "name": "Aura 20WBTC-80BADGER",
@@ -177,7 +156,7 @@
             "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
             "0x3472A5A71965499acd81997a54BBA8D852C6E53d"
         ],
-        "rewarder": "0x05df1E87f41F793D9e03d341Cdc315b76595654C"
+        "rewarder": "0x4EFc8DED860Bc472FA8d938dc3fD4946Bc1A0a18"
     },
     {
         "name": "Aura 40WBTC-40DIGG-20graviAURA",
@@ -187,7 +166,7 @@
             "0x798D1bE841a82a273720CE31c822C61a67a601C3",
             "0xBA485b556399123261a5F9c95d413B4f93107407"
         ],
-        "rewarder": "0xe86f0312b06126855810B4a13a43c3E2b1B8DD90"
+        "rewarder": "0xD7c9c6922db15F47EF3131F2830d8E87f7637210"
     },
     {
         "name": "Aura 50WSTETH-50LDO",
@@ -196,7 +175,7 @@
             "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
             "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
         ],
-        "rewarder": "0x6a56B4ce74eFCa6150E3E811A96227259c5016BC"
+        "rewarder": "0x6c3f6C327DE4aE51a2DfAaF3431b3c508ec8D3EB"
     },
     {
         "name": "Aura 50rETH-50RPL",
@@ -205,7 +184,7 @@
             "0xae78736Cd615f374D3085123A210448E74Fc6393",
             "0xD33526068D116cE69F19A9ee46F0bd304F21A51f"
         ],
-        "rewarder": "0xd84eBc73e484bA614eD201e333416b18b48D9727"
+        "rewarder": "0x21e2DF86658c8ad41a05453Fa5815A0d91273ee9"
     },
     {
         "name": "Aura 50INV-50DOLA",
@@ -214,7 +193,7 @@
             "0x41D5D79431A913C4aE7d69a668ecdfE5fF9DFB68",
             "0x865377367054516e17014CcdED1e7d814EDC9ce4"
         ],
-        "rewarder": "0xA615a41C019AE402c1B7cA9D3d600763e0909A92"
+        "rewarder": "0xA5D7A7690B72a89B7b720E43fC9cBda5419d0C71"
     },
     {
         "name": "Aura 80TEMPLE-20DAI",
@@ -223,7 +202,7 @@
             "0x470EBf5f030Ed85Fc1ed4C2d36B9DD02e77CF1b7",
             "0x6B175474E89094C44Da98b954EedeAC495271d0F"
         ],
-        "rewarder": "0xB665b3020bBE8a9020951e9a74194c1BFda5C5c4"
+        "rewarder": "0x33E2AEd4d2Eb6F85495908260554fDbF4ff14583"
     },
     {
         "name": "Aura MAI-USDC-SP",
@@ -232,7 +211,7 @@
             "0x8D6CeBD76f18E1558D4DB88138e2DeFB3909fAD6",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ],
-        "rewarder": "0xdF0575Aca437F6DaC5289d59DDaAF495159dbCbD"
+        "rewarder": "0x0C57a7CB838C215fad7ADe13062db956E91F1941"
     },
     {
         "name": "Aura 50Silo-50WETH",
@@ -241,116 +220,114 @@
             "0x6f80310CA7F2C654691D1383149Fa1A57d8AB1f8",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ],
-        "rewarder": "0xBD88871D971D3CFc3214b3a1b793383a1B4716FE"
+        "rewarder": "0x201D5e6E9b760aE5b2Bc1874b5906DA42f125340"
     },
     {
-        "name": "Aura bb-a-USD",
-        "token": "0xA13a9247ea42D743238089903570127DdA72fE44",
-        "rewarder": "0x1e9F147241dA9009417811ad5858f22Ed1F9F9fd"
-    },
-    {
-        "name": "Aura 50COW-50GNO",
-        "token": "0x92762B42A06dCDDDc5B7362Cfb01E631c4D44B40",
-        "tokens": [
-            "0x6810e776880C02933D47DB1b9fc05908e5386b96",
-            "0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB"
-        ],
-        "rewarder": "0x94EC8f17745A8C5B4926dA5E74ca76607c18CdEa"
-    },
-    {
-        "name": "Aura 50COW-50WETH",
-        "token": "0xde8C195Aa41C11a0c4787372deFBbDdAa31306D2",
-        "tokens": [
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-            "0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB"
-        ],
-        "rewarder": "0x2d051AbC0a3183d4F4d83C397fc7c6f86b1Aa5Df"
-    },
-    {
-        "name": "Aura 20WETH-80FDT",
-        "token": "0x2D344A84BaC123660b021EEbE4eB6F12ba25fe86",
-        "tokens": [
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-            "0xEd1480d12bE41d92F36f5f7bDd88212E381A3677"
-        ],
-        "rewarder": "0x5c21C86735BBC0a8f943a5de4C4DbC454f19859e"
-    },
-    {
-        "name": "Aura 50DFX-50WETH",
-        "token": "0x3F7C10701b14197E2695dEC6428a2Ca4Cf7FC3B8",
-        "tokens": [
-            "0x888888435FDe8e7d4c54cAb67f206e4199454c60",
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ],
-        "rewarder": "0x91b4D9D1a0a2B693Cc27848C51Ec09e9b839e7D6"
-    },
-    {
-        "name": "Aura USDC-PAL",
-        "token": "0xA7Ff759DBeF9F3EFDD1d59Beee44b966AcAfe214",
-        "tokens": [
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "0xAB846Fb6C81370327e784Ae7CbB6d6a6af6Ff4BF"
-        ],
-        "rewarder": "0xA7A423DE3cF4b47b1130A6C524024151BfA403e6"
-    },
-    {
-        "name": "Aura 20DAI-80TCR",
-        "token": "0x96bA9025311e2f47B840A1f68ED57A3DF1EA8747",
+        "name": "Aura staBAL3",
+        "token": "0x06Df3b2bbB68adc8B0e302443692037ED9f91b42",
         "tokens": [
             "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            "0x9C4A4204B79dd291D6b6571C5BE8BbcD0622F050"
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
         ],
-        "rewarder": "0xEb21C224632d9F59214a160c21e5Ba43104FB015"
+        "rewarder": "0xD73638829aEF73BA55f040858cD5E5B9Af66CF2B"
     },
     {
-        "name": "Aura 80D2D-20USDC",
-        "token": "0x27C9f71cC31464B906E0006d4FcBC8900F48f15f",
+        "name": "Aura B-50SNX-50WETH",
+        "token": "0x072f14B85ADd63488DDaD88f855Fda4A99d6aC9B",
         "tokens": [
-            "0x43D4A3cd90ddD2F8f4f693170C9c8098163502ad",
+            "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ],
+        "rewarder": "0xc7c2AF26b1a8A350D2A53cc05604702ec27E228b"
+    },
+    {
+        "name": "Aura B-60WETH-40DAI",
+        "token": "0x0b09deA16768f0799065C475bE02919503cB2a35",
+        "tokens": [
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ],
+        "rewarder": "0xeD1527FD069465711490bCb3bAfa49AC3F3aF197"
+    },
+    {
+        "name": "Aura B-stETH-STABLE",
+        "token": "0x32296969Ef14EB0c6d29669C550D4a0449130230",
+        "tokens": [
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ],
+        "rewarder": "0xe4683Fe8F53da14cA5DAc4251EaDFb3aa614d528"
+    },
+    {
+        "name": "Aura B-50USDC-50WETH",
+        "token": "0x96646936b91d6B9D7D0c47C496AfBF3D6ec7B6f8",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ],
+        "rewarder": "0x9a004491d82894e8D52698D5924bDE960530Da37"
+    },
+    {
+        "name": "Aura B-50WBTC-50WETH",
+        "token": "0xA6F548DF93de924d73be7D25dC02554c6bD66dB5",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ],
+        "rewarder": "0x7663EC8ee5073CdA94A8e1D72b017E22904fD44a"
+    },
+    {
+        "name": "Aura B-80LDO-20WETH",
+        "token": "0xBF96189Eee9357a95C7719f4F5047F76bdE804E5",
+        "tokens": [
+            "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ],
+        "rewarder": "0x208a62C257550b2eA1E57e4FA7148E2d2C4ba633"
+    },
+    {
+        "name": "Aura B-80GNO-20WETH",
+        "token": "0xF4C0DD9B82DA36C07605df83c8a416F11724d88b",
+        "tokens": [
+            "0x6810e776880C02933D47DB1b9fc05908e5386b96",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ],
+        "rewarder": "0xD3780729035c5b302f76ced0E7F74cF0Fb7c739a"
+    },
+    {
+        "name": "Aura B-50WETH-50YFI",
+        "token": "0x186084fF790C65088BA694Df11758faE4943EE9E",
+        "tokens": [
+            "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ],
+        "rewarder": "0x87AFD58d8dd4DEF356189E0930Ba8611B0546Bd9"
+    },
+    {
+        "name": "Aura 33auraBAL-33graviAURA-33WETH",
+        "token": "0x0578292CB20a443bA1CdE459c985CE14Ca2bDEe5",
+        "tokens": [
+            "0x616e8BfA43F920657B3497DBf40D6b1A02D4608d",
+            "0xBA485b556399123261a5F9c95d413B4f93107407",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ],
+        "rewarder": "0x2F74088d365a66bfbd0c2c55aF3b4977bf637FDD"
+    },
+    {
+        "name": "Aura FUD",
+        "token": "0x178E029173417b1F9C8bC16DCeC6f697bC323746",
+        "tokens": [
+            "0x586Aa273F262909EEF8fA02d90Ab65F5015e0516",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ],
-        "rewarder": "0x998c991b8F6C174eeEc55A89c050387f5681358F"
+        "rewarder": "0x4286c1239bC2705f4A1Fd90edb3582F7aF672356"
     },
     {
-        "name": "Aura DOLA BSP",
-        "token": "0x5b3240B6BE3E7487d61cd1AFdFC7Fe4Fa1D81e64",
-        "rewarder": "0x99653d46D52eE41c7b35cbAd1aC408A00bad6A76"
-    },
-    {
-        "name": "Aura 50COMP-50WSTETH",
-        "token": "0x496ff26B76b8d23bbc6cF1Df1eeE4a48795490F7",
-        "tokens": [
-            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-            "0xc00e94Cb662C3520282E6f5717214004A7f26888"
-        ],
-        "rewarder": "0x9E41f55db4573f92D0cb59736d781891e94b8F1d"
-    },
-    {
-        "name": "Aura 50wstETH-50bb-a-USD",
-        "token": "0x25Accb7943Fd73Dda5E23bA6329085a3C24bfb6a",
-        "tokens": [
-            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-            "0xA13a9247ea42D743238089903570127DdA72fE44"
-        ],
-        "rewarder": "0xe5d920029556a49a9cA4DD808CD62a1876C10eBA"
-    },
-    {
-        "name": "Aura 50rETH-50bb-a-USD",
-        "token": "0x334C96d792e4b26B841d28f53235281cec1be1F2",
-        "tokens": [
-            "0xA13a9247ea42D743238089903570127DdA72fE44",
-            "0xae78736Cd615f374D3085123A210448E74Fc6393"
-        ],
-        "rewarder": "0x19d94045f1aDE0Ed253D30a34e0845bE99AAb194"
-    },
-    {
-        "name": "Aura 50BADGER-50rETH",
-        "token": "0xe340EBfcAA544da8bB1Ee9005F1a346D50Ec422e",
-        "tokens": [
-            "0x3472A5A71965499acd81997a54BBA8D852C6E53d",
-            "0xae78736Cd615f374D3085123A210448E74Fc6393"
-        ],
-        "rewarder": "0x685C94e7DA6C8F14Ae58f168C942Fb05bAD73412"
+        "name": "Aura cbETH-wstETH-BPT",
+        "token": "0x4EdcB2B46377530Bc18BB4D2c7Fe46a992c73e10",
+        "rewarder": "0x7D67BeB5cF289B015FCA7B3fc408860731d826E1"
     },
     {
         "name": "Aura 50TEMPLE-50bb-a-USD",
@@ -359,6 +336,25 @@
             "0x470EBf5f030Ed85Fc1ed4C2d36B9DD02e77CF1b7",
             "0xA13a9247ea42D743238089903570127DdA72fE44"
         ],
-        "rewarder": "0x987c70086239E1A1e9F242ca19fb5a270D4E72B2"
+        "rewarder": "0x07A38A3aEa0b25364b1f9c66C8ddFA1FbD1c8fE0"
+    },
+    {
+        "name": "Aura wstETH-ACX",
+        "token": "0x798b112420AD6391A4129Ac25eF59663a44C88bB",
+        "tokens": [
+            "0x44108f0223A3C3028F5Fe7AEC7f9bb2E66beF82F",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+        ],
+        "rewarder": "0x9AccD370C03a3cc4Bf717a81aD5A46e6c88FA109"
+    },
+    {
+        "name": "Aura 33LUSD-33LQTY-33WETH",
+        "token": "0x5512A4bbe7B3051f92324bAcF25C02b9000c4a50",
+        "tokens": [
+            "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
+            "0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ],
+        "rewarder": "0x32380a7b485F75cce3b3Dced6a273F11846406FD"
     }
 ]

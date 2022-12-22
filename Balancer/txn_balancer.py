@@ -131,6 +131,9 @@ def pool_data(lptoken_address):
     except:
         txn_balancer = {}
     
+    web3 = get_node(ETHEREUM)
+    
+    lptoken_address = web3.toChecksumAddress(lptoken_address)
     pool = search_pool(balancer_data, lptoken_address)
     if pool == None:
         print('LP Token: %s not found in Balancer Data File' % lptoken_address)
@@ -157,13 +160,15 @@ def pool_data(lptoken_address):
     txn_balancer[lptoken_address]['functions'].append({
         'signature': 'joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))',
         'target address': Balancer.VAULT,
-        'avatar address arguments': [1, 2]
+        'avatar address arguments': [1, 2],
+        'bytes32': balancer_data[lptoken_address]['pool id']
     })
 
     txn_balancer[lptoken_address]['functions'].append({
         'signature': 'exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))',
         'target address': Balancer.VAULT,
-        'avatar address arguments': [1, 2]
+        'avatar address arguments': [1, 2],
+        'bytes32': balancer_data[lptoken_address]['pool id']
     })
 
     # result_item['functions'].append({
@@ -197,6 +202,7 @@ def pool_data(lptoken_address):
         txn_balancer[lptoken_address]['functions'].append({
             'signature': 'mint(address)',
             'target address': '0x239e55f427d44c3cc793f49bfb507ebe76638a2b',
+            'address[0]': balancer_data[lptoken_address]['gauge']
         })
 
     if lptoken_address == B_80BAL_20_WETH_ETH:
@@ -237,7 +243,7 @@ def pool_data(lptoken_address):
         json.dump(txn_balancer, txn_balancer_file)
 
 
-pool_data('0x432eb5a7e69F0753298f111b0Ce6336423925608')
+pool_data('0x8f4205e1604133d1875a3e771ae7e4f2b0865639')
 pool_data('0xfF083f57A556bfB3BBe46Ea1B4Fa154b2b1FBe88')
 #transactions_data(ETHEREUM)
 

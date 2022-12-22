@@ -27,11 +27,11 @@
         "functions": [
             {
                 "signature": "stake(uint256)",
-                "target address": "0x5e5ea2048475854a5702F5B8468A51Ba1296EFcC"
+                "target address": "0x00A7BA8Ae7bca0B10A32Ea1f8e2a1Da980c6CAd2"
             },
             {
                 "signature": "withdraw(uint256,bool)",
-                "target address": "0x5e5ea2048475854a5702F5B8468A51Ba1296EFcC"
+                "target address": "0x00A7BA8Ae7bca0B10A32Ea1f8e2a1Da980c6CAd2"
             },
             {
                 "signature": "deposit(uint256,uint256,bool,address)",
@@ -52,7 +52,7 @@
             },
             {
                 "signature": "getReward()",
-                "target address": "0x5e5ea2048475854a5702F5B8468A51Ba1296EFcC"
+                "target address": "0x00A7BA8Ae7bca0B10A32Ea1f8e2a1Da980c6CAd2"
             },
             {
                 "signature": "lock(address,uint256)",

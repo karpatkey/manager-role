@@ -1170,7 +1170,7 @@ def crypto_factory_pool_data(lptoken_address):
 
 
 
-#regular_pool_data('0xcA3d75aC011BF5aD07a98d02f18225F9bD9A6BDF')
+regular_pool_data('0x06325440D014e39736583c165C2963BA99fAf14E')
 #factory_pool_data('0x67C7f0a63BA70a2dAc69477B716551FC921aed00')
 #crypto_v2_pool_data('0x70fc957eb90E37Af82ACDbd12675699797745F68')
 #crypto_factory_pool_data('0xf985005a3793DbA4cCe241B3C19ddcd3Fe069ff4')

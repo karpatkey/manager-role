@@ -1,0 +1,28 @@
+[
+    {
+        "approve": [
+            {
+                "token": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                "spender": "0x1344A36A1B56144C3Bc62E7757377D288fDE0369"
+            },
+            {
+                "token": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                "spender": "0x1344A36A1B56144C3Bc62E7757377D288fDE0369"
+            }
+        ],
+        "functions": [
+            {
+                "signature": "batchBalanceAndTradeAction(address,(uint8,uint16,uint256,uint256,bool,bool,bytes32[])[])",
+                "target address": "0x1344A36A1B56144C3Bc62E7757377D288fDE0369",
+                "avatar address arguments": [0],
+                "tuple[0]": "2",
+                "tuple[1]": "2(USDC) o 3(DAI)"
+            },
+            {
+                "signature": "withdraw(uint16,uint88,bool)",
+                "target address": "0x1344A36A1B56144C3Bc62E7757377D288fDE0369",
+                "arg[0]": "2(USDC) o 3(DAI)"
+            }
+        ]
+    }
+]
