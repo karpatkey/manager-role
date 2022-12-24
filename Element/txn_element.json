@@ -12,6 +12,14 @@
             {
                 "token": "0x06325440D014e39736583c165C2963BA99fAf14E",
                 "spender": "0xEe4e158c03A10CBc8242350d74510779A364581C"
+            },
+            {
+                "token": "0x06325440D014e39736583c165C2963BA99fAf14E",
+                "spender": "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
+            },
+            {
+                "token": "0x724e3073317d4B1A8d0c6E89B137eA5af1f4051e",
+                "spender": "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
             }
         ],
         "functions": [
@@ -38,6 +46,42 @@
             {
                 "signature": "withdraw(uint256)",
                 "target address": "0x182B723a58739a9c974cFDB385ceaDb237453c28"
+            },
+            {
+                "signature": "withdraw(uint256)",
+                "target address": "0x182B723a58739a9c974cFDB385ceaDb237453c28"
+            },
+            {
+                "signature": "mint(uint256,address,uint256,address,(address,address,uint256,uint256,bytes32,bytes32,uint8)[])",
+                "target address": "0xEe4e158c03A10CBc8242350d74510779A364581C",
+                "address[1]": "0x06325440D014e39736583c165C2963BA99fAf14E",
+                "address[3]": "0xcD62f09681dCBB9fbc5bA8054B52F414Cb28960A"
+            },
+            {
+                "signature": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+                "target address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+                "avatar address arguments": [
+                    1,
+                    2
+                ],
+                "bytes32": "0x07f589ea6b789249c83992dd1ed324c3b80fd06b00020000000000000000034e"
+            },
+            {
+                "signature": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+                "target address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+                "avatar address arguments": [
+                    1,
+                    2
+                ],
+                "bytes32": "0x07f589ea6b789249c83992dd1ed324c3b80fd06b00020000000000000000034e"
+            },
+            {
+                "signature": "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",
+                "target address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+                "avatar address arguments": [1,[0,2]],
+                "bytes32": "0x07f589ea6b789249c83992dd1ed324c3b80fd06b00020000000000000000034e",
+                "address[0,2]": "0x724e3073317d4B1A8d0c6E89B137eA5af1f4051e",
+                "address[0,3]": "0x06325440D014e39736583c165C2963BA99fAf14E"
             }
         ]
     }

@@ -1,12 +1,25 @@
 from defi_protocols.functions import *
 from defi_protocols.constants import *
+from defi_protocols.UniswapV3 import *
 from txn_uniswapv3 import *
 
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# LITERALS
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 MAX_TOKEN_AMOUNT = 115792089237316195423570985008687907853269984665640564039457584007913129639935
 
 MAX_COLLECT_AMOUNT = 340282366920938463463374607431768211455
 
-ABI_ALLOWANCE = '[{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]'
+MIN = 'MIN'
+
+MAX = 'MAX'
+
+TICK_SPACING = {
+    FEES[0]: 1,
+    FEES[1]: 10,
+    FEES[2]: 60,
+    FEES[3]: 200
+}
 
 class bcolors:
     HEADER = '\033[95m'
@@ -18,6 +31,11 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# ABIS
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ABI_ALLOWANCE = '[{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]'
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -99,10 +117,54 @@ def tokens_amounts():
     
     return amount0_desired, amount1_desired
 
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# set_price
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def set_price(price_range_option, min_max):
+
+    if price_range_option == '1':
+        price = input('Enter the %s Price of %s per %s desired: ' % (min_max, token1_symbol, token0_symbol))
+    else:
+        price = input('Enter the %s Price of %s per %s desired: ' % (min_max, token0_symbol, token1_symbol))
+    
+    while True:
+        try:
+            price = float(price)
+            break
+        except:
+            price = input('Enter a valid price: ')
+    
+    print()
+    
+    tick_index = (math.log10(price) + (token1_decimals - token0_decimals)) / math.log10(1.0001) / TICK_SPACING[fee]
+    tick1_index = math.floor(tick_index)
+    tick2_index = math.ceil(tick_index)
+    price1 = 1.0001**(tick1_index * TICK_SPACING[fee]) / 10**(token1_decimals - token0_decimals)
+    price2 = 1.0001**(tick2_index * TICK_SPACING[fee]) / 10**(token1_decimals - token0_decimals)
+    
+    if price_range_option == '1':
+        print('Enter the %s Price of %s per %s: ' % (min_max, token1_symbol, token0_symbol))
+    else:
+        print('Enter the %s Price of %s per %s: ' % (min_max, token0_symbol, token1_symbol))
+    
+    print('1- %.8f' % price1)
+    print('2- %.8f' % price2)
+    print()
+    
+    price_option = input('Enter the option: ')
+    while price_option not in ['1','2']:
+        price_option = input('Enter a valid option (1 or 2): ')
+    
+    if price_option == '1':
+        price = price1
+    else:
+        price = price2
+    
+    return price
+
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # tokens_prices
-# Always returns the MIN and MAX prices of Token1 per Token0, but with the actual Token0 and Token1 of the pool
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def tokens_prices():
 
@@ -118,39 +180,21 @@ def tokens_prices():
     print()
     min_price = 0
     max_price = 0
-    if price_range_option == '1':
-        min_price = input('Enter the MIN Price of %s per %s: ' % (token1_symbol, token0_symbol))
-    else:
-        min_price = input('Enter the MIN Price of %s per %s: ' % (token0_symbol, token1_symbol))
+    current_price = get_rate_uniswap_v3(token0, token1, 'latest', ETHEREUM, fee=fee)
     
-    while True:
-        try:
-            min_price = float(min_price)
-            break
-        except:
-            min_price = input('Enter a valid price: ')
+    if price_range_option == '1':
+        message = 'The current price of %s per %s is %.8f' % (token1_symbol, token0_symbol, current_price)
+    else:
+        message = 'The current price of %s per %s is %.8f' % (token0_symbol, token1_symbol, 1 / current_price)
+    
+    print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
     print()
-    
-    if price_range_option == '1':
-        max_price = input('Enter the MAX Price of %s per %s: ' % (token1_symbol, token0_symbol))
-    else:
-        max_price = input('Enter the MAX Price of %s per %s: ' % (token0_symbol, token1_symbol))
-    
-    while True:
-        try:
-            max_price = float(max_price)
-            break
-        except:
-            max_price = input('Enter a valid price: ')
-    
-    if price_range_option == '2':
-        min_price_aux = min_price
-        max_price_aux = max_price
-        min_price = 1 / max_price_aux
-        max_price = 1 / min_price_aux
+    min_price = set_price(price_range_option, MIN)
+    print()
+    max_price = set_price(price_range_option, MAX)
 
-    return min_price, max_price
+    return min_price, max_price, price_range_option
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -491,7 +535,15 @@ while proceed:
         print()
 
         prices = tokens_prices()
-        # print(prices)
+        print()
+        if prices[2] == '1':
+            message = 'The MIN price of %s per %s selected is %.8f\n' % (token1_symbol, token0_symbol, prices[0])
+            message += 'The MAX price of %s per %s selected is %.8f' % (token1_symbol, token0_symbol, prices[1])
+        else:
+            message = 'The MIN price of %s per %s selected is %.8f\n' % (token0_symbol, token1_symbol, prices[0])
+            message += 'The MAX price of %s per %s selected is %.8f' % (token0_symbol, token1_symbol, prices[1])
+
+        print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
         min_price = prices[0]
         max_price = prices[1]
         
