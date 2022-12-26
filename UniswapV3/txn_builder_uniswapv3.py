@@ -136,11 +136,18 @@ def set_price(price_range_option, min_max):
     
     print()
     
+    if price_range_option == '2':
+        price = 1 / price
+
     tick_index = (math.log10(price) + (token1_decimals - token0_decimals)) / math.log10(1.0001) / TICK_SPACING[fee]
     tick1_index = math.floor(tick_index)
     tick2_index = math.ceil(tick_index)
     price1 = 1.0001**(tick1_index * TICK_SPACING[fee]) / 10**(token1_decimals - token0_decimals)
     price2 = 1.0001**(tick2_index * TICK_SPACING[fee]) / 10**(token1_decimals - token0_decimals)
+    
+    if price_range_option == '2':
+        price1 = 1 / price1
+        price2 = 1 / price2
     
     if price_range_option == '1':
         print('Enter the %s Price of %s per %s: ' % (min_max, token1_symbol, token0_symbol))
@@ -157,10 +164,12 @@ def set_price(price_range_option, min_max):
     
     if price_option == '1':
         price = price1
+        tick = tick1_index * TICK_SPACING[fee]
     else:
         price = price2
+        tick = tick2_index * TICK_SPACING[fee]
     
-    return price
+    return price, tick
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -190,11 +199,18 @@ def tokens_prices():
     print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
     print()
-    min_price = set_price(price_range_option, MIN)
+    min_price, tick1 = set_price(price_range_option, MIN)
     print()
-    max_price = set_price(price_range_option, MAX)
+    max_price, tick2 = set_price(price_range_option, MAX)
 
-    return min_price, max_price, price_range_option
+    if tick1 <= tick2:
+        tick_lower = tick1
+        tick_upper = tick2
+    else:
+        tick_lower = tick2
+        tick_upper = tick1
+
+    return min_price, max_price, tick_lower, tick_upper, current_price, price_range_option, 
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -280,7 +296,7 @@ def add_liquidity():
     
     # createAndInitializePoolIfNecessary
     if pool == None:
-        sqrt_price_x96 = 1 # CHANGE
+        sqrt_price_x96 = math.sqrt(current_price * 10**(token1_decimals - token0_decimals)) * (2**96)
         tx_data = get_data(UniswapV3.POSITIONS_NFT, 'createAndInitializePoolIfNecessary', [token0, token1, fee, sqrt_price_x96], ETHEREUM, web3=web3)
         
         eth_value = 0
@@ -290,8 +306,6 @@ def add_liquidity():
                 add_txn_with_role(tx_data, eth_value)
     
     # mint
-    tick_lower = fee / 2 # CHANGE
-    tick_upper = fee * 2 # CHANGE
     amount0_min = 0.1 * amount0_desired # CHANGE
     amount1_min = 0.1 * amount1_desired # CHANGE
     deadline = math.floor(datetime.now().timestamp()+1800)
@@ -534,18 +548,16 @@ while proceed:
         amount1_desired = amounts[1]
         print()
 
-        prices = tokens_prices()
+        min_price, max_price, tick_lower, tick_upper, current_price, price_range_option = tokens_prices()
         print()
-        if prices[2] == '1':
-            message = 'The MIN price of %s per %s selected is %.8f\n' % (token1_symbol, token0_symbol, prices[0])
-            message += 'The MAX price of %s per %s selected is %.8f' % (token1_symbol, token0_symbol, prices[1])
+        if price_range_option == '1':
+            message = 'The MIN price of %s per %s selected is %.8f\n' % (token1_symbol, token0_symbol, min_price)
+            message += 'The MAX price of %s per %s selected is %.8f' % (token1_symbol, token0_symbol, max_price)
         else:
-            message = 'The MIN price of %s per %s selected is %.8f\n' % (token0_symbol, token1_symbol, prices[0])
-            message += 'The MAX price of %s per %s selected is %.8f' % (token0_symbol, token1_symbol, prices[1])
+            message = 'The MIN price of %s per %s selected is %.8f\n' % (token0_symbol, token1_symbol, min_price)
+            message += 'The MAX price of %s per %s selected is %.8f' % (token0_symbol, token1_symbol, max_price)
 
         print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
-        min_price = prices[0]
-        max_price = prices[1]
         
         add_liquidity()
     
