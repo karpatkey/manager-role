@@ -363,7 +363,7 @@ def pool_data(pool_address):
         json.dump(txn_uniswapv3, txn_uniswapv3_file)
 
 
-#transactions_data(min_tvl_usd=1000, min_volume_usd=1000)
+#transactions_data(min_tvl_usd=1000)
 
 #pool_data('0xcbcdf9626bc03e24f779434178a73a0b4bad62ed')
 # pool_data('0x6c6bc977e13df9b0de53b251522280bb72383700')
@@ -387,3 +387,5 @@ def pool_data(pool_address):
 #     json.dump(result, uniswapv3_data_file)
 
 #print(subgraph_query_pool('0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', WETH_ETH, 0.3))
+
+#print(subgraph_query_pool('0x48C3399719B582dD63eB5AADf12A40B4C3f52FA2', '0xFe2e637202056d30016725477c5da089Ab0A043A', 3000))
