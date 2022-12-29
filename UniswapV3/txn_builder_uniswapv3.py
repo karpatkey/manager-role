@@ -102,7 +102,7 @@ def tokens_amounts():
         try:
             if token_option == '1':
                 amount0_desired = float(amount0_desired)
-                amount1_desired = 501490240201705 # CHANGE
+                amount1_desired = 496554138828729 # CHANGE
                 amount0_desired = amount0_desired * 10**token0_decimals
             elif token_option == '2':
                 amount1_desired = float(amount1_desired)
@@ -233,13 +233,13 @@ def get_eth_value():
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def add_txn_with_role(tx_data, eth_value):
 
-    exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [UniswapV3.POSITIONS_NFT, 0, tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address='0x8c858908D5f4cEF92f2B2277CB38248D39513f45')
+    exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [UniswapV3.POSITIONS_NFT, eth_value, tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address='0x8c858908D5f4cEF92f2B2277CB38248D39513f45')
     if exec_data is not None:   
         json_file['transactions'].append(
             {
                 'to': roles_mod_address,
                 'data': exec_data,
-                'value': str(eth_value)
+                'value': str(0)
             }
         )
 
@@ -293,33 +293,31 @@ def add_liquidity():
 
     # tokens approvals
     approve_tokens()
+
+    eth_value = get_eth_value()
     
     # createAndInitializePoolIfNecessary
     if pool == None:
         sqrt_price_x96 = math.sqrt(current_price * 10**(token1_decimals - token0_decimals)) * (2**96)
         tx_data = get_data(UniswapV3.POSITIONS_NFT, 'createAndInitializePoolIfNecessary', [token0, token1, fee, int(sqrt_price_x96)], ETHEREUM, web3=web3)
         
-        eth_value = 0
         if tx_data is not None:
-            exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [UniswapV3.POSITIONS_NFT, 0, tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address='0x8c858908D5f4cEF92f2B2277CB38248D39513f45')
-            if exec_data is not None:
-                add_txn_with_role(tx_data, eth_value)
+            add_txn_with_role(tx_data, eth_value)
     
     # mint
     amount0_min = 3568 # CHANGE
-    amount1_min = 497216668324299 # CHANGE
+    amount1_min = 492307833644865 # CHANGE
     deadline = math.floor(datetime.now().timestamp()+1800)
     tx_data = get_data(UniswapV3.POSITIONS_NFT, 'mint', [[token0, token1, int(fee), int(tick_lower), int(tick_upper), int(round(amount0_desired)), int(round(amount1_desired)), int(round(amount0_min)), int(round(amount1_min)), avatar_address, int(deadline)]], ETHEREUM, web3=web3)
 
-    eth_value = get_eth_value()
     if tx_data is not None:
         add_txn_with_role(tx_data, eth_value)
     
     # If one of the two tokens is ETH add the refundETH() function call
-    if eth_value > 0:
+    if eth:
         tx_data = get_data(UniswapV3.POSITIONS_NFT, 'refundETH', [], ETHEREUM, web3=web3)
         if tx_data is not None:
-            add_txn_with_role(tx_data, eth_value)
+            add_txn_with_role(tx_data, 0)
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -341,10 +339,10 @@ def increase_liquidity():
         add_txn_with_role(tx_data, eth_value)
     
     # If one of the two tokens is ETH add the refundETH() function call
-    if eth_value > 0:
+    if eth:
         tx_data = get_data(UniswapV3.POSITIONS_NFT, 'refundETH', [], ETHEREUM, web3=web3)
         if tx_data is not None:
-            add_txn_with_role(tx_data, eth_value)
+            add_txn_with_role(tx_data, 0)
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
