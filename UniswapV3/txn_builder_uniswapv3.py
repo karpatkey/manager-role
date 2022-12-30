@@ -81,6 +81,10 @@ def approve_tokens():
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def tokens_amounts():
 
+    global token0_symbol
+    global token1_symbol
+    global eth
+
     print('Select the token to enter the amount: ')
     print('1- %s' % token0_symbol)
     print('2- %s' % token1_symbol)
@@ -89,6 +93,23 @@ def tokens_amounts():
     token_option = input('Enter the Token: ')
     while token_option not in ['1','2']:
         token_option = input('Enter a valid option (1 or 2): ')
+    
+    if (token_option == '1' and token0_symbol == 'WETH') or (token_option == '2' and token1_symbol == 'WETH'):
+        print()
+        print('Select the token to enter the amount: ')
+        print('1- ETH')
+        print('2- WETH')
+        print()
+        token_option_eth = input('Enter the Token: ')
+        while token_option_eth not in ['1','2']:
+            token_option_eth = input('Enter a valid option (1 or 2): ')
+        
+        if token_option_eth == '1':
+            eth = True
+            if token_option == '1':
+                token0_symbol = 'ETH'
+            else:
+                token1_symbol = 'ETH'
 
     print()
     amount0_desired = 0
@@ -245,45 +266,47 @@ def add_txn_with_role(tx_data, eth_value):
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# input_nft_position_id
+# input_nft_position
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def input_nft_position_id():
+def input_nft_position():
 
-    nft_position_id = input('Enter the NFT Position ID: ')
-    while True:
-        try:
-            nft_position_id = int(nft_position_id)
-            positions_nft_contract = get_contract(UniswapV3.POSITIONS_NFT, ETHEREUM, web3=web3, abi=UniswapV3.ABI_POSITIONS_NFT)
-            try:
-                nft_indexes = positions_nft_contract.functions.balanceOf(avatar_address).call()
-                for i in range(nft_indexes):
-                    nft_position_index = positions_nft_contract.functions.tokenOfOwnerByIndex(avatar_address, i).call()
-                    if nft_position_id == nft_position_index:
-                        position = positions_nft_contract.functions.positions(nft_position_id).call()
-                        if position[2] != token0:
-                            print()
-                            message = 'ERROR: %s not found on NFT Position ID: %s' % (token0_symbol, nft_position_id)
-                            print(f"{bcolors.FAIL}{message}{bcolors.ENDC}")
-                            nft_position_id = None
-                            break
-                        if position[3] != token1:
-                            print()
-                            message = 'ERROR: %s not found on NFT Position ID: %s' % (token1_symbol, nft_position_id)
-                            print(f"{bcolors.FAIL}{message}{bcolors.ENDC}")
-                            nft_position_id = None
-                            break
-                        if position[4] != fee:
-                            print()
-                            message = 'ERROR: Fee %.2f%% does not match the one on NFT Position ID: %s' % (fee/10000, nft_position_id)
-                            print(f"{bcolors.FAIL}{message}{bcolors.ENDC}")
-                            nft_position_id = None
-                            break
-                            
-                return nft_position_id
-            except:
-                nft_position_id = input('Enter a valid NFT Position ID: ')
-        except:
-            nft_position_id = input('Enter a valid NFT Position ID: ')
+    positions_nft_contract = get_contract(UniswapV3.POSITIONS_NFT, ETHEREUM, web3=web3, abi=UniswapV3.ABI_POSITIONS_NFT)
+    nft_indexes = positions_nft_contract.functions.balanceOf(avatar_address).call()
+    
+    if nft_indexes == 0:
+        message = 'ERROR: No NFT Position IDs found in Safe: %s' % avatar_address
+        print(f"{bcolors.FAIL}{message}{bcolors.ENDC}")
+        return None
+    else:
+        safe_positions = []
+        valid_options = []
+        print(f"{bcolors.OKBLUE}-------------------------{bcolors.ENDC}")
+        print(f"{bcolors.OKBLUE}--- NFT Positions IDs ---{bcolors.ENDC}")
+        print(f"{bcolors.OKBLUE}-------------------------{bcolors.ENDC}")
+        print()
+        for i in range(nft_indexes):
+            nft_position_id = positions_nft_contract.functions.tokenOfOwnerByIndex(avatar_address, i).call()
+            position = positions_nft_contract.functions.positions(nft_position_id).call()
+            token0 = position[2]
+            token0_symbol = get_symbol(token0, ETHEREUM, web3=web3)
+            token1 = position[3]
+            token1_symbol = get_symbol(token1, ETHEREUM, web3=web3)
+            fee = position[4]
+
+            safe_positions.append([nft_position_id, token0, token0_symbol, token1, token1_symbol, fee])
+            valid_options.append(str(i+1))
+
+            print('%d- %d: %s/%s, %.2f%%' % (i+1, nft_position_id, token0_symbol, token1_symbol, fee/10000))
+
+        print()
+        option = input('Enter the NFT Position ID: ')
+        while option not in valid_options:
+            message = 'Enter a valid option (' + ','.join(option for option in valid_options) + '): '
+            option = input(message)
+        
+        print()
+
+        return safe_positions[int(option)-1]
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -405,92 +428,18 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}-------------------------------------{bcol
 print()
 
 while proceed:
-    eth = False
-    print(f"{bcolors.OKBLUE}--------------{bcolors.ENDC}")
-    print(f"{bcolors.OKBLUE}--- Tokens ---{bcolors.ENDC}")
-    print(f"{bcolors.OKBLUE}--------------{bcolors.ENDC}")
-    print()
-    print(f"{bcolors.WARNING}If one of the tokens is ETH press Enter{bcolors.ENDC}")
-    print()
-    token0 = input('Enter Token0 address: ').lower()
-    while not web3.isAddress(token0) and token0 != '':
-        token0 = input('Enter a valid address: ').lower()
+    avatar_address = input('Enter the Avatar Safe address: ')
+    while not web3.isAddress(avatar_address):
+        avatar_address = input('Enter a valid address: ')
     
-    if token0 == '':
-        token0 = WETH_ETH
-        eth = True
-
-    print()
-    token1 = input('Enter Token1 address: ').lower()
-    while not web3.isAddress(token1) and token1 != '':
-        token1 = input('Enter a valid address: ').lower()
-    
-    if token1 == '':
-        token1 = WETH_ETH
-        eth = True
-
+    web3.toChecksumAddress(avatar_address)
     print()
 
-    if token0 == token1:
-        print(f"{bcolors.FAIL}{bcolors.BOLD}ERROR: Tokens can't have the same address{bcolors.ENDC}")
-        break
-
-    print(f"{bcolors.OKBLUE}------------{bcolors.ENDC}")
-    print(f"{bcolors.OKBLUE}--- Fees ---{bcolors.ENDC}")
-    print(f"{bcolors.OKBLUE}------------{bcolors.ENDC}")
-
-    print()
-    print('1- 0.01%')
-    print('2- 0.05%')
-    print('3- 0.3%')
-    print('4- 1%')
-    print()
+    roles_mod_address = input('Enter the Roles Module address: ')
+    while not web3.isAddress(roles_mod_address):
+        roles_mod_address = input('Enter a valid address: ')
     
-    fee = input('Enter the Fee: ')
-    while fee not in ['1','2','3','4']:
-        fee = input('Enter a valid option (1, 2, 3 or 4): ')
-    
-    if fee == '1':
-        fee = 100
-    elif fee == '2':
-        fee = 500
-    elif fee == '3':
-        fee = 3000
-    elif fee == '4':
-        fee = 10000
-    
-    print()
-    
-    token0_symbol = ''
-    token1_symbol = ''
-    pool = subgraph_query_pool(token0, token1, fee)
-    if pool == None:
-        token0 = web3.toChecksumAddress(token0)
-        token1 = web3.toChecksumAddress(token1)
-        if token0 > token1:
-            token0, token1 = token1, token0
-        token0_symbol = get_symbol(token0, ETHEREUM, web3=web3)
-        token1_symbol = get_symbol(token1, ETHEREUM, web3=web3)
-        message = 'Warning: No pool in Uniswap V3 for tokens: %s and %s, with Fee: %.2f%%' % (token0_symbol, token1_symbol, fee/10000)
-        print(f"{bcolors.WARNING}{bcolors.BOLD}{message}{bcolors.ENDC}")
-        print()
-    else:
-        token0 = web3.toChecksumAddress(pool[0]['token0']['id'])
-        token1 = web3.toChecksumAddress(pool[0]['token1']['id'])
-        token0_symbol = get_symbol(token0, ETHEREUM, web3=web3)
-        token1_symbol = get_symbol(token1, ETHEREUM, web3=web3)
-    
-    if token0 == WETH_ETH and eth == True:
-        token0_symbol = 'ETH' 
-
-    if token1 == WETH_ETH and eth == True:
-        token1_symbol = 'ETH'       
-
-    token0_decimals = get_decimals(token0, ETHEREUM, web3=web3)
-    token1_decimals = get_decimals(token1, ETHEREUM, web3=web3)
-    message = 'Pool: UniswapV3 %s/%s %.2f%%:' % (token0_symbol, token1_symbol, fee/10000)
-    print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
-    #print(f"{bcolors.OKGREEN}{pool}{bcolors.ENDC}")
+    web3.toChecksumAddress(roles_mod_address)
 
     print()
     print(f"{bcolors.OKBLUE}------------------{bcolors.ENDC}")
@@ -506,7 +455,104 @@ while proceed:
     while operation not in ['1','2','3','4']:
         operation = input('Enter a valid option (1, 2, 3 or 4): ')
     
-    print()
+    eth = False
+    token0_symbol = ''
+    token1_symbol = ''
+    if operation == '1':
+        print()
+        print(f"{bcolors.OKBLUE}--------------{bcolors.ENDC}")
+        print(f"{bcolors.OKBLUE}--- Tokens ---{bcolors.ENDC}")
+        print(f"{bcolors.OKBLUE}--------------{bcolors.ENDC}")
+        print()
+        print(f"{bcolors.WARNING}If one of the tokens is ETH press Enter{bcolors.ENDC}")
+        print()
+        token0 = input('Enter Token0 address: ').lower()
+        while not web3.isAddress(token0) and token0 != '':
+            token0 = input('Enter a valid address: ').lower()
+        
+        if token0 == '':
+            token0 = WETH_ETH
+            eth = True
+
+        print()
+        token1 = input('Enter Token1 address: ').lower()
+        while not web3.isAddress(token1) and token1 != '':
+            token1 = input('Enter a valid address: ').lower()
+        
+        if token1 == '':
+            token1 = WETH_ETH
+            eth = True
+
+        print()
+
+        if token0 == token1:
+            print(f"{bcolors.FAIL}{bcolors.BOLD}ERROR: Tokens can't have the same address{bcolors.ENDC}")
+            break
+
+        print(f"{bcolors.OKBLUE}------------{bcolors.ENDC}")
+        print(f"{bcolors.OKBLUE}--- Fees ---{bcolors.ENDC}")
+        print(f"{bcolors.OKBLUE}------------{bcolors.ENDC}")
+
+        print()
+        print('1- 0.01%')
+        print('2- 0.05%')
+        print('3- 0.3%')
+        print('4- 1%')
+        print()
+        
+        fee = input('Enter the Fee: ')
+        while fee not in ['1','2','3','4']:
+            fee = input('Enter a valid option (1, 2, 3 or 4): ')
+        
+        if fee == '1':
+            fee = 100
+        elif fee == '2':
+            fee = 500
+        elif fee == '3':
+            fee = 3000
+        elif fee == '4':
+            fee = 10000
+        
+        print()
+    
+        pool = subgraph_query_pool(token0, token1, fee)
+        if pool == None:
+            token0 = web3.toChecksumAddress(token0)
+            token1 = web3.toChecksumAddress(token1)
+            if token0 > token1:
+                token0, token1 = token1, token0
+            token0_symbol = get_symbol(token0, ETHEREUM, web3=web3)
+            token1_symbol = get_symbol(token1, ETHEREUM, web3=web3)
+            message = 'Warning: No pool in Uniswap V3 for tokens: %s and %s, with Fee: %.2f%%' % (token0_symbol, token1_symbol, fee/10000)
+            print(f"{bcolors.WARNING}{bcolors.BOLD}{message}{bcolors.ENDC}")
+            print()
+        else:
+            token0 = web3.toChecksumAddress(pool[0]['token0']['id'])
+            token1 = web3.toChecksumAddress(pool[0]['token1']['id'])
+            token0_symbol = get_symbol(token0, ETHEREUM, web3=web3)
+            token1_symbol = get_symbol(token1, ETHEREUM, web3=web3)
+
+            message = 'Pool: UniswapV3 %s/%s %.2f%%:' % (token0_symbol, token1_symbol, fee/10000)
+            print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+            print()
+            #print(f"{bcolors.OKGREEN}{pool}{bcolors.ENDC}")
+
+            if token0 == WETH_ETH and eth == True:
+                token0_symbol = 'ETH' 
+
+            if token1 == WETH_ETH and eth == True:
+                token1_symbol = 'ETH'
+                
+    else:
+        print()
+        nft_position = input_nft_position()
+        if nft_position == None:
+            break
+        else:
+            nft_position_id, token0, token0_symbol, token1, token1_symbol, fee = nft_position      
+
+    token0_decimals = get_decimals(token0, ETHEREUM, web3=web3)
+    token1_decimals = get_decimals(token1, ETHEREUM, web3=web3)
 
     json_file = {
         'version': '1.0',
@@ -519,21 +565,6 @@ while proceed:
         'createdAt': math.floor(datetime.now().timestamp()*1000),
         'transactions': []
     }
-
-    avatar_address = input('Enter the Avatar Safe address: ')
-    while not web3.isAddress(avatar_address):
-        avatar_address = input('Enter a valid address: ')
-    
-    web3.toChecksumAddress(avatar_address)
-    print()
-
-    roles_mod_address = input('Enter the Roles Module address: ')
-    while not web3.isAddress(roles_mod_address):
-        roles_mod_address = input('Enter a valid address: ')
-    
-    web3.toChecksumAddress(roles_mod_address)
-
-    print()
     
     if operation == '1':
         print(f"{bcolors.OKBLUE}---------------------{bcolors.ENDC}")
@@ -565,7 +596,6 @@ while proceed:
         print(f"{bcolors.OKBLUE}--------------------------{bcolors.ENDC}")
         print()
         
-        nft_position_id = input_nft_position_id()
         if nft_position_id != None:
             amounts = tokens_amounts()
             amount0_desired = amounts[0]
@@ -583,7 +613,6 @@ while proceed:
         print(f"{bcolors.OKBLUE}------------------------{bcolors.ENDC}")
         print()
 
-        nft_position_id = input_nft_position_id()
         if nft_position_id != None:
             amounts = tokens_amounts()
             amount0_desired = amounts[0]
@@ -619,7 +648,6 @@ while proceed:
         print(f"{bcolors.OKBLUE}--------------------{bcolors.ENDC}")
         print()
 
-        nft_position_id = input_nft_position_id()
         if nft_position_id != None:
             if eth == True:
                 print('Collect ETH or WETH')
