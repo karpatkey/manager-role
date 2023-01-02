@@ -61,7 +61,7 @@ def approve_tokens():
 
     # approve Token1
     if token1_symbol != 'ETH':
-        token1_contract = get_contract(token0, ETHEREUM, web3=web3, abi=ABI_ALLOWANCE)
+        token1_contract = get_contract(token1, ETHEREUM, web3=web3, abi=ABI_ALLOWANCE)
         if token1_contract.functions.allowance(avatar_address, UniswapV3.POSITIONS_NFT).call() == 0:
             tx_data = get_data(token1, 'approve', [UniswapV3.POSITIONS_NFT, MAX_TOKEN_AMOUNT], ETHEREUM, web3=web3)
             if tx_data is not None:
