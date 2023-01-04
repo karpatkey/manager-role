@@ -46,14 +46,14 @@ avatar_address = input('Enter the Avatar Safe address: ')
 while not web3.isAddress(avatar_address):
     avatar_address = input('Enter a valid address: ')
 
-web3.toChecksumAddress(avatar_address)
+avatar_address = web3.toChecksumAddress(avatar_address)
 print()
 
 roles_mod_address = input('Enter the Roles Module address: ')
 while not web3.isAddress(roles_mod_address):
     roles_mod_address = input('Enter a valid address: ')
 
-web3.toChecksumAddress(roles_mod_address)
+roles_mod_address = web3.toChecksumAddress(roles_mod_address)
 print()
 
 json_file = {

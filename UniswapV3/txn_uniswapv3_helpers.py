@@ -1,6 +1,6 @@
 from defi_protocols.functions import get_node, get_data, get_contract, get_decimals
 from defi_protocols.constants import ETHEREUM, WETH_ETH
-from defi_protocols.UniswapV3 import POSITIONS_NFT, FEES, UNISWAPV3_ROUTER2, get_rate_uniswap_v3
+from defi_protocols.UniswapV3 import ABI_POOL, POSITIONS_NFT, FEES, UNISWAPV3_ROUTER2, get_rate_uniswap_v3
 # thegraph queries
 from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import os
 import time
+from decimal import Decimal
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # LITERALS
@@ -419,3 +420,77 @@ def restart_end():
     
     if option == '2':
         exit()
+    else:
+        print()
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# get_amount1
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def get_amount1(positions_nft_contract, pool_address, nft_position_id, amount0_desired, web3=None):
+
+    if web3 is None:
+        web3 = get_node(ETHEREUM)
+
+    position_data = positions_nft_contract.functions.positions(nft_position_id).call()
+    tick_lower = position_data[5]
+    tick_upper = position_data[6]
+
+    pool_contract = get_contract(pool_address, ETHEREUM, web3=web3, abi=ABI_POOL)
+    sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
+
+    amount1_desired = Decimal(amount0_desired * sqrt_price_x96 * 1.0001**(tick_upper/2)*(sqrt_price_x96-1.0001**(tick_lower/2)*(2**96)))/Decimal((2**96) * (1.0001**(tick_upper/2)*(2**96)-sqrt_price_x96))
+
+    return int(amount1_desired)
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# get_amount0
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def get_amount0(positions_nft_contract, pool_address, nft_position_id, amount1_desired, web3=None):
+
+    if web3 is None:
+        web3 = get_node(ETHEREUM)
+
+    position_data = positions_nft_contract.functions.positions(nft_position_id).call()
+    tick_lower = position_data[5]
+    tick_upper = position_data[6]
+
+    pool_contract = get_contract(pool_address, ETHEREUM, web3=web3, abi=ABI_POOL)
+    sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
+
+    amount0_desired = Decimal(amount1_desired * (2**96) * (1.0001**(tick_upper/2)*(2**96)-sqrt_price_x96)) / (Decimal(sqrt_price_x96 * 1.0001**(tick_upper/2)*(sqrt_price_x96-1.0001**(tick_lower/2)*(2**96))))
+
+    return int(amount0_desired)
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# get_amount1_mint
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def get_amount1_mint(pool_address, tick_lower, tick_upper, amount0_desired, web3=None):
+
+    if web3 is None:
+        web3 = get_node(ETHEREUM)
+
+    pool_contract = get_contract(pool_address, ETHEREUM, web3=web3, abi=ABI_POOL)
+    sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
+
+    amount1_desired = Decimal(amount0_desired * sqrt_price_x96 * 1.0001**(tick_upper/2)*(sqrt_price_x96-1.0001**(tick_lower/2)*(2**96)))/Decimal((2**96) * (1.0001**(tick_upper/2)*(2**96)-sqrt_price_x96))
+
+    return int(amount1_desired)
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# get_amount0_mint
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def get_amount0_mint(pool_address, tick_lower, tick_upper, amount1_desired, web3=None):
+
+    if web3 is None:
+        web3 = get_node(ETHEREUM)
+
+    pool_contract = get_contract(pool_address, ETHEREUM, web3=web3, abi=ABI_POOL)
+    sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
+
+    amount0_desired = Decimal(amount1_desired * (2**96) * (1.0001**(tick_upper/2)*(2**96)-sqrt_price_x96)) / (Decimal(sqrt_price_x96 * 1.0001**(tick_upper/2)*(sqrt_price_x96-1.0001**(tick_lower/2)*(2**96))))
+
+    return int(amount0_desired)
