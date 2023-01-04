@@ -1,4 +1,4 @@
-from defi_protocols.functions import get_node, get_data, get_contract
+from defi_protocols.functions import get_node, get_data, get_contract, get_decimals
 from defi_protocols.constants import ETHEREUM, WETH_ETH
 from defi_protocols.UniswapV3 import POSITIONS_NFT, FEES, UNISWAPV3_ROUTER2, get_rate_uniswap_v3
 # thegraph queries
@@ -273,7 +273,7 @@ def add_txn_with_role(roles_mod_address, tx_data, eth_value, json_file, web3=Non
     if web3 is None:
         web3 = get_node(ETHEREUM)
 
-    exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [POSITIONS_NFT, eth_value, tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address='0x8c858908D5f4cEF92f2B2277CB38248D39513f45')
+    exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [POSITIONS_NFT, int(eth_value), tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address='0x8c858908D5f4cEF92f2B2277CB38248D39513f45')
     if exec_data is not None:   
         json_file['transactions'].append(
             {
@@ -316,7 +316,6 @@ def get_rate(path, web3=None):
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def json_file_download(json_file):
 
-    print()
     print(f"{bcolors.OKBLUE}-------------------------{bcolors.ENDC}")
     print(f"{bcolors.OKBLUE}--- JSON File Download---{bcolors.ENDC}")
     print(f"{bcolors.OKBLUE}-------------------------{bcolors.ENDC}")
@@ -375,7 +374,7 @@ def swap_selected_token(avatar_address, roles_mod_address, path, token, token_ba
             
             print()
 
-            amount_out_min = slippage * expected_amount / 100
+            amount_out_min = (100 - slippage) * expected_amount / 100
             message = 'The MIN amount of %s for the %f of %s is: %f' % (swap_token_symbol, token_balance, token_symbol, amount_out_min)
             print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
@@ -389,10 +388,13 @@ def swap_selected_token(avatar_address, roles_mod_address, path, token, token_ba
             while option not in ['1','2']:
                 option = input('Enter a valid option (1, 2): ')
             
+            print()
             if option == '1':
                 approve_tokens(avatar_address, roles_mod_address, token, swap_token, json_file, web3=web3)
-
-                tx_data = get_data(UNISWAPV3_ROUTER2, 'swapExactTokensForTokens', [token_balance, amount_out_min, path, avatar_address])
+                
+                token_balance = token_balance * (10**get_decimals(token, ETHEREUM, web3=web3))
+                amount_out_min = amount_out_min * (10**get_decimals(swap_token, ETHEREUM, web3=web3))
+                tx_data = get_data(UNISWAPV3_ROUTER2, 'swapExactTokensForTokens', [int(round(token_balance)), int(round(amount_out_min)), path, avatar_address], ETHEREUM, web3=web3)
                 if tx_data is not None:
                     add_txn_with_role(roles_mod_address, tx_data, 0, json_file, web3=web3)
                 
@@ -404,7 +406,6 @@ def swap_selected_token(avatar_address, roles_mod_address, path, token, token_ba
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def restart_end():
 
-    print()
     print(f"{bcolors.WARNING}{bcolors.BOLD}No transactions were recorded{bcolors.ENDC}")
     print()
     print('Do you wish to restart?')

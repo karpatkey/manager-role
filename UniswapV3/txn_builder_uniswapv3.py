@@ -450,9 +450,21 @@ while not web3.isAddress(roles_mod_address):
     roles_mod_address = input('Enter a valid address: ')
 
 web3.toChecksumAddress(roles_mod_address)
+print()
+
+json_file = {
+    'version': '1.0',
+    'chainId': '1',
+    'meta': {
+        'name': None,
+        'description': '',
+        'txBuilderVersion': '1.8.0'
+    },
+    'createdAt': math.floor(datetime.now().timestamp()*1000),
+    'transactions': []
+}
 
 while True:
-    print()
     print(f"{bcolors.OKBLUE}------------------{bcolors.ENDC}")
     print(f"{bcolors.OKBLUE}--- Operations ---{bcolors.ENDC}")
     print(f"{bcolors.OKBLUE}------------------{bcolors.ENDC}")
@@ -566,18 +578,6 @@ while True:
 
     token0_decimals = get_decimals(token0, ETHEREUM, web3=web3)
     token1_decimals = get_decimals(token1, ETHEREUM, web3=web3)
-
-    json_file = {
-        'version': '1.0',
-        'chainId': '1',
-        'meta': {
-            'name': None,
-            'description': '',
-            'txBuilderVersion': '1.8.0'
-        },
-        'createdAt': math.floor(datetime.now().timestamp()*1000),
-        'transactions': []
-    }
     
     if operation == '1':
         print(f"{bcolors.OKBLUE}---------------------{bcolors.ENDC}")
