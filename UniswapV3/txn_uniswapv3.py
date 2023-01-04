@@ -1,198 +1,11 @@
-from defi_protocols.functions import *
-from defi_protocols.constants import *
-from defi_protocols import UniswapV3
-# thegraph queries
-from gql import gql, Client
-from gql.transport.requests import RequestsHTTPTransport
+from txn_uniswapv3_helpers import subgraph_query_all_pools
+from defi_protocols.functions import get_symbol
+from defi_protocols.constants import ETHEREUM, WETH_ETH
+from defi_protocols.UniswapV3 import POSITIONS_NFT
 from pathlib import Path
 import os
-import time
+import json
 
-
-#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# subgraph_query_pool
-#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def subgraph_query_pool(token0, token1, fee):
-
-    subgraph_url = "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
-    uniswapv3_transport=RequestsHTTPTransport(
-        url=subgraph_url,
-        verify=True,
-        retries=3
-    )
-    client = Client(transport=uniswapv3_transport)
-
-    token0 = token0.lower()
-    token1 = token1.lower()
-
-    query_string = '''
-    query {{
-    pools(where: {{token0_:{{id_in:["{token0}""{token1}"]}} token1_:{{id_in:["{token0}""{token1}"]}}feeTier: "{fee}"}})
-        {{
-            id
-            token0{{id}}
-            token1{{id}}
-            feeTier
-            volumeUSD
-            totalValueLockedUSD
-            createdAtTimestamp
-        }}
-    }}
-    '''
-
-    formatted_query_string = query_string.format(token0=token0, token1=token1, fee=fee)
-    response = client.execute(gql(formatted_query_string))
-
-    if response['pools'] != []:
-        return response['pools']
-    else:
-        return None
-
-#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# subgraph_query_all_pools
-#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def subgraph_query_all_pools(min_tvl_usd=0, min_volume_usd=0):
-
-    # Initialize subgraph
-    subgraph_url = "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
-    uniswapv3_transport=RequestsHTTPTransport(
-        url=subgraph_url,
-        verify=True,
-        retries=3
-    )
-    client = Client(transport=uniswapv3_transport)
-
-    # all_found = False
-    # skip = 0
-    # num_pools_to_query = 1000
-    # pools = []
-
-    # try:
-    #     while not all_found:
-    #         query_string = '''
-    #         query {{
-    #         pools(first: {first}, skip: {skip}) {{
-    #             id
-    #             token0{{id}}
-    #             token1{{id}}
-    #         }}
-    #         }}
-    #         '''
-            
-    #         formatted_query_string = query_string.format(first=num_pools_to_query, skip=skip)
-    #         response = client.execute(gql(formatted_query_string))
-
-    #         for pool in response['pools']:
-    #             pools.append(pool)
-
-    #         if len(response['pools']) < 1000:
-    #             all_found = True
-    #         else:
-    #             skip += 1000
-
-    pools = {}
-    last_timestamp = 0
-    all_found = False
-
-    web3 = get_node(ETHEREUM)
-
-    try:
-        query_string = '''
-        query {{
-        pools(first: 1000, orderBy: createdAtTimestamp, orderDirection: asc) 
-            {{
-                id
-                token0{{id}}
-                token1{{id}}
-                feeTier
-                volumeUSD
-                totalValueLockedUSD
-                createdAtTimestamp
-            }}
-        }}
-        '''
-
-        formatted_query_string = query_string.format()
-        response = client.execute(gql(formatted_query_string))
-
-        for pool in response['pools']:
-            volume_usd = float(pool['volumeUSD'])
-            tvl_usd = float(pool['totalValueLockedUSD'])
-            
-            # try:
-            #     total_supply_token0 = total_supply(pool['token0']['id'], 'latest', ETHEREUM, web3=web3)
-            # except:
-            #     continue
-            
-            # try:
-                # total_supply_token1 = total_supply(pool['token1']['id'], 'latest', ETHEREUM, web3=web3)
-            # except:
-            #     continue
-
-            # if volume_usd > 0 and tvl_usd > 100 and total_supply_token0 > 0 and total_supply_token1 > 0:
-            if volume_usd >= min_volume_usd and tvl_usd >= min_tvl_usd:
-                pools[pool['id']] = [web3.toChecksumAddress(pool['token0']['id']), web3.toChecksumAddress(pool['token1']['id']), int(pool['feeTier']), volume_usd, tvl_usd]
-
-        if len(response['pools']) < 1000:
-            all_found = True
-        else:
-            last_timestamp = int(pool['createdAtTimestamp']) - 1
-    
-    except Exception as Ex:
-        print(Ex)
-    
-    if not all_found and last_timestamp > 0:
-
-        try:
-            while not all_found:
-                query_string = '''
-                query {{
-                pools(first: 1000, orderBy: createdAtTimestamp, orderDirection: asc
-                where: {{createdAtTimestamp_gt: {last_timestamp} }})
-                    {{
-                        id
-                        token0{{id}}
-                        token1{{id}}
-                        feeTier
-                        volumeUSD
-                        totalValueLockedUSD
-                        createdAtTimestamp
-                    }}
-                }}
-                '''
-
-                formatted_query_string = query_string.format(last_timestamp=last_timestamp)
-                response = client.execute(gql(formatted_query_string))
-
-                for pool in response['pools']:
-                    volume_usd = float(pool['volumeUSD'])
-                    tvl_usd = float(pool['totalValueLockedUSD'])
-                    
-                    # try:
-                    #     total_supply_token0 = total_supply(pool['token0']['id'], 'latest', ETHEREUM, web3=web3)
-                    # except:
-                    #     continue
-                    
-                    # try:
-                    #     total_supply_token1 = total_supply(pool['token1']['id'], 'latest', ETHEREUM, web3=web3)
-                    # except:
-                    #     continue
-
-                    # if volume_usd > 0 and tvl_usd > 100 and total_supply_token0 > 0 and total_supply_token1 > 0:
-                    if volume_usd >= min_volume_usd and tvl_usd >= min_tvl_usd:
-                        pools[pool['id']] = [web3.toChecksumAddress(pool['token0']['id']), web3.toChecksumAddress(pool['token1']['id']), int(pool['feeTier']), volume_usd, tvl_usd]
-
-                if len(response['pools']) < 1000:
-                    all_found = True
-                else:
-                    last_timestamp = int(pool['createdAtTimestamp']) - 1
-                    time.sleep(5)
-        
-        except Exception as Ex:
-            print(Ex)
-        
-    return pools
-    
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # transactions_data
@@ -285,12 +98,12 @@ def pool_data(pool_address):
     # APPROVALS
     txn_uniswapv3[pool_address]['approve'].append({
         'token': pool['tokens'][0],
-        'spender': UniswapV3.POSITIONS_NFT
+        'spender': POSITIONS_NFT
     })
 
     txn_uniswapv3[pool_address]['approve'].append({
         'token': pool['tokens'][1],
-        'spender': UniswapV3.POSITIONS_NFT
+        'spender': POSITIONS_NFT
     })
 
 
@@ -298,56 +111,56 @@ def pool_data(pool_address):
     if WETH_ETH in pool['tokens']:
         txn_uniswapv3[pool_address]['functions'].append({
             'signature': 'mint((address,address,uint24,int24,int24,uint256,uint256,uint256,uint256,address,uint256))',
-            'target address': UniswapV3.POSITIONS_NFT,
+            'target address': POSITIONS_NFT,
             "avatar address arguments": [9],
             'use ETH': True
         })
 
         txn_uniswapv3[pool_address]['functions'].append({
             'signature': 'refundETH()',
-            'target address': UniswapV3.POSITIONS_NFT,
+            'target address': POSITIONS_NFT,
             'use ETH': True
         })
 
         txn_uniswapv3[pool_address]['functions'].append({
             'signature': 'increaseLiquidity((uint256,uint256,uint256,uint256,uint256,uint256))',
-            'target address': UniswapV3.POSITIONS_NFT,
+            'target address': POSITIONS_NFT,
             'use ETH': True
         })
 
         txn_uniswapv3[pool_address]['functions'].append({
             'signature': 'collect((uint256,address,uint128,uint128))',
-            'target address': UniswapV3.POSITIONS_NFT,
+            'target address': POSITIONS_NFT,
             "avatar address arguments": [1] # WARNING: CHECK ZERO_ADDRESS
         })
 
         txn_uniswapv3[pool_address]['functions'].append({
             'signature': 'unwrapWETH9(uint256,address)',
-            'target address': UniswapV3.POSITIONS_NFT,
+            'target address': POSITIONS_NFT,
             "avatar address arguments": [1],
         })
 
         txn_uniswapv3[pool_address]['functions'].append({
             'signature': 'sweepToken(address,uint256,address)',
-            'target address': UniswapV3.POSITIONS_NFT,
+            'target address': POSITIONS_NFT,
             "avatar address arguments": [2],
         })
 
     else:
         txn_uniswapv3[pool_address]['functions'].append({
             'signature': 'mint((address,address,uint24,int24,int24,uint256,uint256,uint256,uint256,address,uint256))',
-            'target address': UniswapV3.POSITIONS_NFT,
+            'target address': POSITIONS_NFT,
             "avatar address arguments": [9],
         })
 
         txn_uniswapv3[pool_address]['functions'].append({
             'signature': 'increaseLiquidity((uint256,uint256,uint256,uint256,uint256,uint256))',
-            'target address': UniswapV3.POSITIONS_NFT,
+            'target address': POSITIONS_NFT,
         })
 
         txn_uniswapv3[pool_address]['functions'].append({
             'signature': 'collect((uint256,address,uint128,uint128))',
-            'target address': UniswapV3.POSITIONS_NFT,
+            'target address': POSITIONS_NFT,
             "avatar address arguments": [1]
         })
     
@@ -355,7 +168,7 @@ def pool_data(pool_address):
     # Common Functions
     txn_uniswapv3[pool_address]['functions'].append({
         'signature': 'decreaseLiquidity((uint256,uint128,uint256,uint256,uint256))',
-        'target address': UniswapV3.POSITIONS_NFT,
+        'target address': POSITIONS_NFT,
     })
 
 
