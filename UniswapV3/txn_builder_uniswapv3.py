@@ -1,6 +1,6 @@
 from txn_uniswapv3_helpers import *
 from defi_protocols.UniswapV3 import ABI_POSITIONS_NFT, FEES, POSITIONS_NFT, get_rate_uniswap_v3, underlying, get_fee
-from defi_protocols.functions import get_contract, get_symbol, get_data, get_node, get_decimals, balance_of
+from defi_protocols.functions import get_contract, get_symbol, get_data, get_node, get_decimals
 from defi_protocols.constants import ETHEREUM, WETH_ETH, ZERO_ADDRESS
 from datetime import datetime
 import math
@@ -40,23 +40,22 @@ def tokens_amounts():
     while token_option not in ['1','2']:
         token_option = input('Enter a valid option (1 or 2): ')
     
-    if operation == '1' or operation == '2':
-        if token0 == WETH_ETH or token1 == WETH_ETH:
-            print()
-            print('Select the token you prefer to add: ')
-            print('1- ETH')
-            print('2- WETH')
-            print()
-            token_option_eth = input('Enter the Token: ')
-            while token_option_eth not in ['1','2']:
-                token_option_eth = input('Enter a valid option (1 or 2): ')
-            
-            if token_option_eth == '1':
-                eth = True
-                if token0_symbol == 'WETH':
-                    token0_symbol = 'ETH'
-                else:
-                    token1_symbol = 'ETH'
+    if token0 == WETH_ETH or token1 == WETH_ETH:
+        print()
+        print('Select the token you prefer to add: ')
+        print('1- ETH')
+        print('2- WETH')
+        print()
+        token_option_eth = input('Enter the Token: ')
+        while token_option_eth not in ['1','2']:
+            token_option_eth = input('Enter a valid option (1 or 2): ')
+        
+        if token_option_eth == '1':
+            eth = True
+            if token0_symbol == 'WETH':
+                token0_symbol = 'ETH'
+            else:
+                token1_symbol = 'ETH'
         
     if token_option == '1':
         selected_token = token0
@@ -71,147 +70,17 @@ def tokens_amounts():
         selected_token = ZERO_ADDRESS
     
     print()
-    nft_position_balances = None
-    if operation == '3':
-        nft_position_balances = underlying(avatar_address, nft_position_id, 'latest', ETHEREUM, decimals=False)
-        selected_token_balance = get_selected_token_balance(avatar_address, operation, token_option, selected_token, selected_token_symbol, selected_token_decimals, nft_position_balances=nft_position_balances, web3=web3)
-    else:
-        selected_token_balance = get_selected_token_balance(avatar_address, operation, token_option, selected_token, selected_token_symbol, selected_token_decimals, web3=web3)
-
-    # selected_token_balance = 0
-    # if operation == '1' or operation == '2':
-    #     selected_token_balance = balance_of(avatar_address, selected_token, 'latest', ETHEREUM, decimals=False, web3=web3)
-        
-    #     if selected_token_balance == 0:
-    #         message = 'Avatar Safe has no remaining balance of %s' % (selected_token_symbol)
-    #         print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
-    #         return None
-    #     else:
-    #         message = 'The balance of %s in the Avatar Safe is %f' % (selected_token_symbol, selected_token_balance / (10**selected_token_decimals))
-    #         print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
     
-    # elif operation == '3':
-    #     nft_position_balances = underlying(avatar_address, nft_position_id, 'latest', ETHEREUM, decimals=False)
-        
-    #     if nft_position_balances == None:
-    #         print(f"{bcolors.FAIL}{bcolors.BOLD}Error while retrieving the position balances{bcolors.ENDC}")
-    #         exit()
-
-    #     if token_option == '1':
-    #         selected_token_balance = nft_position_balances[0][1]
-    #     else:
-    #         selected_token_balance = nft_position_balances[1][1]
-        
-    #     if selected_token_balance == 0:
-    #         message = 'The NFT Position has no remaining balance of %s' % (selected_token_symbol)
-    #         print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
-    #         return None
-    #     else:
-    #         message = 'The balance of %s in the NFT Position is %f' % (selected_token_symbol, selected_token_balance / (10**selected_token_decimals))
-    #         print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
-
+    selected_token_balance = get_selected_token_balance(avatar_address, selected_token, selected_token_symbol, selected_token_decimals, web3=web3)
+    if selected_token_balance == 0:
+        return None
+    
     print()
 
     if operation == '1':
-        return get_amounts_desired(avatar_address, operation, token_option, selected_token_balance, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, fee, positions_nft_contract, nft_position_balances, tick_lower=tick_lower, tick_upper=tick_upper, web3=web3)
+        return get_amounts_desired(avatar_address, pool_contract, operation, token_option, selected_token_balance, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, positions_nft_contract, tick_lower=tick_lower, tick_upper=tick_upper, web3=web3)
     else:
-        return get_amounts_desired(avatar_address, operation, token_option, selected_token_balance, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, fee, positions_nft_contract, nft_position_balances, nft_position_id=nft_position_id, web3=web3)
-    # amount0_desired = 0
-    # amount1_desired = 0
-    # message = 'If you want to select the MAX amount of %s enter \"max\"' %  (selected_token_symbol)
-    # print(f"{bcolors.WARNING}{bcolors.BOLD}{message}{bcolors.ENDC}")
-    # if token_option == '1':
-    #     amount0_desired = input('Enter the Amount of %s: ' % token0_symbol)
-    # elif token_option == '2':
-    #     amount1_desired = input('Enter the Amount of %s: ' % token1_symbol)
-
-    # while True:
-    #     try:
-    #         if token_option == '1':
-    #             if amount0_desired == 'max':
-    #                 amount0_desired = selected_token_balance
-    #             else:
-    #                 amount0_desired = float(amount0_desired) * (10**token0_decimals)
-                
-    #             if amount0_desired > selected_token_balance:
-    #                 if operation != '3':
-    #                     message = 'Insufficient balance of %s in Avatar Safe' % (selected_token_symbol)
-    #                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
-    #                 else:
-    #                     message = 'Insufficient balance of %s in NFT Position' % (selected_token_symbol)
-    #                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
-
-    #                 print()
-    #                 return None
-                
-    #             if operation == '3':
-    #                 amount1_desired = nft_position_balances[1][1]
-    #             else:
-    #                 pool_address = web3.toChecksumAddress(subgraph_query_pool(token0, token1, fee)[0]['id'])
-                    
-    #                 if operation == '1':
-    #                     amount1_desired = get_amount1_mint(pool_address, tick_lower, tick_upper, amount0_desired, web3=web3)
-    #                 else:
-    #                     amount1_desired = get_amount1(positions_nft_contract, pool_address, nft_position_id, amount0_desired, web3=web3)
-                    
-    #                 if token1_symbol == 'ETH':
-    #                     token1_balance = balance_of(avatar_address, ZERO_ADDRESS, 'latest', ETHEREUM, web3=web3, decimals=False)
-    #                 else:
-    #                     token1_balance = balance_of(avatar_address, token1, 'latest', ETHEREUM, web3=web3, decimals=False)
-                    
-    #                 if token1_balance < amount1_desired:
-    #                     message = 'Insufficient balance of %s in Avatar Safe' % (token1_symbol)
-    #                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
-                        
-    #                     return None
-                
-    #         elif token_option == '2':
-    #             if amount1_desired == 'max':
-    #                 amount1_desired = selected_token_balance
-    #             else:
-    #                 amount1_desired = float(amount1_desired) * (10**token1_decimals)
-
-    #             if amount1_desired > selected_token_balance:
-    #                 if operation != '3':
-    #                     message = 'Insufficient balance of %s in Avatar Safe' % (selected_token_symbol)
-    #                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
-                        
-    #                 else:
-    #                     message = 'Insufficient balance of %s in NFT Position' % (selected_token_symbol)
-    #                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
-
-    #                 print()
-    #                 return None
-
-    #             if operation == '3':
-    #                 amount0_desired = nft_position_balances[0][1]
-    #             else:
-    #                 pool_address = web3.toChecksumAddress(subgraph_query_pool(token0, token1, fee)[0]['id'])
-                    
-    #                 if operation == '1':
-    #                     amount0_desired = get_amount0_mint(pool_address, tick_lower, tick_upper, amount1_desired, web3=web3)
-    #                 else:
-    #                     amount0_desired = get_amount0(positions_nft_contract, pool_address, nft_position_id, amount1_desired, web3=web3)
-                    
-    #                 if token0_symbol == 'ETH':
-    #                     token0_balance = balance_of(avatar_address, ZERO_ADDRESS, 'latest', ETHEREUM, web3=web3, decimals=False)
-    #                 else:
-    #                     token0_balance = balance_of(avatar_address, token0, 'latest', ETHEREUM, web3=web3, decimals=False)
-                    
-    #                 if token0_balance < amount0_desired:
-    #                     message = 'Insufficient balance of %s in Avatar Safe' % (token0_symbol)
-    #                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
-
-    #                     return None
-    #         break
-            
-    #     except:
-    #         if token_option == '1':
-    #             amount0_desired = input('Enter a valid amount: ')
-    #         elif token_option == '2':
-    #             amount1_desired = input('Enter a valid amount: ')
-
-    return amount0_desired, amount1_desired
+        return get_amounts_desired(avatar_address, pool_contract, operation, token_option, selected_token_balance, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, positions_nft_contract, nft_position_id=nft_position_id, web3=web3)
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -343,6 +212,7 @@ def input_nft_position():
         print(f"{bcolors.OKBLUE}--- NFT Positions IDs ---{bcolors.ENDC}")
         print(f"{bcolors.OKBLUE}-------------------------{bcolors.ENDC}")
         print()
+        valid_ntfs_counter = 0
         for i in range(nft_indexes):
             nft_position_id = positions_nft_contract.functions.tokenOfOwnerByIndex(avatar_address, i).call()
             position = positions_nft_contract.functions.positions(nft_position_id).call()
@@ -351,11 +221,14 @@ def input_nft_position():
             token1 = position[3]
             token1_symbol = get_symbol(token1, ETHEREUM, web3=web3)
             fee = position[4]
+            liquidity = position[7]
 
-            safe_positions.append([nft_position_id, token0, token0_symbol, token1, token1_symbol, fee])
-            valid_options.append(str(i+1))
+            if liquidity > 0:
+                valid_ntfs_counter += 1
+                safe_positions.append([nft_position_id, token0, token0_symbol, token1, token1_symbol, fee, liquidity])
+                valid_options.append(str(valid_ntfs_counter))
 
-            print('%d- %d: %s/%s, %.2f%%' % (i+1, nft_position_id, token0_symbol, token1_symbol, fee/10000))
+                print('%d- %d: %s/%s, %.2f%%' % (valid_ntfs_counter, nft_position_id, token0_symbol, token1_symbol, fee/10000))
 
         print()
         option = input('Enter the NFT Position ID option: ')
@@ -379,7 +252,7 @@ def add_liquidity():
     eth_value = get_eth_value()
     
     # createAndInitializePoolIfNecessary
-    if pool == None:
+    if pool_address == None:
         sqrt_price_x96 = math.sqrt(current_price * 10**(token1_decimals - token0_decimals)) * (2**96)
         tx_data = get_data(POSITIONS_NFT, 'createAndInitializePoolIfNecessary', [token0, token1, fee, int(sqrt_price_x96)], ETHEREUM, web3=web3)
         
@@ -432,13 +305,13 @@ def increase_liquidity():
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def remove_liquidity():
 
-    liquidity = 1
     amount0_min = 0.9 * amount0_desired
     amount1_min = 0.95 * amount1_desired
+
     deadline = math.floor(datetime.now().timestamp()+1800)
 
     # remove liquidity
-    tx_data = get_data(POSITIONS_NFT, 'decreaseLiquidity', [[int(nft_position_id), int(liquidity), int(amount0_min), int(amount1_min), int(deadline)]], ETHEREUM, web3=web3)
+    tx_data = get_data(POSITIONS_NFT, 'decreaseLiquidity', [[int(nft_position_id), int(removed_liquidity), int(amount0_min), int(amount1_min), int(deadline)]], ETHEREUM, web3=web3)
     if tx_data is not None:
         add_txn_with_role(roles_mod_address, tx_data, 0, json_file, web3=web3)
     
@@ -476,12 +349,10 @@ def collect():
             collect_eth_amount = position_fees[1][1]
             collect_token_amount = position_fees[0][1]
             
-        #collect_eth_amount = 1 # CHANGE: how to obtain the amount of eth to collect
         tx_data = get_data(POSITIONS_NFT, 'unwrapWETH9', [int(round(collect_eth_amount)), avatar_address], ETHEREUM, web3=web3)
         if tx_data is not None:
             add_txn_with_role(roles_mod_address, tx_data, 0, json_file, web3=web3)
         
-        #collect_token_amount = 1 # CHANGE: how to obtain the amount of the other token to collect
         if token0_symbol == 'ETH':
             collect_token = token1
         else:
@@ -529,7 +400,8 @@ json_file = {
 }
 
 positions_nft_contract = get_contract(POSITIONS_NFT, ETHEREUM, web3=web3, abi=ABI_POSITIONS_NFT)
-pool = None
+pool_address = None
+pool_contract = None
 
 while True:
     print(f"{bcolors.OKBLUE}------------------{bcolors.ENDC}")
@@ -605,8 +477,8 @@ while True:
         
         print()
     
-        pool = subgraph_query_pool(token0, token1, fee)
-        if pool == None:
+        pool_data = subgraph_query_pool(token0, token1, fee)
+        if pool_data == None:
             token0 = web3.toChecksumAddress(token0)
             token1 = web3.toChecksumAddress(token1)
             if token0 > token1:
@@ -617,8 +489,9 @@ while True:
             print(f"{bcolors.WARNING}{bcolors.BOLD}{message}{bcolors.ENDC}")
             print()
         else:
-            token0 = web3.toChecksumAddress(pool[0]['token0']['id'])
-            token1 = web3.toChecksumAddress(pool[0]['token1']['id'])
+            pool_address = web3.toChecksumAddress(pool_data[0]['id'])
+            token0 = web3.toChecksumAddress(pool_data[0]['token0']['id'])
+            token1 = web3.toChecksumAddress(pool_data[0]['token1']['id'])
             
             if token0 == WETH_ETH and eth == True:
                 token0_symbol = 'ETH'
@@ -633,7 +506,6 @@ while True:
             message = 'Pool: UniswapV3 %s/%s %.2f%%:' % (token0_symbol, token1_symbol, fee/10000)
             print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
             print()
-            #print(f"{bcolors.OKGREEN}{pool}{bcolors.ENDC}")
                 
     else:
         print()
@@ -641,7 +513,11 @@ while True:
         if nft_position == None:
             break
         else:
-            nft_position_id, token0, token0_symbol, token1, token1_symbol, fee = nft_position      
+            nft_position_id, token0, token0_symbol, token1, token1_symbol, fee, liquidity = nft_position
+            pool_address = web3.toChecksumAddress(subgraph_query_pool(token0, token1, fee)[0]['id'])
+
+    if pool_address != None:
+        pool_contract = get_contract(pool_address, ETHEREUM, web3=web3, abi=ABI_POOL)
 
     token0_decimals = get_decimals(token0, ETHEREUM, web3=web3)
     token1_decimals = get_decimals(token1, ETHEREUM, web3=web3)
@@ -664,10 +540,13 @@ while True:
             print()
             if price_range_option == '1':
                 message = 'The MIN price of %s per %s selected is %.8f\n' % (token1_symbol, token0_symbol, min_price)
-                message += 'The MAX price of %s per %s selected is %.8f' % (token1_symbol, token0_symbol, max_price)
+                message += 'The MAX price of %s per %s selected is %.8f\n' % (token1_symbol, token0_symbol, max_price)
             else:
                 message = 'The MIN price of %s per %s selected is %.8f\n' % (token0_symbol, token1_symbol, min_price)
                 message += 'The MAX price of %s per %s selected is %.8f' % (token0_symbol, token1_symbol, max_price)
+            
+            message += 'The amount of %s desired is %.8f\n' % (token0_symbol, amount0_desired / (10**token0_decimals))
+            message += 'The amount of %s desired is %.8f' % (token1_symbol, amount1_desired / (10**token1_decimals))
 
             print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
@@ -697,31 +576,27 @@ while True:
         print()
 
         if nft_position_id != None:
-            amounts = tokens_amounts()
-            if amounts != None:
-                amount0_desired = amounts[0]
-                amount1_desired = amounts[1]
+            removed_liquidity, amount0_desired, amount1_desired = get_removed_liquidity(avatar_address, nft_position_id, liquidity, token0_symbol, token1_symbol, token0_decimals, token1_decimals, web3=web3)
+            
+            collect_option = 0
+            if token0 == WETH_ETH or token1 == WETH_ETH:
+                print('Collect ETH or WETH:')
+                print('1- ETH')
+                print('2- WETH')
                 print()
-
-                collect_option = 0
-                if token0 == WETH_ETH or token1 == WETH_ETH:
-                    print('Collect ETH or WETH:')
-                    print('1- ETH')
-                    print('2- WETH')
-                    print()
+            
+                collect_option = input('Enter the option: ')
+                while collect_option not in ['1','2']:
+                    collect_option = input('Enter a valid option (1, 2): ')
                 
-                    collect_option = input('Enter the option: ')
-                    while collect_option not in ['1','2']:
-                        collect_option = input('Enter a valid option (1, 2): ')
-                    
-                    if collect_option == '2':
-                        if token0_symbol == 'ETH':
-                            token0_symbol = 'WETH'
-                        else:
-                            token1_symbol = 'WETH'
+                if collect_option == '2':
+                    if token0_symbol == 'ETH':
+                        token0_symbol = 'WETH'
+                    else:
+                        token1_symbol = 'WETH'
 
-                print()
-                remove_liquidity()
+            print()
+            remove_liquidity()
     
     elif operation == '4':
         print(f"{bcolors.OKBLUE}--------------------{bcolors.ENDC}")
