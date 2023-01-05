@@ -1,6 +1,6 @@
-from defi_protocols.functions import get_node, get_data, get_contract, get_decimals
-from defi_protocols.constants import ETHEREUM, WETH_ETH
-from defi_protocols.UniswapV3 import ABI_POOL, POSITIONS_NFT, FEES, UNISWAPV3_ROUTER2, get_rate_uniswap_v3
+from defi_protocols.functions import get_node, get_data, get_contract, get_decimals, balance_of
+from defi_protocols.constants import ETHEREUM, WETH_ETH, ZERO_ADDRESS
+from defi_protocols.UniswapV3 import ABI_POOL, POSITIONS_NFT, FEES, UNISWAPV3_ROUTER2, get_rate_uniswap_v3, underlying
 # thegraph queries
 from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
@@ -494,3 +494,153 @@ def get_amount0_mint(pool_address, tick_lower, tick_upper, amount1_desired, web3
     amount0_desired = Decimal(amount1_desired * (2**96) * (1.0001**(tick_upper/2)*(2**96)-sqrt_price_x96)) / (Decimal(sqrt_price_x96 * 1.0001**(tick_upper/2)*(sqrt_price_x96-1.0001**(tick_lower/2)*(2**96))))
 
     return int(amount0_desired)
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# get_selected_token_balance
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def get_selected_token_balance(avatar_address, operation, token_option, token_address, token_symbol, token_decimals, nft_position_balances=None, web3=None):
+
+    if web3 is None:
+        web3 = get_node(ETHEREUM)
+
+    selected_token_balance = 0
+    if operation == '1' or operation == '2':
+        selected_token_balance = balance_of(avatar_address, token_address, 'latest', ETHEREUM, decimals=False, web3=web3)
+        
+        if selected_token_balance == 0:
+            message = 'Avatar Safe has no remaining balance of %s' % (token_symbol)
+            print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
+            return None
+        else:
+            message = 'The balance of %s in the Avatar Safe is %.10f' % (token_symbol, selected_token_balance / (10**token_decimals))
+            print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+    
+    elif operation == '3':
+        #nft_position_balances = underlying(avatar_address, nft_position_id, 'latest', ETHEREUM, decimals=False)
+        
+        if nft_position_balances == None:
+            print(f"{bcolors.FAIL}{bcolors.BOLD}Error while retrieving the position balances{bcolors.ENDC}")
+            exit()
+
+        if token_option == '1':
+            selected_token_balance = nft_position_balances[0][1]
+        else:
+            selected_token_balance = nft_position_balances[1][1]
+        
+        if selected_token_balance == 0:
+            message = 'The NFT Position has no remaining balance of %s' % (token_symbol)
+            print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
+            return None
+        else:
+            message = 'The balance of %s in the NFT Position is %.10f' % (token_symbol, selected_token_balance / (10**token_decimals))
+            print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+    
+    return selected_token_balance
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# get_amounts_desired
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def get_amounts_desired(avatar_address, operation, token_option, selected_token_balance, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, fee, positions_nft_contract, nft_position_balances, nft_position_id=0, tick_lower=0, tick_upper=0, web3=None):
+
+    amount0_desired = 0
+    amount1_desired = 0
+    message = 'If you want to select the MAX amount of %s enter \"max\"' %  (selected_token_symbol)
+    print(f"{bcolors.WARNING}{bcolors.BOLD}{message}{bcolors.ENDC}")
+    if token_option == '1':
+        amount0_desired = input('Enter the Amount of %s: ' % token0_symbol)
+    elif token_option == '2':
+        amount1_desired = input('Enter the Amount of %s: ' % token1_symbol)
+
+    while True:
+        try:
+            if token_option == '1':
+                if amount0_desired == 'max':
+                    amount0_desired = selected_token_balance
+                else:
+                    amount0_desired = float(amount0_desired) * (10**token0_decimals)
+                
+                if amount0_desired > selected_token_balance:
+                    print()
+                    if operation != '3':
+                        message = 'Insufficient balance of %s in Avatar Safe' % (selected_token_symbol)
+                        print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
+                    else:
+                        message = 'Insufficient balance of %s in NFT Position' % (selected_token_symbol)
+                        print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
+
+                    print()
+                    return None
+                
+                if operation == '3':
+                    amount1_desired = nft_position_balances[1][1]
+                else:
+                    pool_address = web3.toChecksumAddress(subgraph_query_pool(token0, token1, fee)[0]['id'])
+                    
+                    if operation == '1':
+                        amount1_desired = get_amount1_mint(pool_address, tick_lower, tick_upper, amount0_desired, web3=web3)
+                    else:
+                        amount1_desired = get_amount1(positions_nft_contract, pool_address, nft_position_id, amount0_desired, web3=web3)
+                    
+                    if token1_symbol == 'ETH':
+                        token1_balance = balance_of(avatar_address, ZERO_ADDRESS, 'latest', ETHEREUM, web3=web3, decimals=False)
+                    else:
+                        token1_balance = balance_of(avatar_address, token1, 'latest', ETHEREUM, web3=web3, decimals=False)
+                    
+                    if token1_balance < amount1_desired:
+                        print()
+                        message = 'Insufficient balance of %s in Avatar Safe' % (token1_symbol)
+                        print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
+                        print()
+                        return None
+                
+            elif token_option == '2':
+                if amount1_desired == 'max':
+                    amount1_desired = selected_token_balance
+                else:
+                    amount1_desired = float(amount1_desired) * (10**token1_decimals)
+
+                if amount1_desired > selected_token_balance:
+                    print()
+                    if operation != '3':
+                        message = 'Insufficient balance of %s in Avatar Safe' % (selected_token_symbol)
+                        print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
+                        
+                    else:
+                        message = 'Insufficient balance of %s in NFT Position' % (selected_token_symbol)
+                        print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
+
+                    print()
+                    return None
+
+                if operation == '3':
+                    amount0_desired = nft_position_balances[0][1]
+                else:
+                    pool_address = web3.toChecksumAddress(subgraph_query_pool(token0, token1, fee)[0]['id'])
+                    
+                    if operation == '1':
+                        amount0_desired = get_amount0_mint(pool_address, tick_lower, tick_upper, amount1_desired, web3=web3)
+                    else:
+                        amount0_desired = get_amount0(positions_nft_contract, pool_address, nft_position_id, amount1_desired, web3=web3)
+                    
+                    if token0_symbol == 'ETH':
+                        token0_balance = balance_of(avatar_address, ZERO_ADDRESS, 'latest', ETHEREUM, web3=web3, decimals=False)
+                    else:
+                        token0_balance = balance_of(avatar_address, token0, 'latest', ETHEREUM, web3=web3, decimals=False)
+                    
+                    if token0_balance < amount0_desired:
+                        print()
+                        message = 'Insufficient balance of %s in Avatar Safe' % (token0_symbol)
+                        print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
+                        print()
+                        return None
+            break
+            
+        except:
+            if token_option == '1':
+                amount0_desired = input('Enter a valid amount: ')
+            elif token_option == '2':
+                amount1_desired = input('Enter a valid amount: ')
+    
+    return amount0_desired, amount1_desired
