@@ -12,19 +12,23 @@ TOKENS = [SETH2, COMP, AAVE, RETH2, SWISE]
 PATHS = {
     COMP: {
         USDC_ETH: [COMP, WETH_ETH, USDC_ETH],
-        DAI_ETH: [COMP, WETH_ETH, DAI_ETH]
+        DAI_ETH: [COMP, WETH_ETH, DAI_ETH],
+        WETH_ETH: [COMP, WETH_ETH]
     },
     AAVE: {
         USDC_ETH: [AAVE, WETH_ETH, USDC_ETH],
-        DAI_ETH: [AAVE, WETH_ETH, DAI_ETH]
+        DAI_ETH: [AAVE, WETH_ETH, DAI_ETH],
+        WETH_ETH: [AAVE, WETH_ETH]
     },
     RETH2: {
         USDC_ETH: [RETH2, SETH2, WETH_ETH, USDC_ETH],
-        DAI_ETH: [RETH2, SETH2, WETH_ETH, DAI_ETH]
+        DAI_ETH: [RETH2, SETH2, WETH_ETH, DAI_ETH],
+        WETH_ETH: [RETH2, WETH_ETH]
     },
     SWISE: {
         USDC_ETH: [SWISE, SETH2, WETH_ETH, USDC_ETH],
-        DAI_ETH: [SWISE, SETH2, WETH_ETH, DAI_ETH]
+        DAI_ETH: [SWISE, SETH2, WETH_ETH, DAI_ETH],
+        WETH_ETH: [SWISE, WETH_ETH]
     },
     SETH2: {
         WETH_ETH: [SETH2, WETH_ETH]
@@ -97,10 +101,11 @@ while True:
         print('Select the token to swap the %s balance for: ' % token_symbol)
         print('1- USDC')
         print('2- DAI')
+        print('3- WETH')
         print()
         swap_option = input('Enter the option: ')
-        while swap_option not in ['1','2']:
-            swap_option = input('Enter a valid option (1, 2): ')
+        while swap_option not in ['1','2', '3']:
+            swap_option = input('Enter a valid option (1, 2, 3): ')
         
         if swap_option == '1':
             swap_token = USDC_ETH
@@ -108,6 +113,9 @@ while True:
         elif swap_option == '2':
             swap_token = DAI_ETH
             swap_token_symbol = 'DAI'
+        elif swap_option == '3':
+            swap_token = WETH_ETH
+            swap_token_symbol = 'WETH'
         
         print()
 
@@ -118,6 +126,7 @@ while True:
     path = PATHS[selected_token][swap_token]
 
     if token_balance > 0:
+        print()
         swap_selected_token(avatar_address, roles_mod_address, path, selected_token, token_balance, token_symbol, swap_token, swap_token_symbol, json_file, web3=web3)
 
     if json_file['transactions'] != []:

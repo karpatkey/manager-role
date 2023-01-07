@@ -1,8 +1,8 @@
 from txn_uniswapv3_helpers import *
-from defi_protocols.UniswapV3 import ABI_POOL, ABI_POSITIONS_NFT, ABI_FACTORY, FEES, POSITIONS_NFT, FACTORY, get_rate_uniswap_v3, get_fee
+from defi_protocols.UniswapV3 import ABI_POSITIONS_NFT, ABI_POOL, ABI_FACTORY, FEES, POSITIONS_NFT, FACTORY, get_rate_uniswap_v3, get_fee
 from defi_protocols.prices.prices import get_price
 from defi_protocols.functions import get_contract, get_symbol, get_data, get_node, get_decimals
-from defi_protocols.constants import ETHEREUM, WETH_ETH, ZERO_ADDRESS
+from defi_protocols.constants import ETHEREUM, WBTC_ETH, WETH_ETH, ZERO_ADDRESS
 from datetime import datetime
 import math
 
@@ -40,23 +40,6 @@ def tokens_amounts():
     token_option = input('Enter the Token: ')
     while token_option not in ['1','2']:
         token_option = input('Enter a valid option (1 or 2): ')
-    
-    if token0 == WETH_ETH or token1 == WETH_ETH:
-        print()
-        print('Select the token you prefer to add: ')
-        print('1- ETH')
-        print('2- WETH')
-        print()
-        token_option_eth = input('Enter the Token: ')
-        while token_option_eth not in ['1','2']:
-            token_option_eth = input('Enter a valid option (1 or 2): ')
-        
-        if token_option_eth == '1':
-            eth = True
-            if token0_symbol == 'WETH':
-                token0_symbol = 'ETH'
-            else:
-                token1_symbol = 'ETH'
         
     if token_option == '1':
         selected_token = token0
@@ -381,7 +364,7 @@ def collect():
             
         tx_data = get_data(POSITIONS_NFT, 'unwrapWETH9', [int(round(collect_eth_amount)), avatar_address], ETHEREUM, web3=web3)
         if tx_data is not None:
-            add_txn_with_role(roles_mod_address, tx_data, 0, json_file, web3=web3)     
+            add_txn_with_role(roles_mod_address, tx_data, 0, json_file, web3=web3)         
 
         tx_data = get_data(POSITIONS_NFT, 'sweepToken', [collect_token, int(round(collect_token_amount)), avatar_address], ETHEREUM, web3=web3)
         if tx_data is not None:
@@ -398,19 +381,9 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}--- UniswapV3 Transaction Builder ---{bcol
 print(f"{bcolors.HEADER}{bcolors.BOLD}-------------------------------------{bcolors.ENDC}")
 print()
 
-avatar_address = input('Enter the Avatar Safe address: ')
-while not web3.isAddress(avatar_address):
-    avatar_address = input('Enter a valid address: ')
+avatar_address = '0xC01318baB7ee1f5ba734172bF7718b5DC6Ec90E1'
 
-avatar_address = web3.toChecksumAddress(avatar_address)
-print()
-
-roles_mod_address = input('Enter the Roles Module address: ')
-while not web3.isAddress(roles_mod_address):
-    roles_mod_address = input('Enter a valid address: ')
-
-roles_mod_address = web3.toChecksumAddress(roles_mod_address)
-print()
+roles_mod_address = '0xeF14e0f66a2e22Bbe85bFA53b3F956354Ce51e62'
 
 json_file = {
     'version': '1.0',
@@ -443,88 +416,21 @@ while True:
     while operation not in ['1','2','3','4']:
         operation = input('Enter a valid option (1, 2, 3 or 4): ')
     
-    eth = False
-    token0_symbol = ''
-    token1_symbol = ''
+    if operation == '2':
+        print()
+        print(f"{bcolors.FAIL}{bcolors.BOLD}ERROR: The operation is not allowed by the current preset{bcolors.ENDC}")
+        print()
+        continue
+    
+    eth = True
+    token0_symbol = 'WBTC'
+    token1_symbol = 'ETH'
     if operation == '1':
-        print()
-        print(f"{bcolors.OKBLUE}--------------{bcolors.ENDC}")
-        print(f"{bcolors.OKBLUE}--- Tokens ---{bcolors.ENDC}")
-        print(f"{bcolors.OKBLUE}--------------{bcolors.ENDC}")
-        print()
-        print(f"{bcolors.WARNING}{bcolors.BOLD}If one of the tokens is ETH press Enter{bcolors.ENDC}")
-        print()
-        token0 = input('Enter Token0 address: ').lower()
-        while not web3.isAddress(token0) and token0 != '':
-            token0 = input('Enter a valid address: ').lower()
-        
-        if token0 == '':
-            token0 = WETH_ETH
-            eth = True
+        token0 = WBTC_ETH
+        token1 = WETH_ETH
+        fee = FEES[2]
 
         print()
-        token1 = input('Enter Token1 address: ').lower()
-        while not web3.isAddress(token1) and token1 != '':
-            token1 = input('Enter a valid address: ').lower()
-        
-        if token1 == '':
-            token1 = WETH_ETH
-            eth = True
-
-        print()
-
-        if token0 == token1:
-            print(f"{bcolors.FAIL}{bcolors.BOLD}ERROR: Tokens can't have the same address{bcolors.ENDC}")
-            break
-
-        print(f"{bcolors.OKBLUE}------------{bcolors.ENDC}")
-        print(f"{bcolors.OKBLUE}--- Fees ---{bcolors.ENDC}")
-        print(f"{bcolors.OKBLUE}------------{bcolors.ENDC}")
-
-        print()
-        print('1- 0.01%')
-        print('2- 0.05%')
-        print('3- 0.3%')
-        print('4- 1%')
-        print()
-        
-        fee = input('Enter the Fee: ')
-        while fee not in ['1','2','3','4']:
-            fee = input('Enter a valid option (1, 2, 3 or 4): ')
-        
-        if fee == '1':
-            fee = FEES[0]
-        elif fee == '2':
-            fee = FEES[1]
-        elif fee == '3':
-            fee = FEES[2]
-        elif fee == '4':
-            fee = FEES[3]
-        
-        print()
-
-        token0 = web3.toChecksumAddress(token0)
-        token1 = web3.toChecksumAddress(token1)
-        
-        if token0 > token1:
-            token0, token1 = token1, token0
-        
-        token0_symbol = get_symbol(token0, ETHEREUM, web3=web3)
-        token1_symbol = get_symbol(token1, ETHEREUM, web3=web3)
-        
-        pool_address = factory_contract.functions.getPool(token0, token1, fee).call()
-        
-        if pool_address == ZERO_ADDRESS:
-            message = 'Warning: No pool in Uniswap V3 for tokens: %s and %s, with Fee: %.2f%%' % (token0_symbol, token1_symbol, fee/10000)
-            print(f"{bcolors.WARNING}{bcolors.BOLD}{message}{bcolors.ENDC}")
-            print()
-            
-        if token0 == WETH_ETH and eth == True:
-            token0_symbol = 'ETH'
-        
-        if token1 == WETH_ETH and eth == True:
-            token1_symbol = 'ETH'
-
         message = 'Pool: UniswapV3 %s/%s %.2f%%:' % (token0_symbol, token1_symbol, fee/10000)
         print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
         print()
@@ -553,29 +459,29 @@ while True:
         pool_info = pool_price_data()
         if pool_info != None:
             min_price, max_price, tick_lower, tick_upper, current_price, price_range_option = pool_info
+        
+        print()
+        amounts = tokens_amounts()
+        
+        if amounts != None:
+            amount0_desired = amounts[0]
+            amount1_desired = amounts[1]
 
             print()
-            amounts = tokens_amounts()
+            if price_range_option == '1':
+                message = 'The MIN price of %s per %s selected is %.8f\n' % (token1_symbol, token0_symbol, min_price)
+                message += 'The MAX price of %s per %s selected is %.8f\n' % (token1_symbol, token0_symbol, max_price)
+            else:
+                message = 'The MIN price of %s per %s selected is %.8f\n' % (token0_symbol, token1_symbol, min_price)
+                message += 'The MAX price of %s per %s selected is %.8f' % (token0_symbol, token1_symbol, max_price)
             
-            if amounts != None:
-                amount0_desired = amounts[0]
-                amount1_desired = amounts[1]
+            message += 'The amount of %s desired is %.8f\n' % (token0_symbol, amount0_desired / (10**token0_decimals))
+            message += 'The amount of %s desired is %.8f' % (token1_symbol, amount1_desired / (10**token1_decimals))
 
-                print()
-                if price_range_option == '1':
-                    message = 'The MIN price of %s per %s selected is %.8f\n' % (token1_symbol, token0_symbol, min_price)
-                    message += 'The MAX price of %s per %s selected is %.8f\n' % (token1_symbol, token0_symbol, max_price)
-                else:
-                    message = 'The MIN price of %s per %s selected is %.8f\n' % (token0_symbol, token1_symbol, min_price)
-                    message += 'The MAX price of %s per %s selected is %.8f' % (token0_symbol, token1_symbol, max_price)
-                
-                message += 'The amount of %s desired is %.8f\n' % (token0_symbol, amount0_desired / (10**token0_decimals))
-                message += 'The amount of %s desired is %.8f' % (token1_symbol, amount1_desired / (10**token1_decimals))
+            print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
-                print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
-
-                print()
-                add_liquidity()
+            print()
+            add_liquidity()
     
     elif operation == '2':
         print(f"{bcolors.OKBLUE}--------------------------{bcolors.ENDC}")
@@ -602,24 +508,25 @@ while True:
         if nft_position_id != None:
             removed_liquidity, amount0_desired, amount1_desired = get_removed_liquidity(avatar_address, nft_position_id, liquidity, token0_symbol, token1_symbol, token0_decimals, token1_decimals, web3=web3)
             
-            collect_option = 0
-            if token0 == WETH_ETH or token1 == WETH_ETH:
-                print('Collect ETH or WETH:')
-                print('1- ETH')
-                print('2- WETH')
-                print()
+            # collect_option = 0
+            # if token0 == WETH_ETH or token1 == WETH_ETH:
+            #     print('Collect ETH or WETH:')
+            #     print('1- ETH')
+            #     print('2- WETH')
+            #     print()
             
-                collect_option = input('Enter the option: ')
-                while collect_option not in ['1','2']:
-                    collect_option = input('Enter a valid option (1, 2): ')
+            #     collect_option = input('Enter the option: ')
+            #     while collect_option not in ['1','2']:
+            #         collect_option = input('Enter a valid option (1, 2): ')
                 
-                if collect_option == '2':
-                    if token0_symbol == 'ETH':
-                        token0_symbol = 'WETH'
-                    else:
-                        token1_symbol = 'WETH'
+            #     if collect_option == '2':
+            #         if token0_symbol == 'ETH':
+            #             token0_symbol = 'WETH'
+            #         else:
+            #             token1_symbol = 'WETH'
+            collect_option = '1'
+            token1_symbol = 'ETH'
 
-            print()
             remove_liquidity()
     
     elif operation == '4':

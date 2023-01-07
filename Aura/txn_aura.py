@@ -78,6 +78,7 @@ def transactions_data():
                 
                 pool_data = {
                     'name': 'Aura %s' % lptoken_symbol,
+                    'poolId': i,
                     'token': pool_info[0],
                     'tokens': pool_tokens,
                     'rewarder':pool_info[3]
@@ -86,6 +87,7 @@ def transactions_data():
             else:
                 pool_data = {
                     'name': 'Aura %s' % lptoken_symbol,
+                    'poolId': i,
                     'token': pool_info[0],
                     'rewarder':pool_info[3]
                 }
@@ -94,7 +96,7 @@ def transactions_data():
 
             print(i)
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/aura_data_final.json', 'w') as aura_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/aura_data_final_.json', 'w') as aura_data_file:
         json.dump(result, aura_data_file)
 
 
@@ -153,13 +155,17 @@ def pool_data(lptoken_address):
     # FUNCTIONS
     txn_aura[lptoken_address]['functions'].append({
         'signature': 'deposit(uint256,uint256,bool)',
-        'target address': Aura.BOOSTER
+        'target address': Aura.BOOSTER,
+        '[0]': pool['poolId']
     })
 
     if lptoken_data['isBoosted'] == False:
         txn_aura[lptoken_address]['functions'].append({
             'signature': 'depositSingle(address,address,uint256,bytes32,(address[],uint256[],bytes,bool))',
-            'target address': Aura.REWARD_POOL_DEPOSIT_WRAPPER
+            'target address': Aura.REWARD_POOL_DEPOSIT_WRAPPER,
+            '[0]': pool['rewarder'],
+            '[1]': pool['tokens'],
+            '[3]': '0x' + lptoken_data['poolId'].hex()
         })
 
     txn_aura[lptoken_address]['functions'].append({
@@ -169,14 +175,14 @@ def pool_data(lptoken_address):
 
     txn_aura[lptoken_address]['functions'].append({
         'signature': 'getReward()',
-        'target address': pool['rewarder'],
+        'target address': pool['rewarder']
     })
 
     with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/txn_aura_pools.json', 'w') as txn_aura_file:
         json.dump(txn_aura, txn_aura_file)
 
 
-#pool_data('0x32296969Ef14EB0c6d29669C550D4a0449130230')
+pool_data('0x32296969Ef14EB0c6d29669C550D4a0449130230')
 
 #transactions_data()
 

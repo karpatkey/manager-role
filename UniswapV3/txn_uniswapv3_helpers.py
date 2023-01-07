@@ -1,6 +1,6 @@
 from defi_protocols.functions import get_node, get_data, get_contract, get_decimals, balance_of
 from defi_protocols.constants import ETHEREUM, WETH_ETH, ZERO_ADDRESS
-from defi_protocols.UniswapV3 import ABI_POOL, POSITIONS_NFT, FEES, UNISWAPV3_ROUTER2, get_rate_uniswap_v3, underlying
+from defi_protocols.UniswapV3 import POSITIONS_NFT, FEES, UNISWAPV3_ROUTER2, get_rate_uniswap_v3, underlying
 # thegraph queries
 from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
@@ -436,7 +436,6 @@ def get_amount1(positions_nft_contract, pool_contract, nft_position_id, amount0_
     tick_lower = position_data[5]
     tick_upper = position_data[6]
 
-    #pool_contract = get_contract(pool_address, ETHEREUM, web3=web3, abi=ABI_POOL)
     sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
 
     amount1_desired = Decimal(amount0_desired * sqrt_price_x96 * 1.0001**(tick_upper/2)*(sqrt_price_x96-1.0001**(tick_lower/2)*(2**96)))/Decimal((2**96) * (1.0001**(tick_upper/2)*(2**96)-sqrt_price_x96))
@@ -456,7 +455,6 @@ def get_amount0(positions_nft_contract, pool_contract, nft_position_id, amount1_
     tick_lower = position_data[5]
     tick_upper = position_data[6]
 
-    #pool_contract = get_contract(pool_address, ETHEREUM, web3=web3, abi=ABI_POOL)
     sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
 
     amount0_desired = Decimal(amount1_desired * (2**96) * (1.0001**(tick_upper/2)*(2**96)-sqrt_price_x96)) / (Decimal(sqrt_price_x96 * 1.0001**(tick_upper/2)*(sqrt_price_x96-1.0001**(tick_lower/2)*(2**96))))
@@ -467,15 +465,18 @@ def get_amount0(positions_nft_contract, pool_contract, nft_position_id, amount1_
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # get_amount1_mint
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def get_amount1_mint(pool_contract, tick_lower, tick_upper, amount0_desired, web3=None):
+def get_amount1_mint(pool_contract, tick_lower, tick_upper, amount0_desired, current_price=0, token0_decimals=0, token1_decimals=0, web3=None):
 
     if web3 is None:
         web3 = get_node(ETHEREUM)
 
-    #pool_contract = get_contract(pool_address, ETHEREUM, web3=web3, abi=ABI_POOL)
-    sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
-
-    amount1_desired = Decimal(amount0_desired * sqrt_price_x96 * 1.0001**(tick_upper/2)*(sqrt_price_x96-1.0001**(tick_lower/2)*(2**96)))/Decimal((2**96) * (1.0001**(tick_upper/2)*(2**96)-sqrt_price_x96))
+    if pool_contract == None:
+        current_price = Decimal(current_price)
+        sqrt_price = current_price.sqrt()
+        amount1_desired = int(Decimal(amount0_desired) * sqrt_price * Decimal(1.0001)**Decimal(tick_upper/2)*Decimal(10**((token1_decimals+token0_decimals)/2))*(sqrt_price*Decimal(10**((token1_decimals-token0_decimals)/2))-Decimal(1.0001)**Decimal(tick_lower/2))/(Decimal(1.0001)**Decimal(tick_upper/2)-sqrt_price*Decimal(10**((token1_decimals-token0_decimals)/2))))
+    else:
+        sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
+        amount1_desired = Decimal(amount0_desired * sqrt_price_x96 * 1.0001**(tick_upper/2)*(sqrt_price_x96-1.0001**(tick_lower/2)*(2**96)))/Decimal((2**96) * (1.0001**(tick_upper/2)*(2**96)-sqrt_price_x96))
 
     return int(amount1_desired)
 
@@ -483,15 +484,19 @@ def get_amount1_mint(pool_contract, tick_lower, tick_upper, amount0_desired, web
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # get_amount0_mint
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def get_amount0_mint(pool_contract, tick_lower, tick_upper, amount1_desired, web3=None):
+def get_amount0_mint(pool_contract, tick_lower, tick_upper, amount1_desired, current_price=0, token0_decimals=0, token1_decimals=0, web3=None):
 
     if web3 is None:
         web3 = get_node(ETHEREUM)
 
-    #pool_contract = get_contract(pool_address, ETHEREUM, web3=web3, abi=ABI_POOL)
-    sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
-
-    amount0_desired = Decimal(amount1_desired * (2**96) * (1.0001**(tick_upper/2)*(2**96)-sqrt_price_x96)) / (Decimal(sqrt_price_x96 * 1.0001**(tick_upper/2)*(sqrt_price_x96-1.0001**(tick_lower/2)*(2**96))))
+    
+    if pool_contract == None:
+        current_price = Decimal(current_price)
+        sqrt_price = current_price.sqrt()
+        amount0_desired = int(Decimal(amount1_desired) * (Decimal(1.0001)**Decimal(tick_upper/2)-sqrt_price*Decimal(10**((token1_decimals-token0_decimals)/2))) / (sqrt_price * Decimal(1.0001)**Decimal(tick_upper/2)*Decimal(10**((token1_decimals+token0_decimals)/2))*(sqrt_price*Decimal(10**((token1_decimals-token0_decimals)/2))-Decimal(1.0001)**Decimal(tick_lower/2))))
+    else:
+        sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
+        amount0_desired = Decimal(amount1_desired * (2**96) * (1.0001**(tick_upper/2)*(2**96)-sqrt_price_x96)) / (Decimal(sqrt_price_x96 * 1.0001**(tick_upper/2)*(sqrt_price_x96-1.0001**(tick_lower/2)*(2**96))))
 
     return int(amount0_desired)
 
@@ -562,7 +567,7 @@ def get_removed_liquidity(avatar_address, nft_position_id, liquidity, token0_sym
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # get_amounts_desired
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def get_amounts_desired(avatar_address, pool_contract, operation, token_option, selected_token_balance, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, positions_nft_contract, nft_position_id=0, tick_lower=0, tick_upper=0, web3=None):
+def get_amounts_desired(avatar_address, pool_contract, operation, token_option, selected_token_balance, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, positions_nft_contract, nft_position_id=0, tick_lower=0, tick_upper=0, current_price=0, web3=None):
 
     amount0_desired = 0
     amount1_desired = 0
@@ -587,11 +592,10 @@ def get_amounts_desired(avatar_address, pool_contract, operation, token_option, 
                     message = 'Insufficient balance of %s in Avatar Safe' % (selected_token_symbol)
                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
                     print()
-
-                    return None
+                    raise Exception
                 
                 if operation == '1':
-                    amount1_desired = get_amount1_mint(pool_contract, tick_lower, tick_upper, amount0_desired, web3=web3)
+                    amount1_desired = get_amount1_mint(pool_contract, tick_lower, tick_upper, amount0_desired, current_price=current_price, token0_decimals=token0_decimals, token1_decimals=token1_decimals, web3=web3)
                 else:
                     amount1_desired = get_amount1(positions_nft_contract, pool_contract, nft_position_id, amount0_desired, web3=web3)
                 
@@ -605,7 +609,7 @@ def get_amounts_desired(avatar_address, pool_contract, operation, token_option, 
                     message = 'Insufficient balance of %s in Avatar Safe' % (token1_symbol)
                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
                     print()
-                    return None
+                    raise Exception
                 
             elif token_option == '2':
                 if amount1_desired == 'max':
@@ -618,11 +622,10 @@ def get_amounts_desired(avatar_address, pool_contract, operation, token_option, 
                     message = 'Insufficient balance of %s in Avatar Safe' % (selected_token_symbol)
                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
                     print()
-
-                    return None
+                    raise Exception
      
                 if operation == '1':
-                    amount0_desired = get_amount0_mint(pool_contract, tick_lower, tick_upper, amount1_desired, web3=web3)
+                    amount0_desired = get_amount0_mint(pool_contract, tick_lower, tick_upper, amount1_desired, current_price=current_price, token0_decimals=token0_decimals, token1_decimals=token1_decimals, web3=web3)
                 else:
                     amount0_desired = get_amount0(positions_nft_contract, pool_contract, nft_position_id, amount1_desired, web3=web3)
                 
@@ -636,7 +639,7 @@ def get_amounts_desired(avatar_address, pool_contract, operation, token_option, 
                     message = 'Insufficient balance of %s in Avatar Safe' % (token0_symbol)
                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
                     print()
-                    return None
+                    raise Exception
             break
             
         except:
