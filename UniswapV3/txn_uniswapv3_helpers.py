@@ -228,7 +228,7 @@ def subgraph_query_all_pools(min_tvl_usd=0, min_volume_usd=0):
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # approve_tokens
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def approve_tokens(avatar_address, roles_mod_address, token0, token1, json_file, web3=None, eth=False):
+def approve_tokens(avatar_address, roles_mod_address, token0, token1, spender_address, json_file, web3=None, eth=False):
 
     if web3 is None:
         web3 = get_node(ETHEREUM)
@@ -236,8 +236,8 @@ def approve_tokens(avatar_address, roles_mod_address, token0, token1, json_file,
     # approve Token0
     if (token0 == WETH_ETH and eth == False) or token0 != WETH_ETH:
         token0_contract = get_contract(token0, ETHEREUM, web3=web3, abi=ABI_ALLOWANCE)
-        if token0_contract.functions.allowance(avatar_address, POSITIONS_NFT).call() == 0:
-            tx_data = get_data(token0, 'approve', [POSITIONS_NFT, MAX_TOKEN_AMOUNT], ETHEREUM, web3=web3)
+        if token0_contract.functions.allowance(avatar_address, spender_address).call() == 0:
+            tx_data = get_data(token0, 'approve', [spender_address, MAX_TOKEN_AMOUNT], ETHEREUM, web3=web3)
             if tx_data is not None:
                 exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [token0, 0, tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address='0x8c858908D5f4cEF92f2B2277CB38248D39513f45')
                 if exec_data is not None:
@@ -252,8 +252,8 @@ def approve_tokens(avatar_address, roles_mod_address, token0, token1, json_file,
     # approve Token1
     if (token1 == WETH_ETH and eth == False) or token1 != WETH_ETH:
         token1_contract = get_contract(token1, ETHEREUM, web3=web3, abi=ABI_ALLOWANCE)
-        if token1_contract.functions.allowance(avatar_address, POSITIONS_NFT).call() == 0:
-            tx_data = get_data(token1, 'approve', [POSITIONS_NFT, MAX_TOKEN_AMOUNT], ETHEREUM, web3=web3)
+        if token1_contract.functions.allowance(avatar_address, spender_address).call() == 0:
+            tx_data = get_data(token1, 'approve', [spender_address, MAX_TOKEN_AMOUNT], ETHEREUM, web3=web3)
             if tx_data is not None:
                 exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [token1, 0, tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address='0x8c858908D5f4cEF92f2B2277CB38248D39513f45')
                 if exec_data is not None:
@@ -365,13 +365,17 @@ def swap_selected_token(avatar_address, roles_mod_address, path, token, token_ba
 
         while True:
             print()
+            print(f"{bcolors.WARNING}{bcolors.BOLD}The percentage must be greater than 0% and lower or equal to 100%{bcolors.ENDC}")
             slippage = input('Enter the MAX percentage of slippage tolerance: ')
             while True:
                 try:
                     slippage = float(slippage)
-                    break
+                    if slippage <= 0 or slippage > 100:
+                        raise Exception
+                    else:
+                        break
                 except:
-                    slippage = input('Enter a valid amount: ')
+                    slippage = input('Enter a valid percentage: ')
             
             print()
 
@@ -391,7 +395,7 @@ def swap_selected_token(avatar_address, roles_mod_address, path, token, token_ba
             
             print()
             if option == '1':
-                approve_tokens(avatar_address, roles_mod_address, token, swap_token, json_file, web3=web3)
+                approve_tokens(avatar_address, roles_mod_address, token, swap_token, UNISWAPV3_ROUTER2, json_file, web3=web3)
                 
                 token_balance = token_balance * (10**get_decimals(token, ETHEREUM, web3=web3))
                 amount_out_min = amount_out_min * (10**get_decimals(swap_token, ETHEREUM, web3=web3))
@@ -545,7 +549,7 @@ def get_removed_liquidity(avatar_address, nft_position_id, liquidity, token0_sym
     percentage_removed_liquidity = input('Enter the percentage of liquidity to remove: ')
     while True:
         try:
-            percentage_removed_liquidity = int(percentage_removed_liquidity)
+            percentage_removed_liquidity = float(percentage_removed_liquidity)
             if percentage_removed_liquidity <= 0 or percentage_removed_liquidity > 100:
                 raise Exception
             else:

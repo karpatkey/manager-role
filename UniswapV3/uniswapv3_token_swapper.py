@@ -75,9 +75,9 @@ json_file = {
 }
 
 while True:
+    print(f"{bcolors.WARNING}{bcolors.BOLD}If you choose sETH2, it will automatically be swapped by WETH{bcolors.ENDC}")
     print('Select the token to swap: ')
-    print(f"{bcolors.WARNING}If you choose sETH2, it will automatically be swapped by WETH{bcolors.ENDC}")
-    print()
+
     valid_token_options = []
     for i in range(len(TOKENS)):
         print('%d- %s' % (i+1, get_symbol(TOKENS[i], ETHEREUM, web3=web3)))
@@ -115,9 +115,7 @@ while True:
             swap_token_symbol = 'DAI'
         elif swap_option == '3':
             swap_token = WETH_ETH
-            swap_token_symbol = 'WETH'
-        
-        print()
+            swap_token_symbol = 'WETH'       
 
     else:
         swap_token = WETH_ETH
@@ -125,8 +123,8 @@ while True:
         
     path = PATHS[selected_token][swap_token]
 
+    print()
     if token_balance > 0:
-        print()
         swap_selected_token(avatar_address, roles_mod_address, path, selected_token, token_balance, token_symbol, swap_token, swap_token_symbol, json_file, web3=web3)
 
     if json_file['transactions'] != []:

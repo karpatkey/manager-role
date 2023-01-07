@@ -258,7 +258,7 @@ def input_nft_position():
 def add_liquidity():
 
     # tokens approvals
-    approve_tokens(avatar_address, roles_mod_address, token0, token1, json_file, web3=web3, eth=eth)
+    approve_tokens(avatar_address, roles_mod_address, token0, token1, POSITIONS_NFT, json_file, web3=web3, eth=eth)
 
     eth_value = get_eth_value()
     
@@ -292,7 +292,7 @@ def add_liquidity():
 def increase_liquidity():
 
     # tokens approvals
-    approve_tokens(avatar_address, roles_mod_address, token0, token1, json_file, web3=web3, eth=eth)
+    approve_tokens(avatar_address, roles_mod_address, token0, token1, POSITIONS_NFT, json_file, web3=web3, eth=eth)
 
     eth_value = get_eth_value()
 
