@@ -595,7 +595,7 @@ def get_amounts_desired(avatar_address, pool_contract, operation, token_option, 
                     raise Exception
                 
                 if operation == '1':
-                    amount1_desired = get_amount1_mint(pool_contract, tick_lower, tick_upper, amount0_desired, current_price=current_price, token0_decimals=token0_decimals, token1_decimals=token1_decimals, web3=web3)
+                    amount1_desired = get_amount1_mint(pool_contract, tick_lower, tick_upper, amount0_desired / (10**token0_decimals), current_price=current_price, token0_decimals=token0_decimals, token1_decimals=token1_decimals, web3=web3)
                 else:
                     amount1_desired = get_amount1(positions_nft_contract, pool_contract, nft_position_id, amount0_desired, web3=web3)
                 
@@ -625,7 +625,7 @@ def get_amounts_desired(avatar_address, pool_contract, operation, token_option, 
                     raise Exception
      
                 if operation == '1':
-                    amount0_desired = get_amount0_mint(pool_contract, tick_lower, tick_upper, amount1_desired, current_price=current_price, token0_decimals=token0_decimals, token1_decimals=token1_decimals, web3=web3)
+                    amount0_desired = get_amount0_mint(pool_contract, tick_lower, tick_upper, amount1_desired / (10**token1_decimals), current_price=current_price, token0_decimals=token0_decimals, token1_decimals=token1_decimals, web3=web3)
                 else:
                     amount0_desired = get_amount0(positions_nft_contract, pool_contract, nft_position_id, amount1_desired, web3=web3)
                 
