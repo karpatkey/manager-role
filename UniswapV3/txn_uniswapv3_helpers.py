@@ -21,6 +21,8 @@ SETH2 = '0xFe2e637202056d30016725477c5da089Ab0A043A'
 
 MAX_TOKEN_AMOUNT = 115792089237316195423570985008687907853269984665640564039457584007913129639935
 
+TOKEN_PROXY = '0xa2327a938Febf5FEC13baCFb16Ae10EcBc4cbDCF'
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -237,44 +239,28 @@ def approve_tokens(avatar_address, roles_mod_address, token0, token1, spender_ad
     if (token0 == WETH_ETH and eth == False) or token0 != WETH_ETH:
         token0_contract = get_contract(token0, ETHEREUM, web3=web3, abi=ABI_ALLOWANCE)
         if token0_contract.functions.allowance(avatar_address, spender_address).call() == 0:
-            tx_data = get_data(token0, 'approve', [spender_address, MAX_TOKEN_AMOUNT], ETHEREUM, web3=web3)
+            tx_data = get_data(token0, 'approve', [spender_address, MAX_TOKEN_AMOUNT], ETHEREUM, abi_address=TOKEN_PROXY, web3=web3)
             if tx_data is not None:
-                exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [token0, 0, tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address='0x8c858908D5f4cEF92f2B2277CB38248D39513f45')
-                if exec_data is not None:
-                    json_file['transactions'].append(
-                        {
-                            'to': roles_mod_address,
-                            'data': exec_data,
-                            'value': 0
-                        }
-                    )
+                add_txn_with_role(roles_mod_address, token0, tx_data, 0, json_file, web3=web3)
 
     # approve Token1
     if (token1 == WETH_ETH and eth == False) or token1 != WETH_ETH:
         token1_contract = get_contract(token1, ETHEREUM, web3=web3, abi=ABI_ALLOWANCE)
         if token1_contract.functions.allowance(avatar_address, spender_address).call() == 0:
-            tx_data = get_data(token1, 'approve', [spender_address, MAX_TOKEN_AMOUNT], ETHEREUM, web3=web3)
+            tx_data = get_data(token1, 'approve', [spender_address, MAX_TOKEN_AMOUNT], ETHEREUM, abi_address=TOKEN_PROXY, web3=web3)
             if tx_data is not None:
-                exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [token1, 0, tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address='0x8c858908D5f4cEF92f2B2277CB38248D39513f45')
-                if exec_data is not None:
-                    json_file['transactions'].append(
-                        {
-                            'to': roles_mod_address,
-                            'data': exec_data,
-                            'value': 0
-                        }
-                    )
+                add_txn_with_role(roles_mod_address, token1, tx_data, 0, json_file, web3=web3)
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # add_txn_with_role
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def add_txn_with_role(roles_mod_address, tx_data, eth_value, json_file, web3=None):
+def add_txn_with_role(roles_mod_address, to_address, tx_data, eth_value, json_file, web3=None):
 
     if web3 is None:
         web3 = get_node(ETHEREUM)
 
-    exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [POSITIONS_NFT, int(eth_value), tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address='0x8c858908D5f4cEF92f2B2277CB38248D39513f45')
+    exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [to_address, int(eth_value), tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address='0x8c858908D5f4cEF92f2B2277CB38248D39513f45')
     if exec_data is not None:   
         json_file['transactions'].append(
             {
@@ -347,7 +333,8 @@ def swap_selected_token(avatar_address, roles_mod_address, path, token, token_ba
     rate = get_rate(path)
 
     expected_amount = rate * token_balance
-    message = 'Expected amount of %s for the %f of %s is: %f' % (swap_token_symbol, token_balance, token_symbol, expected_amount)
+    message = ('Expected amount of %s for the %.18f' % (swap_token_symbol, token_balance)).rstrip('0').rstrip('.')
+    message += (' of %s is: %.18f' % (token_symbol, expected_amount)).rstrip('0').rstrip('.')
     print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
     print()
@@ -380,7 +367,8 @@ def swap_selected_token(avatar_address, roles_mod_address, path, token, token_ba
             print()
 
             amount_out_min = (100 - slippage) * expected_amount / 100
-            message = 'The MIN amount of %s for the %f of %s is: %f' % (swap_token_symbol, token_balance, token_symbol, amount_out_min)
+            message = ('The MIN amount of %s for the %.18f' % (swap_token_symbol, token_balance)).rstrip('0').rstrip('.')
+            message += (' of %s is: %.18f' % (token_symbol, amount_out_min)).rstrip('0').rstrip('.')
             print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
             print()
@@ -477,6 +465,7 @@ def get_amount1_mint(pool_contract, tick_lower, tick_upper, amount0_desired, cur
     if pool_contract == None:
         current_price = Decimal(current_price)
         sqrt_price = current_price.sqrt()
+        amount0_desired = amount0_desired / (10**token0_decimals)
         amount1_desired = int(Decimal(amount0_desired) * sqrt_price * Decimal(1.0001)**Decimal(tick_upper/2)*Decimal(10**((token1_decimals+token0_decimals)/2))*(sqrt_price*Decimal(10**((token1_decimals-token0_decimals)/2))-Decimal(1.0001)**Decimal(tick_lower/2))/(Decimal(1.0001)**Decimal(tick_upper/2)-sqrt_price*Decimal(10**((token1_decimals-token0_decimals)/2))))
     else:
         sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
@@ -497,6 +486,7 @@ def get_amount0_mint(pool_contract, tick_lower, tick_upper, amount1_desired, cur
     if pool_contract == None:
         current_price = Decimal(current_price)
         sqrt_price = current_price.sqrt()
+        amount1_desired = amount1_desired / (10**token1_decimals)
         amount0_desired = int(Decimal(amount1_desired) * (Decimal(1.0001)**Decimal(tick_upper/2)-sqrt_price*Decimal(10**((token1_decimals-token0_decimals)/2))) / (sqrt_price * Decimal(1.0001)**Decimal(tick_upper/2)*Decimal(10**((token1_decimals+token0_decimals)/2))*(sqrt_price*Decimal(10**((token1_decimals-token0_decimals)/2))-Decimal(1.0001)**Decimal(tick_lower/2))))
     else:
         sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
@@ -520,9 +510,9 @@ def get_selected_token_balance(avatar_address, token_address, token_symbol, toke
     if selected_token_balance == 0:
         message = 'Avatar Safe has no remaining balance of %s' % (token_symbol)
         print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
-        return None
+        print()
     else:
-        message = 'The balance of %s in the Avatar Safe is %.10f' % (token_symbol, selected_token_balance / (10**token_decimals))
+        message = ('The balance of %s in the Avatar Safe is %.18f' % (token_symbol, selected_token_balance / (10**token_decimals))).rstrip('0').rstrip('.')
         print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
     
     return selected_token_balance
@@ -542,8 +532,10 @@ def get_removed_liquidity(avatar_address, nft_position_id, liquidity, token0_sym
         print(f"{bcolors.FAIL}{bcolors.BOLD}Error while retrieving the position balances{bcolors.ENDC}")
         exit()
 
-    message = 'The balance of %s in the NFT Position is %.10f\nThe balance of %s in the NFT Position is %.10f\n' % (token0_symbol, nft_position_balances[0][1] / (10**token0_decimals), token1_symbol, nft_position_balances[1][1] / (10**token1_decimals))
+    message = ('The balance of %s in the NFT Position is %.18f' % (token0_symbol, nft_position_balances[0][1] / (10**token0_decimals))).rstrip('0').rstrip('.')
+    message += ('\nThe balance of %s in the NFT Position is %.18f' % (token1_symbol, nft_position_balances[1][1] / (10**token1_decimals))).rstrip('0').rstrip('.')
     print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+    print()
 
     print(f"{bcolors.WARNING}{bcolors.BOLD}The percentage must be greater than 0% and lower or equal to 100%{bcolors.ENDC}")
     percentage_removed_liquidity = input('Enter the percentage of liquidity to remove: ')
@@ -560,8 +552,10 @@ def get_removed_liquidity(avatar_address, nft_position_id, liquidity, token0_sym
     print()
     amount0_desired = nft_position_balances[0][1] * percentage_removed_liquidity / 100 
     amount1_desired = nft_position_balances[1][1] * percentage_removed_liquidity / 100 
-    message = 'The balance of %s to be removed is %.10f\nThe balance of %s to be removed is %.10f\n' % (token0_symbol, amount0_desired / (10**token0_decimals), token1_symbol, amount1_desired / (10**token1_decimals))
+    message = ('The balance of %s to be removed is %.18f' % (token0_symbol, amount0_desired / (10**token0_decimals))).rstrip('0').rstrip('.')
+    message += ('\nThe balance of %s to be removed is %.18f' % (token1_symbol, amount1_desired / (10**token1_decimals))).rstrip('0').rstrip('.')
     print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+    print()
 
     removed_liquidity = liquidity * percentage_removed_liquidity / 100
     
@@ -571,7 +565,7 @@ def get_removed_liquidity(avatar_address, nft_position_id, liquidity, token0_sym
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # get_amounts_desired
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def get_amounts_desired(avatar_address, pool_contract, operation, token_option, selected_token_balance, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, positions_nft_contract, nft_position_id=0, tick_lower=0, tick_upper=0, current_price=0, web3=None):
+def get_amounts_desired(avatar_address, pool_contract, operation, token_option, selected_token_balance, selected_token_decimals, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, positions_nft_contract, nft_position_id=0, tick_lower=0, tick_upper=0, current_price=0, web3=None):
 
     amount0_desired = 0
     amount1_desired = 0
@@ -593,13 +587,13 @@ def get_amounts_desired(avatar_address, pool_contract, operation, token_option, 
                 
                 if amount0_desired > selected_token_balance:
                     print()
-                    message = 'Insufficient balance of %s in Avatar Safe' % (selected_token_symbol)
+                    message = ('Insufficient balance of %s in Avatar Safe\nThe balance of %s is %.18f' % (selected_token_symbol, selected_token_symbol, selected_token_balance / (10**selected_token_decimals))).rstrip('0').rstrip('.')
                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
                     print()
                     raise Exception
                 
                 if operation == '1':
-                    amount1_desired = get_amount1_mint(pool_contract, tick_lower, tick_upper, amount0_desired / (10**token0_decimals), current_price=current_price, token0_decimals=token0_decimals, token1_decimals=token1_decimals, web3=web3)
+                    amount1_desired = get_amount1_mint(pool_contract, tick_lower, tick_upper, amount0_desired, current_price=current_price, token0_decimals=token0_decimals, token1_decimals=token1_decimals, web3=web3)
                 else:
                     amount1_desired = get_amount1(positions_nft_contract, pool_contract, nft_position_id, amount0_desired, web3=web3)
                 
@@ -610,7 +604,8 @@ def get_amounts_desired(avatar_address, pool_contract, operation, token_option, 
                 
                 if token1_balance < amount1_desired:
                     print()
-                    message = 'Insufficient balance of %s in Avatar Safe' % (token1_symbol)
+                    message = ('Insufficient balance of %s in Avatar Safe: %.18f' % (token1_symbol, balance_of(avatar_address, token1, 'latest', ETHEREUM, web3=web3))).rstrip('0').rstrip('.')
+                    message += (' %s\nThe desired amount of %s is %.18f' % (token1_symbol, token1_symbol, amount1_desired / (10**token1_decimals))).rstrip('0').rstrip('.')
                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
                     print()
                     raise Exception
@@ -623,13 +618,13 @@ def get_amounts_desired(avatar_address, pool_contract, operation, token_option, 
 
                 if amount1_desired > selected_token_balance:
                     print()
-                    message = 'Insufficient balance of %s in Avatar Safe' % (selected_token_symbol)
+                    message = ('Insufficient balance of %s in Avatar Safe\nThe balance of %s is %.18f' % (selected_token_symbol, selected_token_symbol, selected_token_balance / (10**selected_token_decimals))).rstrip('0').rstrip('.')
                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
                     print()
                     raise Exception
      
                 if operation == '1':
-                    amount0_desired = get_amount0_mint(pool_contract, tick_lower, tick_upper, amount1_desired / (10**token1_decimals), current_price=current_price, token0_decimals=token0_decimals, token1_decimals=token1_decimals, web3=web3)
+                    amount0_desired = get_amount0_mint(pool_contract, tick_lower, tick_upper, amount1_desired, current_price=current_price, token0_decimals=token0_decimals, token1_decimals=token1_decimals, web3=web3)
                 else:
                     amount0_desired = get_amount0(positions_nft_contract, pool_contract, nft_position_id, amount1_desired, web3=web3)
                 
@@ -640,7 +635,8 @@ def get_amounts_desired(avatar_address, pool_contract, operation, token_option, 
                 
                 if token0_balance < amount0_desired:
                     print()
-                    message = 'Insufficient balance of %s in Avatar Safe' % (token0_symbol)
+                    message = ('Insufficient balance of %s in Avatar Safe: %.18f' % (token0_symbol, balance_of(avatar_address, token0, 'latest', ETHEREUM, web3=web3))).rstrip('0').rstrip('.')
+                    message += (' %s\nThe desired amount of %s is %.18f' % (token0_symbol, token0_symbol, amount0_desired / (10**token0_decimals))).rstrip('0').rstrip('.')
                     print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
                     print()
                     raise Exception

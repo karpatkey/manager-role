@@ -79,15 +79,15 @@ def tokens_amounts():
     print()
 
     if operation == '1':
-        return get_amounts_desired(avatar_address, pool_contract, operation, token_option, selected_token_balance, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, positions_nft_contract, tick_lower=tick_lower, tick_upper=tick_upper, current_price=current_price, web3=web3)
+        return get_amounts_desired(avatar_address, pool_contract, operation, token_option, selected_token_balance, selected_token_decimals, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, positions_nft_contract, tick_lower=tick_lower, tick_upper=tick_upper, current_price=current_price, web3=web3)
     else:
-        return get_amounts_desired(avatar_address, pool_contract, operation, token_option, selected_token_balance, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, positions_nft_contract, nft_position_id=nft_position_id, web3=web3)
+        return get_amounts_desired(avatar_address, pool_contract, operation, token_option, selected_token_balance, selected_token_decimals, selected_token_symbol, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, positions_nft_contract, nft_position_id=nft_position_id, web3=web3)
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # set_price
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def set_price(price_range_option, min_max, min_price=0):
+def set_price(price_range_option, min_max, current_price, min_price=0):
 
     if price_range_option == '1':
         price = input('Enter the %s Price of %s per %s desired: ' % (min_max, token1_symbol, token0_symbol))
@@ -97,12 +97,25 @@ def set_price(price_range_option, min_max, min_price=0):
     while True:
         try:
             price = float(price)
-            if min_max == MAX and min_price >= price:
-                print()
-                print(f"{bcolors.FAIL}{bcolors.BOLD}The MAX price must be greater than the MIN price{bcolors.ENDC}")
-                print()
+            if min_max == MAX:
+                if min_price >= price:
+                    print()
+                    print(f"{bcolors.FAIL}{bcolors.BOLD}The MAX price must be greater than the MIN price{bcolors.ENDC}")
+                    print()
+                    raise Exception
 
-                raise Exception
+                if current_price >= price:
+                    print()
+                    print(f"{bcolors.FAIL}{bcolors.BOLD}The MAX price must be greater than the current price{bcolors.ENDC}")
+                    print()
+                    raise Exception
+            else:
+                if current_price <= price:
+                    print()
+                    print(f"{bcolors.FAIL}{bcolors.BOLD}The MIN price must be lower than the current price{bcolors.ENDC}")
+                    print()
+                    raise Exception
+            
             break
         except:
             price = input('Enter a valid price: ')
@@ -127,8 +140,8 @@ def set_price(price_range_option, min_max, min_price=0):
     else:
         print('Enter the %s Price of %s per %s: ' % (min_max, token0_symbol, token1_symbol))
     
-    print('1- %.8f' % price1)
-    print('2- %.8f' % price2)
+    print(str('1- %.18f' % price1).rstrip('0').rstrip('.'))
+    print(str('2- %.18f' % price2).rstrip('0').rstrip('.'))
     print()
     
     price_option = input('Enter the option: ')
@@ -176,14 +189,14 @@ def pool_price_data():
             return None
     
     if price_range_option == '1':
-        message = 'The current price of %s per %s is %.8f' % (token1_symbol, token0_symbol, current_price)
+        message = ('The current price of %s per %s is %.18f' % (token1_symbol, token0_symbol, current_price)).rstrip('0').rstrip('.')
     else:
-        message = 'The current price of %s per %s is %.8f' % (token0_symbol, token1_symbol, 1 / current_price)
+        message = ('The current price of %s per %s is %.18f' % (token0_symbol, token1_symbol, 1 / current_price)).rstrip('0').rstrip('.')
     
     print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
-    print()
 
     if pool_address == ZERO_ADDRESS:
+        print()
         current_price = input('Enter the pool price: ')
         while True:
             try:
@@ -193,9 +206,9 @@ def pool_price_data():
                 current_price = input('Enter a valid price: ')
     
     print()
-    min_price, tick1 = set_price(price_range_option, MIN)
+    min_price, tick1 = set_price(price_range_option, MIN, current_price)
     print()
-    max_price, tick2 = set_price(price_range_option, MAX, min_price=min_price)
+    max_price, tick2 = set_price(price_range_option, MAX, current_price, min_price=min_price)
 
     if tick1 <= tick2:
         tick_lower = tick1
@@ -285,7 +298,7 @@ def add_liquidity():
         tx_data = get_data(POSITIONS_NFT, 'createAndInitializePoolIfNecessary', [token0, token1, fee, int(sqrt_price_x96)], ETHEREUM, web3=web3)
         
         if tx_data is not None:
-            add_txn_with_role(roles_mod_address, tx_data, eth_value, json_file, web3=web3)
+            add_txn_with_role(roles_mod_address, POSITIONS_NFT, tx_data, eth_value, json_file, web3=web3)
     
     # mint
     amount0_min = 0.9 * amount0_desired
@@ -294,13 +307,13 @@ def add_liquidity():
     tx_data = get_data(POSITIONS_NFT, 'mint', [[token0, token1, int(fee), int(tick_lower), int(tick_upper), int(round(amount0_desired)), int(round(amount1_desired)), int(round(amount0_min)), int(round(amount1_min)), avatar_address, int(deadline)]], ETHEREUM, web3=web3)
 
     if tx_data is not None:
-        add_txn_with_role(roles_mod_address, tx_data, eth_value, json_file, web3=web3)
+        add_txn_with_role(roles_mod_address, POSITIONS_NFT, tx_data, eth_value, json_file, web3=web3)
     
     # If one of the two tokens is ETH add the refundETH() function call
     if eth:
         tx_data = get_data(POSITIONS_NFT, 'refundETH', [], ETHEREUM, web3=web3)
         if tx_data is not None:
-            add_txn_with_role(roles_mod_address, tx_data, 0, json_file, web3=web3)
+            add_txn_with_role(roles_mod_address, POSITIONS_NFT, tx_data, 0, json_file, web3=web3)
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -319,13 +332,13 @@ def increase_liquidity():
 
     tx_data = get_data(POSITIONS_NFT, 'increaseLiquidity', [[int(nft_position_id), int(amount0_desired), int(amount1_desired), int(amount0_min), int(amount1_min), int(deadline)]], ETHEREUM, web3=web3)
     if tx_data is not None:
-        add_txn_with_role(roles_mod_address, tx_data, eth_value, json_file, web3=web3)
+        add_txn_with_role(roles_mod_address, POSITIONS_NFT, tx_data, eth_value, json_file, web3=web3)
     
     # If one of the two tokens is ETH add the refundETH() function call
     if eth:
         tx_data = get_data(POSITIONS_NFT, 'refundETH', [], ETHEREUM, web3=web3)
         if tx_data is not None:
-            add_txn_with_role(roles_mod_address, tx_data, 0, json_file, web3=web3)
+            add_txn_with_role(roles_mod_address, POSITIONS_NFT, tx_data, 0, json_file, web3=web3)
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -341,7 +354,7 @@ def remove_liquidity():
     # remove liquidity
     tx_data = get_data(POSITIONS_NFT, 'decreaseLiquidity', [[int(nft_position_id), int(removed_liquidity), int(amount0_min), int(amount1_min), int(deadline)]], ETHEREUM, web3=web3)
     if tx_data is not None:
-        add_txn_with_role(roles_mod_address, tx_data, 0, json_file, web3=web3)
+        add_txn_with_role(roles_mod_address, POSITIONS_NFT, tx_data, 0, json_file, web3=web3)
     
     collect()
 
@@ -353,7 +366,9 @@ def collect():
 
     position_fees = get_fee(nft_position_id, 'latest', ETHEREUM, web3=web3, decimals=False)
     if position_fees != None:
-        message = 'Unclaimed fees: %f %s and %f %s' % (position_fees[0][1] / (10**token0_decimals), token0_symbol, position_fees[1][1] / (10**token1_decimals), token1_symbol)
+        message = str('Unclaimed fees: %.18f' % (position_fees[0][1] / (10**token0_decimals))).rstrip('0').rstrip('.')
+        message += (' %s and %.18f' % (token0_symbol, position_fees[1][1] / (10**token1_decimals))).rstrip('0').rstrip('.')
+        message += ' %s' % (token1_symbol)
         print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
         print()
     else:
@@ -366,7 +381,7 @@ def collect():
         tx_data = get_data(POSITIONS_NFT, 'collect', [[int(nft_position_id), avatar_address, MAX_COLLECT_AMOUNT, MAX_COLLECT_AMOUNT]], ETHEREUM, web3=web3)
 
     if tx_data is not None:
-        add_txn_with_role(roles_mod_address, tx_data, 0, json_file, web3=web3)
+        add_txn_with_role(roles_mod_address, POSITIONS_NFT, tx_data, 0, json_file, web3=web3)
     
     if collect_option == '1':
         
@@ -381,11 +396,11 @@ def collect():
             
         tx_data = get_data(POSITIONS_NFT, 'unwrapWETH9', [int(round(collect_eth_amount)), avatar_address], ETHEREUM, web3=web3)
         if tx_data is not None:
-            add_txn_with_role(roles_mod_address, tx_data, 0, json_file, web3=web3)     
+            add_txn_with_role(roles_mod_address, POSITIONS_NFT, tx_data, 0, json_file, web3=web3)     
 
         tx_data = get_data(POSITIONS_NFT, 'sweepToken', [collect_token, int(round(collect_token_amount)), avatar_address], ETHEREUM, web3=web3)
         if tx_data is not None:
-            add_txn_with_role(roles_mod_address, tx_data, 0, json_file, web3=web3)
+            add_txn_with_role(roles_mod_address, POSITIONS_NFT, tx_data, 0, json_file, web3=web3)
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -563,14 +578,14 @@ while True:
 
                 print()
                 if price_range_option == '1':
-                    message = 'The MIN price of %s per %s selected is %.8f\n' % (token1_symbol, token0_symbol, min_price)
-                    message += 'The MAX price of %s per %s selected is %.8f\n' % (token1_symbol, token0_symbol, max_price)
+                    message = ('The MIN price of %s per %s selected is %.18f' % (token1_symbol, token0_symbol, min_price)).rstrip('0').rstrip('.')
+                    message += ('\nThe MAX price of %s per %s selected is %.18f' % (token1_symbol, token0_symbol, max_price)).rstrip('0').rstrip('.')
                 else:
-                    message = 'The MIN price of %s per %s selected is %.8f\n' % (token0_symbol, token1_symbol, min_price)
-                    message += 'The MAX price of %s per %s selected is %.8f' % (token0_symbol, token1_symbol, max_price)
+                    message = ('The MIN price of %s per %s selected is %.18f' % (token0_symbol, token1_symbol, min_price)).rstrip('0').rstrip('.')
+                    message += ('\nThe MAX price of %s per %s selected is %.18f' % (token0_symbol, token1_symbol, max_price)).rstrip('0').rstrip('.')
                 
-                message += 'The amount of %s desired is %.8f\n' % (token0_symbol, amount0_desired / (10**token0_decimals))
-                message += 'The amount of %s desired is %.8f' % (token1_symbol, amount1_desired / (10**token1_decimals))
+                message += ('\nThe amount of %s desired is %.18f' % (token0_symbol, amount0_desired / (10**token0_decimals))).rstrip('0').rstrip('.')
+                message += ('\nThe amount of %s desired is %.18f' % (token1_symbol, amount1_desired / (10**token1_decimals))).rstrip('0').rstrip('.')
 
                 print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
@@ -589,8 +604,14 @@ while True:
             if amounts != None:
                 amount0_desired = amounts[0]
                 amount1_desired = amounts[1]
+                
                 print()
+                message = ('The amount of %s desired is %.18f' % (token0_symbol, amount0_desired / (10**token0_decimals))).rstrip('0').rstrip('.')
+                message += ('\nThe amount of %s desired is %.18f' % (token1_symbol, amount1_desired / (10**token1_decimals))).rstrip('0').rstrip('.')
 
+                print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+
+                print()
                 increase_liquidity()
     
     elif operation == '3':
@@ -611,7 +632,7 @@ while True:
             
                 collect_option = input('Enter the option: ')
                 while collect_option not in ['1','2']:
-                    collect_option = input('Enter a valid option (1, 2): ')
+                    collect_option = input('Enter a valid option (1 or 2): ')
                 
                 if collect_option == '2':
                     if token0_symbol == 'ETH':
@@ -638,7 +659,7 @@ while True:
 
                 collect_option = input('Enter the option: ')
                 while collect_option not in ['1','2']:
-                    collect_option = input('Enter a valid option (1, 2): ')
+                    collect_option = input('Enter a valid option (1 or 2): ')
                 
                 if collect_option == '2':
                     if token0_symbol == 'ETH':

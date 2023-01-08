@@ -1,13 +1,13 @@
-from defi_protocols.functions import get_symbol, balance_of, get_node
-from defi_protocols.constants import USDC_ETH, DAI_ETH, WETH_ETH, ETHEREUM
-from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2, bcolors, swap_selected_token, json_file_download, restart_end
+from defi_protocols.functions import get_symbol, balance_of, get_node, get_data
+from defi_protocols.constants import USDC_ETH, DAI_ETH, WETH_ETH, ZERO_ADDRESS, ETHEREUM
+from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2, bcolors, swap_selected_token, json_file_download, restart_end, add_txn_with_role
 from datetime import datetime
 import math
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # LITERALS
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TOKENS = [SETH2, COMP, AAVE, RETH2, SWISE]
+TOKENS = [SETH2, COMP, AAVE, RETH2, SWISE, ZERO_ADDRESS, WETH_ETH]
 
 PATHS = {
     COMP: {
@@ -80,7 +80,13 @@ while True:
 
     valid_token_options = []
     for i in range(len(TOKENS)):
-        print('%d- %s' % (i+1, get_symbol(TOKENS[i], ETHEREUM, web3=web3)))
+        if TOKENS[i] == ZERO_ADDRESS:
+            print('%d- Wrap %s' % (i+1, 'ETH'))
+        elif TOKENS[i] == WETH_ETH:
+            print('%d- Unwrap %s' % (i+1, 'WETH'))
+        else:
+            print('%d- %s' % (i+1, get_symbol(TOKENS[i], ETHEREUM, web3=web3)))
+        
         valid_token_options.append(str(i+1))
 
     print()
@@ -89,43 +95,90 @@ while True:
         message = 'Enter a valid option (' + ','.join(option for option in valid_token_options) + '): '
         token_option = input(message)
 
-    print()
     selected_token = TOKENS[int(token_option)-1]
-    token_symbol = get_symbol(selected_token, ETHEREUM, web3=web3)
-    token_balance = balance_of(avatar_address, selected_token, 'latest', ETHEREUM, web3=web3)
-    message = 'Selected Token: %s\nBalance: %f' % (token_symbol, token_balance)
-    print(f"{bcolors.OKBLUE}{bcolors.BOLD}{message}{bcolors.ENDC}")
-    print()
-
-    if selected_token != SETH2:
-        print('Select the token to swap the %s balance for: ' % token_symbol)
-        print('1- USDC')
-        print('2- DAI')
-        print('3- WETH')
+    if selected_token in [SETH2, COMP, AAVE, RETH2, SWISE]:
         print()
-        swap_option = input('Enter the option: ')
-        while swap_option not in ['1','2', '3']:
-            swap_option = input('Enter a valid option (1, 2, 3): ')
-        
-        if swap_option == '1':
-            swap_token = USDC_ETH
-            swap_token_symbol = 'USDC'
-        elif swap_option == '2':
-            swap_token = DAI_ETH
-            swap_token_symbol = 'DAI'
-        elif swap_option == '3':
+        token_symbol = get_symbol(selected_token, ETHEREUM, web3=web3)
+        token_balance = balance_of(avatar_address, selected_token, 'latest', ETHEREUM, web3=web3)
+        message = ('Selected Token: %s\nBalance: %.18f' % (token_symbol, token_balance)).rstrip('0').rstrip('.')
+        print(f"{bcolors.OKBLUE}{bcolors.BOLD}{message}{bcolors.ENDC}")
+        print()
+
+        if selected_token == SETH2:
             swap_token = WETH_ETH
-            swap_token_symbol = 'WETH'       
-
-    else:
-        swap_token = WETH_ETH
-        swap_token_symbol = 'WETH'
+            swap_token_symbol = 'WETH'
         
-    path = PATHS[selected_token][swap_token]
+        else:
+            print('Select the token to swap the %s balance for: ' % token_symbol)
+            print('1- USDC')
+            print('2- DAI')
+            print('3- WETH')
+            print()
+            swap_option = input('Enter the option: ')
+            while swap_option not in ['1','2', '3']:
+                swap_option = input('Enter a valid option (1, 2, 3): ')
+            
+            if swap_option == '1':
+                swap_token = USDC_ETH
+                swap_token_symbol = 'USDC'
+            elif swap_option == '2':
+                swap_token = DAI_ETH
+                swap_token_symbol = 'DAI'
+            elif swap_option == '3':
+                swap_token = WETH_ETH
+                swap_token_symbol = 'WETH'       
+       
+        path = PATHS[selected_token][swap_token]
 
+        if token_balance > 0:
+            swap_selected_token(avatar_address, roles_mod_address, path, selected_token, token_balance, token_symbol, swap_token, swap_token_symbol, json_file, web3=web3)
+
+    elif selected_token == ZERO_ADDRESS or selected_token == WETH_ETH:
+        print()
+        if selected_token == ZERO_ADDRESS:
+            symbol = 'ETH'
+            action = 'wrap'
+        else:
+            symbol = 'WETH'
+            action = 'unwrap'
+
+        balance = balance_of(avatar_address, selected_token, 'latest', ETHEREUM, decimals=False, web3=web3)
+        message = str('The amount of %s in the Avatar Safe is: %.18f' % (symbol, balance / (10**18))).rstrip('0').rstrip('.')
+        print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+        message = 'If you want to select the MAX amount of %s enter \"max\"' % symbol
+        print(f"{bcolors.WARNING}{bcolors.BOLD}{message}{bcolors.ENDC}")
+
+        if selected_token == ZERO_ADDRESS:
+            amount = input('Enter the Amount of %s to %s: ' % (symbol, action))
+
+        while True:
+            try:
+                if amount == 'max':
+                    amount = balance
+                else:
+                    amount = float(amount)
+                    if amount > balance:
+                        print()
+                        message = str('Insufficient balance of ETH in Avatar Safe: %.18f' % (balance)).rstrip('0').rstrip('.')
+                        message += (' %s\n') % symbol
+                        print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
+                        print()
+                        raise Exception
+                break
+            except:
+                amount = input('Enter a valid amount: ')
+
+        eth_value = 0
+        if selected_token == ZERO_ADDRESS:
+            tx_data = get_data(WETH_ETH, 'deposit', [], ETHEREUM, web3=web3)
+            eth_value = amount
+        else:
+            tx_data = get_data(WETH_ETH, 'withdraw', [int(amount)], ETHEREUM, web3=web3)
+
+        if tx_data is not None:
+            add_txn_with_role(roles_mod_address, WETH_ETH, tx_data, eth_value, json_file, web3=web3)
+        
     print()
-    if token_balance > 0:
-        swap_selected_token(avatar_address, roles_mod_address, path, selected_token, token_balance, token_symbol, swap_token, swap_token_symbol, json_file, web3=web3)
 
     if json_file['transactions'] != []:
         json_file_download(json_file)
