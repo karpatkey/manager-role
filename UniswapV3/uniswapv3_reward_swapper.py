@@ -1,6 +1,6 @@
 from defi_protocols.functions import get_symbol, balance_of, get_node
 from defi_protocols.constants import USDC_ETH, DAI_ETH, WETH_ETH, ETHEREUM
-from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2, bcolors, swap_selected_token, json_file_download, restart_end
+from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2, bcolors, swap_selected_token, json_file_download, restart_end, input_avatar_roles_module
 from datetime import datetime
 import math
 
@@ -46,19 +46,7 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}--- UniswapV3 Reward Swapper ---{bcolors.E
 print(f"{bcolors.HEADER}{bcolors.BOLD}--------------------------------{bcolors.ENDC}")
 print()
 
-avatar_address = input('Enter the Avatar Safe address: ')
-while not web3.isAddress(avatar_address):
-    avatar_address = input('Enter a valid address: ')
-
-avatar_address = web3.toChecksumAddress(avatar_address)
-print()
-
-roles_mod_address = input('Enter the Roles Module address: ')
-while not web3.isAddress(roles_mod_address):
-    roles_mod_address = input('Enter a valid address: ')
-
-roles_mod_address = web3.toChecksumAddress(roles_mod_address)
-print()
+avatar_address, roles_mod_address = input_avatar_roles_module(web3=web3)
 
 json_file = {
     'version': '1.0',
@@ -111,7 +99,9 @@ while True:
             if token_balance > 0:
                 print()
                 swap_selected_token(avatar_address, roles_mod_address, path, reward_token, token_balance, token_symbol, swap_token, swap_token_symbol, json_file, web3=web3)
+                print()
         else:
+            print()
             continue
         
     if json_file['transactions'] != []:

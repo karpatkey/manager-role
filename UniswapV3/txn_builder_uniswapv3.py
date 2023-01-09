@@ -413,19 +413,7 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}--- UniswapV3 Transaction Builder ---{bcol
 print(f"{bcolors.HEADER}{bcolors.BOLD}-------------------------------------{bcolors.ENDC}")
 print()
 
-avatar_address = input('Enter the Avatar Safe address: ')
-while not web3.isAddress(avatar_address):
-    avatar_address = input('Enter a valid address: ')
-
-avatar_address = web3.toChecksumAddress(avatar_address)
-print()
-
-roles_mod_address = input('Enter the Roles Module address: ')
-while not web3.isAddress(roles_mod_address):
-    roles_mod_address = input('Enter a valid address: ')
-
-roles_mod_address = web3.toChecksumAddress(roles_mod_address)
-print()
+avatar_address, roles_mod_address = input_avatar_roles_module(web3=web3)
 
 json_file = {
     'version': '1.0',
@@ -469,18 +457,42 @@ while True:
         print()
         print(f"{bcolors.WARNING}{bcolors.BOLD}If one of the tokens is ETH press Enter{bcolors.ENDC}")
         print()
-        token0 = input('Enter Token0 address: ').lower()
-        while not web3.isAddress(token0) and token0 != '':
-            token0 = input('Enter a valid address: ').lower()
+        token0 = input('Enter Token0 address: ')
+        while True:
+            if token0 == '':
+                break
+            try:
+                token0 = web3.toChecksumAddress(token0)
+                token0_decimals = get_decimals(token0, ETHEREUM, web3=web3)
+                if token0_decimals == None:
+                    raise Exception
+                token0_symbol = get_symbol(token0, ETHEREUM, web3=web3)
+                if token0_symbol == '':
+                    raise Exception
+                break
+            except:
+                token0 = input('Enter a valid address: ')
         
         if token0 == '':
             token0 = WETH_ETH
             eth = True
 
         print()
-        token1 = input('Enter Token1 address: ').lower()
-        while not web3.isAddress(token1) and token1 != '':
-            token1 = input('Enter a valid address: ').lower()
+        token1 = input('Enter Token1 address: ')
+        while True:
+            if token0 == '':
+                break
+            try:
+                token1 = web3.toChecksumAddress(token1)
+                token1_decimals = get_decimals(token1, ETHEREUM, web3=web3)
+                if token1_decimals == None:
+                    raise Exception
+                token1_symbol = get_symbol(token1, ETHEREUM, web3=web3)
+                if token1_symbol == '':
+                    raise Exception
+                break
+            except:
+                token1 = input('Enter a valid address: ')
         
         if token1 == '':
             token1 = WETH_ETH
@@ -491,6 +503,8 @@ while True:
         if token0 == token1:
             print(f"{bcolors.FAIL}{bcolors.BOLD}ERROR: Tokens can't have the same address{bcolors.ENDC}")
             break
+        elif token0 > token1:
+            token0, token1, token0_decimals, token1_decimals, token0_symbol, token1_symbol = token1, token0, token1_decimals, token0_decimals, token1_symbol, token0_symbol
 
         print(f"{bcolors.OKBLUE}------------{bcolors.ENDC}")
         print(f"{bcolors.OKBLUE}--- Fees ---{bcolors.ENDC}")
@@ -517,15 +531,6 @@ while True:
             fee = FEES[3]
         
         print()
-
-        token0 = web3.toChecksumAddress(token0)
-        token1 = web3.toChecksumAddress(token1)
-        
-        if token0 > token1:
-            token0, token1 = token1, token0
-        
-        token0_symbol = get_symbol(token0, ETHEREUM, web3=web3)
-        token1_symbol = get_symbol(token1, ETHEREUM, web3=web3)
         
         pool_address = factory_contract.functions.getPool(token0, token1, fee).call()
         
@@ -548,16 +553,15 @@ while True:
         print()
         nft_position = input_nft_position()
         if nft_position == None:
-            break
+            print()
+            restart_end()
+            continue
         else:
             nft_position_id, token0, token0_symbol, token1, token1_symbol, fee, liquidity = nft_position
             pool_address = factory_contract.functions.getPool(token0, token1, fee).call()
 
     if pool_address != ZERO_ADDRESS:
         pool_contract = get_contract(pool_address, ETHEREUM, web3=web3, abi=ABI_POOL)
-
-    token0_decimals = get_decimals(token0, ETHEREUM, web3=web3)
-    token1_decimals = get_decimals(token1, ETHEREUM, web3=web3)
     
     if operation == '1':
         print(f"{bcolors.OKBLUE}---------------------{bcolors.ENDC}")

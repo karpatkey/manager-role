@@ -1,4 +1,4 @@
-from defi_protocols.functions import get_node, get_data, get_contract, get_decimals, balance_of
+from defi_protocols.functions import get_node, get_data, get_contract, get_contract_proxy_abi, get_decimals, balance_of
 from defi_protocols.constants import ETHEREUM, WETH_ETH, ZERO_ADDRESS
 from defi_protocols.UniswapV3 import POSITIONS_NFT, FEES, UNISWAPV3_ROUTER2, get_rate_uniswap_v3, underlying
 # thegraph queries
@@ -22,6 +22,8 @@ SETH2 = '0xFe2e637202056d30016725477c5da089Ab0A043A'
 MAX_TOKEN_AMOUNT = 115792089237316195423570985008687907853269984665640564039457584007913129639935
 
 TOKEN_PROXY = '0xa2327a938Febf5FEC13baCFb16Ae10EcBc4cbDCF'
+AVATAR_PROXY = '0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552'
+ROLES_MOD_PROXY = '0x85388a8cd772b19a468F982Dc264C238856939C9'
 
 class bcolors:
     HEADER = '\033[95m'
@@ -228,6 +230,41 @@ def subgraph_query_all_pools(min_tvl_usd=0, min_volume_usd=0):
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# input_avatar_roles_module
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def input_avatar_roles_module(web3=None):
+
+    if web3 is None:
+        web3 = get_node(ETHEREUM)
+
+    avatar_address = input('Enter the Avatar Safe address: ')
+    while True:
+        try:
+            avatar_address = web3.toChecksumAddress(avatar_address)
+            avatar_contract = get_contract_proxy_abi(avatar_address, AVATAR_PROXY, ETHEREUM)
+            avatar_contract.functions.VERSION().call()
+            break
+        except:
+            avatar_address = input('Enter a valid address: ')
+
+    print()
+
+    roles_mod_address = input('Enter the Roles Module address: ')
+    while True:
+        try:
+            roles_mod_address = web3.toChecksumAddress(roles_mod_address)
+            roles_mod_address = get_contract_proxy_abi(roles_mod_address, ROLES_MOD_PROXY, ETHEREUM)
+            roles_mod_address.functions.avatar().call()
+            break
+        except:
+            roles_mod_address = input('Enter a valid address: ')
+
+    print()
+
+    return avatar_address, roles_mod_address
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # approve_tokens
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def approve_tokens(avatar_address, roles_mod_address, token0, token1, spender_address, json_file, web3=None, eth=False):
@@ -260,7 +297,7 @@ def add_txn_with_role(roles_mod_address, to_address, tx_data, eth_value, json_fi
     if web3 is None:
         web3 = get_node(ETHEREUM)
 
-    exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [to_address, int(eth_value), tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address='0x8c858908D5f4cEF92f2B2277CB38248D39513f45')
+    exec_data = get_data(roles_mod_address, 'execTransactionWithRole', [to_address, int(eth_value), tx_data, 0, 1, False], ETHEREUM, web3=web3, abi_address=ROLES_MOD_PROXY)
     if exec_data is not None:   
         json_file['transactions'].append(
             {
@@ -381,7 +418,6 @@ def swap_selected_token(avatar_address, roles_mod_address, path, token, token_ba
             while option not in ['1','2']:
                 option = input('Enter a valid option (1, 2): ')
             
-            print()
             if option == '1':
                 approve_tokens(avatar_address, roles_mod_address, token, swap_token, UNISWAPV3_ROUTER2, json_file, web3=web3)
                 
@@ -389,7 +425,7 @@ def swap_selected_token(avatar_address, roles_mod_address, path, token, token_ba
                 amount_out_min = amount_out_min * (10**get_decimals(swap_token, ETHEREUM, web3=web3))
                 tx_data = get_data(UNISWAPV3_ROUTER2, 'swapExactTokensForTokens', [int(round(token_balance)), int(round(amount_out_min)), path, avatar_address], ETHEREUM, web3=web3)
                 if tx_data is not None:
-                    add_txn_with_role(roles_mod_address, tx_data, 0, json_file, web3=web3)
+                    add_txn_with_role(roles_mod_address, UNISWAPV3_ROUTER2, tx_data, 0, json_file, web3=web3)
                 
                 break
 

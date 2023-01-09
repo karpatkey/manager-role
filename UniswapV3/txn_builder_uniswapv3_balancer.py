@@ -478,7 +478,9 @@ while True:
         print()
         nft_position = input_nft_position()
         if nft_position == None:
-            break
+            print()
+            restart_end()
+            continue
         else:
             nft_position_id, token0, token0_symbol, token1, token1_symbol, fee, liquidity = nft_position
             pool_address = factory_contract.functions.getPool(token0, token1, fee).call()
