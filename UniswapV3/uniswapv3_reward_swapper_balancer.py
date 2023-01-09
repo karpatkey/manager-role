@@ -46,8 +46,8 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}--- UniswapV3 Reward Swapper ---{bcolors.E
 print(f"{bcolors.HEADER}{bcolors.BOLD}--------------------------------{bcolors.ENDC}")
 print()
 
-avatar_address = '0xC01318baB7ee1f5ba734172bF7718b5DC6Ec90E1'
-roles_mod_address = '0x1ffAdc16726dd4F91fF275b4bF50651801B06a86'
+avatar_address = '0xA2372f3C9a26F45b5D69BD513BE0d553Ff9CC617'
+roles_mod_address = '0xeF14e0f66a2e22Bbe85bFA53b3F956354Ce51e62'
 
 json_file = {
     'version': '1.0',
@@ -62,11 +62,16 @@ json_file = {
 }
 
 while True:
+    print(f"{bcolors.OKBLUE}{bcolors.BOLD}---------------{bcolors.ENDC}")
+    print(f"{bcolors.OKBLUE}{bcolors.BOLD}--- Rewards ---{bcolors.ENDC}")
+    print(f"{bcolors.OKBLUE}{bcolors.BOLD}---------------{bcolors.ENDC}")
+    print()
+
     for reward_token in REWARDS_TOKENS:
         token_symbol = get_symbol(reward_token, ETHEREUM, web3=web3)
         token_balance = balance_of(avatar_address, reward_token, 'latest', ETHEREUM, web3=web3)
         message = ('Reward Token: %s\nBalance: %.18f' % (token_symbol, token_balance)).rstrip('0').rstrip('.')
-        print(f"{bcolors.OKBLUE}{bcolors.BOLD}{message}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
         print()
 
         if token_balance == 0:

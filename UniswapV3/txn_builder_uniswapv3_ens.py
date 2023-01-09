@@ -174,7 +174,8 @@ def pool_price_data():
     if price_range_option == '1':
         message = ('The current price of %s per %s is %.18f' % (token1_symbol, token0_symbol, current_price)).rstrip('0').rstrip('.')
     else:
-        message = ('The current price of %s per %s is %.18f' % (token0_symbol, token1_symbol, 1 / current_price)).rstrip('0').rstrip('.')
+        current_price = 1 / current_price
+        message = ('The current price of %s per %s is %.18f' % (token0_symbol, token1_symbol, current_price)).rstrip('0').rstrip('.')
     
     print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
@@ -241,15 +242,17 @@ def input_nft_position():
             nft_position_id = positions_nft_contract.functions.tokenOfOwnerByIndex(avatar_address, i).call()
             position = positions_nft_contract.functions.positions(nft_position_id).call()
             token0 = position[2]
+            token0_decimals = get_decimals(token0, ETHEREUM, web3=web3)
             token0_symbol = get_symbol(token0, ETHEREUM, web3=web3)
             token1 = position[3]
+            token1_decimals = get_decimals(token1, ETHEREUM, web3=web3)
             token1_symbol = get_symbol(token1, ETHEREUM, web3=web3)
             fee = position[4]
             liquidity = position[7]
 
             if liquidity > 0:
                 valid_ntfs_counter += 1
-                safe_positions.append([nft_position_id, token0, token0_symbol, token1, token1_symbol, fee, liquidity])
+                safe_positions.append([nft_position_id, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, fee, liquidity])
                 valid_options.append(str(valid_ntfs_counter))
 
                 print('%d- %d: %s/%s, %.2f%%' % (valid_ntfs_counter, nft_position_id, token0_symbol, token1_symbol, fee/10000))
@@ -358,34 +361,11 @@ def collect():
         print(f"{bcolors.FAIL}{bcolors.BOLD}Error while retrieving the unclaimed fees{bcolors.ENDC}")
         exit()
     
-    # if collect_option == '1':
-    #     tx_data = get_data(POSITIONS_NFT, 'collect', [[int(nft_position_id), ZERO_ADDRESS, MAX_COLLECT_AMOUNT, MAX_COLLECT_AMOUNT]], ETHEREUM, web3=web3)
-    # else:  
-    
     tx_data = get_data(POSITIONS_NFT, 'collect', [[int(nft_position_id), avatar_address, MAX_COLLECT_AMOUNT, MAX_COLLECT_AMOUNT]], ETHEREUM, web3=web3)
 
     if tx_data is not None:
         add_txn_with_role(roles_mod_address, POSITIONS_NFT, tx_data, 0, json_file, web3=web3)
     
-    # if collect_option == '1':
-        
-    #     if position_fees[0][0] == WETH_ETH:
-    #         collect_eth_amount = position_fees[0][1]
-    #         collect_token = token1
-    #         collect_token_amount = position_fees[1][1]
-    #     else:
-    #         collect_eth_amount = position_fees[1][1]
-    #         collect_token = token0
-    #         collect_token_amount = position_fees[0][1]
-            
-    #     tx_data = get_data(POSITIONS_NFT, 'unwrapWETH9', [int(round(collect_eth_amount)), avatar_address], ETHEREUM, web3=web3)
-    #     if tx_data is not None:
-    #         add_txn_with_role(roles_mod_address, POSITIONS_NFT, tx_data, 0, json_file, web3=web3)         
-
-    #     tx_data = get_data(POSITIONS_NFT, 'sweepToken', [collect_token, int(round(collect_token_amount)), avatar_address], ETHEREUM, web3=web3)
-    #     if tx_data is not None:
-    #         add_txn_with_role(roles_mod_address, POSITIONS_NFT, tx_data, 0, json_file, web3=web3)
-
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # MAIN
@@ -398,7 +378,6 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}-------------------------------------{bcol
 print()
 
 avatar_address = '0xdcba2646961784610ce0bCE7e120BF72bAd9e552'
-
 roles_mod_address = '0xa8a8B168CFe8374EC27D110AE5c776cD537c43BA'
 
 json_file = {
@@ -457,12 +436,16 @@ while True:
         if pool_option == '1':
             token0 = WETH_ETH
             token1 = SETH2
+            token0_decimals = 18
+            token1_decimals = 18
             token0_symbol = 'WETH'
             token1_symbol = 'sETH2'
             fee = FEES[2]
         else:
             token0 = WBTC_ETH
             token1 = WETH_ETH
+            token0_decimals = 8
+            token1_decimals = 18
             token0_symbol = 'WBTC'
             token1_symbol = 'WETH'
             fee = FEES[2]
@@ -482,14 +465,11 @@ while True:
             restart_end()
             continue
         else:
-            nft_position_id, token0, token0_symbol, token1, token1_symbol, fee, liquidity = nft_position
+            nft_position_id, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, fee, liquidity = nft_position
             pool_address = factory_contract.functions.getPool(token0, token1, fee).call()
 
     if pool_address != ZERO_ADDRESS:
         pool_contract = get_contract(pool_address, ETHEREUM, web3=web3, abi=ABI_POOL)
-
-    token0_decimals = get_decimals(token0, ETHEREUM, web3=web3)
-    token1_decimals = get_decimals(token1, ETHEREUM, web3=web3)
     
     if operation == '1':
         print(f"{bcolors.OKBLUE}---------------------{bcolors.ENDC}")
@@ -554,25 +534,6 @@ while True:
 
         if nft_position_id != None:
             removed_liquidity, amount0_desired, amount1_desired = get_removed_liquidity(avatar_address, nft_position_id, liquidity, token0_symbol, token1_symbol, token0_decimals, token1_decimals, web3=web3)
-            
-            # collect_option = 0
-            # if token0 == WETH_ETH or token1 == WETH_ETH:
-            #     print('Collect ETH or WETH:')
-            #     print('1- ETH')
-            #     print('2- WETH')
-            #     print()
-            
-            #     collect_option = input('Enter the option: ')
-            #     while collect_option not in ['1','2']:
-            #         collect_option = input('Enter a valid option (1 or 2): ')
-                
-            #     if collect_option == '2':
-            #         if token0_symbol == 'ETH':
-            #             token0_symbol = 'WETH'
-            #         else:
-            #             token1_symbol = 'WETH'
-            # collect_option = '2'
-            # token1_symbol = 'ETH'
 
             remove_liquidity()
     
@@ -581,25 +542,6 @@ while True:
         print(f"{bcolors.OKBLUE}--- Collect Fees ---{bcolors.ENDC}")
         print(f"{bcolors.OKBLUE}--------------------{bcolors.ENDC}")
         print()
-
-        # if nft_position_id != None:
-        #     collect_option = 0
-        #     if token0 == WETH_ETH or token1 ==WETH_ETH:
-        #         print('Collect ETH or WETH:')
-        #         print('1- ETH')
-        #         print('2- WETH')
-        #         print()
-
-        #         collect_option = input('Enter the option: ')
-        #         while collect_option not in ['1','2']:
-        #             collect_option = input('Enter a valid option (1 or 2): ')
-                
-        #         if collect_option == '2':
-        #             if token0_symbol == 'ETH':
-        #                 token0_symbol = 'WETH'
-        #             else:
-        #                 token1_symbol = 'WETH'
-        #     print()
         
         collect()
 

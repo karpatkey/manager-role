@@ -52,8 +52,8 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}--- UniswapV3 Token Swapper ---{bcolors.EN
 print(f"{bcolors.HEADER}{bcolors.BOLD}-------------------------------{bcolors.ENDC}")
 print()
 
-avatar_address = '0xC01318baB7ee1f5ba734172bF7718b5DC6Ec90E1'
-roles_mod_address = '0x1ffAdc16726dd4F91fF275b4bF50651801B06a86'
+avatar_address = '0xA2372f3C9a26F45b5D69BD513BE0d553Ff9CC617'
+roles_mod_address = '0xeF14e0f66a2e22Bbe85bFA53b3F956354Ce51e62'
 
 json_file = {
     'version': '1.0',
@@ -69,12 +69,12 @@ json_file = {
 
 while True:
     print(f"{bcolors.WARNING}{bcolors.BOLD}If you choose sETH2, it will automatically be swapped by WETH{bcolors.ENDC}")
-    print('Select the token to swap: ')
+    print('Select the action to execute: ')
 
     valid_token_options = []
     for i in range(len(TOKENS)):
         
-        print('%d- %s' % (i+1, get_symbol(TOKENS[i], ETHEREUM, web3=web3)))
+        print('%d- Swap %s' % (i+1, get_symbol(TOKENS[i], ETHEREUM, web3=web3)))
         
         valid_token_options.append(str(i+1))
     
@@ -100,7 +100,7 @@ while True:
             if token_balance > 0:
                 print()
                 message = ('Selected Token: %s\nBalance: %.18f' % (token_symbol, token_balance)).rstrip('0').rstrip('.')
-                print(f"{bcolors.OKBLUE}{bcolors.BOLD}{message}{bcolors.ENDC}")
+                print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
                 print()
 
                 if selected_token == SETH2:
@@ -141,6 +141,10 @@ while True:
                 if token_balance > 0:
                     print()
                     swap_selected_token(avatar_address, roles_mod_address, path, selected_token, token_balance, token_symbol, swap_token, swap_token_symbol, json_file, web3=web3)
+            else:
+                print()
+                message = 'Avatar Safe has no remaining balance of %s' % (token_symbol)
+                print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
     else:
         print()
@@ -154,39 +158,44 @@ while True:
             action = 'unwrap'
 
         balance = balance_of(avatar_address, selected_token, 'latest', ETHEREUM, decimals=False, web3=web3)
-        message = str('The amount of %s in the Avatar Safe is: %.18f' % (symbol, balance / (10**18))).rstrip('0').rstrip('.')
-        print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
-        message = 'If you want to select the MAX amount of %s enter \"max\"' % symbol
-        print(f"{bcolors.WARNING}{bcolors.BOLD}{message}{bcolors.ENDC}")
+        if balance > 0:
+            message = str('The amount of %s in the Avatar Safe is: %.18f' % (symbol, balance / (10**18))).rstrip('0').rstrip('.')
+            print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+            message = 'If you want to select the MAX amount of %s enter \"max\"' % symbol
+            print(f"{bcolors.WARNING}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
-        if selected_token == ZERO_ADDRESS:
-            amount = input('Enter the Amount of %s to %s: ' % (symbol, action))
+            if selected_token == ZERO_ADDRESS:
+                amount = input('Enter the Amount of %s to %s: ' % (symbol, action))
 
-        while True:
-            try:
-                if amount == 'max':
-                    amount = balance
-                else:
-                    amount = float(amount)
-                    if amount > balance / (10**18):
-                        print()
-                        message = str('Insufficient balance of ETH in Avatar Safe: %.18f' % (balance / (10**18))).rstrip('0').rstrip('.')
-                        message += (' %s\n') % symbol
-                        print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
-                        raise Exception
-                break
-            except:
-                amount = input('Enter a valid amount: ')
+            while True:
+                try:
+                    if amount == 'max':
+                        amount = balance
+                    else:
+                        amount = float(amount)
+                        if amount > balance / (10**18):
+                            print()
+                            message = str('Insufficient balance of ETH in Avatar Safe: %.18f' % (balance / (10**18))).rstrip('0').rstrip('.')
+                            message += (' %s\n') % symbol
+                            print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
+                            raise Exception
+                    break
+                except:
+                    amount = input('Enter a valid amount: ')
 
-        eth_value = 0
-        if selected_token == ZERO_ADDRESS:
-            tx_data = get_data(WETH_ETH, 'deposit', [], ETHEREUM, web3=web3)
-            eth_value = amount
+            eth_value = 0
+            if selected_token == ZERO_ADDRESS:
+                tx_data = get_data(WETH_ETH, 'deposit', [], ETHEREUM, web3=web3)
+                eth_value = amount
+            else:
+                tx_data = get_data(WETH_ETH, 'withdraw', [int(amount)], ETHEREUM, web3=web3)
+
+            if tx_data is not None:
+                add_txn_with_role(roles_mod_address, WETH_ETH, tx_data, eth_value, json_file, web3=web3)
+        
         else:
-            tx_data = get_data(WETH_ETH, 'withdraw', [int(amount)], ETHEREUM, web3=web3)
-
-        if tx_data is not None:
-            add_txn_with_role(roles_mod_address, WETH_ETH, tx_data, eth_value, json_file, web3=web3)
+            message = 'Avatar Safe has no remaining balance of %s' % (symbol)
+            print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
         
     print()
 

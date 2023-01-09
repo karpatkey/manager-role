@@ -9,6 +9,7 @@ from pathlib import Path
 import os
 import time
 from decimal import Decimal
+from tqdm import tqdm
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # LITERALS
@@ -254,8 +255,8 @@ def input_avatar_roles_module(web3=None):
     while True:
         try:
             roles_mod_address = web3.toChecksumAddress(roles_mod_address)
-            roles_mod_address = get_contract_proxy_abi(roles_mod_address, ROLES_MOD_PROXY, ETHEREUM)
-            roles_mod_address.functions.avatar().call()
+            roles_mod_contract = get_contract_proxy_abi(roles_mod_address, ROLES_MOD_PROXY, ETHEREUM)
+            roles_mod_contract.functions.avatar().call()
             break
         except:
             roles_mod_address = input('Enter a valid address: ')
@@ -318,9 +319,10 @@ def get_rate(path, web3=None):
         web3 = get_node(ETHEREUM)
 
     result_rates = []
-    for i in range(len(path)-1):
+    print(f"{bcolors.OKBLUE}{bcolors.BOLD}Searching for the best rate...\n{bcolors.ENDC}")
+    for i in tqdm(range(len(path)-1)):
         rates = []
-        for fee in FEES:
+        for fee in tqdm(FEES):
             rate = get_rate_uniswap_v3(path[i], path[i+1], 'latest', ETHEREUM, web3=web3, fee=fee)
             if rate != None:
                 rates.append(rate)
@@ -328,8 +330,9 @@ def get_rate(path, web3=None):
         min_rate = min(rates)
         result_rates.append(min_rate)
 
-    result_rate = 1
+    print()
 
+    result_rate = 1
     for rate in result_rates:
         result_rate = result_rate * rate
     

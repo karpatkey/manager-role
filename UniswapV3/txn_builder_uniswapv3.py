@@ -191,7 +191,8 @@ def pool_price_data():
     if price_range_option == '1':
         message = ('The current price of %s per %s is %.18f' % (token1_symbol, token0_symbol, current_price)).rstrip('0').rstrip('.')
     else:
-        message = ('The current price of %s per %s is %.18f' % (token0_symbol, token1_symbol, 1 / current_price)).rstrip('0').rstrip('.')
+        current_price = 1 / current_price
+        message = ('The current price of %s per %s is %.18f' % (token0_symbol, token1_symbol, current_price)).rstrip('0').rstrip('.')
     
     print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
@@ -258,15 +259,17 @@ def input_nft_position():
             nft_position_id = positions_nft_contract.functions.tokenOfOwnerByIndex(avatar_address, i).call()
             position = positions_nft_contract.functions.positions(nft_position_id).call()
             token0 = position[2]
+            token0_decimals = get_decimals(token0, ETHEREUM, web3=web3)
             token0_symbol = get_symbol(token0, ETHEREUM, web3=web3)
             token1 = position[3]
+            token1_decimals = get_decimals(token1, ETHEREUM, web3=web3)
             token1_symbol = get_symbol(token1, ETHEREUM, web3=web3)
             fee = position[4]
             liquidity = position[7]
 
             if liquidity > 0:
                 valid_ntfs_counter += 1
-                safe_positions.append([nft_position_id, token0, token0_symbol, token1, token1_symbol, fee, liquidity])
+                safe_positions.append([nft_position_id, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, fee, liquidity])
                 valid_options.append(str(valid_ntfs_counter))
 
                 print('%d- %d: %s/%s, %.2f%%' % (valid_ntfs_counter, nft_position_id, token0_symbol, token1_symbol, fee/10000))
@@ -557,7 +560,7 @@ while True:
             restart_end()
             continue
         else:
-            nft_position_id, token0, token0_symbol, token1, token1_symbol, fee, liquidity = nft_position
+            nft_position_id, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, fee, liquidity = nft_position
             pool_address = factory_contract.functions.getPool(token0, token1, fee).call()
 
     if pool_address != ZERO_ADDRESS:

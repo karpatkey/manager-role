@@ -67,11 +67,16 @@ json_file = {
 }
 
 while True:
+    print(f"{bcolors.OKBLUE}{bcolors.BOLD}---------------{bcolors.ENDC}")
+    print(f"{bcolors.OKBLUE}{bcolors.BOLD}--- Rewards ---{bcolors.ENDC}")
+    print(f"{bcolors.OKBLUE}{bcolors.BOLD}---------------{bcolors.ENDC}")
+    print()
+
     for reward_token in REWARDS_TOKENS:
         token_symbol = get_symbol(reward_token, ETHEREUM, web3=web3)
         token_balance = balance_of(avatar_address, reward_token, 'latest', ETHEREUM, web3=web3)
         message = ('Reward Token: %s\nBalance: %.18f' % (token_symbol, token_balance)).rstrip('0').rstrip('.')
-        print(f"{bcolors.OKBLUE}{bcolors.BOLD}{message}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
         print()
 
         if token_balance == 0:
