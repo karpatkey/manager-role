@@ -1,6 +1,6 @@
 from defi_protocols.functions import get_symbol, balance_of, get_node, get_data
 from defi_protocols.constants import USDC_ETH, DAI_ETH, WETH_ETH, ZERO_ADDRESS, ETHEREUM
-from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2, bcolors, swap_selected_token, json_file_download, restart_end, add_txn_with_role, input_avatar_roles_module
+from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2, bcolors, swap_selected_token, json_file_download, restart_end, add_txn_with_role
 from datetime import datetime
 import math
 
@@ -52,7 +52,8 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}--- UniswapV3 Token Swapper ---{bcolors.EN
 print(f"{bcolors.HEADER}{bcolors.BOLD}-------------------------------{bcolors.ENDC}")
 print()
 
-avatar_address, roles_mod_address = input_avatar_roles_module(web3=web3)
+avatar_address = '0xC01318baB7ee1f5ba734172bF7718b5DC6Ec90E1'
+roles_mod_address = '0x1ffAdc16726dd4F91fF275b4bF50651801B06a86'
 
 json_file = {
     'version': '1.0',

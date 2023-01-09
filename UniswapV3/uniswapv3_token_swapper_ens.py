@@ -1,13 +1,13 @@
 from defi_protocols.functions import get_symbol, balance_of, get_node, get_data
-from defi_protocols.constants import USDC_ETH, DAI_ETH, WETH_ETH, ZERO_ADDRESS, ETHEREUM
-from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2, bcolors, swap_selected_token, json_file_download, restart_end, add_txn_with_role, input_avatar_roles_module
+from defi_protocols.constants import USDC_ETH, DAI_ETH, WETH_ETH, CRV_ETH, ZERO_ADDRESS, ETHEREUM
+from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2, LDO, bcolors, swap_selected_token, json_file_download, restart_end, add_txn_with_role
 from datetime import datetime
 import math
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # LITERALS
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TOKENS = [SETH2, COMP, AAVE, RETH2, SWISE, WETH_ETH]
+TOKENS = [SETH2, COMP, LDO, CRV_ETH, RETH2, SWISE, WETH_ETH]
 
 PATHS = {
     COMP: {
@@ -15,10 +15,15 @@ PATHS = {
         DAI_ETH: [COMP, WETH_ETH, DAI_ETH],
         WETH_ETH: [COMP, WETH_ETH]
     },
-    AAVE: {
-        USDC_ETH: [AAVE, WETH_ETH, USDC_ETH],
-        DAI_ETH: [AAVE, WETH_ETH, DAI_ETH],
-        WETH_ETH: [AAVE, WETH_ETH]
+    LDO: {
+        USDC_ETH: [LDO, WETH_ETH, USDC_ETH],
+        DAI_ETH: [LDO, WETH_ETH, DAI_ETH],
+        WETH_ETH: [LDO, WETH_ETH]
+    },
+    CRV_ETH: {
+        USDC_ETH: [CRV_ETH, WETH_ETH, USDC_ETH],
+        DAI_ETH: [CRV_ETH, WETH_ETH, DAI_ETH],
+        WETH_ETH: [CRV_ETH, WETH_ETH]
     },
     RETH2: {
         USDC_ETH: [RETH2, SETH2, WETH_ETH, USDC_ETH],
@@ -52,7 +57,8 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}--- UniswapV3 Token Swapper ---{bcolors.EN
 print(f"{bcolors.HEADER}{bcolors.BOLD}-------------------------------{bcolors.ENDC}")
 print()
 
-avatar_address, roles_mod_address = input_avatar_roles_module(web3=web3)
+avatar_address = '0xdcba2646961784610ce0bCE7e120BF72bAd9e552'
+roles_mod_address = '0xa8a8B168CFe8374EC27D110AE5c776cD537c43BA'
 
 json_file = {
     'version': '1.0',
