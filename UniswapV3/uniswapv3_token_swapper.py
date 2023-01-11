@@ -86,7 +86,7 @@ while True:
     valid_token_options.append(str(i))
 
     print()
-    token_option = input('Enter the token: ') 
+    token_option = input('Enter the token: ')
     while token_option not in valid_token_options:
         message = 'Enter a valid option (' + ','.join(option for option in valid_token_options) + '): '
         token_option = input(message)
