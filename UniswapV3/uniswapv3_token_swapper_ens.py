@@ -28,12 +28,12 @@ PATHS = {
     RETH2: {
         USDC_ETH: [RETH2, SETH2, WETH_ETH, USDC_ETH],
         DAI_ETH: [RETH2, SETH2, WETH_ETH, DAI_ETH],
-        WETH_ETH: [RETH2, WETH_ETH]
+        WETH_ETH: [RETH2, SETH2, WETH_ETH]
     },
     SWISE: {
         USDC_ETH: [SWISE, SETH2, WETH_ETH, USDC_ETH],
         DAI_ETH: [SWISE, SETH2, WETH_ETH, DAI_ETH],
-        WETH_ETH: [SWISE, WETH_ETH]
+        WETH_ETH: [SWISE, SETH2, WETH_ETH]
     },
     SETH2: {
         WETH_ETH: [SETH2, WETH_ETH]
@@ -57,8 +57,8 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}--- UniswapV3 Token Swapper ---{bcolors.EN
 print(f"{bcolors.HEADER}{bcolors.BOLD}-------------------------------{bcolors.ENDC}")
 print()
 
-avatar_address = '0xdcba2646961784610ce0bCE7e120BF72bAd9e552'
-roles_mod_address = '0xa8a8B168CFe8374EC27D110AE5c776cD537c43BA'
+avatar_address = '0x4F2083f5fBede34C2714aFfb3105539775f7FE64'
+roles_mod_address = '0xf20325cf84b72e8BBF8D8984B8f0059B984B390B'
 
 json_file = {
     'version': '1.0',

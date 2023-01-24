@@ -24,12 +24,12 @@ PATHS = {
     RETH2: {
         USDC_ETH: [RETH2, SETH2, WETH_ETH, USDC_ETH],
         DAI_ETH: [RETH2, SETH2, WETH_ETH, DAI_ETH],
-        WETH_ETH: [RETH2, WETH_ETH]
+        WETH_ETH: [RETH2, SETH2, WETH_ETH]
     },
     SWISE: {
         USDC_ETH: [SWISE, SETH2, WETH_ETH, USDC_ETH],
         DAI_ETH: [SWISE, SETH2, WETH_ETH, DAI_ETH],
-        WETH_ETH: [SWISE, WETH_ETH]
+        WETH_ETH: [SWISE, SETH2, WETH_ETH]
     }
 }
 
@@ -46,8 +46,8 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}--- UniswapV3 Reward Swapper ---{bcolors.E
 print(f"{bcolors.HEADER}{bcolors.BOLD}--------------------------------{bcolors.ENDC}")
 print()
 
-avatar_address = '0xA2372f3C9a26F45b5D69BD513BE0d553Ff9CC617'
-roles_mod_address = '0xeF14e0f66a2e22Bbe85bFA53b3F956354Ce51e62'
+avatar_address = '0x0EFcCBb9E2C09Ea29551879bd9Da32362b32fc89'
+roles_mod_address = '0xd8dd9164E765bEF903E429c9462E51F0Ea8514F9'
 
 json_file = {
     'version': '1.0',

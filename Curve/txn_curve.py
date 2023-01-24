@@ -76,7 +76,7 @@ def transactions_data(blockchain, all_pools=False):
     result = []
     
     try:
-        with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final.json', 'r') as curve_data_file:
+        with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final_xdai.json', 'r') as curve_data_file:
             # Reading from json file
             curve_data = json.load(curve_data_file)
             curve_data_file.close()
@@ -84,7 +84,7 @@ def transactions_data(blockchain, all_pools=False):
         curve_data = None
     
     try:
-        with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_zaps.json', 'r') as curve_zaps_file:
+        with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_zaps_xdai.json', 'r') as curve_zaps_file:
             # Reading from json file
             curve_zaps = json.load(curve_zaps_file)
             curve_zaps_file.close()
@@ -400,7 +400,7 @@ def transactions_data(blockchain, all_pools=False):
 
             print(id, i)
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final.json', 'w') as curve_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final_xdai.json', 'w') as curve_data_file:
         json.dump(result, curve_data_file)
 
 
@@ -1170,7 +1170,7 @@ def crypto_factory_pool_data(lptoken_address):
 
 
 
-regular_pool_data('0x06325440D014e39736583c165C2963BA99fAf14E')
+#regular_pool_data('0x06325440D014e39736583c165C2963BA99fAf14E')
 #factory_pool_data('0x67C7f0a63BA70a2dAc69477B716551FC921aed00')
 #crypto_v2_pool_data('0x70fc957eb90E37Af82ACDbd12675699797745F68')
 #crypto_factory_pool_data('0xf985005a3793DbA4cCe241B3C19ddcd3Fe069ff4')
@@ -1183,7 +1183,7 @@ regular_pool_data('0x06325440D014e39736583c165C2963BA99fAf14E')
 
 #print(len(curve_data['regular']), len(curve_data['factory']), len(curve_data['crypto v2']), len(curve_data['crypto factory']))
 
-#transactions_data(ETHEREUM)
+#transactions_data(XDAI)
 
 # with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data.json', 'r') as curve_data_file:
 #     # Reading from json file
