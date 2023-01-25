@@ -192,7 +192,7 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}--- Token Approvals ---{bcolors.ENDC}")
 print(f"{bcolors.HEADER}{bcolors.BOLD}-----------------------{bcolors.ENDC}")
 print()
 
-avatar_address = '0xdcba2646961784610ce0bCE7e120BF72bAd9e552'
+avatar_address = '0x4F2083f5fBede34C2714aFfb3105539775f7FE64'
 
 json_file = {
     'version': '1.0',
