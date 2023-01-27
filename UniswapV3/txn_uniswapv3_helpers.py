@@ -1,4 +1,4 @@
-from defi_protocols.functions import get_node, get_data, get_decimals, balance_of
+from defi_protocols.functions import get_node, get_data, get_decimals, balance_of, get_symbol
 from defi_protocols.constants import ETHEREUM, ZERO_ADDRESS
 from defi_protocols.UniswapV3 import FEES, UNISWAPV3_ROUTER2, get_rate_uniswap_v3, underlying
 from helper_functions.helper_functions import *
@@ -207,6 +207,65 @@ def subgraph_query_all_pools(min_tvl_usd=0, min_volume_usd=0):
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# get_best_rate
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def get_best_rate(paths, web3=None):
+
+    if web3 is None:
+        web3 = get_node(ETHEREUM)
+    
+    if isinstance(paths[0], list):
+        print('Select the path: ')
+        i = 1
+        valid_path_options = []
+        path_strings = []
+        for path in paths:
+            path_symbols = [get_symbol(path_token, ETHEREUM, web3=web3) for path_token in path]
+            path_string = '[{}]'.format('->'.join(path_symbols))
+            path_strings.append(path_string)
+            print('%d- %s' % (i, path_string))
+            valid_path_options.append(i)
+            i += 1
+        
+        print()
+        path_option = input('Enter the path: ')
+        while int(path_option) not in valid_path_options:
+            message = 'Enter a valid option (' + ','.join(str(option) for option in valid_path_options) + '): '
+            path_option = input(message)
+        
+        # return list(paths)[int(path_option)-1], get_rate(list(paths)[int(path_option)-1], web3=web3)
+        return list(paths)[int(path_option)-1], set_min_amount_out(path_strings[int(path_option)-1], web3=web3)
+    
+    else:
+        path_symbols = [get_symbol(path_token, ETHEREUM, web3=web3) for path_token in paths]
+        path_string = '[{}]'.format('->'.join(path_symbols))
+
+        # return paths, get_rate(paths, web3=web3)
+        return paths, set_min_amount_out(path_string, web3=web3)
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# set_min_amount_out
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def set_min_amount_out(path_string, web3=None):
+
+    if web3 is None:
+        web3 = get_node(ETHEREUM)
+    
+    message = '\nPath: %s\n' % path_string
+    print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+
+    amount_out_min = input('Enter the MIN amount out: ')
+    while True:
+        try:
+            amount_out_min = float(amount_out_min)
+
+            return amount_out_min
+        except:
+            amount_out_min = input('Enter a valid amount: ')
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # get_rate
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def get_rate(path, web3=None):
@@ -215,7 +274,10 @@ def get_rate(path, web3=None):
         web3 = get_node(ETHEREUM)
 
     result_rates = []
-    print(f"{bcolors.OKBLUE}{bcolors.BOLD}Searching for the best rate...\n{bcolors.ENDC}")
+    path_symbols = [get_symbol(path_token, ETHEREUM, web3=web3) for path_token in path]
+    path_string = '[{}]'.format(','.join(path_symbols))
+    message = 'Searching for the best rate with the path %s...\n' % path_string
+    print(f"{bcolors.OKBLUE}{bcolors.BOLD}{message}{bcolors.ENDC}")
     for i in tqdm(range(len(path)-1)):
         rates = []
         for fee in tqdm(FEES):
@@ -223,8 +285,8 @@ def get_rate(path, web3=None):
             if rate != None:
                 rates.append(rate)
         
-        min_rate = min(rates)
-        result_rates.append(min_rate)
+        max_rate = max(rates)
+        result_rates.append(max_rate)
 
     print()
 
@@ -238,73 +300,87 @@ def get_rate(path, web3=None):
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # swap_selected_token
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def swap_selected_token(avatar_address, roles_mod_address, path, token, token_balance, token_symbol, swap_token, swap_token_symbol, json_file, web3=None):
-    
-    if web3 is None:
-        web3 = get_node(ETHEREUM)
+def swap_selected_token(avatar_address, roles_mod_address, path, amount_out_min, token, token_balance, swap_token, json_file, web3=None):
 
-    rate = get_rate(path)
-
-    expected_amount = rate * token_balance
-    message = ('Expected amount of %s for the %.18f' % (swap_token_symbol, token_balance)).rstrip('0').rstrip('.')
-    message += (' of %s is: %.18f' % (token_symbol, expected_amount)).rstrip('0').rstrip('.')
-    print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
-
-    print()
-
-    print('Do you wish to proceed: ')
-    print('1- Yes')
-    print('2- No')
-    print()
-
-    option = input('Enter the option: ')
-    while option not in ['1','2']:
-        option = input('Enter a valid option (1, 2): ')
-    
-    if option == '1':
-
-        while True:
-            print()
-            print(f"{bcolors.WARNING}{bcolors.BOLD}The percentage must be greater than 0% and lower or equal to 100%{bcolors.ENDC}")
-            slippage = input('Enter the MAX percentage of slippage tolerance: ')
-            while True:
-                try:
-                    slippage = float(slippage)
-                    if slippage <= 0 or slippage > 100:
-                        raise Exception
-                    else:
-                        break
-                except:
-                    slippage = input('Enter a valid percentage: ')
-            
-            print()
-
-            amount_out_min = (100 - slippage) * expected_amount / 100
-            message = ('The MIN amount of %s for the %.18f' % (swap_token_symbol, token_balance)).rstrip('0').rstrip('.')
-            message += (' of %s is: %.18f' % (token_symbol, amount_out_min)).rstrip('0').rstrip('.')
-            print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
-
-            print()
-            print('Do you wish to proceed: ')
-            print('1- Yes')
-            print('2- No')
-            print()
-
-            option = input('Enter the option: ')
-            while option not in ['1','2']:
-                option = input('Enter a valid option (1, 2): ')
-            
-            if option == '1':
-                approve_token(avatar_address, roles_mod_address, token, UNISWAPV3_ROUTER2, json_file, web3=web3)
-                approve_token(avatar_address, roles_mod_address, swap_token, UNISWAPV3_ROUTER2, json_file, web3=web3)
+    approve_token(avatar_address, roles_mod_address, token, UNISWAPV3_ROUTER2, json_file, web3=web3)
+    approve_token(avatar_address, roles_mod_address, swap_token, UNISWAPV3_ROUTER2, json_file, web3=web3)
                 
-                token_balance = token_balance * (10**get_decimals(token, ETHEREUM, web3=web3))
-                amount_out_min = amount_out_min * (10**get_decimals(swap_token, ETHEREUM, web3=web3))
-                tx_data = get_data(UNISWAPV3_ROUTER2, 'swapExactTokensForTokens', [int(round(token_balance)), int(round(amount_out_min)), path, avatar_address], ETHEREUM, web3=web3)
-                if tx_data is not None:
-                    add_txn_with_role(roles_mod_address, UNISWAPV3_ROUTER2, tx_data, 0, json_file, web3=web3)
+    token_balance = token_balance * (10**get_decimals(token, ETHEREUM, web3=web3))
+    amount_out_min = amount_out_min * (10**get_decimals(swap_token, ETHEREUM, web3=web3))
+ 
+    tx_data = get_data(UNISWAPV3_ROUTER2, 'swapExactTokensForTokens', [int(round(token_balance)), int(round(amount_out_min)), path, avatar_address], ETHEREUM, web3=web3)
+    if tx_data is not None:
+        add_txn_with_role(roles_mod_address, UNISWAPV3_ROUTER2, tx_data, 0, json_file, web3=web3)
+
+
+# #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# # swap_selected_token
+# #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# def swap_selected_token(avatar_address, roles_mod_address, path, rate, token, token_balance, token_symbol, swap_token, swap_token_symbol, json_file, web3=None):
+    
+#     if web3 is None:
+#         web3 = get_node(ETHEREUM)
+
+#     expected_amount = rate * token_balance
+#     message = ('Expected amount of %s for the %.18f' % (swap_token_symbol, token_balance)).rstrip('0').rstrip('.')
+#     message += (' of %s is: %.18f' % (token_symbol, expected_amount)).rstrip('0').rstrip('.')
+#     print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+
+#     print()
+
+#     print('Do you wish to proceed: ')
+#     print('1- Yes')
+#     print('2- No')
+#     print()
+
+#     option = input('Enter the option: ')
+#     while option not in ['1','2']:
+#         option = input('Enter a valid option (1, 2): ')
+    
+#     if option == '1':
+
+#         while True:
+#             print()
+#             print(f"{bcolors.WARNING}{bcolors.BOLD}The percentage must be greater than 0% and lower or equal to 100%{bcolors.ENDC}")
+#             slippage = input('Enter the MAX percentage of slippage tolerance: ')
+#             while True:
+#                 try:
+#                     slippage = float(slippage)
+#                     if slippage <= 0 or slippage > 100:
+#                         raise Exception
+#                     else:
+#                         break
+#                 except:
+#                     slippage = input('Enter a valid percentage: ')
+            
+#             print()
+
+#             amount_out_min = (100 - slippage) * expected_amount / 100
+#             message = ('The MIN amount of %s for the %.18f' % (swap_token_symbol, token_balance)).rstrip('0').rstrip('.')
+#             message += (' of %s is: %.18f' % (token_symbol, amount_out_min)).rstrip('0').rstrip('.')
+#             print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+
+#             print()
+#             print('Do you wish to proceed: ')
+#             print('1- Yes')
+#             print('2- No')
+#             print()
+
+#             option = input('Enter the option: ')
+#             while option not in ['1','2']:
+#                 option = input('Enter a valid option (1, 2): ')
+            
+#             if option == '1':
+#                 approve_token(avatar_address, roles_mod_address, token, UNISWAPV3_ROUTER2, json_file, web3=web3)
+#                 approve_token(avatar_address, roles_mod_address, swap_token, UNISWAPV3_ROUTER2, json_file, web3=web3)
                 
-                break
+#                 token_balance = token_balance * (10**get_decimals(token, ETHEREUM, web3=web3))
+#                 amount_out_min = amount_out_min * (10**get_decimals(swap_token, ETHEREUM, web3=web3))
+#                 tx_data = get_data(UNISWAPV3_ROUTER2, 'swapExactTokensForTokens', [int(round(token_balance)), int(round(amount_out_min)), path, avatar_address], ETHEREUM, web3=web3)
+#                 if tx_data is not None:
+#                     add_txn_with_role(roles_mod_address, UNISWAPV3_ROUTER2, tx_data, 0, json_file, web3=web3)
+                
+#                 break
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------

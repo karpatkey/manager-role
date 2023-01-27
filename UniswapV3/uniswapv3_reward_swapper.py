@@ -1,6 +1,6 @@
 from defi_protocols.functions import get_symbol, balance_of, get_node
 from defi_protocols.constants import USDC_ETH, DAI_ETH, WETH_ETH, ETHEREUM
-from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2, bcolors, swap_selected_token, json_file_download, restart_end, input_avatar_roles_module
+from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2, bcolors, get_best_rate, swap_selected_token, json_file_download, restart_end, input_avatar_roles_module
 from datetime import datetime
 import math
 
@@ -77,34 +77,37 @@ while True:
             continue
         
         print('Select the action to execute with the balance of %s: ' % token_symbol)
-        print('1- Swap it for USDC')
-        print('2- Swap it for DAI')
-        print('3- Swap it for WETH')
-        print('4- None')
-        print()
 
-        swap_option = input('Enter the option: ')
-        while swap_option not in ['1','2','3', '4']:
-            swap_option = input('Enter a valid option (1, 2, 3, 4): ')
+        j = 0
+        valid_swap_token_options = []
+        for swap_token in PATHS[reward_token]:
+            print('%d- %s' % (j+1, get_symbol(swap_token, ETHEREUM, web3=web3)))
+            valid_swap_token_options.append(str(j+1))
+            j += 1
         
-        if swap_option != '4':
+        j += 1
+        print('%d- None' % j)
+        valid_swap_token_options.append(str(j))
+        
+        print()
+        swap_token_option = input('Enter the token: ')
+        while swap_token_option not in valid_swap_token_options:
+            message = 'Enter a valid option (' + ','.join(option for option in valid_swap_token_options) + '): '
+            swap_token_option = input(message)
+        
+        if int(swap_token_option) != j:
+            # print()
+            selected_swap_token = list(PATHS[reward_token])[int(swap_token_option) - 1]
+            selected_swap_token_symbol = get_symbol(selected_swap_token, ETHEREUM, web3=web3)
 
-            if swap_option == '1':
-                swap_token = USDC_ETH
-                swap_token_symbol = 'USDC'
-            elif swap_option == '2':
-                swap_token = DAI_ETH
-                swap_token_symbol = 'DAI'
-            elif swap_option == '3':
-                swap_token = WETH_ETH
-                swap_token_symbol = 'WETH'
+            # path, rate = get_best_rate(PATHS[reward_token][selected_swap_token], web3=web3)
+            path, amount_out_min = get_best_rate(PATHS[reward_token][selected_swap_token], web3=web3)
+            
+             # swap_selected_token(avatar_address, roles_mod_address, path, rate, reward_token, token_balance, token_symbol, selected_swap_token, selected_swap_token_symbol, json_file, web3=web3)
+            swap_selected_token(avatar_address, roles_mod_address, path, amount_out_min, reward_token, token_balance, swap_token, json_file, web3=web3)
 
-            path = PATHS[reward_token][swap_token]
+            print()
 
-            if token_balance > 0:
-                print()
-                swap_selected_token(avatar_address, roles_mod_address, path, reward_token, token_balance, token_symbol, swap_token, swap_token_symbol, json_file, web3=web3)
-                print()
         else:
             print()
             continue
@@ -114,4 +117,3 @@ while True:
         break
     else:
         restart_end()
-

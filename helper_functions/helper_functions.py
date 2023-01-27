@@ -112,7 +112,7 @@ def json_file_download(json_file):
     print()
 
     file_name = input('Enter the name of the JSON file: ')
-    file_path = str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/%s.json' % file_name
+    file_path = str(Path(os.path.abspath(__file__)).resolve().parents[1])+'/%s.json' % file_name
     print()
     try:
         with open(file_path, 'w') as uniswapv3_txn_builder:
