@@ -233,6 +233,7 @@ def get_best_rate(paths, web3=None):
             message = 'Enter a valid option (' + ','.join(str(option) for option in valid_path_options) + '): '
             path_option = input(message)
         
+        print()
         # return list(paths)[int(path_option)-1], get_rate(list(paths)[int(path_option)-1], web3=web3)
         return list(paths)[int(path_option)-1], set_min_amount_out(path_strings[int(path_option)-1], web3=web3)
     
@@ -252,7 +253,7 @@ def set_min_amount_out(path_string, web3=None):
     if web3 is None:
         web3 = get_node(ETHEREUM)
     
-    message = '\nPath: %s\n' % path_string
+    message = 'Path: %s\n' % path_string
     print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
     amount_out_min = input('Enter the MIN amount out: ')

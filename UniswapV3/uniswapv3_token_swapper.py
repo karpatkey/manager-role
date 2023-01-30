@@ -172,6 +172,7 @@ while True:
                     amount = input('Enter a valid amount: ')
 
             eth_value = 0
+            amount = amount * (10**18)
             if selected_token == ZERO_ADDRESS:
                 tx_data = get_data(WETH_ETH, 'deposit', [], ETHEREUM, web3=web3)
                 eth_value = amount
