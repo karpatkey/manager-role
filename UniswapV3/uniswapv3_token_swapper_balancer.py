@@ -149,7 +149,7 @@ while True:
             path, amount_out_min = get_best_rate(PATHS[selected_token][selected_swap_token], web3=web3)
             
             # swap_selected_token(avatar_address, roles_mod_address, rate, selected_token, token_balance, token_symbol, selected_swap_token, selected_swap_token_symbol, json_file, web3=web3)
-            swap_selected_token(avatar_address, roles_mod_address, path, amount_out_min, selected_token, token_balance, swap_token, json_file, web3=web3)
+            swap_selected_token(avatar_address, roles_mod_address, path, amount_out_min, selected_token, token_balance, selected_swap_token, json_file, web3=web3)
 
         else:
             print()
