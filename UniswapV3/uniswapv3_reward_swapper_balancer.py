@@ -1,4 +1,4 @@
-from defi_protocols.functions import get_symbol, balance_of, get_node
+from defi_protocols.functions import get_symbol, balance_of, get_node, get_decimals
 from defi_protocols.constants import USDC_ETH, DAI_ETH, WETH_ETH, ETHEREUM
 from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2, bcolors, get_best_rate, swap_selected_token, json_file_download, restart_end
 from datetime import datetime
@@ -69,14 +69,15 @@ while True:
 
     for reward_token in REWARDS_TOKENS:
         token_symbol = get_symbol(reward_token, ETHEREUM, web3=web3)
-        token_balance = balance_of(avatar_address, reward_token, 'latest', ETHEREUM, web3=web3)
-        message = ('Reward Token: %s\nBalance: %.18f' % (token_symbol, token_balance)).rstrip('0').rstrip('.')
+        token_balance = balance_of(avatar_address, reward_token, 'latest', ETHEREUM, web3=web3, decimals=False)
+        reward_token_decimals = get_decimals(reward_token, ETHEREUM, web3=web3)
+        message = str('The amount of %s in the Avatar Safe is: %.18f' % (token_symbol, token_balance / (10**reward_token_decimals))).rstrip('0').rstrip('.')
         print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
         print()
 
         if token_balance == 0:
             continue
-        
+            
         print('Select the action to execute with the balance of %s: ' % token_symbol)
 
         j = 0
@@ -97,7 +98,26 @@ while True:
             swap_token_option = input(message)
         
         if int(swap_token_option) != j:
-            # print()
+            print()
+            message = 'If you want to select the MAX amount of %s enter \"max\"' % token_symbol
+            print(f"{bcolors.WARNING}{bcolors.BOLD}{message}{bcolors.ENDC}")
+            amount = input('Enter the amount of %s to swap: ' % token_symbol)
+            while True:
+                try:
+                    if amount == 'max':
+                        amount = token_balance / (10**reward_token_decimals)
+                    else:
+                        amount = float(amount)
+                        if amount > token_balance / (10**reward_token_decimals):
+                            print()
+                            message = str('Insufficient balance of %s in Avatar Safe: %.18f' % (token_symbol, token_balance / (10**reward_token_decimals))).rstrip('0').rstrip('.')
+                            message += (' %s\n') % token_symbol
+                            print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
+                            raise Exception
+                    break
+                except:
+                    amount = input('Enter a valid amount: ')
+
             selected_swap_token = list(PATHS[reward_token])[int(swap_token_option) - 1]
             selected_swap_token_symbol = get_symbol(selected_swap_token, ETHEREUM, web3=web3)
 
@@ -105,7 +125,7 @@ while True:
             path, amount_out_min = get_best_rate(PATHS[reward_token][selected_swap_token], web3=web3)
             
              # swap_selected_token(avatar_address, roles_mod_address, path, rate, reward_token, token_balance, token_symbol, selected_swap_token, selected_swap_token_symbol, json_file, web3=web3)
-            swap_selected_token(avatar_address, roles_mod_address, path, amount_out_min, reward_token, token_balance, swap_token, json_file, web3=web3)
+            swap_selected_token(avatar_address, roles_mod_address, path, amount_out_min, reward_token, amount, swap_token, json_file, web3=web3)
 
             print()
         
