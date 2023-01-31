@@ -414,12 +414,12 @@ while True:
     while operation not in ['1','2','3','4']:
         operation = input('Enter a valid option (1, 2, 3 or 4): ')
     
-    # Added until the NFTs are created
-    if operation == '2':
-        print()
-        print(f"{bcolors.FAIL}{bcolors.BOLD}ERROR: The operation is not allowed by the current preset{bcolors.ENDC}")
-        print()
-        continue
+    # # Added until the NFTs are created
+    # if operation == '2':
+    #     print()
+    #     print(f"{bcolors.FAIL}{bcolors.BOLD}ERROR: The operation is not allowed by the current preset{bcolors.ENDC}")
+    #     print()
+    #     continue
     
     if operation == '1':
         print()
