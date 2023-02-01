@@ -130,10 +130,11 @@ while True:
             while True:
                 try:
                     if amount == 'max':
-                        amount = token_balance / (10**selected_token_decimals)
+                        amount = token_balance
                     else:
                         amount = float(amount)
-                        if amount > token_balance / (10**selected_token_decimals):
+                        amount = amount * (10**selected_token_decimals)
+                        if amount > token_balance:
                             print()
                             message = str('Insufficient balance of %s in Avatar Safe: %.18f' % (token_symbol, token_balance / (10**selected_token_decimals))).rstrip('0').rstrip('.')
                             message += (' %s\n') % token_symbol
@@ -168,6 +169,7 @@ while True:
 
             # rate = get_best_rate(PATHS[selected_token][selected_swap_token], web3=web3)
             path, amount_out_min = get_best_rate(PATHS[selected_token][selected_swap_token], web3=web3)
+            amount_out_min = amount_out_min * (10**get_decimals(selected_swap_token, ETHEREUM, web3=web3))
             
             # swap_selected_token(avatar_address, roles_mod_address, rate, selected_token, token_balance, token_symbol, selected_swap_token, selected_swap_token_symbol, json_file, web3=web3)
             swap_selected_token(avatar_address, roles_mod_address, path, amount_out_min, selected_token, amount, selected_swap_token, json_file, web3=web3)
@@ -201,10 +203,11 @@ while True:
             while True:
                 try:
                     if amount == 'max':
-                        amount = balance / (10**18)
+                        amount = balance
                     else:
                         amount = float(amount)
-                        if amount > balance / (10**18):
+                        amount = amount * (10**18)
+                        if amount > balance:
                             print()
                             message = str('Insufficient balance of %s in Avatar Safe: %.18f' % (symbol, (balance / (10**18)))).rstrip('0').rstrip('.')
                             message += (' %s\n') % symbol
@@ -215,7 +218,6 @@ while True:
                     amount = input('Enter a valid amount: ')
 
             eth_value = 0
-            amount = amount * (10**18)
             if selected_token == ZERO_ADDRESS:
                 tx_data = get_data(WETH_ETH, 'deposit', [], ETHEREUM, web3=web3)
                 eth_value = amount
@@ -236,4 +238,3 @@ while True:
         break
     else:
         restart_end()
-

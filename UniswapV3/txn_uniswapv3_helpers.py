@@ -305,9 +305,6 @@ def swap_selected_token(avatar_address, roles_mod_address, path, amount_out_min,
 
     approve_token(avatar_address, roles_mod_address, token, UNISWAPV3_ROUTER2, json_file, web3=web3)
     approve_token(avatar_address, roles_mod_address, swap_token, UNISWAPV3_ROUTER2, json_file, web3=web3)
-                
-    token_balance = token_balance * (10**get_decimals(token, ETHEREUM, web3=web3))
-    amount_out_min = amount_out_min * (10**get_decimals(swap_token, ETHEREUM, web3=web3))
  
     tx_data = get_data(UNISWAPV3_ROUTER2, 'swapExactTokensForTokens', [int(round(token_balance)), int(round(amount_out_min)), path, avatar_address], ETHEREUM, web3=web3)
     if tx_data is not None:
