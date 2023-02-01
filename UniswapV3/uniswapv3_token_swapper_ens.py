@@ -1,6 +1,6 @@
 from defi_protocols.functions import get_symbol, balance_of, get_node, get_data, get_decimals
 from defi_protocols.constants import USDC_ETH, USDT_ETH, DAI_ETH, WETH_ETH, CRV_ETH, ZERO_ADDRESS, ETHEREUM
-from txn_uniswapv3_helpers import COMP, RETH2, SWISE, SETH2, LDO, bcolors, get_best_rate, swap_selected_token, json_file_download, restart_end, add_txn_with_role
+from txn_uniswapv3_helpers import COMP, RETH2, SWISE, SETH2, LDO, bcolors, get_best_rate, swap_selected_token, json_file_download, continue_execution, add_txn_with_role
 from datetime import datetime
 import math
 from decimal import Decimal
@@ -109,7 +109,7 @@ while True:
     valid_token_options.append(str(i))
 
     print()
-    token_option = input('Enter the token: ')
+    token_option = input('Enter the option: ')
     while token_option not in valid_token_options:
         message = 'Enter a valid option (' + ','.join(option for option in valid_token_options) + '): '
         token_option = input(message)
@@ -163,8 +163,7 @@ while True:
                     message = 'Enter a valid option (' + ','.join(option for option in valid_swap_token_options) + '): '
                     swap_token_option = input(message)
 
-                print()
-            
+            print()
             selected_swap_token = list(PATHS[selected_token])[int(swap_token_option) - 1]
             selected_swap_token_symbol = get_symbol(selected_swap_token, ETHEREUM, web3=web3)
 
@@ -233,10 +232,18 @@ while True:
             print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
         
     print()
-
     if json_file['transactions'] != []:
-        json_file_download(json_file)
-        break
+        exec = continue_execution(True)
     else:
-        restart_end()
+        exec = continue_execution()
+
+    print()
+    if exec:
+        continue
+    else:
+        if json_file['transactions'] != []:
+            json_file_download(json_file)
+            print()
+            
+        break
 

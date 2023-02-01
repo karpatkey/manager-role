@@ -463,9 +463,17 @@ while True:
         print()
         nft_position = input_nft_position()
         if nft_position == None:
+            exec = continue_execution()
+
             print()
-            restart_end()
-            continue
+            if exec:
+                continue
+            else:
+                if json_file['transactions'] != []:
+                    json_file_download(json_file)
+                    print()
+
+                exit()
         else:
             nft_position_id, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, fee, liquidity = nft_position
             pool_address = factory_contract.functions.getPool(token0, token1, fee).call()
@@ -547,9 +555,17 @@ while True:
         
         collect()
 
-    
     if json_file['transactions'] != []:
-        json_file_download(json_file)
-        break
+        exec = continue_execution(True)
     else:
-        restart_end()
+        exec = continue_execution()
+
+    print()
+    if exec:
+        continue
+    else:
+        if json_file['transactions'] != []:
+            json_file_download(json_file)
+        
+        print()
+        break

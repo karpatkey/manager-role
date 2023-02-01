@@ -126,13 +126,15 @@ def json_file_download(json_file):
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# restart_end
+# continue_execution
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def restart_end():
+def continue_execution(json_has_txns=False):
 
-    print(f"{bcolors.WARNING}{bcolors.BOLD}No transactions were recorded{bcolors.ENDC}")
-    print()
-    print('Do you wish to restart?')
+    if not json_has_txns:
+        print(f"{bcolors.WARNING}{bcolors.BOLD}No transactions were recorded{bcolors.ENDC}")
+        print()
+
+    print('Do you wish to add more transactions?')
     print('1- Yes')
     print('2- No')
     print()
@@ -142,6 +144,28 @@ def restart_end():
         option = input('Enter a valid option (1, 2): ')
     
     if option == '2':
-        exit()
+        return False
     else:
-        print()
+        return True
+
+
+# #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# # restart_end
+# #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# def restart_end():
+
+#     print(f"{bcolors.WARNING}{bcolors.BOLD}No transactions were recorded{bcolors.ENDC}")
+#     print()
+#     print('Do you wish to restart?')
+#     print('1- Yes')
+#     print('2- No')
+#     print()
+
+#     option = input('Enter the option: ')
+#     while option not in ['1','2']:
+#         option = input('Enter a valid option (1, 2): ')
+    
+#     if option == '2':
+#         exit()
+#     else:
+#         print()

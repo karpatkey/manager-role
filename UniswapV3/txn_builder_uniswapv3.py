@@ -465,7 +465,8 @@ while True:
         token0 = input('Enter Token0 address: ')
         while True:
             if token0 == '':
-                break
+                token0 = WETH_ETH
+                eth = True
             try:
                 token0 = web3.toChecksumAddress(token0)
                 token0_decimals = get_decimals(token0, ETHEREUM, web3=web3)
@@ -476,17 +477,14 @@ while True:
                     raise Exception
                 break
             except:
-                token0 = input('Enter a valid address: ')
-        
-        if token0 == '':
-            token0 = WETH_ETH
-            eth = True
+                token0 = input('Enter a valid address: ')          
 
         print()
         token1 = input('Enter Token1 address: ')
         while True:
-            if token0 == '':
-                break
+            if token1 == '':
+                token1 = WETH_ETH
+                eth = True
             try:
                 token1 = web3.toChecksumAddress(token1)
                 token1_decimals = get_decimals(token1, ETHEREUM, web3=web3)
@@ -498,10 +496,6 @@ while True:
                 break
             except:
                 token1 = input('Enter a valid address: ')
-        
-        if token1 == '':
-            token1 = WETH_ETH
-            eth = True
 
         print()
 
@@ -558,9 +552,17 @@ while True:
         print()
         nft_position = input_nft_position()
         if nft_position == None:
+            exec = continue_execution()
+
             print()
-            restart_end()
-            continue
+            if exec:
+                continue
+            else:
+                if json_file['transactions'] != []:
+                    json_file_download(json_file)
+                    print()
+
+                exit()
         else:
             nft_position_id, token0, token0_decimals, token0_symbol, token1, token1_decimals, token1_symbol, fee, liquidity = nft_position
             pool_address = factory_contract.functions.getPool(token0, token1, fee).call()
@@ -678,9 +680,17 @@ while True:
             print()
             collect()
 
-    
     if json_file['transactions'] != []:
-        json_file_download(json_file)
-        break
+        exec = continue_execution(True)
     else:
-        restart_end()
+        exec = continue_execution()
+
+    print()
+    if exec:
+        continue
+    else:
+        if json_file['transactions'] != []:
+            json_file_download(json_file)
+        
+        print()
+        break
