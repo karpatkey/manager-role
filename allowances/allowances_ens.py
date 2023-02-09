@@ -39,6 +39,7 @@ LDO = "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32"
 CURVE_stETH_ETH_POOL = "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022"
 CURVE_stETH_ETH_LPTOKEN = "0x06325440D014e39736583c165C2963BA99fAf14E"
 CURVE_stETH_ETH_GAUGE = "0x182B723a58739a9c974cFDB385ceaDb237453c28"
+CURVE_3POOL = "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7"
 CRV = "0xD533a949740bb3306d119CC777fa900bA034cd52"
 CRV_MINTER = "0xd061D61a4d941c39E5453435B6345Dc261C2fcE0"
 
@@ -55,6 +56,21 @@ BAL = "0xba100000625a3754423978a60c9317c58a424e3D"
 SUSHISWAP_ROUTER = "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F"
 
 ALLOWANCES = [
+    {
+        "token": DAI,
+        "spender": CURVE_3POOL
+    },
+    {
+        "token": USDC,
+        "spender": CURVE_3POOL
+    },
+    {
+        "token": USDT,
+        "spender": CURVE_3POOL
+    },
+]
+
+""" ALLOWANCES = [
     {
         "token": stETH,
         "spender": wstETH
@@ -178,8 +194,20 @@ ALLOWANCES = [
     {
         "token": USDT,
         "spender": SUSHISWAP_ROUTER
-    }
-]
+    },
+    {
+        "token": DAI,
+        "spender": CURVE_3POOL
+    },
+    {
+        "token": USDC,
+        "spender": CURVE_3POOL
+    },
+    {
+        "token": USDT,
+        "spender": CURVE_3POOL
+    },
+] """
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # MAIN

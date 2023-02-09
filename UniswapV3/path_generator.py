@@ -92,7 +92,7 @@ for token in TOKENS:
                                 path += hex(fee)[2:].rjust(6, '0')
                             path += PATHS[token][swap_token][i][j+1][2:]
 
-                            paths.append(path)
+                            paths.append(path.lower())
                     
                     matrix_index += 1
                 else:
@@ -103,7 +103,7 @@ for token in TOKENS:
                             path += hex(position[j])[2:].rjust(6, '0')
                             path += PATHS[token][swap_token][i][j+1][2:]
 
-                        paths.append(path)
+                        paths.append(path.lower())
                     
                     matrix_index += 1
         else:
@@ -115,7 +115,7 @@ for token in TOKENS:
                             path += hex(fee)[2:].rjust(6, '0')
                         path += PATHS[token][swap_token][i+1][2:]
 
-                        paths.append(path)
+                        paths.append(path.lower())
                 
                 matrix_index += 1
                     
@@ -127,7 +127,7 @@ for token in TOKENS:
                         path += hex(position[i])[2:].rjust(6, '0')
                         path += PATHS[token][swap_token][i+1][2:]
 
-                    paths.append(path)
+                    paths.append(path.lower())
                 
                 matrix_index += 1
             
