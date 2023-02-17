@@ -1,44 +1,37 @@
 from defi_protocols.functions import get_symbol, balance_of, get_node, get_data, get_decimals
-from defi_protocols.constants import USDC_ETH, USDT_ETH, DAI_ETH, WETH_ETH, WBTC_ETH, ZERO_ADDRESS, ETHEREUM
-from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2, bcolors, get_best_rate, swap_selected_token, json_file_download, continue_execution, add_txn_with_role
+from defi_protocols.constants import COMP_ETH, CRV_ETH, DAI_ETH, LDO_ETH, RETH2_ETH, SETH2_ETH, SWISE_ETH, USDC_ETH, USDT_ETH, WETH_ETH, ZERO_ADDRESS, ETHEREUM
+from txn_uniswapv3_helpers import bcolors, select_path, set_min_amount_out, select_fee, swap_selected_token_v2, swap_selected_token_v3, json_file_download, continue_execution, add_txn_with_role
 from datetime import datetime
 import math
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # LITERALS
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TOKENS = [SETH2, COMP, AAVE, RETH2, SWISE, WETH_ETH, USDC_ETH, USDT_ETH, DAI_ETH, WBTC_ETH]
+# UniswapV3
+TOKENS_IN = [SETH2_ETH, COMP_ETH, LDO_ETH, CRV_ETH, RETH2_ETH, SWISE_ETH, USDC_ETH, DAI_ETH, USDT_ETH, WETH_ETH]
+TOKENS_OUT = [SETH2_ETH, USDC_ETH, DAI_ETH, USDT_ETH, WETH_ETH]
 
+# UniswapV2
 PATHS = {
-    COMP: {
-        USDC_ETH: [COMP, WETH_ETH, USDC_ETH],
-        DAI_ETH: [COMP, WETH_ETH, DAI_ETH],
-        WETH_ETH: [COMP, WETH_ETH]
+    COMP_ETH: {
+        USDC_ETH: [COMP_ETH, WETH_ETH, USDC_ETH],
+        DAI_ETH: [COMP_ETH, WETH_ETH, DAI_ETH],
+        WETH_ETH: [COMP_ETH, WETH_ETH]
     },
-    AAVE: {
-        USDC_ETH: [AAVE, WETH_ETH, USDC_ETH],
-        DAI_ETH: [AAVE, WETH_ETH, DAI_ETH],
-        WETH_ETH: [AAVE, WETH_ETH]
+    LDO_ETH: {
+        USDC_ETH: [LDO_ETH, WETH_ETH, USDC_ETH],
+        DAI_ETH: [LDO_ETH, WETH_ETH, DAI_ETH],
+        WETH_ETH: [LDO_ETH, WETH_ETH]
     },
-    RETH2: {
-        USDC_ETH: [RETH2, SETH2, WETH_ETH, USDC_ETH],
-        DAI_ETH: [RETH2, SETH2, WETH_ETH, DAI_ETH],
-        WETH_ETH: [RETH2, SETH2, WETH_ETH]
-    },
-    SWISE: {
-        USDC_ETH: [SWISE, SETH2, WETH_ETH, USDC_ETH],
-        DAI_ETH: [SWISE, SETH2, WETH_ETH, DAI_ETH],
-        WETH_ETH: [SWISE, SETH2, WETH_ETH]
-    },
-    SETH2: {
-        WETH_ETH: [SETH2, WETH_ETH]
+    CRV_ETH: {
+        USDC_ETH: [CRV_ETH, WETH_ETH, USDC_ETH],
+        DAI_ETH: [CRV_ETH, WETH_ETH, DAI_ETH],
+        WETH_ETH: [CRV_ETH, WETH_ETH]
     },
     WETH_ETH: {
-        SETH2: [WETH_ETH, SETH2],
         USDC_ETH: [WETH_ETH, USDC_ETH],
         USDT_ETH: [WETH_ETH, USDT_ETH],
-        DAI_ETH: [WETH_ETH, DAI_ETH],
-        WBTC_ETH: [WETH_ETH, WBTC_ETH]
+        DAI_ETH: [WETH_ETH, DAI_ETH]
     },
     USDC_ETH: {
         WETH_ETH: [USDC_ETH, WETH_ETH],
@@ -54,10 +47,7 @@ PATHS = {
         WETH_ETH: [DAI_ETH, WETH_ETH],
         USDC_ETH: [[DAI_ETH, USDC_ETH], [DAI_ETH, WETH_ETH, USDC_ETH]],
         USDT_ETH: [[DAI_ETH, USDT_ETH], [DAI_ETH, WETH_ETH, USDT_ETH]]
-    },
-    WBTC_ETH: {
-        WETH_ETH: [WBTC_ETH, WETH_ETH]
-    },
+    }
 }
 
 
@@ -68,13 +58,13 @@ PATHS = {
 web3 = get_node(ETHEREUM)
 
 proceed = True
-print(f"{bcolors.HEADER}{bcolors.BOLD}-------------------------------{bcolors.ENDC}")
-print(f"{bcolors.HEADER}{bcolors.BOLD}--- UniswapV3 Token Swapper ---{bcolors.ENDC}")
-print(f"{bcolors.HEADER}{bcolors.BOLD}-------------------------------{bcolors.ENDC}")
+print(f"{bcolors.HEADER}{bcolors.BOLD}-----------------------------{bcolors.ENDC}")
+print(f"{bcolors.HEADER}{bcolors.BOLD}--- Uniswap Token Swapper ---{bcolors.ENDC}")
+print(f"{bcolors.HEADER}{bcolors.BOLD}-----------------------------{bcolors.ENDC}")
 print()
 
-avatar_address = '0x0EFcCBb9E2C09Ea29551879bd9Da32362b32fc89'
-roles_mod_address = '0xd8dd9164E765bEF903E429c9462E51F0Ea8514F9'
+avatar_address = '0x4F2083f5fBede34C2714aFfb3105539775f7FE64'
+roles_mod_address = '0xf20325cf84b72e8BBF8D8984B8f0059B984B390B'
 
 json_file = {
     'version': '1.0',
@@ -89,8 +79,21 @@ json_file = {
 }
 
 while True:
-    print(f"{bcolors.WARNING}{bcolors.BOLD}If you choose sETH2, it will automatically be swapped by WETH{bcolors.ENDC}")
-    print('Select the action to execute: ')
+
+    print(f"{bcolors.OKBLUE}{bcolors.BOLD}Select where you want to execute the token swappings:{bcolors.ENDC}")
+    print(f"{bcolors.OKGREEN}{bcolors.BOLD}1- UniswapV2{bcolors.ENDC}")
+    print(f"{bcolors.OKGREEN}{bcolors.BOLD}2- UniswapV3{bcolors.ENDC}")
+    print()
+
+    uniswap_option = input('Enter the option: ')
+    while uniswap_option not in ['1','2']:
+        uniswap_option = input('Enter a valid option (1, 2): ')
+        uniswap_option = input(message) 
+    
+    if uniswap_option == '1':
+        TOKENS = list(PATHS)
+    else:
+        TOKENS = TOKENS_IN
 
     valid_token_options = []
     for i in range(len(TOKENS)):
@@ -144,14 +147,21 @@ while True:
                 except:
                     amount = input('Enter a valid amount: ')
 
-            if len(list(PATHS[selected_token])) == 1:
+            if uniswap_option == '1':
+                SWAP_TOKENS = list(PATHS[selected_token])
+            else:
+                SWAP_TOKENS = TOKENS_OUT
+                if selected_token in SWAP_TOKENS:
+                    SWAP_TOKENS.remove(selected_token)
+
+            if len(SWAP_TOKENS) == 1:
                 swap_token_option = 1
             else:
                 print()
                 print('Select the token to swap the %s amount for: ' % token_symbol)
                 j = 0
                 valid_swap_token_options = []
-                for swap_token in PATHS[selected_token]:
+                for swap_token in SWAP_TOKENS:
                     print('%d- %s' % (j+1, get_symbol(swap_token, ETHEREUM, web3=web3)))
                     valid_swap_token_options.append(str(j+1))
                     j += 1
@@ -163,15 +173,23 @@ while True:
                     swap_token_option = input(message)
 
             print()
-            selected_swap_token = list(PATHS[selected_token])[int(swap_token_option) - 1]
+            selected_swap_token = SWAP_TOKENS[int(swap_token_option) - 1]
             selected_swap_token_symbol = get_symbol(selected_swap_token, ETHEREUM, web3=web3)
 
+            if uniswap_option == '1':
             # rate = get_best_rate(PATHS[selected_token][selected_swap_token], web3=web3)
-            path, amount_out_min = get_best_rate(PATHS[selected_token][selected_swap_token], web3=web3)
+                path = select_path(PATHS[selected_token][selected_swap_token], web3=web3)
+            else:
+                fee = select_fee(token_symbol, selected_swap_token_symbol, web3=web3)
+
+            amount_out_min = set_min_amount_out(web3=web3)
             amount_out_min = amount_out_min * (10**get_decimals(selected_swap_token, ETHEREUM, web3=web3))
             
-            # swap_selected_token(avatar_address, roles_mod_address, rate, selected_token, token_balance, token_symbol, selected_swap_token, selected_swap_token_symbol, json_file, web3=web3)
-            swap_selected_token(avatar_address, roles_mod_address, path, amount_out_min, selected_token, amount, selected_swap_token, json_file, web3=web3)
+            if uniswap_option == '1':
+                # swap_selected_token(avatar_address, roles_mod_address, rate, selected_token, token_balance, token_symbol, selected_swap_token, selected_swap_token_symbol, json_file, web3=web3)
+                swap_selected_token_v2(avatar_address, roles_mod_address, path, amount_out_min, selected_token, amount, selected_swap_token, json_file, web3=web3)
+            else:
+                swap_selected_token_v3(avatar_address, roles_mod_address, fee,  amount_out_min, selected_token, amount, selected_swap_token, json_file, web3=web3)
             
         else:
             print()
@@ -245,3 +263,4 @@ while True:
             print()
             
         break
+

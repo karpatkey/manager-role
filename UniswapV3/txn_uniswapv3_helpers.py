@@ -1,4 +1,4 @@
-from defi_protocols.functions import get_node, get_data, get_decimals, balance_of, get_symbol
+from defi_protocols.functions import get_node, get_data, balance_of, get_symbol
 from defi_protocols.constants import ETHEREUM, ZERO_ADDRESS
 from defi_protocols.UniswapV3 import FEES, UNISWAPV3_ROUTER2, get_rate_uniswap_v3, underlying
 from helper_functions.helper_functions import *
@@ -8,17 +8,6 @@ from gql.transport.requests import RequestsHTTPTransport
 import time
 from decimal import Decimal
 from tqdm import tqdm
-
-#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# LITERALS
-#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-COMP = '0xc00e94Cb662C3520282E6f5717214004A7f26888'
-AAVE = '0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9'
-RETH2 = '0x20BC832ca081b91433ff6c17f85701B6e92486c5'
-SWISE = '0x48C3399719B582dD63eB5AADf12A40B4C3f52FA2'
-SETH2 = '0xFe2e637202056d30016725477c5da089Ab0A043A'
-LDO = '0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32'
-
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # subgraph_query_pool
@@ -207,9 +196,9 @@ def subgraph_query_all_pools(min_tvl_usd=0, min_volume_usd=0):
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# get_best_rate
+# select_path
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def get_best_rate(paths, web3=None):
+def select_path(paths, web3=None):
 
     if web3 is None:
         web3 = get_node(ETHEREUM)
@@ -235,26 +224,28 @@ def get_best_rate(paths, web3=None):
         
         print()
         # return list(paths)[int(path_option)-1], get_rate(list(paths)[int(path_option)-1], web3=web3)
-        return list(paths)[int(path_option)-1], set_min_amount_out(path_strings[int(path_option)-1], web3=web3)
+        path = list(paths)[int(path_option)-1]
+        path_string = path_strings[int(path_option)-1]
     
     else:
         path_symbols = [get_symbol(path_token, ETHEREUM, web3=web3) for path_token in paths]
         path_string = '[{}]'.format('->'.join(path_symbols))
-
+        path = paths
         # return paths, get_rate(paths, web3=web3)
-        return paths, set_min_amount_out(path_string, web3=web3)
+    
+    message = 'Path: %s\n' % path_string
+    print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+    
+    return paths
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # set_min_amount_out
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def set_min_amount_out(path_string, web3=None):
+def set_min_amount_out(web3=None):
 
     if web3 is None:
         web3 = get_node(ETHEREUM)
-    
-    message = 'Path: %s\n' % path_string
-    print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
     amount_out_min = input('Enter the MIN amount out: ')
     while True:
@@ -264,6 +255,36 @@ def set_min_amount_out(path_string, web3=None):
             return amount_out_min
         except:
             amount_out_min = input('Enter a valid amount: ')
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# select_fee
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def select_fee(selected_token, selected_swap_token, web3=None):
+
+    if web3 is None:
+        web3 = get_node(ETHEREUM)
+
+    print('Select the Fee for the UniswapV3 %s/%s pool: ' % (selected_token, selected_swap_token))
+    print()
+    print('1- 0.01%')
+    print('2- 0.05%')
+    print('3- 0.3%')
+    print('4- 1%')
+    print()
+    
+    fee_option = input('Enter the Fee: ')
+    while fee_option not in ['1','2','3','4']:
+        fee_option = input('Enter a valid option (1, 2, 3 or 4): ')
+    
+    if fee_option == '1':
+        return FEES[0]
+    elif fee_option == '2':
+        return FEES[1]
+    elif fee_option == '3':
+        return FEES[2]
+    elif fee_option == '4':
+        return FEES[3]
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -299,14 +320,27 @@ def get_rate(path, web3=None):
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# swap_selected_token
+# swap_selected_token_v2
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def swap_selected_token(avatar_address, roles_mod_address, path, amount_out_min, token, token_balance, swap_token, json_file, web3=None):
+def swap_selected_token_v2(avatar_address, roles_mod_address, path, amount_out_min, token, token_balance, swap_token, json_file, web3=None):
 
     approve_token(avatar_address, roles_mod_address, token, UNISWAPV3_ROUTER2, json_file, web3=web3)
     approve_token(avatar_address, roles_mod_address, swap_token, UNISWAPV3_ROUTER2, json_file, web3=web3)
  
     tx_data = get_data(UNISWAPV3_ROUTER2, 'swapExactTokensForTokens', [int(round(token_balance)), int(round(amount_out_min)), path, avatar_address], ETHEREUM, web3=web3)
+    if tx_data is not None:
+        add_txn_with_role(roles_mod_address, UNISWAPV3_ROUTER2, tx_data, 0, json_file, web3=web3)
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# swap_selected_token_v3
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def swap_selected_token_v3(avatar_address, roles_mod_address, fee, amount_out_min, token, token_balance, swap_token, json_file, web3=None):
+
+    approve_token(avatar_address, roles_mod_address, token, UNISWAPV3_ROUTER2, json_file, web3=web3)
+    approve_token(avatar_address, roles_mod_address, swap_token, UNISWAPV3_ROUTER2, json_file, web3=web3)
+ 
+    tx_data = get_data(UNISWAPV3_ROUTER2, 'exactInputSingle', [[token, swap_token, int(fee), avatar_address, int(round(token_balance)), int(round(amount_out_min)), 0]], ETHEREUM, web3=web3)
     if tx_data is not None:
         add_txn_with_role(roles_mod_address, UNISWAPV3_ROUTER2, tx_data, 0, json_file, web3=web3)
 
