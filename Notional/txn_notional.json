@@ -22,6 +22,10 @@
                 "signature": "withdraw(uint16,uint88,bool)",
                 "target address": "0x1344A36A1B56144C3Bc62E7757377D288fDE0369",
                 "arg[0]": "2(DAI) o 3(USDC)"
+            },
+            {
+                "signature": "nTokenClaimIncentives()",
+                "target address": "0x1344A36A1B56144C3Bc62E7757377D288fDE0369"
             }
         ]
     }
