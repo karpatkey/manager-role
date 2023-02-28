@@ -1,0 +1,72 @@
+[
+    {
+        "approve": [
+            {
+                "token": "0x6810e776880c02933d47db1b9fc05908e5386b96",
+                "spender": "0xD758500ddEc05172aaA035911387C8E0e789CF6a"
+            }
+        ],
+        "functions": [
+            {
+                "signature": "openLockGemAndDraw(address,address,address,address,bytes32,uint256,uint256,bool)",
+                "target address": "0x82ecD135Dce65Fbc6DbdD0e4237E0AF93FFD5038 (DssProxyActions)",
+                "address[0]": "0x5ef30b9986345249bc32d8928B7ee64DE9435E39 (Manager)",
+                "address[1]": "0x19c0976f590D67707E62397C87829d896Dc0f1F1 (Jug)",
+                "address[2]": "0x7bD3f01e24E0f0838788bC8f573CEA43A80CaBB5 (gemJoin)",
+                "address[3]": "0x9759A6Ac90977b93B58547b4A71c78317f391A28 (daiJoin)",
+                "bytes32[4]": "0x474e4f2d41000000000000000000000000000000000000000000000000000000 (ilk)"
+            },
+            {
+                "signature": "lockGemAndDraw(address,address,address,address,uint256,uint256,uint256,bool)",
+                "target address": "0x82ecD135Dce65Fbc6DbdD0e4237E0AF93FFD5038",
+                "address[0]": "0x5ef30b9986345249bc32d8928B7ee64DE9435E39 (Manager)",
+                "address[1]": "0x19c0976f590D67707E62397C87829d896Dc0f1F1 (Jug)",
+                "address[2]": "0x7bD3f01e24E0f0838788bC8f573CEA43A80CaBB5 (gemJoin)",
+                "address[3]": "0x9759A6Ac90977b93B58547b4A71c78317f391A28 (daiJoin)",
+                "uint256[4]": "VaultID"
+            },
+            {
+                "signature": "executeActionDirect(bytes)",
+                "target address": "0xa704FBBe2f7ea8eF45a8280f6Bf96939eBC73252 (McdSupply - Supply)",
+                "chunk[0]": "0000000000000000000000000000000000000000000000000000000000000020",
+                "chunk[1]": "00000000000000000000000000000000000000000000000000000000000000a0",
+                "chunk[2]": "0000000000000000000000000000000000000000000000000000000000007502 (VaultID in hexa)",
+                "chunk[3]": "amount (no need to be scoped)",
+                "chunk[4]": "0000000000000000000000007bd3f01e24e0f0838788bc8f573cea43a80cabb5 (gemJoin)",
+                "chunk[5]": "000000000000000000000000849d52316331967b6ff1198e5e32a0eb168d039d (Avatar)",
+                "chunk[6]": "0000000000000000000000005ef30b9986345249bc32d8928b7ee64de9435e39 (Manager)"
+            },
+            {
+                "signature": "executeActionDirect(bytes)",
+                "target address": "0xa704FBBe2f7ea8eF45a8280f6Bf96939eBC73252 (McdWithdraw - Withdraw)",
+                "chunk[0]": "0000000000000000000000000000000000000000000000000000000000000020",
+                "chunk[1]": "00000000000000000000000000000000000000000000000000000000000000a0",
+                "chunk[2]": "0000000000000000000000000000000000000000000000000000000000007502 (VaultID in hexa)",
+                "chunk[3]": "amount (no need to be scoped)",
+                "chunk[4]": "0000000000000000000000007bd3f01e24e0f0838788bc8f573cea43a80cabb5 (gemJoin)",
+                "chunk[5]": "000000000000000000000000849d52316331967b6ff1198e5e32a0eb168d039d (Avatar)",
+                "chunk[6]": "0000000000000000000000005ef30b9986345249bc32d8928b7ee64de9435e39 (Manager)"
+            },
+            {
+                "signature": "executeActionDirect(bytes)",
+                "target address": "0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3 (McdGenerate - Borrow)",
+                "chunk[0]": "0000000000000000000000000000000000000000000000000000000000000020",
+                "chunk[1]": "0000000000000000000000000000000000000000000000000000000000000080",
+                "chunk[2]": "0000000000000000000000000000000000000000000000000000000000007502 (VaultID in hexa)",
+                "chunk[3]": "amount (no need to be scoped)",
+                "chunk[4]": "000000000000000000000000849d52316331967b6ff1198e5e32a0eb168d039d (Avatar)",
+                "chunk[5]": "0000000000000000000000005ef30b9986345249bc32d8928b7ee64de9435e39 (Manager)"
+            },
+            {
+                "signature": "executeActionDirect(bytes)",
+                "target address": "0xE68AeD979Af6f85516fF485D098804c0f9eD9A5b (McdPayback - Payback)",
+                "chunk[0]": "0000000000000000000000000000000000000000000000000000000000000020",
+                "chunk[1]": "0000000000000000000000000000000000000000000000000000000000000080",
+                "chunk[2]": "0000000000000000000000000000000000000000000000000000000000007502 (VaultID in hexa)",
+                "chunk[3]": "amount (no need to be scoped)",
+                "chunk[4]": "000000000000000000000000849d52316331967b6ff1198e5e32a0eb168d039d (Avatar)",
+                "chunk[5]": "0000000000000000000000005ef30b9986345249bc32d8928b7ee64de9435e39 (Manager)"
+            }
+        ]
+    }
+]
