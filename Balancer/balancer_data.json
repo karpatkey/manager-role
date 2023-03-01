@@ -29,6 +29,17 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x00C2A4be503869Fa751c2DbcB7156cc970b5a8dA": {
+        "pool id": "0x00c2a4be503869fa751c2dbcb7156cc970b5a8da000000000000000000000477",
+        "pool name": "Balancer/bb-e-USDC/bb-e-FRAX",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x00C2A4be503869Fa751c2DbcB7156cc970b5a8dA",
+            "0xD4e7C1F3DA1144c9E2CfD1b015eDA7652b4a4399",
+            "0xF71d0774B214c4cf51E33Eb3d30Ef98132e4DBaA"
+        ]
+    },
     "0x01abc00E86C7e258823b9a055Fd62cA6CF61a163": {
         "pool id": "0x01abc00e86c7e258823b9a055fd62ca6cf61a16300010000000000000000003b",
         "pool name": "Balancer YFI/UNI/SUSHI/AAVE/MKR/BAL/COMP/WETH",
@@ -42,6 +53,16 @@
             "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2",
             "0xba100000625a3754423978a60c9317c58a424e3D",
             "0xc00e94Cb662C3520282E6f5717214004A7f26888",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x01cCaf5e5dAD6Cc76Ce7b9Cb0038e4378FdEB721": {
+        "pool id": "0x01ccaf5e5dad6cc76ce7b9cb0038e4378fdeb7210002000000000000000004a6",
+        "pool name": "Balancer tof/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7F69720c889f08E9a83c4ef119906f86390902eB",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
@@ -63,6 +84,17 @@
         "tokens": [
             "0x2D341673Ff1837C535672E03bdae0Efb8581a8c0",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x02653cAe0caD6b3cd73E7DBc4f7A3cE6693C3ed7": {
+        "pool id": "0x02653cae0cad6b3cd73e7dbc4f7a3ce6693c3ed70001000000000000000003e6",
+        "pool name": "Balancer UNI/COMP/AMPL",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0xc00e94Cb662C3520282E6f5717214004A7f26888",
+            "0xD46bA6D942050d489DBd938a2C909A5d5039A161"
         ]
     },
     "0x0296be96a391711Ced561b8F22dcfAe3755598A1": {
@@ -93,6 +125,26 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xc98D64DA73a6616c42117b582e832812e7B8D57F"
+        ]
+    },
+    "0x02f67926005863dF88eC7fb4Ff521e6cD71f40D9": {
+        "pool id": "0x02f67926005863df88ec7fb4ff521e6cd71f40d9000200000000000000000455",
+        "pool name": "Balancer SNATI/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x97B302A9C1154b95bB9967cA72Ef15F646B5838A",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x03043a4276A11f68401B0B46529078181d2A2e3E": {
+        "pool id": "0x03043a4276a11f68401b0b46529078181d2a2e3e000200000000000000000436",
+        "pool name": "Balancer GGANBU/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xaE7278081FEbf4C276045f3927568710517053bD",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0x0371C272fDD28Ac13c434F1ef6b8B52ea3e6d844": {
@@ -145,6 +197,16 @@
             "0xfC248CEf4C8763838743D3bd599a27E1BD6397f4"
         ]
     },
+    "0x04EEECa0d37a238B46DeD385F04F956F6D9656A2": {
+        "pool id": "0x04eeeca0d37a238b46ded385f04f956f6d9656a2000200000000000000000442",
+        "pool name": "Balancer EGGS/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2e516BA5Bf3b7eE47fb99B09eaDb60BDE80a82e0",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x04f5baBC66C2464Cb9E292f042b6173e2Ff627bc": {
         "pool id": "0x04f5babc66c2464cb9e292f042b6173e2ff627bc000200000000000000000363",
         "pool name": "Balancer BTCBR/BTCTRADE",
@@ -163,6 +225,26 @@
         "tokens": [
             "0x8a14897eA5F668f36671678593fAe44Ae23B39FB",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x05449B87d9e6212B1b65D17619d884a914A84098": {
+        "pool id": "0x05449b87d9e6212b1b65d17619d884a914a840980002000000000000000004af",
+        "pool name": "Balancer NARUTO/USDC",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x3d6eD6e76585f32E1d16c9b8c897a04BA91E734d",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x05513cA725b6Ce035ca2641075474eb469F05f4c": {
+        "pool id": "0x05513ca725b6ce035ca2641075474eb469f05f4c00020000000000000000041f",
+        "pool name": "Balancer RBN/bb-a-USD",
+        "pool type": "Weighted",
+        "gauge": "0xB21751B8c26a79b56046D7571B90027A137c5B5f",
+        "tokens": [
+            "0x6123B0049F904d730dB3C36a31167D9d4121fA6B",
+            "0xA13a9247ea42D743238089903570127DdA72fE44"
         ]
     },
     "0x056A197622B1159824f30A438c106307cb9cc288": {
@@ -186,6 +268,17 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x05Bb9b340D21Fc5A0D730EcD1CA79584Fe88E5b8": {
+        "pool id": "0x05bb9b340d21fc5a0d730ecd1ca79584fe88e5b80001000000000000000003b9",
+        "pool name": "Balancer WBTC/wstETH/BAL",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "0xba100000625a3754423978a60c9317c58a424e3D"
+        ]
+    },
     "0x062F38735AAC32320DB5e2DBBEb07968351D7C72": {
         "pool id": "0x062f38735aac32320db5e2dbbeb07968351d7c720002000000000000000000ac",
         "pool name": "Balancer steCRV/eYyvcrvSTETH-15APR22",
@@ -194,6 +287,16 @@
         "tokens": [
             "0x06325440D014e39736583c165C2963BA99fAf14E",
             "0xEb1a6C6eA0CD20847150c27b5985fA198b2F90bD"
+        ]
+    },
+    "0x063C624672e390363B25F0C6c68aD9067c34595b": {
+        "pool id": "0x063c624672e390363b25f0c6c68ad9067c34595b000200000000000000000429",
+        "pool name": "Balancer wsETH2/sETH2",
+        "pool type": "MetaStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x5dA21D9e63F1EA13D34e48B7223bcc97e3ecD687",
+            "0xFe2e637202056d30016725477c5da089Ab0A043A"
         ]
     },
     "0x06419e7e010f073E1FA85027AAF9f0010499fC1b": {
@@ -216,6 +319,17 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x065a935bc0fe6d02ebDf42A8CBdC3Ceb898C2826": {
+        "pool id": "0x065a935bc0fe6d02ebdf42a8cbdc3ceb898c28260001000000000000000003e5",
+        "pool name": "Balancer BAL/COMP/AMPL",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xba100000625a3754423978a60c9317c58a424e3D",
+            "0xc00e94Cb662C3520282E6f5717214004A7f26888",
+            "0xD46bA6D942050d489DBd938a2C909A5d5039A161"
+        ]
+    },
     "0x065E51B8786d8031645E8871Aac0E1386F50EA38": {
         "pool id": "0x065e51b8786d8031645e8871aac0e1386f50ea38000200000000000000000139",
         "pool name": "Balancer DSLA/WETH",
@@ -223,6 +337,17 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             "0x3aFfCCa64c2A6f4e3B6Bd9c64CD2C969EFd1ECBe",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x065F5B35D4077334379847fe26f58B1029e51161": {
+        "pool id": "0x065f5b35d4077334379847fe26f58b1029e511610001000000000000000004b1",
+        "pool name": "Balancer SGT/DAI/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x24C19F7101c1731b85F1127EaA0407732E36EcDD",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
@@ -317,6 +442,26 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x084e8d63aDfa12E5b31D80d914BA5c74c3c4092C": {
+        "pool id": "0x084e8d63adfa12e5b31d80d914ba5c74c3c4092c00020000000000000000044a",
+        "pool name": "Balancer SHISWAP/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x5a9EA46CC7fbc8B85C96A6188beB45Aa59598F04",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x0868f7A5045847845D0A0B2a2220102adDf642d8": {
+        "pool id": "0x0868f7a5045847845d0a0b2a2220102addf642d800020000000000000000043a",
+        "pool name": "Balancer WETH/ZEON",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xE5B826Ca2Ca02F09c1725e9bd98d9a8874C30532"
+        ]
+    },
     "0x0901EDCA10664C4c27374D18cFab2Df2aCf828fb": {
         "pool id": "0x0901edca10664c4c27374d18cfab2df2acf828fb00020000000000000000026c",
         "pool name": "Balancer PLAN/WETH",
@@ -403,6 +548,17 @@
             "0xe2A20F757f5D75d6a751320D0cc30067ef8565fd"
         ]
     },
+    "0x0A0FB4ff697dE5ac5B6770CD8eE1B72AF80b57CF": {
+        "pool id": "0x0a0fb4ff697de5ac5b6770cd8ee1b72af80b57cf000000000000000000000496",
+        "pool name": "Balancer/TEST/WETH",
+        "pool type": "YearnLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x0A0FB4ff697dE5ac5B6770CD8eE1B72AF80b57CF",
+            "0x5C5fCf8fBd4cd563cED27e7D066b88ee20E1867A",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x0A54996Ce9cEAA449Cde73dA6aA0368bfe3df6Dc": {
         "pool id": "0x0a54996ce9ceaa449cde73da6aa0368bfe3df6dc000200000000000000000102",
         "pool name": "Balancer TMNT/USDC",
@@ -453,6 +609,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x0B1dB456d0B4080A5E2634AF7aAE178c0757036E": {
+        "pool id": "0x0b1db456d0b4080a5e2634af7aae178c0757036e00020000000000000000048d",
+        "pool name": "Balancer REMIO/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xa35Bd2246978Dfbb1980DFf8Ff0f5834335dFdbc",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x0b55C8D4f9d5DD4De88519A11BA84178f8B0c3c1": {
         "pool id": "0x0b55c8d4f9d5dd4de88519a11ba84178f8b0c3c100010000000000000000018c",
         "pool name": "Balancer AAVE/BAL/RARE/ENS/RPL/GTC/HAUS/ROBOT",
@@ -499,6 +665,18 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x0C3A264adb2D95e077277867ACc03320224c6b09": {
+        "pool id": "0x0c3a264adb2d95e077277867acc03320224c6b09000100000000000000000430",
+        "pool name": "Balancer MANA/SAND/APE/ENJ",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x0F5D2fB29fb7d3CFeE444a200298f468908cC942",
+            "0x3845badAde8e6dFF049820680d1F14bD3903a5d0",
+            "0x4d224452801ACEd8B2F0aebE155379bb5D594381",
+            "0xF629cBd94d3791C9250152BD8dfBDF380E2a3B9c"
+        ]
+    },
     "0x0CDAB06B07197D96369Fea6F3bEA6eFC7Ecdf709": {
         "pool id": "0x0cdab06b07197d96369fea6f3bea6efc7ecdf7090002000000000000000002de",
         "pool name": "Balancer XYO/ETHMNY",
@@ -519,6 +697,17 @@
             "0xdAC17F958D2ee523a2206206994597C13D831ec7"
         ]
     },
+    "0x0d70F2fC0096b9E3d39ad8A9c011126FbDb69779": {
+        "pool id": "0x0d70f2fc0096b9e3d39ad8a9c011126fbdb697790001000000000000000003fe",
+        "pool name": "Balancer LUSD/USDC/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
     "0x0D968094e386f9fBFB3797655Ab8e4672c2CB737": {
         "pool id": "0x0d968094e386f9fbfb3797655ab8e4672c2cb73700020000000000000000014f",
         "pool name": "Balancer CGT/WETH",
@@ -526,6 +715,26 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             "0x8987A07ba83607a66c7351266e771fB865c9cA6C",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x0DE5a1184768473F5b24e5adA68C9c9420441cf8": {
+        "pool id": "0x0de5a1184768473f5b24e5ada68c9c9420441cf8000200000000000000000454",
+        "pool name": "Balancer USDC/TSURU \ud83e\udda9",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xb41b5c130f1DBFa8546a22400261dfa041E5F2E1"
+        ]
+    },
+    "0x0e134A4D48449d5e1119b66A703b900beeFB69D0": {
+        "pool id": "0x0e134a4d48449d5e1119b66a703b900beefb69d0000200000000000000000482",
+        "pool name": "Balancer FLUT/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4F08705FB8F33AffC231ed66e626B40E84A71870",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
@@ -589,6 +798,16 @@
             "0xF629cBd94d3791C9250152BD8dfBDF380E2a3B9c"
         ]
     },
+    "0x1087164Ff5351Bb86d38DA3C204567097b6b09ec": {
+        "pool id": "0x1087164ff5351bb86d38da3c204567097b6b09ec0002000000000000000004aa",
+        "pool name": "Balancer WETH/ORDI",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xe8eB18f2dEe5228f6e91b96805e0954C5E4f5066"
+        ]
+    },
     "0x10a2F8bd81Ee2898D7eD18fb8f114034a549FA59": {
         "pool id": "0x10a2f8bd81ee2898d7ed18fb8f114034a549fa59000200000000000000000090",
         "pool name": "Balancer ePyvUSDC-28JAN22/USDC",
@@ -627,6 +846,17 @@
         "tokens": [
             "0x94E9EB8b5Ab9fd6B9ea3169D55FFAde62a01702e",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x1146994006b9364eDe3fC6Fd746E741aa00AecEB": {
+        "pool id": "0x1146994006b9364ede3fc6fd746e741aa00aeceb0001000000000000000003b1",
+        "pool name": "Balancer WBTC/stETH/BAL",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+            "0xba100000625a3754423978a60c9317c58a424e3D"
         ]
     },
     "0x1158C354A702e86A711CeDB86806d91cD9A13681": {
@@ -671,6 +901,17 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x126e7643235ec0ab9c103c507642dC3F4cA23C66": {
+        "pool id": "0x126e7643235ec0ab9c103c507642dc3f4ca23c66000000000000000000000468",
+        "pool name": "Balancer/APE/sAPE",
+        "pool type": "ERC4626Linear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x126e7643235ec0ab9c103c507642dC3F4cA23C66",
+            "0x4d224452801ACEd8B2F0aebE155379bb5D594381",
+            "0x7966C5BAe631294D7cFFcEA5430b78C2F76DB6Fa"
+        ]
+    },
     "0x12769c1020A3e68946a4F1F0D18A737258772e04": {
         "pool id": "0x12769c1020a3e68946a4f1f0d18a737258772e04000200000000000000000360",
         "pool name": "Balancer VITA/WETH",
@@ -709,6 +950,17 @@
         "tokens": [
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xF017b4E33E3265F43E5466B7b944E6B8c7189445"
+        ]
+    },
+    "0x133d241F225750D2c92948E464A5a80111920331": {
+        "pool id": "0x133d241f225750d2c92948e464a5a80111920331000000000000000000000476",
+        "pool name": "Balancer/bb-euler-USD-BPT/DOLA",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x133d241F225750D2c92948E464A5a80111920331",
+            "0x50Cf90B954958480b8DF7958A9E965752F627124",
+            "0x865377367054516e17014CcdED1e7d814EDC9ce4"
         ]
     },
     "0x1392a9b9647bE11c03385c74A51Bb1EEd4A4Ca96": {
@@ -804,6 +1056,26 @@
             "0xECD8e185782a845bDe1Bf50F201F250f22fC4213"
         ]
     },
+    "0x1576d472d82A72a1Ec7C57FcA770BD752D124A62": {
+        "pool id": "0x1576d472d82a72a1ec7c57fca770bd752d124a6200020000000000000000045d",
+        "pool name": "Balancer BAL/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xba100000625a3754423978a60c9317c58a424e3D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x15C1cDAcd3dA1E1C1304200b1bEb080D50BbBc0F": {
+        "pool id": "0x15c1cdacd3da1e1c1304200b1beb080d50bbbc0f00020000000000000000045f",
+        "pool name": "Balancer TRYB/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x41962010E675E8f4951777A518B0E43dBab3e874",
+        "tokens": [
+            "0x2C537E5624e4af88A7ae4060C022609376C8D0EB",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
     "0x15d645478eA0a2248bb3B42cBc37dF3DCD4f47Ec": {
         "pool id": "0x15d645478ea0a2248bb3b42cbc37df3dcd4f47ec0002000000000000000001ee",
         "pool name": "Balancer USDC/JCG",
@@ -854,6 +1126,16 @@
         "tokens": [
             "0x59d1e836F7b7210A978b25a855085cc46fd090B5",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x173063A30E095313eEe39411f07E95A8a806014e": {
+        "pool id": "0x173063a30e095313eee39411f07e95a8a806014e0002000000000000000003ab",
+        "pool name": "Balancer TEMPLE/bb-a-USD",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x470EBf5f030Ed85Fc1ed4C2d36B9DD02e77CF1b7",
+            "0xA13a9247ea42D743238089903570127DdA72fE44"
         ]
     },
     "0x17348579B49fcD2303d3bC0681f50f92e4fF960F": {
@@ -957,6 +1239,16 @@
             "0xAf5191B0De278C7286d6C7CC6ab6BB8A73bA2Cd6"
         ]
     },
+    "0x188C2d30d934A16048c1E6c570A9a92700c5B4f3": {
+        "pool id": "0x188c2d30d934a16048c1e6c570a9a92700c5b4f300020000000000000000045c",
+        "pool name": "Balancer FLOKIAI/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x92D7C6AbB222E78935d3776878274B0852990e82",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x197aB1ad1ca6dD1007D0a01011c6d28FB8E28BF9": {
         "pool id": "0x197ab1ad1ca6dd1007d0a01011c6d28fb8e28bf9000200000000000000000322",
         "pool name": "Balancer FACE/USDC",
@@ -1025,6 +1317,17 @@
         "tokens": [
             "0x6B175474E89094C44Da98b954EedeAC495271d0F",
             "0xcb73afE8b6271d7C218508BC7af6e671F530b5c8"
+        ]
+    },
+    "0x1D1b44A4C5A047Bdc9b3F06842566e5eA9c1966D": {
+        "pool id": "0x1d1b44a4c5a047bdc9b3f06842566e5ea9c1966d0000000000000000000003b3",
+        "pool name": "Balancer/USDC/USDT",
+        "pool type": "HighAmpComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x1D1b44A4C5A047Bdc9b3F06842566e5eA9c1966D",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
         ]
     },
     "0x1D310a6238e11c8BE91D83193C88A99eB66279bE": {
@@ -1137,6 +1440,16 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x1ee442b5326009Bb18F2F472d3e0061513d1A0fF": {
+        "pool id": "0x1ee442b5326009bb18f2f472d3e0061513d1a0ff000200000000000000000464",
+        "pool name": "Balancer BADGER/rETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x3472A5A71965499acd81997a54BBA8D852C6E53d",
+            "0xae78736Cd615f374D3085123A210448E74Fc6393"
+        ]
+    },
     "0x1eE71e1Ed744AE6D4058F5c7797C2e583DbfB095": {
         "pool id": "0x1ee71e1ed744ae6d4058f5c7797c2e583dbfb095000200000000000000000268",
         "pool name": "Balancer BADGER/graviAURA",
@@ -1165,6 +1478,18 @@
         "tokens": [
             "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x20b156776114E8a801e9767D90c6ccCCc8Adf398": {
+        "pool id": "0x20b156776114e8a801e9767d90c6ccccc8adf398000000000000000000000499",
+        "pool name": "Balancer/bb-yv-DAI/bb-yv-USDC/bb-yv-USDT",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x20b156776114E8a801e9767D90c6ccCCc8Adf398",
+            "0x8E6eC57A822c2F527F2Df7C7D7D361dF3E7530a1",
+            "0x9B1c8407a360443A9E5ECA004713E4088FAB8AC0",
+            "0xD6E355036f41dC261B3f1ed3Bbc6003E87AAdB4f"
         ]
     },
     "0x20e5509f5C0e361862A0f96dBC08C1B7B2677fe9": {
@@ -1223,6 +1548,17 @@
             "0xCdf06Af4D1DF5d30f8f8Ff5a7653eAF51b460C70"
         ]
     },
+    "0x222bc81C6F3C17e9e9Aba47a12f55a1Dea42f163": {
+        "pool id": "0x222bc81c6f3c17e9e9aba47a12f55a1dea42f16300000000000000000000045e",
+        "pool name": "Balancer TEST/BAL/WETH",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x222bc81C6F3C17e9e9Aba47a12f55a1Dea42f163",
+            "0xba100000625a3754423978a60c9317c58a424e3D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x2269301B32ED3D7D4F2396769952A0e84218Ab63": {
         "pool id": "0x2269301b32ed3d7d4f2396769952a0e84218ab630002000000000000000002fe",
         "pool name": "Balancer OMNIS/DAI",
@@ -1261,6 +1597,26 @@
         "tokens": [
             "0x476c5E26a75bd202a9683ffD34359C0CC15be0fF",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x233F02bc6A53F4aF4B8E1AB3032AcB4fB0b61b7c": {
+        "pool id": "0x233f02bc6a53f4af4b8e1ab3032acb4fb0b61b7c0002000000000000000003be",
+        "pool name": "Balancer /WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xaD67F7a72BA2ca971390B2a1dD907303bD577a4F",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x2354228e3C6F6906884B4A113974d23099dF90A9": {
+        "pool id": "0x2354228e3c6f6906884b4a113974d23099df90a90002000000000000000003c7",
+        "pool name": "Balancer WETH/\u00a5\u20ac$",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xc5a7EbEdce820F06a610289370c2430596E81fa8"
         ]
     },
     "0x23a07596cF915CCcDFD5Ea8EC7e0268ba5488478": {
@@ -1353,6 +1709,30 @@
             "0xbae3558e239c5A775E2F189759C4Aa37D8c8D365"
         ]
     },
+    "0x265B6d1a6c12873a423C177EBa6DD2470f40A3b5": {
+        "pool id": "0x265b6d1a6c12873a423c177eba6dd2470f40a3b50001000000000000000003fd",
+        "pool name": "Balancer WBTC/FTM/MATIC/USDC/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0x4E15361FD6b4BB609Fa63C81A2be19d873717870",
+            "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x270c10cB22cf7dfCBb6435B9a0886bd05E5818E9": {
+        "pool id": "0x270c10cb22cf7dfcbb6435b9a0886bd05e5818e900010000000000000000043c",
+        "pool name": "Balancer AKITA/$HACHI/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x3301Ee63Fb29F863f2333Bd4466acb46CD8323E6",
+            "0x967B0c95295ead8fAef70d26A7846AeCD349AAFf",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x2788b9EF52712469e5c4f8E4f020305CBFEf8798": {
         "pool id": "0x2788b9ef52712469e5c4f8e4f020305cbfef8798000200000000000000000217",
         "pool name": "Balancer USDC/OAK",
@@ -1370,6 +1750,26 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             "0x2B64b33e20e9000592BcD9A9e43FD86AEAba25fE",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x27C36618e9C4D01E9Dba08EE9d69242Eae8D2286": {
+        "pool id": "0x27c36618e9c4d01e9dba08ee9d69242eae8d2286000200000000000000000458",
+        "pool name": "Balancer SHILOCK/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7A8476D428eF3D98189ba393e4020779b8fd9097",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x27C434B6BD80f8b28a0975fB23EFF73d2C12B774": {
+        "pool id": "0x27c434b6bd80f8b28a0975fb23eff73d2c12b7740002000000000000000003aa",
+        "pool name": "Balancer SYCC/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xb2e0AF4500044687f60CE2D9E2EaBDFD042F231c",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
@@ -1448,6 +1848,29 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x2a5f716BdA01e74d2b19Ac10D0c7E1C04485EaB5": {
+        "pool id": "0x2a5f716bda01e74d2b19ac10d0c7e1c04485eab50001000000000000000003b2",
+        "pool name": "Balancer WBTC/BAL/AXS/WETH/SLP",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0xba100000625a3754423978a60c9317c58a424e3D",
+            "0xBB0E17EF65F82Ab018d8EDd776e8DD940327B28b",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xCC8Fa225D80b9c7D42F96e9570156c65D6cAAa25"
+        ]
+    },
+    "0x2b8f64F43Ec14C26cc001847190542567b9787a2": {
+        "pool id": "0x2b8f64f43ec14c26cc001847190542567b9787a2000200000000000000000449",
+        "pool name": "Balancer babyWoof/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xb85F3538Faf1469b8A8Ec204fE0512ddA5e1f7cB",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x2b92b39658D7Ba86f331e1fDC2896A3E13183987": {
         "pool id": "0x2b92b39658d7ba86f331e1fdc2896a3e13183987000200000000000000000352",
         "pool name": "Balancer Riyfruits/WETH",
@@ -1456,6 +1879,17 @@
         "tokens": [
             "0x258E3728824Cf2B8883089cAB301D097b0F3eeB8",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x2Ba7Aa2213Fa2C909Cd9E46FeD5A0059542b36B0": {
+        "pool id": "0x2ba7aa2213fa2c909cd9e46fed5a0059542b36b00000000000000000000003a3",
+        "pool name": "Balancer TUSD/bb-a-USD",
+        "pool type": "ComposableStable",
+        "gauge": "0xD8016c48D24b3f15dAf0DCfDd4B4642DD15CD0b2",
+        "tokens": [
+            "0x0000000000085d4780B73119b644AE5ecd22b376",
+            "0x2Ba7Aa2213Fa2C909Cd9E46FeD5A0059542b36B0",
+            "0xA13a9247ea42D743238089903570127DdA72fE44"
         ]
     },
     "0x2BAB1710709496afFA3c74e43FbCdAe52bA3dF0c": {
@@ -1470,7 +1904,7 @@
     },
     "0x2BBf681cC4eb09218BEe85EA2a5d3D13Fa40fC0C": {
         "pool id": "0x2bbf681cc4eb09218bee85ea2a5d3d13fa40fc0c0000000000000000000000fd",
-        "pool name": "Balancer bb-a-USDT/USDT/aUSDT",
+        "pool name": "Balancer/USDT/aUSDT",
         "pool type": "AaveLinear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -1560,6 +1994,16 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x2DD73658B2351da4c8fee8AF2135B007db37B362": {
+        "pool id": "0x2dd73658b2351da4c8fee8af2135b007db37b362000200000000000000000434",
+        "pool name": "Balancer ENS/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
     "0x2dd9A40Ae659f99ee5b015680D8fC6f9669CB7d9": {
         "pool id": "0x2dd9a40ae659f99ee5b015680d8fc6f9669cb7d900020000000000000000020a",
         "pool name": "Balancer USDC/P",
@@ -1580,6 +2024,16 @@
             "0xc55126051B22eBb829D00368f4B12Bde432de5Da"
         ]
     },
+    "0x2DFE669556460e9519550E6A87F143177e912cf9": {
+        "pool id": "0x2dfe669556460e9519550e6a87f143177e912cf900020000000000000000048c",
+        "pool name": "Balancer REMIO/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xa35Bd2246978Dfbb1980DFf8Ff0f5834335dFdbc",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x2f036c0Db0Ff750ae6CC4E56997c5106619C9Db3": {
         "pool id": "0x2f036c0db0ff750ae6cc4e56997c5106619c9db30002000000000000000001b6",
         "pool name": "Balancer USDC/HOOT",
@@ -1592,7 +2046,7 @@
     },
     "0x2F4eb100552ef93840d5aDC30560E5513DFfFACb": {
         "pool id": "0x2f4eb100552ef93840d5adc30560e5513dfffacb000000000000000000000334",
-        "pool name": "Balancer bb-a-USDT/USDT/aUSDT",
+        "pool name": "Balancer/USDT/aUSDT",
         "pool type": "AaveLinear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -1611,6 +2065,17 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x2FF1A9Dbdacd55297452cFD8a4d94724Bc22a5F7": {
+        "pool id": "0x2ff1a9dbdacd55297452cfd8a4d94724bc22a5f7000000000000000000000484",
+        "pool name": "Balancer/idleUSDTJunior4626/USDT",
+        "pool type": "ERC4626Linear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2FF1A9Dbdacd55297452cFD8a4d94724Bc22a5F7",
+            "0x544897A3B944fdEB1f94A0ed973eA31A80ae18E1",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
     "0x3104abB9D001Ce2e1b939Af81d075047dE88637b": {
         "pool id": "0x3104abb9d001ce2e1b939af81d075047de88637b0002000000000000000002ec",
         "pool name": "Balancer 9/WETH",
@@ -1619,6 +2084,16 @@
         "tokens": [
             "0x3974F62cE6440fE8AD2A85D8904f36d9A65a9fd4",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x314C1A82e147489c7A65F7051e742C9d6981438E": {
+        "pool id": "0x314c1a82e147489c7a65f7051e742c9d6981438e0002000000000000000003ca",
+        "pool name": "Balancer USDC/PROS",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xbe1936A67f503e0eaF2434b0cf9f4e3d7100008A"
         ]
     },
     "0x319438FDD5D27922aCeD2a1b15CD7F0bc3B03068": {
@@ -1692,6 +2167,27 @@
             "0x261b45D85cCFeAbb11F022eBa346ee8D1cd488c0"
         ]
     },
+    "0x331bC9c616e4Ca9032bfccE9056cF9988045Acc6": {
+        "pool id": "0x331bc9c616e4ca9032bfcce9056cf9988045acc60002000000000000000003e4",
+        "pool name": "Balancer AAVE/COMP",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+            "0xc00e94Cb662C3520282E6f5717214004A7f26888"
+        ]
+    },
+    "0x331d50e0b00fc1C32742F151E56B9B616227E23E": {
+        "pool id": "0x331d50e0b00fc1c32742f151e56b9b616227e23e00000000000000000000047c",
+        "pool name": "Balancer/TEST/WETH",
+        "pool type": "AaveLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x331d50e0b00fc1C32742F151E56B9B616227E23E",
+            "0x9805dcfD25e6De36bad8fe9D3Fe2c9b44B764102",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x331dB1B2FfC8343A5a62Fdf407865b0bc6F810c1": {
         "pool id": "0x331db1b2ffc8343a5a62fdf407865b0bc6f810c100020000000000000000030b",
         "pool name": "Balancer XYJL/USDC",
@@ -1710,6 +2206,28 @@
         "tokens": [
             "0xA13a9247ea42D743238089903570127DdA72fE44",
             "0xae78736Cd615f374D3085123A210448E74Fc6393"
+        ]
+    },
+    "0x33ee876F82903555c050a7163eCABBb35B02dA87": {
+        "pool id": "0x33ee876f82903555c050a7163ecabbb35b02da87000200000000000000000413",
+        "pool name": "Balancer $bMINE/USDC",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x795195C027D9597Ea81873439fCc363ab16e6FC3",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x344818B9b4cFec947FE8cCbEa65B3605585c2C71": {
+        "pool id": "0x344818b9b4cfec947fe8ccbea65b3605585c2c71000100000000000000000404",
+        "pool name": "Balancer WBTC/CHZ/LINK/COMP",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0x3506424F91fD33084466F402d5D97f05F8e3b4AF",
+            "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+            "0xc00e94Cb662C3520282E6f5717214004A7f26888"
         ]
     },
     "0x344e8f99a55DA2ba6B4b5158df2143374E400DF2": {
@@ -1788,6 +2306,26 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x358e056C50EeA4CA707E891404E81D9B898D0b41": {
+        "pool id": "0x358e056c50eea4ca707e891404e81d9b898d0b4100020000000000000000049f",
+        "pool name": "Balancer SATS/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6C22910c6F75F828B305e57c6a54855D8adeAbf8",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x35ad347646a84139b6A102B48e6eFCC7FC06a997": {
+        "pool id": "0x35ad347646a84139b6a102b48e6efcc7fc06a997000200000000000000000459",
+        "pool name": "Balancer Early/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x902Ad5d82825b1Fdc0B873801aE12D36E68fa693",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x35c264f24F3A2fB0B9025905D3bBf10874B055AA": {
         "pool id": "0x35c264f24f3a2fb0b9025905d3bbf10874b055aa0001000000000000000002c4",
         "pool name": "Balancer BAT/WBTC/REN/MATIC/SNX/WETH",
@@ -1832,6 +2370,47 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x364A01a54F83f9C36923B584e6200b5b6aa9F68d": {
+        "pool id": "0x364a01a54f83f9c36923b584e6200b5b6aa9f68d000200000000000000000487",
+        "pool name": "Balancer POKI/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4DAda40B2b2A2aa84E059dE66fc642F35c7a7076",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x36Be1E97eA98AB43b4dEBf92742517266F5731a3": {
+        "pool id": "0x36be1e97ea98ab43b4debf92742517266f5731a3000200000000000000000466",
+        "pool name": "Balancer ACX/wstETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x44108f0223A3C3028F5Fe7AEC7f9bb2E66beF82F",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+        ]
+    },
+    "0x37306aeC67220B11991416e1E7A97F9CAEEAff7d": {
+        "pool id": "0x37306aec67220b11991416e1e7a97f9caeeaff7d0002000000000000000003a1",
+        "pool name": "Balancer USDC/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
+    "0x373b347bc87998b151A5E9B6bB6ca692b766648a": {
+        "pool id": "0x373b347bc87998b151a5e9b6bb6ca692b766648a0000000000000000000003f8",
+        "pool name": "Balancer TEST/BAL/WETH",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x373b347bc87998b151A5E9B6bB6ca692b766648a",
+            "0xba100000625a3754423978a60c9317c58a424e3D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x37A4d0f6A7F4fd0684076b951A1B996a84DbfCA9": {
         "pool id": "0x37a4d0f6a7f4fd0684076b951a1b996a84dbfca90002000000000000000001a7",
         "pool name": "Balancer Squelch/WETH",
@@ -1870,6 +2449,16 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xD66A39c92A72d33803cB54dF775c9a63FfFb10f5"
+        ]
+    },
+    "0x384F67aA430376efc4f8987eaBf7F3f84eB9EA5d": {
+        "pool id": "0x384f67aa430376efc4f8987eabf7f3f84eb9ea5d00020000000000000000043d",
+        "pool name": "Balancer DOLA/CUSD",
+        "pool type": "Stable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x865377367054516e17014CcdED1e7d814EDC9ce4",
+            "0xC285B7E09A4584D027E5BC36571785B515898246"
         ]
     },
     "0x38A01c45D86b61A70044fB2A76eAC8e75B1ac78E": {
@@ -1985,6 +2574,17 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x3BB22Fc9033b802F2AC47c18885F63476F158aFC": {
+        "pool id": "0x3bb22fc9033b802f2ac47c18885f63476f158afc000000000000000000000483",
+        "pool name": "Balancer/TUSD/aTUSD",
+        "pool type": "AaveLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x3BB22Fc9033b802F2AC47c18885F63476F158aFC",
+            "0x0000000000085d4780B73119b644AE5ecd22b376",
+            "0x236f4A95361e03267329a558bdD224B1F95F1377"
+        ]
+    },
     "0x3bB9d50A0743103F896D823B332EE15E231848D1": {
         "pool id": "0x3bb9d50a0743103f896d823b332ee15e231848d100020000000000000000015e",
         "pool name": "Balancer TCR/WETH",
@@ -1993,6 +2593,17 @@
         "tokens": [
             "0x9C4A4204B79dd291D6b6571C5BE8BbcD0622F050",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x3C640f0d3036Ad85Afa2D5A9E32bE651657B874F": {
+        "pool id": "0x3c640f0d3036ad85afa2d5a9e32be651657b874f00000000000000000000046b",
+        "pool name": "Balancer/eUSDT/USDT",
+        "pool type": "EulerLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x3C640f0d3036Ad85Afa2D5A9E32bE651657B874F",
+            "0x4d19F33948b99800B6113Ff3e83beC9b537C85d2",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
         ]
     },
     "0x3cBBBe0d1A6284f82e88a06b55641ee1146CD540": {
@@ -2015,9 +2626,19 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x3Ccf90a2309cF0FA1E9f1551F3AF2227197B9aFe": {
+        "pool id": "0x3ccf90a2309cf0fa1e9f1551f3af2227197b9afe000200000000000000000452",
+        "pool name": "Balancer AAI/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x59a942A183101192A5e74a8D9e934cf750fa2F35",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x3CdAE4f12A67ba563499e102f309c73213cB241c": {
         "pool id": "0x3cdae4f12a67ba563499e102f309c73213cb241c000000000000000000000335",
-        "pool name": "Balancer bb-a-USDC/USDC/aUSDC",
+        "pool name": "Balancer/USDC/aUSDC",
         "pool type": "AaveLinear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -2034,6 +2655,27 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xbA31896b2211F32541a53F8E1cb7f326fF940A8a"
+        ]
+    },
+    "0x3d562b56DE5E93ea86cFd521e786Abd143435917": {
+        "pool id": "0x3d562b56de5e93ea86cfd521e786abd1434359170002000000000000000004ac",
+        "pool name": "Balancer WETH/ROOSTER",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xcb51c95A1c0317cf1e802704feE6f70EC3c254A7"
+        ]
+    },
+    "0x3dbb8D974b82E82CE79c20C0F5995F4f1f533eDE": {
+        "pool id": "0x3dbb8d974b82e82ce79c20c0f5995f4f1f533ede000000000000000000000470",
+        "pool name": "Balancer/bb-euler-USD-BPT/ZUSD",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x3dbb8D974b82E82CE79c20C0F5995F4f1f533eDE",
+            "0x50Cf90B954958480b8DF7958A9E965752F627124",
+            "0xc56c2b7e71B54d38Aab6d52E94a04Cbfa8F604fA"
         ]
     },
     "0x3dd0843A028C86e0b760b1A76929d1C5Ef93a2dd": {
@@ -2054,6 +2696,16 @@
         "tokens": [
             "0x8888801aF4d980682e47f1A9036e589479e835C5",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x3e500d50845d4F1c362112Dc246179437511d840": {
+        "pool id": "0x3e500d50845d4f1c362112dc246179437511d840000200000000000000000402",
+        "pool name": "Balancer DENCH/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4b7265D153886a7Dc717e815862AcDE6FF7B5bc8",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
         ]
     },
     "0x3e5FA9518eA95c3E533EB377C001702A9AaCAA32": {
@@ -2166,6 +2818,26 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x400C8f03df41058252caA9CCDbb6480CbCe2eB3b": {
+        "pool id": "0x400c8f03df41058252caa9ccdbb6480cbce2eb3b000200000000000000000479",
+        "pool name": "Balancer WETH/EGGSD",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xFBC70A444e2e0107c578B759e4ef7BE3371F739e"
+        ]
+    },
+    "0x402F60cCF1e53CaD42DEd9cf139941174f54E3B2": {
+        "pool id": "0x402f60ccf1e53cad42ded9cf139941174f54e3b200020000000000000000044e",
+        "pool name": "Balancer RBT/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x39653E7Ac574a362000a1Dc86d1d39d78a985e61",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x406a295Cd75CE1750d8e3c13410273504e8FF994": {
         "pool id": "0x406a295cd75ce1750d8e3c13410273504e8ff9940002000000000000000000ea",
         "pool name": "Balancer USDC/FNT",
@@ -2260,6 +2932,26 @@
             "0xaF5D6d2E724F43769FA9E44284F0433A8F5Be973"
         ]
     },
+    "0x4227b3D63003EB53bBAE6f9139EC0fcbBb5C0b23": {
+        "pool id": "0x4227b3d63003eb53bbae6f9139ec0fcbbb5c0b2300020000000000000000041d",
+        "pool name": "Balancer SD/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x30D20208d987713f46DFD34EF128Bb16C404D10f",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x42735B63116ffaD66DBe3A63211D387cD98e4935": {
+        "pool id": "0x42735b63116ffad66dbe3a63211d387cd98e493500020000000000000000044f",
+        "pool name": "Balancer BALLOON/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x3a4524270f1B96dB45C3eb366B619b4A5074a032",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x42BAB235A5E0cd52f4Ae5ed179392e1c3C0CCe8A": {
         "pool id": "0x42bab235a5e0cd52f4ae5ed179392e1c3c0cce8a0002000000000000000000f7",
         "pool name": "Balancer USDC/TST",
@@ -2300,6 +2992,16 @@
             "0xe4b5936Dce1820f84509C89CcE0F28C87988Bad8"
         ]
     },
+    "0x43BDd55D9C98Ae9184dc3a869Ab89a83762156D5": {
+        "pool id": "0x43bdd55d9c98ae9184dc3a869ab89a83762156d50002000000000000000003f3",
+        "pool name": "Balancer UMA/wstETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+        ]
+    },
     "0x441b8a1980f2F2E43A9397099d15CC2Fe6D36250": {
         "pool id": "0x441b8a1980f2f2e43a9397099d15cc2fe6d3625000020000000000000000035f",
         "pool name": "Balancer INV/DOLA",
@@ -2308,6 +3010,27 @@
         "tokens": [
             "0x41D5D79431A913C4aE7d69a668ecdfE5fF9DFB68",
             "0x865377367054516e17014CcdED1e7d814EDC9ce4"
+        ]
+    },
+    "0x445494F823f3483ee62d854eBc9f58d5B9972A25": {
+        "pool id": "0x445494f823f3483ee62d854ebc9f58d5b9972a25000200000000000000000415",
+        "pool name": "Balancer DOLA/DBR",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x865377367054516e17014CcdED1e7d814EDC9ce4",
+            "0xAD038Eb671c44b853887A7E32528FaB35dC5D710"
+        ]
+    },
+    "0x454Ed96955d04D2f5cDD05E0Fd1C77975bFE5307": {
+        "pool id": "0x454ed96955d04d2f5cdd05e0fd1c77975bfe5307000000000000000000000410",
+        "pool name": "Balancer/TUSD/aTUSD",
+        "pool type": "AaveLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x454Ed96955d04D2f5cDD05E0Fd1C77975bFE5307",
+            "0x0000000000085d4780B73119b644AE5ecd22b376",
+            "0x236f4A95361e03267329a558bdD224B1F95F1377"
         ]
     },
     "0x45910fafF3cBf990FdB204682e93055506682d17": {
@@ -2380,6 +3103,27 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x47EBC05bC9476C9AE36679fBc3cd7bBc83a65190": {
+        "pool id": "0x47ebc05bc9476c9ae36679fbc3cd7bbc83a651900002000000000000000003a0",
+        "pool name": "Balancer DC/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7B4328c127B85369D9f82ca0503B000D09CF9180",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x483006684f422a9448023b2382615C57c5ecF18f": {
+        "pool id": "0x483006684f422a9448023b2382615c57c5ecf18f000000000000000000000488",
+        "pool name": "Balancer bb-a-TUSD/bb-euler-USD-BPT",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x3BB22Fc9033b802F2AC47c18885F63476F158aFC",
+            "0x483006684f422a9448023b2382615C57c5ecF18f",
+            "0x50Cf90B954958480b8DF7958A9E965752F627124"
+        ]
+    },
     "0x48607651416A943bF5AC71C41BE1420538e78f87": {
         "pool id": "0x48607651416a943bf5ac71c41be1420538e78f87000200000000000000000327",
         "pool name": "Balancer Silo/WETH",
@@ -2387,6 +3131,16 @@
         "gauge": "0xC545aa66cdd9Cf172568dC8ebFdDa1CE9a60e0CB",
         "tokens": [
             "0x6f80310CA7F2C654691D1383149Fa1A57d8AB1f8",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x48d63961B25AF0A280B5Cf33bE8ce7d86C221Dbc": {
+        "pool id": "0x48d63961b25af0a280b5cf33be8ce7d86c221dbc00020000000000000000042d",
+        "pool name": "Balancer TRG/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x93eEB426782BD88fCD4B48D7b0368CF061044928",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
@@ -2440,6 +3194,17 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x4A82b580365Cff9B146281Ab72500957a849ABDC": {
+        "pool id": "0x4a82b580365cff9b146281ab72500957a849abdc000000000000000000000494",
+        "pool name": "Balancer/USDC/dUSDC",
+        "pool type": "GearboxLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4A82b580365Cff9B146281Ab72500957a849ABDC",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xc411dB5f5Eb3f7d552F9B8454B2D74097ccdE6E3"
+        ]
+    },
     "0x4aA462D59361fC0115B3aB7E447627534a8642ae": {
         "pool id": "0x4aa462d59361fc0115b3ab7e447627534a8642ae000100000000000000000158",
         "pool name": "Balancer PAXG/USDC/WETH",
@@ -2459,6 +3224,16 @@
         "tokens": [
             "0x939fd8bfcfED01eC51f86dF105821E3C5dC53C1c",
             "0xc4AD29ba4B3c580e6D59105FFf484999997675Ff"
+        ]
+    },
+    "0x4bA02910513bc056D790840DEC078f1B97F4b681": {
+        "pool id": "0x4ba02910513bc056d790840dec078f1b97f4b6810002000000000000000003db",
+        "pool name": "Balancer SNM/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x983F6d60db79ea8cA4eB9968C6aFf8cfA04B3c63",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
     "0x4bd6D86dEBdB9F5413e631Ad386c4427DC9D01B2": {
@@ -2481,6 +3256,17 @@
             "0xDd22e329b6A10f7651DB7d67BD0794AB1DE0A48F"
         ]
     },
+    "0x4C8d2e60863E8D7E1033EdA2B3d84e92A6418020": {
+        "pool id": "0x4c8d2e60863e8d7e1033eda2b3d84e92a641802000000000000000000000040f",
+        "pool name": "Balancer/bb-a-FRAX/bb-a-USDC",
+        "pool type": "ComposableStable",
+        "gauge": "0x161E5f1D250Ff5486287E591e4486e1ded0D2Be3",
+        "tokens": [
+            "0x4C8d2e60863E8D7E1033EdA2B3d84e92A6418020",
+            "0x6a1eB2e9B45e772F55bd9a34659A04B6F75Da687",
+            "0x82698aeCc9E28e9Bb27608Bd52cF57f704BD1B83"
+        ]
+    },
     "0x4ce0BD7deBf13434d3ae127430e9BD4291bfB61f": {
         "pool id": "0x4ce0bd7debf13434d3ae127430e9bd4291bfb61f00020000000000000000038b",
         "pool name": "Balancer bb-a-USD/STG",
@@ -2489,6 +3275,16 @@
         "tokens": [
             "0xA13a9247ea42D743238089903570127DdA72fE44",
             "0xAf5191B0De278C7286d6C7CC6ab6BB8A73bA2Cd6"
+        ]
+    },
+    "0x4d7880b18373fD916bBe63227509a187A41F8b62": {
+        "pool id": "0x4d7880b18373fd916bbe63227509a187a41f8b620002000000000000000003c4",
+        "pool name": "Balancer DAI/USDT",
+        "pool type": "MetaStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
         ]
     },
     "0x4Db9024fc9F477134e00Da0DA3c77DE98d9836aC": {
@@ -2531,6 +3327,19 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x4E4597366297B23dEdE2050Af91Eca726bbfF61B": {
+        "pool id": "0x4e4597366297b23dede2050af91eca726bbff61b0001000000000000000003c1",
+        "pool name": "Balancer WBTC/BUSD/LDO/BAL/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+            "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
+            "0xba100000625a3754423978a60c9317c58a424e3D",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
     "0x4E7f40cD37CEE710f5e87AD72959d30ef8a01A5D": {
         "pool id": "0x4e7f40cd37cee710f5e87ad72959d30ef8a01a5d000100000000000000000031",
         "pool name": "Balancer YFI/1INCH/UNI/DAI/AAVE/xSUSHI/MKR/WETH",
@@ -2545,6 +3354,17 @@
             "0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272",
             "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x4EdcB2B46377530Bc18BB4D2c7Fe46a992c73e10": {
+        "pool id": "0x4edcb2b46377530bc18bb4d2c7fe46a992c73e100000000000000000000003ec",
+        "pool name": "Balancer/wstETH/cbETH",
+        "pool type": "ComposableStable",
+        "gauge": "0xe624E9E85A5728072313c4F4720cDF8fD4FFdAFC",
+        "tokens": [
+            "0x4EdcB2B46377530Bc18BB4D2c7Fe46a992c73e10",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704"
         ]
     },
     "0x4eEbC19E5F29DEC3deA07F66b9e707AFc8f28C06": {
@@ -2567,6 +3387,16 @@
             "0xB2a1078e46cABA5266Beb92B43Cba518E120860C"
         ]
     },
+    "0x4f2E0f963794a3876a54C503eC63dE95e9F24a75": {
+        "pool id": "0x4f2e0f963794a3876a54c503ec63de95e9f24a750002000000000000000004b3",
+        "pool name": "Balancer 50EVA-50WETH/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x66958112c5da50Fa59d7E5BA4447609cDb09c1B1",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x4FA6086ED10C971D255aa1B09a6beB1C7bE5ca37": {
         "pool id": "0x4fa6086ed10c971d255aa1b09a6beb1c7be5ca37000200000000000000000051",
         "pool name": "Balancer RAZOR/WETH",
@@ -2574,6 +3404,16 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             "0x50DE6856358Cc35f3A9a57eAAA34BD4cB707d2cd",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x4facD9F02225d2ca97C16155794BFE5dc2DE74B7": {
+        "pool id": "0x4facd9f02225d2ca97c16155794bfe5dc2de74b70002000000000000000004ab",
+        "pool name": "Balancer Numi/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x8F1E1D58bCD9bd04fD902b6C781e9487117Bd5ca",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
@@ -2587,9 +3427,19 @@
             "0xC14FCf27c9117d1263Bca19802b441607aada9ab"
         ]
     },
+    "0x4fD4687ec38220F805b6363C3c1E52D0dF3B5023": {
+        "pool id": "0x4fd4687ec38220f805b6363c3c1e52d0df3b5023000200000000000000000473",
+        "pool name": "Balancer bb-euler-USD-BPT/wstETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x50Cf90B954958480b8DF7958A9E965752F627124",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+        ]
+    },
     "0x4Fd63966879300caFafBB35D157dC5229278Ed23": {
         "pool id": "0x4fd63966879300cafafbb35d157dc5229278ed230000000000000000000000e9",
-        "pool name": "Balancer bb-a-USD/bb-a-USDC/bb-a-DAI/bb-a-USDT",
+        "pool name": "Balancer/bb-a-USDC/bb-a-DAI/bb-a-USDT",
         "pool type": "StablePhantom",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -2639,6 +3489,28 @@
             "0xF1290473E210b2108A85237fbCd7b6eb42Cc654F"
         ]
     },
+    "0x50c4629b199eF510D49E4742B679E0c7287319A5": {
+        "pool id": "0x50c4629b199ef510d49e4742b679e0c7287319a50002000000000000000003da",
+        "pool name": "Balancer SNM/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x983F6d60db79ea8cA4eB9968C6aFf8cfA04B3c63",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x50Cf90B954958480b8DF7958A9E965752F627124": {
+        "pool id": "0x50cf90b954958480b8df7958a9e965752f62712400000000000000000000046f",
+        "pool name": "Balancer bb-e-USDT/bb-e-USDC/bb-e-DAI",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x3C640f0d3036Ad85Afa2D5A9E32bE651657B874F",
+            "0x50Cf90B954958480b8DF7958A9E965752F627124",
+            "0xD4e7C1F3DA1144c9E2CfD1b015eDA7652b4a4399",
+            "0xeB486AF868AeB3b6e53066abc9623b1041b42bc0"
+        ]
+    },
     "0x5122E01D819E58BB2E22528c0D68D310f0AA6FD7": {
         "pool id": "0x5122e01d819e58bb2e22528c0d68d310f0aa6fd7000200000000000000000163",
         "pool name": "Balancer WETH/NOTE",
@@ -2647,6 +3519,16 @@
         "tokens": [
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xCFEAead4947f0705A14ec42aC3D44129E1Ef3eD5"
+        ]
+    },
+    "0x51459cC1329392a6572AFe901BDd63d905716af6": {
+        "pool id": "0x51459cc1329392a6572afe901bdd63d905716af6000200000000000000000428",
+        "pool name": "Balancer wstETH/cbETH",
+        "pool type": "MetaStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704"
         ]
     },
     "0x514f35a92A13bc7093f299AF5D8ebb1387E42D6B": {
@@ -2729,6 +3611,17 @@
             "0xbF4a2DdaA16148a9D0fA2093FfAC450ADb7cd4aa"
         ]
     },
+    "0x53BC3cBa3832ebeCBFa002c12023F8ab1AA3a3a0": {
+        "pool id": "0x53bc3cba3832ebecbfa002c12023f8ab1aa3a3a0000000000000000000000411",
+        "pool name": "Balancer bb-a-TUSD/bb-a-USD",
+        "pool type": "ComposableStable",
+        "gauge": "0x7d5cAd03DD554ECaDF273935Ea10bfa964fB7d84",
+        "tokens": [
+            "0x454Ed96955d04D2f5cDD05E0Fd1C77975bFE5307",
+            "0x53BC3cBa3832ebeCBFa002c12023F8ab1AA3a3a0",
+            "0xA13a9247ea42D743238089903570127DdA72fE44"
+        ]
+    },
     "0x53d97F23E8d984b75cDea79C12D4Ecf1469965a3": {
         "pool id": "0x53d97f23e8d984b75cdea79c12d4ecf1469965a300020000000000000000023b",
         "pool name": "Balancer SIDHU/USDC",
@@ -2769,6 +3662,17 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x5512A4bbe7B3051f92324bAcF25C02b9000c4a50": {
+        "pool id": "0x5512a4bbe7b3051f92324bacf25c02b9000c4a500001000000000000000003d7",
+        "pool name": "Balancer LUSD/LQTY/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x9Cc382125f19539EcEB2f607A57bBcac459cb097",
+        "tokens": [
+            "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
+            "0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x559157Ec301Dc1B05f13780FAE8199A321d793AC": {
         "pool id": "0x559157ec301dc1b05f13780fae8199a321d793ac000200000000000000000231",
         "pool name": "Balancer Bennu/WETH",
@@ -2779,6 +3683,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x55bEC22f8f6C69137cEAf284d9B441Db1B9bFedc": {
+        "pool id": "0x55bec22f8f6c69137ceaf284d9b441db1b9bfedc0002000000000000000003cd",
+        "pool name": "Balancer XSGD/USDC",
+        "pool type": "FX",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x70e8dE73cE538DA2bEEd35d14187F6959a8ecA96",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
     "0x55eBdd8e500e7b122e01eBf0b516C536280B2a1B": {
         "pool id": "0x55ebdd8e500e7b122e01ebf0b516c536280b2a1b0002000000000000000001e6",
         "pool name": "Balancer USDC/SEA",
@@ -2787,6 +3701,17 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xff9fEa2666AC0b074A1a53579FF95ADd4df0601a"
+        ]
+    },
+    "0x55fFeB33a19952530997572fBb6D039310b2E799": {
+        "pool id": "0x55ffeb33a19952530997572fbb6d039310b2e7990001000000000000000003de",
+        "pool name": "Balancer UNI/AAVE/BAL",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+            "0xba100000625a3754423978a60c9317c58a424e3D"
         ]
     },
     "0x563bb570107Fc2d2DE54CAAC58c91e4f27D68153": {
@@ -2872,6 +3797,19 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x5833f33c5Acec4eEbcd0B5f9d2C35952669C3F1f": {
+        "pool id": "0x5833f33c5acec4eebcd0b5f9d2c35952669c3f1f000100000000000000000403",
+        "pool name": "Balancer UNI/WBTC/CHZ/LINK/COMP",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0x3506424F91fD33084466F402d5D97f05F8e3b4AF",
+            "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+            "0xc00e94Cb662C3520282E6f5717214004A7f26888"
+        ]
+    },
     "0x5844D529E20bA8040670E2F19A3F139E88791ffe": {
         "pool id": "0x5844d529e20ba8040670e2f19a3f139e88791ffe000200000000000000000362",
         "pool name": "Balancer WETH/BTCTRADE",
@@ -2880,6 +3818,16 @@
         "tokens": [
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xFdF888Ccd94Fc4A3971fF3C5ebaA47CFF00445d0"
+        ]
+    },
+    "0x589e8DAF1de6b0F78f8a2DF817F7dBAdd8FF2dcD": {
+        "pool id": "0x589e8daf1de6b0f78f8a2df817f7dbadd8ff2dcd0002000000000000000004ae",
+        "pool name": "Balancer QUEST_MP/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x99f4775b90Ffc503ddC0F5Bc04E46685168f20E9",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0x58aF920D9Dc0bc4e8F771FF013D79215CabcaA9e": {
@@ -3027,6 +3975,17 @@
             "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
         ]
     },
+    "0x5A6aE1fd70d04bA4a279FC219dfAbC53825cb01D": {
+        "pool id": "0x5a6ae1fd70d04ba4a279fc219dfabc53825cb01d0001000000000000000003e3",
+        "pool name": "Balancer AAVE/COMP/TRIBE",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+            "0xc00e94Cb662C3520282E6f5717214004A7f26888",
+            "0xc7283b66Eb1EB5FB86327f08e1B5816b0720212B"
+        ]
+    },
     "0x5Aa90c7362ea46b3cbFBD7F01EA5Ca69C98Fef1c": {
         "pool id": "0x5aa90c7362ea46b3cbfbd7f01ea5ca69c98fef1c000200000000000000000020",
         "pool name": "Balancer UNI/WETH",
@@ -3035,6 +3994,28 @@
         "tokens": [
             "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x5Ae4cF0A44432e6Fd1Fb04CCc3c6BaD7b0b33c98": {
+        "pool id": "0x5ae4cf0a44432e6fd1fb04ccc3c6bad7b0b33c98000200000000000000000439",
+        "pool name": "Balancer WETH/ZEON",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xE5B826Ca2Ca02F09c1725e9bd98d9a8874C30532"
+        ]
+    },
+    "0x5aEe1e99fE86960377DE9f88689616916D5DcaBe": {
+        "pool id": "0x5aee1e99fe86960377de9f88689616916d5dcabe000000000000000000000467",
+        "pool name": "Balancer/wstETH/sfrxETH/rETH",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x5aEe1e99fE86960377DE9f88689616916D5DcaBe",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "0xac3E018457B222d93114458476f3E3416Abbe38F",
+            "0xae78736Cd615f374D3085123A210448E74Fc6393"
         ]
     },
     "0x5B1489C311914555e90EAc3aA394aF5dAb56BcF2": {
@@ -3092,6 +4073,16 @@
             "0xFc35e83Bad6E0323eC08442e645B55A7E92d01da"
         ]
     },
+    "0x5C406E75bAF8C66ea7b7C266ba2f4d474F33EC10": {
+        "pool id": "0x5c406e75baf8c66ea7b7c266ba2f4d474f33ec100002000000000000000003c9",
+        "pool name": "Balancer WETH/\u00a5\u20ac$",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xc5a7EbEdce820F06a610289370c2430596E81fa8"
+        ]
+    },
     "0x5C49DF916BDadF335f9e1806c4149BCE002ad0DA": {
         "pool id": "0x5c49df916bdadf335f9e1806c4149bce002ad0da0002000000000000000002f2",
         "pool name": "Balancer ARABIAN/WETH",
@@ -3100,6 +4091,16 @@
         "tokens": [
             "0x08eBF4dd8ec128bc596f7b8E588da66861017371",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x5C521bB090739a4A0C33d80747DF78DA4f811167": {
+        "pool id": "0x5c521bb090739a4a0c33d80747df78da4f811167000200000000000000000448",
+        "pool name": "Balancer WETH/BOBA",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xC8B66130C6827380cD853853926fA3238C7f606a"
         ]
     },
     "0x5c6Ee304399DBdB9C8Ef030aB642B10820DB8F56": {
@@ -3192,6 +4193,19 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x5e6632Fe1b7c6A8c1001eFa690cDC8D01cC56F79": {
+        "pool id": "0x5e6632fe1b7c6a8c1001efa690cdc8d01cc56f790001000000000000000003d6",
+        "pool name": "Balancer GNO/DAI/USDC/rETH/BAL",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6810e776880C02933D47DB1b9fc05908e5386b96",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xae78736Cd615f374D3085123A210448E74Fc6393",
+            "0xba100000625a3754423978a60c9317c58a424e3D"
+        ]
+    },
     "0x5E6989c0E2B6600aB585D56Bf05479d5450a60C8": {
         "pool id": "0x5e6989c0e2b6600ab585d56bf05479d5450a60c80002000000000000000000c1",
         "pool name": "Balancer NEXO/WETH",
@@ -3216,6 +4230,16 @@
             "0xC52C326331E9Ce41F04484d3B5E5648158028804"
         ]
     },
+    "0x5f1f4E50ba51D723F12385a8a9606afc3A0555f5": {
+        "pool id": "0x5f1f4e50ba51d723f12385a8a9606afc3a0555f5000200000000000000000465",
+        "pool name": "Balancer LDO/wstETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+        ]
+    },
     "0x5f7FA48d765053F8dD85E052843e12D23e3D7BC5": {
         "pool id": "0x5f7fa48d765053f8dd85e052843e12d23e3d7bc50002000000000000000000c0",
         "pool name": "Balancer WETH/NOTE",
@@ -3236,6 +4260,26 @@
             "0x1ac5d65a987d448b0Ecfe7E39017C3EC516d1D87"
         ]
     },
+    "0x5FAce3411e8dB2E35D2720633579C30915F0e998": {
+        "pool id": "0x5face3411e8db2e35d2720633579c30915f0e9980002000000000000000003f9",
+        "pool name": "Balancer USDC/SNX",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F"
+        ]
+    },
+    "0x601d0C197369DBd33Df37EcF6E7F8FEB1659376B": {
+        "pool id": "0x601d0c197369dbd33df37ecf6e7f8feb1659376b00020000000000000000042f",
+        "pool name": "Balancer PSWAP/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x3816b8680bbEBC6D76bd9C9EC1C53298D6A0E0Cd",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x603588f77dC1d72468C5267CD3a6cD3261384850": {
         "pool id": "0x603588f77dc1d72468c5267cd3a6cd3261384850000200000000000000000354",
         "pool name": "Balancer WETH/BTCBR",
@@ -3254,6 +4298,28 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xBb3c2A170FbB8988cDB41c04344F9863b0f71C20"
+        ]
+    },
+    "0x605dFF05302a63aC974B083DA50549A7Cde01C1B": {
+        "pool id": "0x605dff05302a63ac974b083da50549a7cde01c1b0002000000000000000003a9",
+        "pool name": "Balancer BAL/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xba100000625a3754423978a60c9317c58a424e3D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x60683B05e9a39E3509D8fdb9C959f23170f8A0fa": {
+        "pool id": "0x60683b05e9a39e3509d8fdb9c959f23170f8a0fa000000000000000000000489",
+        "pool name": "Balancer bb-i-USDT/bb-i-USDC/bb-i-DAI",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2FF1A9Dbdacd55297452cFD8a4d94724Bc22a5F7",
+            "0x60683B05e9a39E3509D8fdb9C959f23170f8A0fa",
+            "0xbc0F2372008005471874e426e86CCFae7B4De79d",
+            "0xDbA274B4D04097b90A72b62467d828cEFD708037"
         ]
     },
     "0x606e3CCC8C51cbbB1Ff07AD03c6F95a84672ab16": {
@@ -3393,6 +4459,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x6492d344b63f95D24eA72f498E68c75d3bE11A9d": {
+        "pool id": "0x6492d344b63f95d24ea72f498e68c75d3be11a9d000200000000000000000492",
+        "pool name": "Balancer sAPE/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7966C5BAe631294D7cFFcEA5430b78C2F76DB6Fa",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
     "0x64aCA7d9D6f1bE160f49a8e573965769071DD059": {
         "pool id": "0x64aca7d9d6f1be160f49a8e573965769071dd059000200000000000000000098",
         "pool name": "Balancer YFI/WETH",
@@ -3423,6 +4499,16 @@
             "0xd8F260FD067fCd9FA69015e6034BF4DfE1B2982a"
         ]
     },
+    "0x64d2C0fb5EE5e4b3f88337eCbc5c22A46845b399": {
+        "pool id": "0x64d2c0fb5ee5e4b3f88337ecbc5c22a46845b399000200000000000000000490",
+        "pool name": "Balancer BBLUR/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x15467905B8C34FbAe237e5aB475c9bC963a7d2dF",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x64e2c43cA952BA01E32E8cFA05c1E009Bc92E06c": {
         "pool id": "0x64e2c43ca952ba01e32e8cfa05c1e009bc92e06c00020000000000000000009b",
         "pool name": "Balancer GRO/USDC",
@@ -3435,7 +4521,7 @@
     },
     "0x652D486B80C461C397B0d95612A404da936f3db3": {
         "pool id": "0x652d486b80c461c397b0d95612a404da936f3db30000000000000000000000e7",
-        "pool name": "Balancer bb-a-USDC/USDC/aUSDC",
+        "pool name": "Balancer/USDC/aUSDC",
         "pool type": "AaveLinear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -3504,6 +4590,42 @@
             "0x616e8BfA43F920657B3497DBf40D6b1A02D4608d"
         ]
     },
+    "0x664E158dc6D1c0AACEC01C59A9d11643F1a97e8a": {
+        "pool id": "0x664e158dc6d1c0aacec01c59a9d11643f1a97e8a0001000000000000000003b6",
+        "pool name": "Balancer WBTC/BUSD/SHIB/USDC/BAL/WETH/SOL/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+            "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xba100000625a3754423978a60c9317c58a424e3D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xD31a59c85aE9D8edEFeC411D448f90841571b89c",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
+    "0x66958112c5da50Fa59d7E5BA4447609cDb09c1B1": {
+        "pool id": "0x66958112c5da50fa59d7e5ba4447609cdb09c1b10002000000000000000004a5",
+        "pool name": "Balancer EVA/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x90EEeE265528fa9aA620C19d45c644655de1FA81",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x66bB9D104c55861feb3Ec3559433F01f6373c966": {
+        "pool id": "0x66bb9d104c55861feb3ec3559433f01f6373c9660002000000000000000003cf",
+        "pool name": "Balancer DAI/USDC",
+        "pool type": "FX",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
     "0x66d25e31CF63992Db9D7C690B61762096F119288": {
         "pool id": "0x66d25e31cf63992db9d7c690b61762096f119288000200000000000000000129",
         "pool name": "Balancer USDC/SAWA",
@@ -3522,6 +4644,16 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xc7765fF1582A7C71affe6e51Aa8d88e544503a1e"
+        ]
+    },
+    "0x672f3dfC5C005F62A116E44F1bf4498be1068E1e": {
+        "pool id": "0x672f3dfc5c005f62a116e44f1bf4498be1068e1e0002000000000000000004a7",
+        "pool name": "Balancer WETH/DDT",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xe822bE4D8AF58250232e33C3A4D59aF074D5a6cf"
         ]
     },
     "0x67b532d47A31CE1eD0800E6913dbf5F6e9C48a18": {
@@ -3572,6 +4704,16 @@
         "tokens": [
             "0xBA8C8B50Ecd5b580f464f7611b8549fFeE4d8da2",
             "0xEd279fDD11cA84bEef15AF5D39BB4d4bEE23F0cA"
+        ]
+    },
+    "0x6803C821Dac9b61026b3F4aF0FcF46229361D551": {
+        "pool id": "0x6803c821dac9b61026b3f4af0fcf46229361d5510002000000000000000003ad",
+        "pool name": "Balancer CLV/stETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x80C62FE4487E1351b47Ba49809EBD60ED085bf52",
+            "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"
         ]
     },
     "0x68184be6773816f753192cece797Ef67841ff1a7": {
@@ -3639,6 +4781,16 @@
             "0xD31a59c85aE9D8edEFeC411D448f90841571b89c"
         ]
     },
+    "0x69EA3F8F30f1196E3935ea769Fa64a30E3597D44": {
+        "pool id": "0x69ea3f8f30f1196e3935ea769fa64a30e3597d44000200000000000000000481",
+        "pool name": "Balancer WETH/NEOAI",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xd0b9ed2C21849E830d6f6a9a7Ba6C1e952847569"
+        ]
+    },
     "0x6a06E2a5cb13fcd54b28F3f90144e64952a3A0b4": {
         "pool id": "0x6a06e2a5cb13fcd54b28f3f90144e64952a3a0b40002000000000000000000f9",
         "pool name": "Balancer FNC/USDC",
@@ -3659,6 +4811,17 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x6a1eB2e9B45e772F55bd9a34659A04B6F75Da687": {
+        "pool id": "0x6a1eb2e9b45e772f55bd9a34659a04b6f75da68700000000000000000000040d",
+        "pool name": "Balancer/aFRAX/FRAX",
+        "pool type": "AaveLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6a1eB2e9B45e772F55bd9a34659A04B6F75Da687",
+            "0x3eFCeb450fb799f67cd97cDC27a0F4Cd7B02B63B",
+            "0x853d955aCEf822Db058eb8505911ED77F175b99e"
+        ]
+    },
     "0x6A346CDb4300D4070C16929F095A56eFeD28D7d3": {
         "pool id": "0x6a346cdb4300d4070c16929f095a56efed28d7d3000200000000000000000318",
         "pool name": "Balancer PEPE/USDC",
@@ -3667,6 +4830,16 @@
         "tokens": [
             "0x5F94F574ab2ec610aA78aC6289b0cd94fc01a360",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x6A4D422afe275Bb381B7C0A03a591c0be40C583A": {
+        "pool id": "0x6a4d422afe275bb381b7c0a03a591c0be40c583a000200000000000000000419",
+        "pool name": "Balancer rETH/MAGIC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xae78736Cd615f374D3085123A210448E74Fc6393",
+            "0xB0c7a3Ba49C7a6EaBa6cD4a96C55a1391070Ac9A"
         ]
     },
     "0x6a5E8742d040b2c03751391b965118D4a7A7348C": {
@@ -3687,6 +4860,17 @@
         "tokens": [
             "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
             "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+        ]
+    },
+    "0x6A9603E481Fb8F2c09804ea9AdaB49A338855B90": {
+        "pool id": "0x6a9603e481fb8f2c09804ea9adab49a338855b900000000000000000000003a8",
+        "pool name": "Balancer/graviAURA/AURA",
+        "pool type": "ComposableStable",
+        "gauge": "0x0616c14c2336D77c6920b74cd1639AC497A345BA",
+        "tokens": [
+            "0x6A9603E481Fb8F2c09804ea9AdaB49A338855B90",
+            "0xBA485b556399123261a5F9c95d413B4f93107407",
+            "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF"
         ]
     },
     "0x6a9c95DD2Cc3951f23a1aB9bFAc7f5A9A8301117": {
@@ -3727,6 +4911,18 @@
         "tokens": [
             "0x467Bccd9d29f223BcE8043b84E8C8B282827790F",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x6AEbf3f0829347B310d16B4C03a1D3B3838496AA": {
+        "pool id": "0x6aebf3f0829347b310d16b4c03a1d3b3838496aa000100000000000000000425",
+        "pool name": "Balancer BUSD/DAI/USDC/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
         ]
     },
     "0x6b0D50a9df06006170e2d11D468cbFe0f58B43e2": {
@@ -3833,6 +5029,26 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x6e090302ef23EC3AE90D58EF5E5b65612F90f9e1": {
+        "pool id": "0x6e090302ef23ec3ae90d58ef5e5b65612f90f9e1000200000000000000000406",
+        "pool name": "Balancer USDC/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
+    "0x6E13fB316613e6B73dbF83a74f4aa08154abd533": {
+        "pool id": "0x6e13fb316613e6b73dbf83a74f4aa08154abd5330002000000000000000003d0",
+        "pool name": "Balancer LINK/COMP",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+            "0xc00e94Cb662C3520282E6f5717214004A7f26888"
+        ]
+    },
     "0x6E6BF3bC7c794F5d196731166539b4D3a28185f5": {
         "pool id": "0x6e6bf3bc7c794f5d196731166539b4d3a28185f5000200000000000000000264",
         "pool name": "Balancer USDC/HAT",
@@ -3904,6 +5120,16 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x6fBAEBFD2617c99B47A66415081BAA21e944fb7f": {
+        "pool id": "0x6fbaebfd2617c99b47a66415081baa21e944fb7f0002000000000000000003e1",
+        "pool name": "Balancer COMP/TRIBE",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xc00e94Cb662C3520282E6f5717214004A7f26888",
+            "0xc7283b66Eb1EB5FB86327f08e1B5816b0720212B"
+        ]
+    },
     "0x6FC73B9d624b543f8B6b88FC3CE627877Ff169Ee": {
         "pool id": "0x6fc73b9d624b543f8b6b88fc3ce627877ff169ee000200000000000000000235",
         "pool name": "Balancer WETH/AURA",
@@ -3912,6 +5138,16 @@
         "tokens": [
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF"
+        ]
+    },
+    "0x6Fc874b151A43d6A54fABFB6FF50F85fEC4a5086": {
+        "pool id": "0x6fc874b151a43d6a54fabfb6ff50f85fec4a5086000200000000000000000463",
+        "pool name": "Balancer WETH/oBTC",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xfF770E4c68e35DB85c6e0E89a43750eC02bDB2AC"
         ]
     },
     "0x6FE95FafE2F86158c77Bf18350672D360BfC78a2": {
@@ -3932,6 +5168,16 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xc15940ABf4c3b9d2aE671877C76D272340634290"
+        ]
+    },
+    "0x6fFA4c1a951963569C1AF57a1C47Ef7584835D1F": {
+        "pool id": "0x6ffa4c1a951963569c1af57a1c47ef7584835d1f000200000000000000000412",
+        "pool name": "Balancer USDC/TFI",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xf33683d0D690CCdBbF63A54b8d6709ff7e6cf987"
         ]
     },
     "0x702605F43471183158938C1a3e5f5A359d7b31ba": {
@@ -3984,6 +5230,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x7152a37BBF363262bAD269EC4dE2269dD0E84Ca3": {
+        "pool id": "0x7152a37bbf363262bad269ec4de2269dd0e84ca30002000000000000000003bd",
+        "pool name": "Balancer DC/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7B4328c127B85369D9f82ca0503B000D09CF9180",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x71628c66C502F988Fbb9e17081F2bD14e361FAF4": {
         "pool id": "0x71628c66c502f988fbb9e17081f2bd14e361faf4000200000000000000000078",
         "pool name": "Balancer DAI/ePyvDAI-16OCT21",
@@ -4014,6 +5270,16 @@
             "0x6B175474E89094C44Da98b954EedeAC495271d0F"
         ]
     },
+    "0x719fA6Da58398fEeA0b0C307CdE0ab0C15a47Da4": {
+        "pool id": "0x719fa6da58398feea0b0c307cde0ab0c15a47da4000200000000000000000450",
+        "pool name": "Balancer MONDAY/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4CB2d43A03ca2BA39AaafA633bd03A3bDde56595",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x71A5259b0929f9EA607b599511b6Cc4ae3d9C774": {
         "pool id": "0x71a5259b0929f9ea607b599511b6cc4ae3d9c77400010000000000000000037a",
         "pool name": "Balancer G333/DMDHRT20/wG333/DHDAO",
@@ -4026,6 +5292,16 @@
             "0xF8B8F6a01E676d592D95D8D356e445D53A5822f2"
         ]
     },
+    "0x7237c3d8186fE5e301c6537956B2CA08e7aBa43f": {
+        "pool id": "0x7237c3d8186fe5e301c6537956b2ca08e7aba43f0002000000000000000003f5",
+        "pool name": "Balancer YFI/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x7265027393aDDFB77661CCAe97d2282D58326C41": {
         "pool id": "0x7265027393addfb77661ccae97d2282d58326c4100020000000000000000014a",
         "pool name": "Balancer USDC/BBS",
@@ -4034,6 +5310,26 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xFe459828c90c0BA4bC8b42F5C5D44F316700B430"
+        ]
+    },
+    "0x727A0900dB68D141c6A5f44Bb620eCc144DE8dAf": {
+        "pool id": "0x727a0900db68d141c6a5f44bb620ecc144de8daf0002000000000000000003ac",
+        "pool name": "Balancer WETH/CAWx",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xd1B823909Fcef776a33692f50b23daaCfF5Fc87c"
+        ]
+    },
+    "0x72803e91e990d7E5BA65C790EAA05eCbA75b25F2": {
+        "pool id": "0x72803e91e990d7e5ba65c790eaa05ecba75b25f20002000000000000000003c5",
+        "pool name": "Balancer Gasless/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x47ffb498FDff28E21a3a10E9F42536959f8B986B",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0x72Ab6fF76554f90532E2809Cee019ade724e029a": {
@@ -4077,6 +5373,26 @@
         "tokens": [
             "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
             "0x3b32F63c1e0FB810f0a06814Ead1D4431B237560"
+        ]
+    },
+    "0x733BD33Dd0604028f31AacA029C6cc14BdA8a367": {
+        "pool id": "0x733bd33dd0604028f31aaca029c6cc14bda8a3670002000000000000000003e0",
+        "pool name": "Balancer UNI/BAL",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0xba100000625a3754423978a60c9317c58a424e3D"
+        ]
+    },
+    "0x73A923649ec9F302bFb4b35FFC08B3ae94385ea7": {
+        "pool id": "0x73a923649ec9f302bfb4b35ffc08b3ae94385ea70002000000000000000004b0",
+        "pool name": "Balancer WETH/AVOCADOS",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xEaD8f214D18073F69a068FE74FC288A42EcEE4E7"
         ]
     },
     "0x73D3cCf5EF15a3d6139532aB93FBAc71C755d8Fb": {
@@ -4168,6 +5484,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x76FCf0e8C7Ff37A47a799FA2cd4c13cDe0D981C9": {
+        "pool id": "0x76fcf0e8c7ff37a47a799fa2cd4c13cde0d981c90002000000000000000003d2",
+        "pool name": "Balancer OHM/DAI",
+        "pool type": "Weighted",
+        "gauge": "0x107A2209883621aFe2968da31C03190e0B2782C2",
+        "tokens": [
+            "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+        ]
+    },
     "0x773A8b97CcE7d9D78Df41E5C4fdD536D3cF81d3e": {
         "pool id": "0x773a8b97cce7d9d78df41e5c4fdd536d3cf81d3e000200000000000000000189",
         "pool name": "Balancer USDC/SEV",
@@ -4218,6 +5544,16 @@
             "0xf38c3E836Be9cD35072055Ff6a9Ba570e0B70797"
         ]
     },
+    "0x78bA4FBd299A78049D9DF86dDf591f415B5E6f30": {
+        "pool id": "0x78ba4fbd299a78049d9df86ddf591f415b5e6f30000200000000000000000461",
+        "pool name": "Balancer T-800/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6A145fE5c18D852dd7407Feacc42B540746d9C14",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x78dA5100aD1f3e908b97AfD6105de8716109B81A": {
         "pool id": "0x78da5100ad1f3e908b97afd6105de8716109b81a0002000000000000000002c6",
         "pool name": "Balancer CRBN/USDC",
@@ -4248,6 +5584,16 @@
             "0xBc6669E7914a2b327Ae428184086d8Ac88d74EfC"
         ]
     },
+    "0x798b112420AD6391A4129Ac25eF59663a44C88bB": {
+        "pool id": "0x798b112420ad6391a4129ac25ef59663a44c88bb0002000000000000000003f4",
+        "pool name": "Balancer ACX/wstETH",
+        "pool type": "Weighted",
+        "gauge": "0x89F65570Ac019f86E145c501023e2ef7010D155B",
+        "tokens": [
+            "0x44108f0223A3C3028F5Fe7AEC7f9bb2E66beF82F",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+        ]
+    },
     "0x79AC30cb7eb32842841caE9BA4fC445bba6704C1": {
         "pool id": "0x79ac30cb7eb32842841cae9ba4fc445bba6704c10002000000000000000001a1",
         "pool name": "Balancer WETH/ROSE",
@@ -4270,7 +5616,7 @@
     },
     "0x7B50775383d3D6f0215A8F290f2C9e2eEBBEceb2": {
         "pool id": "0x7b50775383d3d6f0215a8f290f2c9e2eebbeceb20000000000000000000000fe",
-        "pool name": "Balancer bb-a-USDT/bb-a-USD/bb-a-DAI/bb-a-USDC",
+        "pool name": "Balancer bb-a-USDT/bb-a-DAI/bb-a-USDC",
         "pool type": "StablePhantom",
         "gauge": "0x68d019f64A7aa97e2D4e7363AEE42251D08124Fb",
         "tokens": [
@@ -4346,6 +5692,28 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x7e1E4Ed284D34722a853cC002f4b990F139dAd32": {
+        "pool id": "0x7e1e4ed284d34722a853cc002f4b990f139dad32000100000000000000000427",
+        "pool name": "Balancer BUSD/DAI/USDC/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
+    "0x7e247e6D7bAf8805bF0c763f7A285be0e4F7143D": {
+        "pool id": "0x7e247e6d7baf8805bf0c763f7a285be0e4f7143d000200000000000000000446",
+        "pool name": "Balancer SNT/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x744d70FDBE2Ba4CF95131626614a1763DF805B9E",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x7E49F73a5b8C62f4C5792DCD23eFb03eC3528585": {
         "pool id": "0x7e49f73a5b8c62f4c5792dcd23efb03ec35285850002000000000000000001ae",
         "pool name": "Balancer BIRDBOX/WETH",
@@ -4394,6 +5762,16 @@
         "tokens": [
             "0x67b0928f8025D8548A4475a80C5444AA8087FdbE",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x7ed8639B84a0F55F87204f45a06ECCF566815Eaf": {
+        "pool id": "0x7ed8639b84a0f55f87204f45a06eccf566815eaf0002000000000000000003df",
+        "pool name": "Balancer UNI/AAVE",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9"
         ]
     },
     "0x7Edde0CB05ED19e03A9a47CD5E53fC57FDe1c80c": {
@@ -4448,7 +5826,7 @@
     },
     "0x804CdB9116a10bB78768D3252355a1b18067bF8f": {
         "pool id": "0x804cdb9116a10bb78768d3252355a1b18067bf8f0000000000000000000000fb",
-        "pool name": "Balancer aDAI/DAI/bb-a-DAI",
+        "pool name": "Balancer aDAI/DAI",
         "pool type": "AaveLinear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -4517,11 +5895,42 @@
             "0x6B175474E89094C44Da98b954EedeAC495271d0F"
         ]
     },
+    "0x81343c08CcCD0E13f3c49C8270C93edc5F3D0fc6": {
+        "pool id": "0x81343c08cccd0e13f3c49c8270c93edc5f3d0fc60002000000000000000003d9",
+        "pool name": "Balancer SNM/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x983F6d60db79ea8cA4eB9968C6aFf8cfA04B3c63",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x813E3fE1761f714c502d1d2d3a7CCEB33f37F59D": {
+        "pool id": "0x813e3fe1761f714c502d1d2d3a7cceb33f37f59d00000000000000000000040c",
+        "pool name": "Balancer/WETH/TEST",
+        "pool type": "AaveLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x813E3fE1761f714c502d1d2d3a7CCEB33f37F59D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xf9F5E0f3f74F57755a8c8be7b2FeDcAa40673080"
+        ]
+    },
+    "0x813E6A5f31C95F7c5f9982B1FDc6C69610bEab4A": {
+        "pool id": "0x813e6a5f31c95f7c5f9982b1fdc6c69610beab4a0002000000000000000003ed",
+        "pool name": "Balancer WETH/CRV",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xD533a949740bb3306d119CC777fa900bA034cd52"
+        ]
+    },
     "0x8167A1117691f39e05e9131cfA88F0e3A620E967": {
         "pool id": "0x8167a1117691f39e05e9131cfa88f0e3a620e96700020000000000000000038c",
         "pool name": "Balancer WETH/T",
         "pool type": "Weighted",
-        "gauge": "0x0000000000000000000000000000000000000000",
+        "gauge": "0x1946d851eA9FfBFE9081E3DB4DC70E9f73BC9f5B",
         "tokens": [
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5"
@@ -4547,6 +5956,19 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x81b7f92c7B7D9349B989b4982588761bfa1aA627": {
+        "pool id": "0x81b7f92c7b7d9349b989b4982588761bfa1aa6270000000000000000000003e9",
+        "pool name": "Balancer BUSD/DAI/USDC/USDT",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0x81b7f92c7B7D9349B989b4982588761bfa1aA627",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
     "0x820298d6C264c2bb95152C44270d8729057ec467": {
         "pool id": "0x820298d6c264c2bb95152c44270d8729057ec467000200000000000000000171",
         "pool name": "Balancer CNDL/WETH",
@@ -4557,9 +5979,19 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x8237c802f100E474613519Ca3c19EE8A24e32470": {
+        "pool id": "0x8237c802f100e474613519ca3c19ee8a24e3247000020000000000000000049d",
+        "pool name": "Balancer TTG/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x77dC2d2f88eAcb2eFD09A079588f47D888AF4E5e",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x82698aeCc9E28e9Bb27608Bd52cF57f704BD1B83": {
         "pool id": "0x82698aecc9e28e9bb27608bd52cf57f704bd1b83000000000000000000000336",
-        "pool name": "Balancer bb-a-USDC/USDC/aUSDC",
+        "pool name": "Balancer/USDC/aUSDC",
         "pool type": "AaveLinear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -4580,6 +6012,16 @@
             "0xF629cBd94d3791C9250152BD8dfBDF380E2a3B9c"
         ]
     },
+    "0x831261f44931B7dA8ba0DcC547223c60BB75B47F": {
+        "pool id": "0x831261f44931b7da8ba0dcc547223c60bb75b47f000200000000000000000460",
+        "pool name": "Balancer USDC/wUSDR",
+        "pool type": "MetaStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xD5a14081a34d256711B02BbEf17E567da48E80b5"
+        ]
+    },
     "0x8339E311265A025Fd5792DB800daA8edA4264e2C": {
         "pool id": "0x8339e311265a025fd5792db800daa8eda4264e2c000200000000000000000029",
         "pool name": "Balancer WETH/RLY",
@@ -4598,6 +6040,16 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xbA8A621b4a54e61C442F5Ec623687e2a942225ef"
+        ]
+    },
+    "0x83A3060Bf8299Fdfc4Dbd6aa85CeDD53939a1357": {
+        "pool id": "0x83a3060bf8299fdfc4dbd6aa85cedd53939a1357000200000000000000000408",
+        "pool name": "Balancer WBTC/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0x8405DC5Ed3789fDBEc5A7f9366b977cB0B023F9f": {
@@ -4650,6 +6102,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x85177c679B84CB54e875A8F5112747b9438ed39e": {
+        "pool id": "0x85177c679b84cb54e875a8f5112747b9438ed39e0002000000000000000003dd",
+        "pool name": "Balancer AAVE/BAL",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+            "0xba100000625a3754423978a60c9317c58a424e3D"
+        ]
+    },
     "0x85370D9e3bb111391cc89F6DE344E80176046183": {
         "pool id": "0x85370d9e3bb111391cc89f6de344e801760461830002000000000000000001ef",
         "pool name": "Balancer CREAM/WETH",
@@ -4688,6 +6150,16 @@
         "tokens": [
             "0x3bf298A1B52F87fc1fDADb211Bc872b15F5a4aFa",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x867fFd906AE63Ddba37f247463725b2EbB90a01A": {
+        "pool id": "0x867ffd906ae63ddba37f247463725b2ebb90a01a000200000000000000000457",
+        "pool name": "Balancer HEDGY/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2f5EFe5a13d7Ee8b982d1426BBb3e945c4d8387D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0x86Bcddf864961f2E4d85841ED0430E87bE0412CD": {
@@ -4730,6 +6202,16 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x87cDB8B0743FF79737cDE31D214b78fcDa56AaFE": {
+        "pool id": "0x87cdb8b0743ff79737cde31d214b78fcda56aafe000200000000000000000400",
+        "pool name": "Balancer USDC/USF",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xE0e05c43c097B0982Db6c9d626c4eb9e95C3b9ce"
+        ]
+    },
     "0x87D2433cc05a915c11229EFBDc1e94FfCc311Db0": {
         "pool id": "0x87d2433cc05a915c11229efbdc1e94ffcc311db000020000000000000000039d",
         "pool name": "Balancer USDT/USDX",
@@ -4758,6 +6240,16 @@
         "tokens": [
             "0x938489a2cF5f2dcD00784020dDae3F899598A1DC",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x888957DbCc984a9cA46679619AEE477134d440CC": {
+        "pool id": "0x888957dbcc984a9ca46679619aee477134d440cc000200000000000000000478",
+        "pool name": "Balancer AIBO/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2Bb28D1de55041831bFcAF9f8260e9717f69e16c",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0x893B30574BF183d69413717f30b17062eC9DFD8b": {
@@ -4800,6 +6292,16 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x8A34b5ad76F528bfEc06c80D85EF3b53dA7FC300": {
+        "pool id": "0x8a34b5ad76f528bfec06c80d85ef3b53da7fc30000020000000000000000043e",
+        "pool name": "Balancer WETH/ankrETH",
+        "pool type": "MetaStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xE95A203B1a91a908F9B9CE46459d101078c2c3cb"
+        ]
+    },
     "0x8A4ea3006dB51Ba1E52EDAe4F311E05d5002968b": {
         "pool id": "0x8a4ea3006db51ba1e52edae4f311e05d5002968b000200000000000000000202",
         "pool name": "Balancer ApeGotchi/USDC",
@@ -4808,6 +6310,16 @@
         "tokens": [
             "0x4807F3065660E0E3B408396627B09f19a9485Fe5",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x8a6B25e33b12D1Bb6929a8793961076bD1F9D3eB": {
+        "pool id": "0x8a6b25e33b12d1bb6929a8793961076bd1f9d3eb0002000000000000000003e8",
+        "pool name": "Balancer XAV/bb-a-USD",
+        "pool type": "Weighted",
+        "gauge": "0x788304E4babe1f415d3bbf836F80720553A64f7e",
+        "tokens": [
+            "0x40370aEd88933021e20CF7C4D67E00417CdA2202",
+            "0xA13a9247ea42D743238089903570127DdA72fE44"
         ]
     },
     "0x8A8fCd351ED553Fc75Aecbc566A32F94471f302E": {
@@ -4839,6 +6351,16 @@
         "tokens": [
             "0x9cbCc93Abb4e2E9c027288E7E365F0c182c1C0b2",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x8AE511Baa25D6c7d21F45ebE60Ff29912D28A8E6": {
+        "pool id": "0x8ae511baa25d6c7d21f45ebe60ff29912d28a8e60002000000000000000003d4",
+        "pool name": "Balancer AAVE/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0x8B03b2416a336A49Ee7E2eb9e4248893f9D0AD54": {
@@ -4908,6 +6430,16 @@
             "0xD533a949740bb3306d119CC777fa900bA034cd52"
         ]
     },
+    "0x8c5f3C967EeF7da094582D831fb1C80F92eCf5DD": {
+        "pool id": "0x8c5f3c967eef7da094582d831fb1c80f92ecf5dd0002000000000000000004b4",
+        "pool name": "Balancer SNT/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x744d70FDBE2Ba4CF95131626614a1763DF805B9E",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x8caAaE21478bD1e9A230b483Cb4E0C01205c1637": {
         "pool id": "0x8caaae21478bd1e9a230b483cb4e0c01205c16370002000000000000000002eb",
         "pool name": "Balancer BUCEPHALUS/USDC",
@@ -4925,6 +6457,16 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             "0x3Ae6a0FdA23c9A96f17208e47876d0313410Cd36",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x8dCBDb06c4ca37F462a542a89900a1D95e9ad62e": {
+        "pool id": "0x8dcbdb06c4ca37f462a542a89900a1d95e9ad62e0002000000000000000003b8",
+        "pool name": "Balancer KARUTO/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x3732216a3E40F6D6316690bf95B006A0C874d54C",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
@@ -4948,6 +6490,17 @@
             "0x6B175474E89094C44Da98b954EedeAC495271d0F"
         ]
     },
+    "0x8E6eC57A822c2F527F2Df7C7D7D361dF3E7530a1": {
+        "pool id": "0x8e6ec57a822c2f527f2df7c7d7d361df3e7530a1000000000000000000000498",
+        "pool name": "Balancer/DAI/yvDAI",
+        "pool type": "YearnLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x8E6eC57A822c2F527F2Df7C7D7D361dF3E7530a1",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xdA816459F1AB5631232FE5e97a05BBBb94970c95"
+        ]
+    },
     "0x8e791A5e63A6ac278E4AB71d304377A10C06340D": {
         "pool id": "0x8e791a5e63a6ac278e4ab71d304377a10c06340d00020000000000000000024b",
         "pool name": "Balancer USDC/GEHRMAN",
@@ -4956,6 +6509,18 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xe4f0239b71210226FC163030d2eBd4105FfbBa72"
+        ]
+    },
+    "0x8e85e97ed19C0fa13B2549309965291fbbc0048b": {
+        "pool id": "0x8e85e97ed19c0fa13b2549309965291fbbc0048b0000000000000000000003ba",
+        "pool name": "Balancer wstETH/sfrxETH/rETH",
+        "pool type": "ComposableStable",
+        "gauge": "0x3F0FB52648Eb3981EA598716b7320081d1c8Ba1a",
+        "tokens": [
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "0x8e85e97ed19C0fa13B2549309965291fbbc0048b",
+            "0xac3E018457B222d93114458476f3E3416Abbe38F",
+            "0xae78736Cd615f374D3085123A210448E74Fc6393"
         ]
     },
     "0x8e9690E135005E415BD050B11768615DE43fe5f8": {
@@ -5001,7 +6566,7 @@
     },
     "0x8f4063446F5011bC1C9F79A819EFE87776F23704": {
         "pool id": "0x8f4063446f5011bc1c9f79a819efe87776f23704000000000000000000000197",
-        "pool name": "Balancer DAI/bb-f-DAI/4626-fDAI-8",
+        "pool name": "Balancer DAI/4626-fDAI-8",
         "pool type": "ERC4626Linear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -5028,6 +6593,16 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xc10ef4a5dAAB2F5488bD5E95898F755B35f2244C"
+        ]
+    },
+    "0x8fcB5BB072c221793FE975d377AA3634d7A47921": {
+        "pool id": "0x8fcb5bb072c221793fe975d377aa3634d7a47921000200000000000000000435",
+        "pool name": "Balancer FLC/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x32C4ADB9cF57f972bc375129de91C897b4F364F1",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0x8fE054748Fc5c8eE50AB8860409a4E9e760E13f4": {
@@ -5070,6 +6645,17 @@
             "0xc03b1bB3139f628ad9ABeb88cf2f78BF9f3b463A"
         ]
     },
+    "0x9064b809aa85E0A6330034bEfE55a513B86a6Bf0": {
+        "pool id": "0x9064b809aa85e0a6330034befe55a513b86a6bf00001000000000000000003c3",
+        "pool name": "Balancer frxETH/sfrxETH/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x5E8422345238F34275888049021821E8E08CAa1f",
+            "0xac3E018457B222d93114458476f3E3416Abbe38F",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x90a310C2F53B3Acc366100D0957f57a660A71a6B": {
         "pool id": "0x90a310c2f53b3acc366100d0957f57a660a71a6b0002000000000000000001a4",
         "pool name": "Balancer LIES/WETH",
@@ -5100,6 +6686,16 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0x90ed574867B420A56c658460474F525156a6e5cf": {
+        "pool id": "0x90ed574867b420a56c658460474f525156a6e5cf0002000000000000000003f0",
+        "pool name": "Balancer USDC/yDAI+yUSDC+yUSDT+yTUSD",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8"
+        ]
+    },
     "0x9124b41A553d5A2f003A74c588cC593Ec3650e87": {
         "pool id": "0x9124b41a553d5a2f003a74c588cc593ec3650e870002000000000000000001fb",
         "pool name": "Balancer USDC/LCH",
@@ -5120,9 +6716,29 @@
             "0xF17e65822b568B3903685a7c9F496CF7656Cc6C2"
         ]
     },
+    "0x9145bcfF3fb05C873B35a78e466c9E7Ba1e90Ef8": {
+        "pool id": "0x9145bcff3fb05c873b35a78e466c9e7ba1e90ef800020000000000000000048b",
+        "pool name": "Balancer ANKR/ankrETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x8290333ceF9e6D528dD5618Fb97a76f268f3EDD4",
+            "0xE95A203B1a91a908F9B9CE46459d101078c2c3cb"
+        ]
+    },
+    "0x915fad67992aA1d309Fe188eA02E18Ecf6c2048D": {
+        "pool id": "0x915fad67992aa1d309fe188ea02e18ecf6c2048d000200000000000000000407",
+        "pool name": "Balancer WBTC/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
     "0x9210F1204b5a24742Eba12f710636D76240dF3d0": {
         "pool id": "0x9210f1204b5a24742eba12f710636d76240df3d00000000000000000000000fc",
-        "pool name": "Balancer bb-a-USDC/USDC/aUSDC",
+        "pool name": "Balancer/USDC/aUSDC",
         "pool type": "AaveLinear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -5149,6 +6765,16 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xa746E7a68641b835761F48DfDeFCBBe3bB4AB97f"
+        ]
+    },
+    "0x9232a548DD9E81BaC65500b5e0d918F8Ba93675C": {
+        "pool id": "0x9232a548dd9e81bac65500b5e0d918f8ba93675c000200000000000000000423",
+        "pool name": "Balancer WETH/LIT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xfd0205066521550D7d7AB19DA8F72bb004b4C341"
         ]
     },
     "0x9234F3A62154F7fCDa5346C35D8d53f608651864": {
@@ -5273,6 +6899,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x959216BB492B2efa72b15B7AAcEa5B5C984c3ccA": {
+        "pool id": "0x959216bb492b2efa72b15b7aacea5b5c984c3cca000200000000000000000472",
+        "pool name": "Balancer bb-t-stkAPE/wstETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x126e7643235ec0ab9c103c507642dC3F4cA23C66",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+        ]
+    },
     "0x960F4ecd3533B0aaBF355fF36f79d747d2CA51e7": {
         "pool id": "0x960f4ecd3533b0aabf355ff36f79d747d2ca51e7000200000000000000000113",
         "pool name": "Balancer USDC/AVG",
@@ -5281,6 +6917,16 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xa41F142b6eb2b164f8164CAE0716892Ce02f311f"
+        ]
+    },
+    "0x961764651931941F23cea5bAB246607dC19ef224": {
+        "pool id": "0x961764651931941f23cea5bab246607dc19ef224000200000000000000000444",
+        "pool name": "Balancer B-80BAL-20WETH/tetuBAL",
+        "pool type": "Stable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x5c6Ee304399DBdB9C8Ef030aB642B10820DB8F56",
+            "0xFE700D523094Cc6C673d78F1446AE0743C89586E"
         ]
     },
     "0x962FFF222f44CF7cb5E6f05fD23c240569c33BD6": {
@@ -5323,6 +6969,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x968024662b9566B42d78af23a0f441BC8723fa83": {
+        "pool id": "0x968024662b9566b42d78af23a0f441bc8723fa83000200000000000000000418",
+        "pool name": "Balancer TRYB/bb-a-USD",
+        "pool type": "Weighted",
+        "gauge": "0xCa38ebc1b2145e1AfCE7aC4325a06217F52e65f7",
+        "tokens": [
+            "0x2C537E5624e4af88A7ae4060C022609376C8D0EB",
+            "0xA13a9247ea42D743238089903570127DdA72fE44"
+        ]
+    },
     "0x9690a83806c905AeE1C59c2788CD272dE728d169": {
         "pool id": "0x9690a83806c905aee1c59c2788cd272de728d169000200000000000000000212",
         "pool name": "Balancer OTHR/USDC",
@@ -5331,6 +6987,16 @@
         "tokens": [
             "0x407a3E019c655B779ccD098Ff50377E4C5F1C334",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x9691350CE007cC2C3BF8819CA2bC9965118f4495": {
+        "pool id": "0x9691350ce007cc2c3bf8819ca2bc9965118f44950002000000000000000003a4",
+        "pool name": "Balancer USDC/USDT",
+        "pool type": "MetaStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
         ]
     },
     "0x96bA9025311e2f47B840A1f68ED57A3DF1EA8747": {
@@ -5384,6 +7050,16 @@
             "0xf650C3d88D12dB855b8bf7D11Be6C55A4e07dCC9"
         ]
     },
+    "0x986bE52138cd994233Ae7FE115eE8eAeeD0af516": {
+        "pool id": "0x986be52138cd994233ae7fe115ee8eaeed0af516000200000000000000000440",
+        "pool name": "Balancer USDC/PINT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xFECBa472B2540C5a2d3700b2C9E06F0aa7dC6462"
+        ]
+    },
     "0x99184713bad36bdcbC31453670FBB0D2eC3Cfcc4": {
         "pool id": "0x99184713bad36bdcbc31453670fbb0d2ec3cfcc400020000000000000000014d",
         "pool name": "Balancer ZOO/DAI",
@@ -5427,6 +7103,17 @@
             "0xd084944d3c05CD115C09d072B9F44bA3E0E45921"
         ]
     },
+    "0x99c88AD7dc566616548adde8ED3eFfa730eB6C34": {
+        "pool id": "0x99c88ad7dc566616548adde8ed3effa730eb6c3400000000000000000000049a",
+        "pool name": "Balancer bb-g-USDC/bb-g-DAI",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4A82b580365Cff9B146281Ab72500957a849ABDC",
+            "0x99c88AD7dc566616548adde8ED3eFfa730eB6C34",
+            "0xe03aF00faBe8401560c1FF7d242d622a5b601573"
+        ]
+    },
     "0x99D79238457Cfa3a9e86856B05D9814C00926D04": {
         "pool id": "0x99d79238457cfa3a9e86856b05d9814c00926d04000200000000000000000395",
         "pool name": "Balancer USDC/TYPE",
@@ -5435,6 +7122,17 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xeaf61FC150CD5c3BeA75744e830D916E60EA5A9F"
+        ]
+    },
+    "0x9A115e4c55509612719395120219c24E4CCf513e": {
+        "pool id": "0x9a115e4c55509612719395120219c24e4ccf513e0001000000000000000003ff",
+        "pool name": "Balancer WBTC/PAXG/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0x45804880De22913dAFE09f4980848ECE6EcbAf78",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
     "0x9A6257135bD47cF7Da17c057B82e42545F3ed93E": {
@@ -5456,6 +7154,17 @@
             "0x1F573D6Fb3F13d689FF844B4cE37794d79a7FF1C",
             "0x48Fb253446873234F2fEBbF9BdeAA72d9d387f94",
             "0xAB05Cf7C6c3a288cd36326e4f7b8600e7268E344"
+        ]
+    },
+    "0x9B1c8407a360443A9E5ECA004713E4088FAB8AC0": {
+        "pool id": "0x9b1c8407a360443a9e5eca004713e4088fab8ac0000000000000000000000497",
+        "pool name": "Balancer/USDC/yvUSDC",
+        "pool type": "YearnLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x9B1c8407a360443A9E5ECA004713E4088FAB8AC0",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xa354F35829Ae975e850e23e9615b11Da1B3dC4DE"
         ]
     },
     "0x9c00362427f263ebc02A6F5229132f39335Fe963": {
@@ -5486,6 +7195,16 @@
         "tokens": [
             "0x0eDF9bc41Bbc1354c70e2107F80C42caE7FBBcA8",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x9c6d47Ff73e0F5E51BE5FD53236e3F595C5793F2": {
+        "pool id": "0x9c6d47ff73e0f5e51be5fd53236e3f595c5793f200020000000000000000042c",
+        "pool name": "Balancer wstETH/cbETH",
+        "pool type": "MetaStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704"
         ]
     },
     "0x9d5320481bb76e004ba5Dba998E2bf9D71B48cc6": {
@@ -5521,6 +7240,17 @@
             "0xba100000625a3754423978a60c9317c58a424e3D",
             "0xc00e94Cb662C3520282E6f5717214004A7f26888",
             "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x9eE0aF1Ee0a0782dAf5F1Af47fD49b2a766bd8d4": {
+        "pool id": "0x9ee0af1ee0a0782daf5f1af47fd49b2a766bd8d40001000000000000000003a2",
+        "pool name": "Balancer 24K/USDC/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4Cc46A45b49a5073A6C1e0636Cbad48EfA35cdD3",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
@@ -5565,6 +7295,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0x9f383F91C89CBd649c700C2BF69c2a828af299Aa": {
+        "pool id": "0x9f383f91c89cbd649c700c2bf69c2a828af299aa0002000000000000000003a6",
+        "pool name": "Balancer USDC/USDT",
+        "pool type": "MetaStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
     "0x9F40f06Ea32304Dc777eCC661609Fb6B0C5daf4A": {
         "pool id": "0x9f40f06ea32304dc777ecc661609fb6b0c5daf4a00020000000000000000026a",
         "pool name": "Balancer graviAURA/AURA",
@@ -5573,6 +7313,37 @@
         "tokens": [
             "0xBA485b556399123261a5F9c95d413B4f93107407",
             "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF"
+        ]
+    },
+    "0x9F9d900462492D4C21e9523ca95A7CD86142F298": {
+        "pool id": "0x9f9d900462492d4c21e9523ca95a7cd86142f298000200000000000000000462",
+        "pool name": "Balancer rETH/RPL",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xae78736Cd615f374D3085123A210448E74Fc6393",
+            "0xD33526068D116cE69F19A9ee46F0bd304F21A51f"
+        ]
+    },
+    "0x9fb771D530B0cEBA5160F7bFE2DD1E8B8aa13403": {
+        "pool id": "0x9fb771d530b0ceba5160f7bfe2dd1e8b8aa1340300000000000000000000040e",
+        "pool name": "Balancer bb-a-FRAX/bb-a-USDC/FBP",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6a1eB2e9B45e772F55bd9a34659A04B6F75Da687",
+            "0x82698aeCc9E28e9Bb27608Bd52cF57f704BD1B83",
+            "0x9fb771D530B0cEBA5160F7bFE2DD1E8B8aa13403"
+        ]
+    },
+    "0xA02A200269AAA866C549449BbbF7f78b54C0E8f8": {
+        "pool id": "0xa02a200269aaa866c549449bbbf7f78b54c0e8f80002000000000000000004a0",
+        "pool name": "Balancer Specter/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x1e6fCB0C88add2FEf7E2753CfADE6dB390581cfb",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0xa02E4b3d18D4E6B8d18Ac421fBc3dfFF8933c40a": {
@@ -5604,6 +7375,16 @@
             "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
             "0x3472A5A71965499acd81997a54BBA8D852C6E53d",
             "0xBA485b556399123261a5F9c95d413B4f93107407"
+        ]
+    },
+    "0xa0cF2478a7a9FaDd53ce24665399Aa80C7eb5075": {
+        "pool id": "0xa0cf2478a7a9fadd53ce24665399aa80c7eb50750002000000000000000003ea",
+        "pool name": "Balancer UNI/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
     "0xa1039beb7A9aae096B41c4A8AD91eFC8624d0279": {
@@ -5638,6 +7419,32 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0xa1a6a7DC48919A182cF2541fcF7e2ecd952E9775": {
+        "pool id": "0xa1a6a7dc48919a182cf2541fcf7e2ecd952e97750001000000000000000003c2",
+        "pool name": "Balancer WBTC/BUSD/LDO/BAL/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+            "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
+            "0xba100000625a3754423978a60c9317c58a424e3D",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
+    "0xa25eD0bc8385c36Bb1106BD1F41C5D07544D0fBe": {
+        "pool id": "0xa25ed0bc8385c36bb1106bd1f41c5d07544d0fbe000100000000000000000401",
+        "pool name": "Balancer EUROC/WBTC/PAXG/USDC/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c",
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0x45804880De22913dAFE09f4980848ECE6EcbAf78",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xA27E92f81b42fEb6e0d507D1c0F75a5284E921E6": {
         "pool id": "0xa27e92f81b42feb6e0d507d1c0f75a5284e921e600010000000000000000036d",
         "pool name": "Balancer XZAR/BUSD/WETH",
@@ -5646,6 +7453,16 @@
         "tokens": [
             "0x48f07301E9E29c3C38a80ae8d9ae771F224f1054",
             "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xA2903a4108fDe55357CcA753E8331788ffB7686d": {
+        "pool id": "0xa2903a4108fde55357cca753e8331788ffb7686d00020000000000000000049c",
+        "pool name": "Balancer OG/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x44e38858261A9fD8D2355d972DC056C5b4313e81",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
@@ -5678,6 +7495,16 @@
             "0xBA485b556399123261a5F9c95d413B4f93107407",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF"
+        ]
+    },
+    "0xa3353f841193c4b77080038663A0DB22da7D26db": {
+        "pool id": "0xa3353f841193c4b77080038663a0db22da7d26db0002000000000000000003a5",
+        "pool name": "Balancer USDC/USDT",
+        "pool type": "MetaStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
         ]
     },
     "0xa33E376932b2c01323F0A7f9bBe0a53F7662B2E9": {
@@ -5717,7 +7544,7 @@
     },
     "0xA3823e50f20982656557A4A6a9C06Ba5467aE908": {
         "pool id": "0xa3823e50f20982656557a4a6a9c06ba5467ae9080000000000000000000000e6",
-        "pool name": "Balancer aDAI/DAI/bb-a-DAI",
+        "pool name": "Balancer aDAI/DAI",
         "pool type": "AaveLinear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -5735,6 +7562,26 @@
             "0xbC396689893D065F41bc2C6EcbeE5e0085233447",
             "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF",
             "0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB"
+        ]
+    },
+    "0xa3C500969accb3D8DF08CBa313C120818fE0ed9D": {
+        "pool id": "0xa3c500969accb3d8df08cba313c120818fe0ed9d000200000000000000000471",
+        "pool name": "Balancer SYN/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x0f2D719407FdBeFF09D87557AbB7232601FD9F29",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xA4254e476a41790E019179A913AE0A16153d8C4d": {
+        "pool id": "0xa4254e476a41790e019179a913ae0a16153d8c4d00020000000000000000044b",
+        "pool name": "Balancer WOOD/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x119d5f9771809AE6b1fAC2C282Dbd30760a93F70",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0xA44eE49c90e8ca8De17d99946e527A19F5b840A7": {
@@ -5877,6 +7724,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0xa718042E5622099E5F0aCe4E7122058ab39e1bbe": {
+        "pool id": "0xa718042e5622099e5f0ace4e7122058ab39e1bbe000200000000000000000475",
+        "pool name": "Balancer TEMPLE/bb-euler-USD-BPT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x470EBf5f030Ed85Fc1ed4C2d36B9DD02e77CF1b7",
+            "0x50Cf90B954958480b8DF7958A9E965752F627124"
+        ]
+    },
     "0xa78bE350A0Dda6d644470cC523030cEe4AD49c20": {
         "pool id": "0xa78be350a0dda6d644470cc523030cee4ad49c20000200000000000000000259",
         "pool name": "Balancer USDC/REBELS",
@@ -5895,6 +7752,17 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xAB846Fb6C81370327e784Ae7CbB6d6a6af6Ff4BF"
+        ]
+    },
+    "0xa8b103A10A94f4f2D7Ed2FdCd5545E8075573307": {
+        "pool id": "0xa8b103a10a94f4f2d7ed2fdcd5545e807557330700000000000000000000048e",
+        "pool name": "Balancer/TEST/WETH",
+        "pool type": "GearboxLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xa8b103A10A94f4f2D7Ed2FdCd5545E8075573307",
+            "0x4bE0E4d6184348c5BA845a4010528CFC779610b8",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0xA8B116aF145F32206c04eB655433D28e0D9f68c5": {
@@ -6007,6 +7875,26 @@
             "0xF24d8651578a55b0C119B9910759a351A3458895"
         ]
     },
+    "0xac0af4e07f8F4a13b1a73d7D381609C426932718": {
+        "pool id": "0xac0af4e07f8f4a13b1a73d7d381609c42693271800020000000000000000042a",
+        "pool name": "Balancer PAGE/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x60e683C6514Edd5F758A55b6f393BeBBAfaA8d5e",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xAC0f0065e06cfDe8E8a64681cBA72719D8e2Aa7d": {
+        "pool id": "0xac0f0065e06cfde8e8a64681cba72719d8e2aa7d00020000000000000000040b",
+        "pool name": "Balancer DAI/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
     "0xAc68F2471b374e21b5779B3a410Dd204dd9af0b2": {
         "pool id": "0xac68f2471b374e21b5779b3a410dd204dd9af0b200020000000000000000024f",
         "pool name": "Balancer USDC/ BMC ",
@@ -6015,6 +7903,17 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xE1275119A401D6Ed13250D0D9b2C0bE9095e4aBF"
+        ]
+    },
+    "0xaC976bb42cb0C85635644E8c7c74D0E0286aA61C": {
+        "pool id": "0xac976bb42cb0c85635644e8c7c74d0e0286aa61c0000000000000000000003cb",
+        "pool name": "Balancer FIAT/bb-a-USD",
+        "pool type": "ComposableStable",
+        "gauge": "0xf84f835B54C20cdf7b1B51309934F3314DCC6ed0",
+        "tokens": [
+            "0x586Aa273F262909EEF8fA02d90Ab65F5015e0516",
+            "0xA13a9247ea42D743238089903570127DdA72fE44",
+            "0xaC976bb42cb0C85635644E8c7c74D0E0286aA61C"
         ]
     },
     "0xACF687871E7d6A0b9393Bb5F7f4e2e5997050B4f": {
@@ -6027,6 +7926,16 @@
             "0xdDB04Ab1eFD8BCB6390758344df705eF22551CE7"
         ]
     },
+    "0xAd0e5e0778cAC28f1ff459602b31351871B5754a": {
+        "pool id": "0xad0e5e0778cac28f1ff459602b31351871b5754a0002000000000000000003ce",
+        "pool name": "Balancer USDC/EURS",
+        "pool type": "FX",
+        "gauge": "0xB381D8923feff930b7AaeDF9563f1496ce0aCe36",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdB25f211AB05b1c97D595516F45794528a807ad8"
+        ]
+    },
     "0xad302e620FEDb60078B33514757335545ba05c6D": {
         "pool id": "0xad302e620fedb60078b33514757335545ba05c6d00020000000000000000004e",
         "pool name": "Balancer WETH/RARI",
@@ -6035,6 +7944,19 @@
         "tokens": [
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xFca59Cd816aB1eaD66534D82bc21E7515cE441CF"
+        ]
+    },
+    "0xaD6A8c18b62EB914604Ec1EEc7FBCf132799Fe09": {
+        "pool id": "0xad6a8c18b62eb914604ec1eec7fbcf132799fe090001000000000000000003f6",
+        "pool name": "Balancer REN/wstETH/SLP/COW/renBTC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x408e41876cCCDC0F92210600ef50372656052a38",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "0xCC8Fa225D80b9c7D42F96e9570156c65D6cAAa25",
+            "0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB",
+            "0xEB4C2781e4ebA804CE9a9803C67d0893436bB27D"
         ]
     },
     "0xadF6ae8A9256dEB22796E65D42Dc27394F812873": {
@@ -6047,9 +7969,19 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0xaE345d50107AA82D11384D2A12204CFBCBb9f0E8": {
+        "pool id": "0xae345d50107aa82d11384d2a12204cfbcbb9f0e80002000000000000000004a4",
+        "pool name": "Balancer EVA/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7FcE0080031e3639cb8B40e21eA59F8f3d840935",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xae37D54Ae477268B9997d4161B96b8200755935c": {
         "pool id": "0xae37d54ae477268b9997d4161b96b8200755935c000000000000000000000337",
-        "pool name": "Balancer aDAI/DAI/bb-a-DAI",
+        "pool name": "Balancer aDAI/DAI",
         "pool type": "AaveLinear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -6060,7 +7992,7 @@
     },
     "0xae4d08895B1F0F14C7Ab5f5B2E9bf54e6e1e5C6F": {
         "pool id": "0xae4d08895b1f0f14c7ab5f5b2e9bf54e6e1e5c6f0001000000000000000001ec",
-        "pool name": "Balancer wstETH/rETH/WETH/aETH\u0441",
+        "pool name": "Balancer wstETH/rETH/WETH/ankrETH",
         "pool type": "Weighted",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -6078,6 +8010,26 @@
         "tokens": [
             "0x24E79e946dEa5482212c38aaB2D0782F04cdB0E0",
             "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9"
+        ]
+    },
+    "0xaEcCF01ca752710d86603E82940342225297e771": {
+        "pool id": "0xaeccf01ca752710d86603e82940342225297e771000200000000000000000443",
+        "pool name": "Balancer rETH/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x9559Aaa82d9649C7A7b220E7c461d2E74c9a3593",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xAEcdBcB6889c329480aaB3a7D6fCeEA05D33Ac35": {
+        "pool id": "0xaecdbcb6889c329480aab3a7d6fceea05d33ac350002000000000000000003dc",
+        "pool name": "Balancer SNM/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x983F6d60db79ea8cA4eB9968C6aFf8cfA04B3c63",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
     "0xaF37b0518A5d528E04634A8bBa1bF829FB718683": {
@@ -6170,9 +8122,19 @@
             "0xAf5191B0De278C7286d6C7CC6ab6BB8A73bA2Cd6"
         ]
     },
+    "0xB08885e6026bab4333A80024Ec25a1a3e1FF2b8A": {
+        "pool id": "0xb08885e6026bab4333a80024ec25a1a3e1ff2b8a000200000000000000000445",
+        "pool name": "Balancer rETH/WETH",
+        "pool type": "MetaStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x9559Aaa82d9649C7A7b220E7c461d2E74c9a3593",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xb0F75E97A114A4EB4a425eDc48990e6760726709": {
         "pool id": "0xb0f75e97a114a4eb4a425edc48990e6760726709000000000000000000000198",
-        "pool name": "Balancer LUSD/4626-fLUSD-8/bb-f-LUSD",
+        "pool name": "Balancer LUSD/4626-fLUSD-8",
         "pool type": "ERC4626Linear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -6221,6 +8183,26 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0xB1b908BF850b75d20cbCE5F4A3f8D8082F64BB2C": {
+        "pool id": "0xb1b908bf850b75d20cbce5f4a3f8d8082f64bb2c000200000000000000000491",
+        "pool name": "Balancer APE/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4d224452801ACEd8B2F0aebE155379bb5D594381",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0xb1c5944170C96C2bd5F0f1855E4691C54601DCA6": {
+        "pool id": "0xb1c5944170c96c2bd5f0f1855e4691c54601dca60002000000000000000003af",
+        "pool name": "Balancer QNT/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4a220E6096B25EADb88358cb44068A3248254675",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
     "0xb1c9557D8F0844451f85548334a5Eef32a6e6630": {
         "pool id": "0xb1c9557d8f0844451f85548334a5eef32a6e66300002000000000000000001e2",
         "pool name": "Balancer DAI/DELTA rLP",
@@ -6239,6 +8221,22 @@
         "tokens": [
             "0x865377367054516e17014CcdED1e7d814EDC9ce4",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xb240930034B1C12B57655b3BE79d2f480d87109a": {
+        "pool id": "0xb240930034b1c12b57655b3be79d2f480d87109a0001000000000000000003bc",
+        "pool name": "Balancer BUSD/MATIC/wstETH/AAVE/SHIB/AXS/SLP/SOL",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+            "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+            "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE",
+            "0xBB0E17EF65F82Ab018d8EDd776e8DD940327B28b",
+            "0xCC8Fa225D80b9c7D42F96e9570156c65D6cAAa25",
+            "0xD31a59c85aE9D8edEFeC411D448f90841571b89c"
         ]
     },
     "0xB2634e2BFab9664F603626afc3D270BE63c09adE": {
@@ -6302,6 +8300,16 @@
             "0x3472A5A71965499acd81997a54BBA8D852C6E53d"
         ]
     },
+    "0xb50133A51826c10631Ca3E8eB3316f9332D5a2BB": {
+        "pool id": "0xb50133a51826c10631ca3e8eb3316f9332d5a2bb0002000000000000000003e7",
+        "pool name": "Balancer XAV/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x40370aEd88933021e20CF7C4D67E00417CdA2202",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
     "0xb5152e7B85E9C2A9Cef95879ee67cfA19da13b1F": {
         "pool id": "0xb5152e7b85e9c2a9cef95879ee67cfa19da13b1f00020000000000000000015b",
         "pool name": "Balancer LEASH/CGT",
@@ -6320,6 +8328,26 @@
         "tokens": [
             "0xB65dF73fC4F6591ebe00494A4bd47ed339a81210",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xB53f8F2907d8E5fED503f8ebCe4433FB5c5BEae2": {
+        "pool id": "0xb53f8f2907d8e5fed503f8ebce4433fb5c5beae200020000000000000000041e",
+        "pool name": "Balancer wARRR/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x057acee6DF29EcC20e87A77783838d90858c5E83",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xB5E3de837F869B0248825e0175DA73d4E8c3db6B": {
+        "pool id": "0xb5e3de837f869b0248825e0175da73d4e8c3db6b000200000000000000000474",
+        "pool name": "Balancer bb-euler-USD-BPT/rETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x50Cf90B954958480b8DF7958A9E965752F627124",
+            "0xae78736Cd615f374D3085123A210448E74Fc6393"
         ]
     },
     "0xb61bEf0Cf17b25542c061eD861f270D5ac88a6b7": {
@@ -6378,6 +8406,17 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0xB704aA724E69601Ffdc9B748137491BFfa1B858D": {
+        "pool id": "0xb704aa724e69601ffdc9b748137491bffa1b858d0001000000000000000004a1",
+        "pool name": "Balancer QOM/O/CAW",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xa71d0588EAf47f12B13cF8eC750430d21DF04974",
+            "0xb53ecF1345caBeE6eA1a65100Ebb153cEbcac40f",
+            "0xf3b9569F82B18aEf890De263B84189bd33EBe452"
+        ]
+    },
     "0xB70c25D96EF260eA07F650037Bf68F5d6583885e": {
         "pool id": "0xb70c25d96ef260ea07f650037bf68f5d6583885e000200000000000000000096",
         "pool name": "Balancer DAI/eYyvDAI-28JAN22",
@@ -6399,6 +8438,16 @@
             "0xae78736Cd615f374D3085123A210448E74Fc6393",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xD33526068D116cE69F19A9ee46F0bd304F21A51f"
+        ]
+    },
+    "0xB78725456D9a8673216BbEfB24553b783F6E8216": {
+        "pool id": "0xb78725456d9a8673216bbefb24553b783f6e821600020000000000000000046d",
+        "pool name": "Balancer BradAI/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x8E80fd661a74262D5bA5FAF0060BB1b50B810B87",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0xB78dD51F513a4399d060B836B4230881317F9247": {
@@ -6434,6 +8483,16 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             "0x7b52118bcD20d43861cDb112150A9b0342677d3b",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0xb8b6fB4474d3Bf3b878a9dfC36115792358Db096": {
+        "pool id": "0xb8b6fb4474d3bf3b878a9dfc36115792358db09600020000000000000000044c",
+        "pool name": "Balancer BaoUSD/USDC",
+        "pool type": "Stable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7945b0A6674b175695e5d1D08aE1e6F13744Abb0",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
@@ -6489,7 +8548,7 @@
     },
     "0xBa26dCF1C68657C3E825c11185Dbe2ffA66D745D": {
         "pool id": "0xba26dcf1c68657c3e825c11185dbe2ffa66d745d0001000000000000000002df",
-        "pool name": "Balancer rETH/rETH/aETH\u0441",
+        "pool name": "Balancer rETH/rETH/ankrETH",
         "pool type": "Weighted",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -6579,6 +8638,28 @@
             "0xc4D71D9B3C04981f515F97D998244320E60B246e"
         ]
     },
+    "0xbb7FE74104Cce0835af16f0E6723A2386b3ff66f": {
+        "pool id": "0xbb7fe74104cce0835af16f0e6723a2386b3ff66f00010000000000000000042e",
+        "pool name": "Balancer JPG/hiBAYC/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x02e7Ac540409D32C90BfB51114003a9E1fF0249c",
+            "0x83031984B45553070a088273f341BfF7fB4f2F46",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xbc0F2372008005471874e426e86CCFae7B4De79d": {
+        "pool id": "0xbc0f2372008005471874e426e86ccfae7b4de79d000000000000000000000485",
+        "pool name": "Balancer/USDC/idleUSDCJunior4626",
+        "pool type": "ERC4626Linear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xbc0F2372008005471874e426e86CCFae7B4De79d",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xc3dA79e0De523eEf7AC1e4ca9aBFE3aAc9973133"
+        ]
+    },
     "0xBc40d048fF363942e93538CbA8230aE476E779A8": {
         "pool id": "0xbc40d048ff363942e93538cba8230ae476e779a80002000000000000000002b3",
         "pool name": "Balancer DLGTN/USDC",
@@ -6609,6 +8690,16 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0xBc81F95f7b19A4Bb3B7b9824449FD897d8200Aa9": {
+        "pool id": "0xbc81f95f7b19a4bb3b7b9824449fd897d8200aa9000200000000000000000437",
+        "pool name": "Balancer TFG/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x5caE4cDF9fb338B6c1AfA89a9f2818EE80BC4B4f",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xBC8A29FC4ff7727235112a6Df59fAb61d7ec0C4c": {
         "pool id": "0xbc8a29fc4ff7727235112a6df59fab61d7ec0c4c00020000000000000000024e",
         "pool name": "Balancer RONIN/USDC",
@@ -6617,6 +8708,16 @@
         "tokens": [
             "0x37b839DA186A6CDF7c84004Eb0b839F9FF9A1a50",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0xbcAe92a7ef7Ff3FEEC11eB3354990640F6e5842F": {
+        "pool id": "0xbcae92a7ef7ff3feec11eb3354990640f6e5842f0002000000000000000003d1",
+        "pool name": "Balancer DAI/AAVE",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9"
         ]
     },
     "0xBCCd9d4B953AdA653b7C464665d7263E5e078A98": {
@@ -6639,6 +8740,35 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0xBD3a698826d27563d08d459Faff2d5F6960e21Cf": {
+        "pool id": "0xbd3a698826d27563d08d459faff2d5f6960e21cf0001000000000000000003b5",
+        "pool name": "Balancer WBTC/DAI/AAVE/USDC/stETH/BAL/WETH/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+            "0xba100000625a3754423978a60c9317c58a424e3D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
+    "0xbD482fFb3E6E50dC1c437557C3Bea2B68f3683Ee": {
+        "pool id": "0xbd482ffb3e6e50dc1c437557c3bea2b68f3683ee0000000000000000000003c6",
+        "pool name": "Balancer BUSD/DAI/USDC/USDT",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xbD482fFb3E6E50dC1c437557C3Bea2B68f3683Ee",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
     "0xBD52970e2d38Ce00283BbeeF558e4eF0Ec42725c": {
         "pool id": "0xbd52970e2d38ce00283bbeef558e4ef0ec42725c0002000000000000000001c0",
         "pool name": "Balancer TRILL/USDC",
@@ -6656,6 +8786,16 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             "0xA81e8811f17b07C51cE214d36D2Fee0C6573581D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xbe7A000d1f9d6846a99E5B8a684E401f53f479FE": {
+        "pool id": "0xbe7a000d1f9d6846a99e5b8a684e401f53f479fe00020000000000000000045b",
+        "pool name": "Balancer SNT/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x744d70FDBE2Ba4CF95131626614a1763DF805B9E",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
@@ -6819,6 +8959,21 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0xC3141fC45791CcA3F21F2A926Fd8598c39a4C6d2": {
+        "pool id": "0xc3141fc45791cca3f21f2a926fd8598c39a4c6d20001000000000000000003b0",
+        "pool name": "Balancer DAI/USDC/BAL/AXS/WETH/SLP/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xba100000625a3754423978a60c9317c58a424e3D",
+            "0xBB0E17EF65F82Ab018d8EDd776e8DD940327B28b",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xCC8Fa225D80b9c7D42F96e9570156c65D6cAAa25",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
     "0xC35bdDa2E93c401c6645e0d8a0B2c86906C51710": {
         "pool id": "0xc35bdda2e93c401c6645e0d8a0b2c86906c51710000200000000000000000111",
         "pool name": "Balancer FEI/TRIBE",
@@ -6965,7 +9120,7 @@
     },
     "0xc8C79fCD0e859e7eC81118e91cE8E4379A481ee6": {
         "pool id": "0xc8c79fcd0e859e7ec81118e91ce8e4379a481ee6000000000000000000000196",
-        "pool name": "Balancer FEI/bb-f-FEI/4626-fFEI-8",
+        "pool name": "Balancer FEI/4626-fFEI-8",
         "pool type": "ERC4626Linear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -7002,6 +9157,17 @@
         "tokens": [
             "0x43b4FdFD4Ff969587185cDB6f0BD875c5Fc83f8c",
             "0x55096A35Bf827919B3Bb0A5e6b5E2af8095F3D4d"
+        ]
+    },
+    "0xC9C5Ff67bB2Fae526aE2467C359609D6BCb4c532": {
+        "pool id": "0xc9c5ff67bb2fae526ae2467c359609d6bcb4c5320000000000000000000003cc",
+        "pool name": "Balancer qETH/WETH",
+        "pool type": "ComposableStable",
+        "gauge": "0xBE05c851c0D84ba94Ec10ec75DF59175C77169B2",
+        "tokens": [
+            "0x93ef1Ea305D11A9b2a3EbB9bB4FCc34695292E7d",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xC9C5Ff67bB2Fae526aE2467C359609D6BCb4c532"
         ]
     },
     "0xC9F45aE62B10AACB34B504DbAB09761c74a8347A": {
@@ -7104,6 +9270,16 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0xcD84dcAEeEB4FD1bc46A4945ea122A2643Fa8d39": {
+        "pool id": "0xcd84dcaeeeb4fd1bc46a4945ea122a2643fa8d390002000000000000000003f1",
+        "pool name": "Balancer DAI/uYyvDAI:1:2023-5-21",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xc4D2b524526d403A3d345015261eab1CA3F70292"
+        ]
+    },
     "0xcD865aFCe7e6949E56a09E89A19B2Cd6df48eC07": {
         "pool id": "0xcd865afce7e6949e56a09e89a19b2cd6df48ec07000200000000000000000271",
         "pool name": "Balancer USDC/NOT",
@@ -7162,6 +9338,21 @@
         "tokens": [
             "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
             "0x6B25b806a48B0d7CfA8399E3537479DdDe7c931f"
+        ]
+    },
+    "0xcFa949Be14F30CA39FeFDd2e15Ce6d9f0034292a": {
+        "pool id": "0xcfa949be14f30ca39fefdd2e15ce6d9f0034292a0001000000000000000003ae",
+        "pool name": "Balancer MAXI/HEX/LUCKY/DECI/TEAM/BASE/TRIO",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x0d86EB9f43C57f6FF3BC9E23D8F9d82503f0e84b",
+            "0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39",
+            "0x6B0956258fF7bd7645aa35369B55B61b8e6d6140",
+            "0x6b32022693210cD2Cfc466b9Ac0085DE8fC34eA6",
+            "0xB7c9E99Da8A857cE576A830A9c19312114d9dE02",
+            "0xe9f84d418B008888A992Ff8c6D22389C2C3504e0",
+            "0xF55cD1e399e1cc3D95303048897a680be3313308"
         ]
     },
     "0xCfB03ccDdc8C9F47aDA039a432FEDabcE9772F0f": {
@@ -7331,6 +9522,16 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0xD1eC5e215E8148D76F4460e4097FD3d5ae0A3558": {
+        "pool id": "0xd1ec5e215e8148d76f4460e4097fd3d5ae0a35580002000000000000000003d3",
+        "pool name": "Balancer OHM/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x5f2c3422a675860f0e019Ddd78C6fA681bE84bd4",
+        "tokens": [
+            "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xD208168d2A512240Eb82582205D94a0710BCe4E7": {
         "pool id": "0xd208168d2a512240eb82582205d94a0710bce4e7000100000000000000000072",
         "pool name": "Balancer VSP/vVSP/WETH",
@@ -7479,6 +9680,27 @@
             "0xEDB171C18cE90B633DB442f2A6F72874093b49Ef"
         ]
     },
+    "0xD4e7C1F3DA1144c9E2CfD1b015eDA7652b4a4399": {
+        "pool id": "0xd4e7c1f3da1144c9e2cfd1b015eda7652b4a439900000000000000000000046a",
+        "pool name": "Balancer/USDC/eUSDC",
+        "pool type": "EulerLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xD4e7C1F3DA1144c9E2CfD1b015eDA7652b4a4399",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xEb91861f8A4e1C12333F42DCE8fB0Ecdc28dA716"
+        ]
+    },
+    "0xd4f79CA0Ac83192693bce4699d0c10C66Aa6Cf0F": {
+        "pool id": "0xd4f79ca0ac83192693bce4699d0c10c66aa6cf0f00020000000000000000047e",
+        "pool name": "Balancer OHM/wstETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+        ]
+    },
     "0xd5167D330FF8680af8119D32b786Ac2Ff2a2BE36": {
         "pool id": "0xd5167d330ff8680af8119d32b786ac2ff2a2be360002000000000000000001a9",
         "pool name": "Balancer BLIND/WETH",
@@ -7515,6 +9737,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0xd590931466cdD6d488A25da1E89dD0539723800c": {
+        "pool id": "0xd590931466cdd6d488a25da1e89dd0539723800c00020000000000000000042b",
+        "pool name": "Balancer RBN/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x81C452E84B103555C2Dd2DEc0bFABC0c4d6B3065",
+        "tokens": [
+            "0x6123B0049F904d730dB3C36a31167D9d4121fA6B",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
     "0xD5D7bc115B32ad1449C6D0083E43C87be95F2809": {
         "pool id": "0xd5d7bc115b32ad1449c6d0083e43c87be95f280900020000000000000000006c",
         "pool name": "Balancer steCRV/eYyvcrvSTETH-15OCT21",
@@ -7547,6 +9779,17 @@
             "0xdAC17F958D2ee523a2206206994597C13D831ec7"
         ]
     },
+    "0xD6E355036f41dC261B3f1ed3Bbc6003E87AAdB4f": {
+        "pool id": "0xd6e355036f41dc261b3f1ed3bbc6003e87aadb4f000000000000000000000495",
+        "pool name": "Balancer/yvUSDT/USDT",
+        "pool type": "YearnLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xD6E355036f41dC261B3f1ed3Bbc6003E87AAdB4f",
+            "0x3B27F92C0e212C671EA351827EDF93DB27cc0c65",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
     "0xd6ebC8Db8a81fBE563819b7b8b4c744CbE28e9E8": {
         "pool id": "0xd6ebc8db8a81fbe563819b7b8b4c744cbe28e9e800020000000000000000019d",
         "pool name": "Balancer ALLUO/USDC",
@@ -7555,6 +9798,16 @@
         "tokens": [
             "0x1E5193ccC53f25638Aa22a940af899B692e10B09",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0xd752f1B709c1DF89e1Ea97aFef814D5ea3728a9F": {
+        "pool id": "0xd752f1b709c1df89e1ea97afef814d5ea3728a9f000200000000000000000441",
+        "pool name": "Balancer HPT/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x8a51866dF1CdDc97502625ae8b7A7C472A7f2cA1",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0xD7d7E117D6EA91690A9BA96a49143948100E316C": {
@@ -7607,7 +9860,7 @@
     },
     "0xD997f35c9b1281B82C8928039D14CdDaB5e13c20": {
         "pool id": "0xd997f35c9b1281b82c8928039d14cddab5e13c2000000000000000000000019c",
-        "pool name": "Balancer bb-f-DAI/bb-f-LUSD/bb-f-FEI/bb-f-USD",
+        "pool name": "Balancer bb-f-DAI/bb-f-LUSD/bb-f-FEI",
         "pool type": "StablePhantom",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -7648,6 +9901,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0xDA51Fd3732CA68c1fE7B902568f85fec723268ec": {
+        "pool id": "0xda51fd3732ca68c1fe7b902568f85fec723268ec00020000000000000000045a",
+        "pool name": "Balancer ShibaAI/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7aD0F6a75C691aBaC1B3D8F52E4DDCbaA3165011",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xda724fa0Da9c7A17BdFB5e970Ba26b75588C5E4a": {
         "pool id": "0xda724fa0da9c7a17bdfb5e970ba26b75588c5e4a00020000000000000000012d",
         "pool name": "Balancer USDC/PIF",
@@ -7656,6 +9919,26 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xB30F5d11b94efBBfDeaa4de38eDFFCeEc0bE6513"
+        ]
+    },
+    "0xDAd01C51C8C4957a65355FF8E7dd2f6108da8F05": {
+        "pool id": "0xdad01c51c8c4957a65355ff8e7dd2f6108da8f0500020000000000000000048a",
+        "pool name": "Balancer CHICKS/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x1170c095Fd603F0022761dB8da0B5F3dfa77CF03",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xDb0cBcF1b8282dedc90e8c2CEFe11041d6d1e9f0": {
+        "pool id": "0xdb0cbcf1b8282dedc90e8c2cefe11041d6d1e9f0000200000000000000000431",
+        "pool name": "Balancer SD/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x30D20208d987713f46DFD34EF128Bb16C404D10f",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
     "0xdB1db6E248d7Bb4175f6E5A382d0A03fe3DCc813": {
@@ -7672,6 +9955,17 @@
             "0xc00e94Cb662C3520282E6f5717214004A7f26888",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xF5D669627376EBd411E34b98F19C868c8ABA5ADA"
+        ]
+    },
+    "0xdB3B48F27332c171869f2Ae4160BC93A8EED347c": {
+        "pool id": "0xdb3b48f27332c171869f2ae4160bc93a8eed347c00000000000000000000049b",
+        "pool name": "Balancer BaoUSD/USDC/baoUSD-STABLE",
+        "pool type": "ComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7945b0A6674b175695e5d1D08aE1e6F13744Abb0",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xdB3B48F27332c171869f2Ae4160BC93A8EED347c"
         ]
     },
     "0xdB3e5Cf969c05625Db344deA9C8b12515e235Df3": {
@@ -7700,6 +9994,27 @@
             "0xc92Ef8d8Af5Fde6A15B46582FFAb6e57AE77DE08"
         ]
     },
+    "0xDbA274B4D04097b90A72b62467d828cEFD708037": {
+        "pool id": "0xdba274b4d04097b90a72b62467d828cefd708037000000000000000000000486",
+        "pool name": "Balancer/idleDAIJunior4626/DAI",
+        "pool type": "ERC4626Linear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xDbA274B4D04097b90A72b62467d828cEFD708037",
+            "0x0c80F31B840C6564e6c5E18f386FaD96b63514cA",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+        ]
+    },
+    "0xDbC4F138528B6B893cBCc3fd9c15D8B34D0554aE": {
+        "pool id": "0xdbc4f138528b6b893cbcc3fd9c15d8b34d0554ae0002000000000000000003bf",
+        "pool name": "Balancer QNT/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4a220E6096B25EADb88358cb44068A3248254675",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
     "0xdBcF0F9fDC724E2855f8fb61C13962aF77b41B77": {
         "pool id": "0xdbcf0f9fdc724e2855f8fb61c13962af77b41b77000200000000000000000204",
         "pool name": "Balancer USDC/NIL",
@@ -7708,6 +10023,16 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xb4a97906466Ba60D97682c37cEd57EaA0D123ba1"
+        ]
+    },
+    "0xdbE827FB45a518571CF3688425101BC36E55d244": {
+        "pool id": "0xdbe827fb45a518571cf3688425101bc36e55d24400020000000000000000044d",
+        "pool name": "Balancer Spad/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x94EC8a81ee30956b79857333F68d49c0A268dc53",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0xDC890D8d287FB473434C81bCC05868e490109Ff9": {
@@ -7730,6 +10055,16 @@
             "0xECD8e185782a845bDe1Bf50F201F250f22fC4213"
         ]
     },
+    "0xdd35F1a087AFCf596Ccdca7FCcEd76eF85bCC73f": {
+        "pool id": "0xdd35f1a087afcf596ccdca7fcced76ef85bcc73f0002000000000000000004b2",
+        "pool name": "Balancer WETH/SBASEAI",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xe06bFDd6F13D0Ef5F786c729348517c4aD037E5F"
+        ]
+    },
     "0xDd3b8a0A963F51869DF37D270339c33071f2D428": {
         "pool id": "0xdd3b8a0a963f51869df37d270339c33071f2d4280002000000000000000001bd",
         "pool name": "Balancer USDC/TWIT",
@@ -7750,6 +10085,16 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0xDd8B9A9d6fE0482e7688cfF3C9f990e1D4d0b338": {
+        "pool id": "0xdd8b9a9d6fe0482e7688cff3c9f990e1d4d0b3380002000000000000000003d8",
+        "pool name": "Balancer USDC/COW",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB"
+        ]
+    },
     "0xDdA942BACBE6Bd0c12E3ED2Db45F0349e8C43101": {
         "pool id": "0xdda942bacbe6bd0c12e3ed2db45f0349e8c43101000200000000000000000131",
         "pool name": "Balancer USDC/SYNR",
@@ -7768,6 +10113,27 @@
         "tokens": [
             "0x987Fd7AB5001F31A893b1f6E44c61e02ccc6c47D",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0xddD27f868728995f81D1BD94B801c65D6785C74d": {
+        "pool id": "0xddd27f868728995f81d1bd94b801c65d6785c74d00020000000000000000043b",
+        "pool name": "Balancer USDC/PIDRAGON",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xf8497bb8aA758acbFC9B0a5cD8E52d69f61ECEF7"
+        ]
+    },
+    "0xdDE47A9fF76A3bBbE6772892233A4626F85B23C9": {
+        "pool id": "0xdde47a9ff76a3bbbe6772892233a4626f85b23c900010000000000000000041b",
+        "pool name": "Balancer SPOT/AMPL/WAMPL",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC1f33e0cf7e40a67375007104B929E49a581bafE",
+            "0xD46bA6D942050d489DBd938a2C909A5d5039A161",
+            "0xEDB171C18cE90B633DB442f2A6F72874093b49Ef"
         ]
     },
     "0xdE148e6cC3F6047EeD6E97238D341A2b8589e19E": {
@@ -7798,6 +10164,17 @@
         "tokens": [
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB"
+        ]
+    },
+    "0xDEC02e6642e2c999aF429F5cE944653CAd15e093": {
+        "pool id": "0xdec02e6642e2c999af429f5ce944653cad15e093000000000000000000000469",
+        "pool name": "Balancer/WETH/TEST",
+        "pool type": "EulerLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xDEC02e6642e2c999aF429F5cE944653CAd15e093",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xC101dcA301a4011C1F925e9622e749e550a1B667"
         ]
     },
     "0xdedB0a5aBC452164Fd241dA019741026f6EFdC74": {
@@ -7840,6 +10217,26 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0xDFd67F525D89060403b6982d7F1A24ee35AAe69F": {
+        "pool id": "0xdfd67f525d89060403b6982d7f1a24ee35aae69f000200000000000000000453",
+        "pool name": "Balancer SHIBANA/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x31f8234413A17e82e95DF3996206ECFd869c991c",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xdfeBFF31dFD8d162372E9aFb6a6f668172D3Bc00": {
+        "pool id": "0xdfebff31dfd8d162372e9afb6a6f668172d3bc000002000000000000000003e2",
+        "pool name": "Balancer AAVE/TRIBE",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+            "0xc7283b66Eb1EB5FB86327f08e1B5816b0720212B"
+        ]
+    },
     "0xE00609d1Ff9ec2C5415f5B3d3f7ACC7e21C3b105": {
         "pool id": "0xe00609d1ff9ec2c5415f5b3d3f7acc7e21c3b1050002000000000000000001af",
         "pool name": "Balancer HORUS/USDC",
@@ -7848,6 +10245,37 @@
         "tokens": [
             "0x6aD58Cb51605cE245848750135ff8e8EF763692d",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0xe00F77301ADe080aa373796374cE1d60235AE11E": {
+        "pool id": "0xe00f77301ade080aa373796374ce1d60235ae11e000200000000000000000433",
+        "pool name": "Balancer TTG/USDC",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2BC830c91c9453881566f5E0e7Ebe02244BD2fa2",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0xE01683d1eb6674825c7bDc5452f0464c5769118D": {
+        "pool id": "0xe01683d1eb6674825c7bdc5452f0464c5769118d0002000000000000000004a8",
+        "pool name": "Balancer XAV/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x40370aEd88933021e20CF7C4D67E00417CdA2202",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xe03aF00faBe8401560c1FF7d242d622a5b601573": {
+        "pool id": "0xe03af00fabe8401560c1ff7d242d622a5b601573000000000000000000000493",
+        "pool name": "Balancer/DAI/dDAI",
+        "pool type": "GearboxLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xe03aF00faBe8401560c1FF7d242d622a5b601573",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0x6CFaF95457d7688022FC53e7AbE052ef8DFBbdBA"
         ]
     },
     "0xe0947A0D847f9662a6a22cA2efF9D7E6352a123e": {
@@ -7931,6 +10359,37 @@
             "0xEd279fDD11cA84bEef15AF5D39BB4d4bEE23F0cA"
         ]
     },
+    "0xe2E01a8b901dE83156e51bc6f87309E64C9bD39A": {
+        "pool id": "0xe2e01a8b901de83156e51bc6f87309e64c9bd39a0002000000000000000003d5",
+        "pool name": "Balancer WETH/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
+    "0xe3132B8923aE75c66C9C07032FC56Fd4Bb1e4eCB": {
+        "pool id": "0xe3132b8923ae75c66c9c07032fc56fd4bb1e4ecb000200000000000000000405",
+        "pool name": "Balancer SNX/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
+    "0xe3168409Fb0BA8ED1200A3DD61e0dA3aFe32fDa5": {
+        "pool id": "0xe3168409fb0ba8ed1200a3dd61e0da3afe32fda500010000000000000000049e",
+        "pool name": "Balancer WBTC/MATIC/AAVE",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
+            "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9"
+        ]
+    },
     "0xe340EBfcAA544da8bB1Ee9005F1a346D50Ec422e": {
         "pool id": "0xe340ebfcaa544da8bb1ee9005f1a346d50ec422e000200000000000000000396",
         "pool name": "Balancer BADGER/rETH",
@@ -7941,6 +10400,16 @@
             "0xae78736Cd615f374D3085123A210448E74Fc6393"
         ]
     },
+    "0xE4010EF5E37dc23154680f23c4A0d48BFca91687": {
+        "pool id": "0xe4010ef5e37dc23154680f23c4a0d48bfca91687000200000000000000000432",
+        "pool name": "Balancer SD/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x30D20208d987713f46DFD34EF128Bb16C404D10f",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xE4B6cce1BeBbB2A13EF76D35d245EBf255C50b70": {
         "pool id": "0xe4b6cce1bebbb2a13ef76d35d245ebf255c50b700002000000000000000002cd",
         "pool name": "Balancer DAI/RICH",
@@ -7949,6 +10418,16 @@
         "tokens": [
             "0x6B175474E89094C44Da98b954EedeAC495271d0F",
             "0xDDD97bef2CD79dD4F0cE72D48009866A1E7331Fa"
+        ]
+    },
+    "0xe4dC3c1998aC693d68F4c77476d7c815694c3e94": {
+        "pool id": "0xe4dc3c1998ac693d68f4c77476d7c815694c3e94000200000000000000000416",
+        "pool name": "Balancer TRYB/bb-a-USD",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2C537E5624e4af88A7ae4060C022609376C8D0EB",
+            "0xA13a9247ea42D743238089903570127DdA72fE44"
         ]
     },
     "0xE54B3F5c444a801e61BECDCa93e74CdC1C4C1F90": {
@@ -7983,7 +10462,7 @@
     },
     "0xe6bCC79f328eec93D4Ec8F7ED35534d9AB549faA": {
         "pool id": "0xe6bcc79f328eec93d4ec8f7ed35534d9ab549faa0000000000000000000000e8",
-        "pool name": "Balancer USDT/bb-a-USDT/aUSDT",
+        "pool name": "Balancer USDT/aUSDT",
         "pool type": "AaveLinear",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -8135,6 +10614,17 @@
             "0xE41d2489571d322189246DaFA5ebDe1F4699F498"
         ]
     },
+    "0xEa912e1afa137c15f1638142E32f978E92Fbce39": {
+        "pool id": "0xea912e1afa137c15f1638142e32f978e92fbce390000000000000000000003b4",
+        "pool name": "Balancer DAI/USDT",
+        "pool type": "HighAmpComposableStable",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+            "0xEa912e1afa137c15f1638142E32f978E92Fbce39"
+        ]
+    },
     "0xeACFBB7C21e742d5cBF82a09B394c313f3d9CE41": {
         "pool id": "0xeacfbb7c21e742d5cbf82a09b394c313f3d9ce4100020000000000000000024c",
         "pool name": "Balancer LIQUID/USDC",
@@ -8145,6 +10635,17 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0xeB486AF868AeB3b6e53066abc9623b1041b42bc0": {
+        "pool id": "0xeb486af868aeb3b6e53066abc9623b1041b42bc000000000000000000000046c",
+        "pool name": "Balancer/DAI/eDAI",
+        "pool type": "EulerLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xeB486AF868AeB3b6e53066abc9623b1041b42bc0",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0xe025E3ca2bE02316033184551D4d3Aa22024D9DC"
+        ]
+    },
     "0xeB58bE542E77195355d90100beb07105B9BD295E": {
         "pool id": "0xeb58be542e77195355d90100beb07105b9bd295e00010000000000000000003d",
         "pool name": "Balancer UMA/SNX/WETH",
@@ -8153,6 +10654,26 @@
         "tokens": [
             "0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828",
             "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xeb6F52459dd06C42937DDe6a66aD9B6609EdEC84": {
+        "pool id": "0xeb6f52459dd06c42937dde6a66ad9b6609edec8400020000000000000000043f",
+        "pool name": "Balancer USDC/PINT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xFECBa472B2540C5a2d3700b2C9E06F0aa7dC6462"
+        ]
+    },
+    "0xEb916672CACD374D09e36e50F0743a1d2aC915dF": {
+        "pool id": "0xeb916672cacd374d09e36e50f0743a1d2ac915df0002000000000000000004a3",
+        "pool name": "Balancer BINU/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7606394B26c07Dd153c7E9b25542B8148f718e24",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
@@ -8196,6 +10717,16 @@
             "0xEDB171C18cE90B633DB442f2A6F72874093b49Ef"
         ]
     },
+    "0xed6aA9284Ee64CDAe4cCE8b2BE87775be8adEee7": {
+        "pool id": "0xed6aa9284ee64cdae4cce8b2be87775be8adeee70002000000000000000003c8",
+        "pool name": "Balancer EUROC/PRD",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c",
+            "0xf89E07a8fcfB5FA96aaaA9fB073DE15d89E2D0cb"
+        ]
+    },
     "0xEd86f985BF12cD88Cd32735e5E78CDa08370ea97": {
         "pool id": "0xed86f985bf12cd88cd32735e5e78cda08370ea970002000000000000000001c2",
         "pool name": "Balancer GOB/USDC",
@@ -8213,6 +10744,16 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             "0x4d224452801ACEd8B2F0aebE155379bb5D594381",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xEDc9f3BfF1172573C7dDDBac8AE1090F23DEc530": {
+        "pool id": "0xedc9f3bff1172573c7dddbac8ae1090f23dec53000020000000000000000047a",
+        "pool name": "Balancer AIF/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x57d93f9B10A08b4F59D12AbAe8a96C524005FfC3",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
@@ -8386,6 +10927,16 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0xF0927CfeeB4160f4c32db0E116D3a7b953e91DFe": {
+        "pool id": "0xf0927cfeeb4160f4c32db0e116d3a7b953e91dfe0002000000000000000004a9",
+        "pool name": "Balancer Numi/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x8F1E1D58bCD9bd04fD902b6C781e9487117Bd5ca",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xF099b7C3BD5A221Aa34Cb83004a50D66B0189ad0": {
         "pool id": "0xf099b7c3bd5a221aa34cb83004a50d66b0189ad0000100000000000000000070",
         "pool name": "Balancer AUDIO/SAND/MVI/NFTX/MUSE/COMP/WETH/AXS",
@@ -8462,6 +11013,16 @@
             "0xfC248CEf4C8763838743D3bd599a27E1BD6397f4"
         ]
     },
+    "0xf257B7D56a56dcc129d396451C2870fCd62b0d98": {
+        "pool id": "0xf257b7d56a56dcc129d396451c2870fcd62b0d980002000000000000000004ad",
+        "pool name": "Balancer QUEST_MP/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xad1049997D83D69c4dD440b8897ad2213022487D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xf28015579F2106B0B5db32a713DF8093a94e8635": {
         "pool id": "0xf28015579f2106b0b5db32a713df8093a94e8635000200000000000000000246",
         "pool name": "Balancer VAULT/USDC",
@@ -8492,6 +11053,36 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0xF2c27A3D4cd13F09972c173C1b222e935361De03": {
+        "pool id": "0xf2c27a3d4cd13f09972c173c1b222e935361de0300020000000000000000040a",
+        "pool name": "Balancer SENSHI/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x250855469B1EaFADC4ecAc66C8F390554ec4e104",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xF2CBD0AA97419BC4dbbaeFC06607e05C003c2476": {
+        "pool id": "0xf2cbd0aa97419bc4dbbaefc06607e05c003c24760002000000000000000004a2",
+        "pool name": "Balancer sAPE/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x7966C5BAe631294D7cFFcEA5430b78C2F76DB6Fa",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0xF30d3F8C0B82995edC69D7E5acd314D1Ca7350A0": {
+        "pool id": "0xf30d3f8c0b82995edc69d7e5acd314d1ca7350a000020000000000000000047d",
+        "pool name": "Balancer OHM/wstETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+        ]
+    },
     "0xf33A6B68D2f6ae0353746C150757E4c494e02366": {
         "pool id": "0xf33a6b68d2f6ae0353746c150757e4c494e02366000200000000000000000117",
         "pool name": "Balancer MTRL/ELA",
@@ -8520,6 +11111,16 @@
         "tokens": [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
             "0xB940Fd6455b51f8A19e827e70748e1dBD9f3D4C8"
+        ]
+    },
+    "0xF3946A0e5368F716b1f40586272c9066b419035c": {
+        "pool id": "0xf3946a0e5368f716b1f40586272c9066b419035c000200000000000000000424",
+        "pool name": "Balancer USDC/LIT",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xfd0205066521550D7d7AB19DA8F72bb004b4C341"
         ]
     },
     "0xF39D971d381B5BB43F27a8f43B8Bf7C7c015aE1c": {
@@ -8588,6 +11189,22 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0xf4E806b0fD2b278Bd45b3bfFe66c2c77BCF700BE": {
+        "pool id": "0xf4e806b0fd2b278bd45b3bffe66c2c77bcf700be0001000000000000000003bb",
+        "pool name": "Balancer BUSD/DAI/MATIC/wstETH/SHIB/USDC/SOL/USDT",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
+            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "0xD31a59c85aE9D8edEFeC411D448f90841571b89c",
+            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        ]
+    },
     "0xF506984C16737B1A9577cadeDa02a49fD612Aff8": {
         "pool id": "0xf506984c16737b1a9577cadeda02a49fd612aff80002000000000000000002a9",
         "pool name": "Balancer XAI/USDC",
@@ -8628,6 +11245,16 @@
             "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5"
         ]
     },
+    "0xF6430A746B2121de2b300F84CE8185CfB41c136F": {
+        "pool id": "0xf6430a746b2121de2b300f84ce8185cfb41c136f000200000000000000000480",
+        "pool name": "Balancer OrdinalBox/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x305f226F735Ba558326De97DeA13406e838aec54",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xf643B222334d6950B9C2C6686397D1BeD9BdF3F3": {
         "pool id": "0xf643b222334d6950b9c2c6686397d1bed9bdf3f3000100000000000000000170",
         "pool name": "Balancer AAVE/USDC/BAL/COMP",
@@ -8650,6 +11277,16 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0xF6d0a7d9dBE46b397331879897a391bdD36fb6f7": {
+        "pool id": "0xf6d0a7d9dbe46b397331879897a391bdd36fb6f7000200000000000000000451",
+        "pool name": "Balancer WETH/Cat Shark Inu",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xD07A3Dd0a25Cf8f43A0c6b197cf5234ECB9f9e4E"
+        ]
+    },
     "0xF6dc4640D2783654BeF88E0dF3fb0F051f0DfC1A": {
         "pool id": "0xf6dc4640d2783654bef88e0df3fb0f051f0dfc1a00020000000000000000007e",
         "pool name": "Balancer ePyvcrv3crypto-12NOV21/crv3crypto",
@@ -8658,6 +11295,16 @@
         "tokens": [
             "0x9CF2AB51aC93711Ec2fa32Ec861349568A16c729",
             "0xc4AD29ba4B3c580e6D59105FFf484999997675Ff"
+        ]
+    },
+    "0xF6E4996697521F23b551C3bc2DeAAfF59198bD3E": {
+        "pool id": "0xf6e4996697521f23b551c3bc2deaaff59198bd3e00020000000000000000041c",
+        "pool name": "Balancer SD/USDC",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x30D20208d987713f46DFD34EF128Bb16C404D10f",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
     "0xf711fEE441625e54dA67f2DdDe431d11182d43AC": {
@@ -8670,9 +11317,33 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0xF71d0774B214c4cf51E33Eb3d30Ef98132e4DBaA": {
+        "pool id": "0xf71d0774b214c4cf51e33eb3d30ef98132e4dbaa00000000000000000000046e",
+        "pool name": "Balancer/eFRAX/FRAX",
+        "pool type": "EulerLinear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xF71d0774B214c4cf51E33Eb3d30Ef98132e4DBaA",
+            "0x5484451A88a35cd0878A1bE177435Ca8A0E4054E",
+            "0x853d955aCEf822Db058eb8505911ED77F175b99e"
+        ]
+    },
+    "0xf751aC6835977294bB2c093124C372e57b8Edd29": {
+        "pool id": "0xf751ac6835977294bb2c093124c372e57b8edd290001000000000000000003f7",
+        "pool name": "Balancer WBTC/FTM/MATIC/SNX/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "0x4E15361FD6b4BB609Fa63C81A2be19d873717870",
+            "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
+            "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xF767F0a3FCf1EAfEc2180b7dE79D0c559D7E7e37": {
         "pool id": "0xf767f0a3fcf1eafec2180b7de79d0c559d7e7e370001000000000000000002f0",
-        "pool name": "Balancer DAI/rETH/rETH/aETH\u0441",
+        "pool name": "Balancer DAI/rETH/rETH/ankrETH",
         "pool type": "Weighted",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -8680,6 +11351,16 @@
             "0x9559Aaa82d9649C7A7b220E7c461d2E74c9a3593",
             "0xae78736Cd615f374D3085123A210448E74Fc6393",
             "0xE95A203B1a91a908F9B9CE46459d101078c2c3cb"
+        ]
+    },
+    "0xf7795Ee348c197EAbfb5283d9f5A2231548e75CE": {
+        "pool id": "0xf7795ee348c197eabfb5283d9f5a2231548e75ce0002000000000000000003ef",
+        "pool name": "Balancer MIDAS/WETH",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x97e6e31aFb2d93d437301e006D9DA714616766A5",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
     "0xF7cd489C2b7E199e2d3E8A982Eb6FD51d71c1ce4": {
@@ -8690,6 +11371,16 @@
         "tokens": [
             "0x123151402076fc819B7564510989e475c9cD93CA",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xF7f310684A7A2dB2aD6Ad4032d61E763f99Bf272": {
+        "pool id": "0xf7f310684a7a2db2ad6ad4032d61e763f99bf272000200000000000000000409",
+        "pool name": "Balancer PAXG/DAI",
+        "pool type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x45804880De22913dAFE09f4980848ECE6EcbAf78",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F"
         ]
     },
     "0xf812A0565B1d396c1518ff547d23f6dC27C53686": {
@@ -8875,6 +11566,16 @@
             "0xEd1480d12bE41d92F36f5f7bDd88212E381A3677"
         ]
     },
+    "0xFba08b1807CfB90518C7dd8B55a73D08B0756513": {
+        "pool id": "0xfba08b1807cfb90518c7dd8b55a73d08b0756513000200000000000000000456",
+        "pool name": "Balancer HEDGY/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x2f5EFe5a13d7Ee8b982d1426BBb3e945c4d8387D",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xFBBC111B691ba38D03b01BbFa2Ac451745f9bCa5": {
         "pool id": "0xfbbc111b691ba38d03b01bbfa2ac451745f9bca5000200000000000000000114",
         "pool name": "Balancer USDC/CARD",
@@ -8915,6 +11616,26 @@
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]
     },
+    "0xFD1Cf6FD41F229Ca86ada0584c63C49C3d66BbC9": {
+        "pool id": "0xfd1cf6fd41f229ca86ada0584c63c49c3d66bbc9000200000000000000000438",
+        "pool name": "Balancer PENDLE/WETH",
+        "pool type": "Weighted",
+        "gauge": "0xD36a379342eCd2dDCb05ed1b2CdFBA8A1f0E36Fd",
+        "tokens": [
+            "0x808507121B80c02388fAd14726482e061B8da827",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xFd46cAAbe412a5c64BC64CB7B2A781E2fe50f9C0": {
+        "pool id": "0xfd46caabe412a5c64bc64cb7b2a781e2fe50f9c0000200000000000000000447",
+        "pool name": "Balancer WOOF/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x6BC08509B36A98E829dFfAD49Fde5e412645d0a3",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0xFD699aee33EFfDE91F400109D8b85c6f0FfAE0cB": {
         "pool id": "0xfd699aee33effde91f400109d8b85c6f0ffae0cb0002000000000000000001c8",
         "pool name": "Balancer WHEAT/USDC",
@@ -8934,6 +11655,16 @@
             "0x48f07301E9E29c3C38a80ae8d9ae771F224f1054",
             "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0xFdF4CBDaEaa8909C2Cd459049c2A8cd7f5bfa50C": {
+        "pool id": "0xfdf4cbdaeaa8909c2cd459049c2a8cd7f5bfa50c00020000000000000000047f",
+        "pool name": "Balancer WETH/MNPLY",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xE2Db97B7Dd3D3D6D669043Af80eD06E1F9a83286"
         ]
     },
     "0xFE012b1915faea40D15c4f667Ddb1cC9B7B4db1D": {
@@ -8967,6 +11698,17 @@
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
+    "0xfeF969638C52899f91781f1Be594aF6f40B99BAd": {
+        "pool id": "0xfef969638c52899f91781f1be594af6f40b99bad00000000000000000000047b",
+        "pool name": "Balancer/WETH/TEST",
+        "pool type": "ERC4626Linear",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xfeF969638C52899f91781f1Be594aF6f40B99BAd",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xE605Dbe1cA85dCdb8F43CEfA427f3B0fC06f6ba6"
+        ]
+    },
     "0xfF083f57A556bfB3BBe46Ea1B4Fa154b2b1FBe88": {
         "pool id": "0xff083f57a556bfb3bbe46ea1b4fa154b2b1fbe88000200000000000000000030",
         "pool name": "Balancer WETH/GTC",
@@ -8975,6 +11717,16 @@
         "tokens": [
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0xDe30da39c46104798bB5aA3fe8B9e0e1F348163F"
+        ]
+    },
+    "0xFf4ce5AAAb5a627bf82f4A571AB1cE94Aa365eA6": {
+        "pool id": "0xff4ce5aaab5a627bf82f4a571ab1ce94aa365ea6000200000000000000000426",
+        "pool name": "Balancer DOLA/USDC",
+        "pool type": "Stable",
+        "gauge": "0x9298faE35169D51714D6F9462B5f1BB2eD36165a",
+        "tokens": [
+            "0x865377367054516e17014CcdED1e7d814EDC9ce4",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
     },
     "0xFFA3209e32658e48fcDFC0c918e4678d61ee07c1": {

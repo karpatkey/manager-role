@@ -13,32 +13,41 @@ import os
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def subgraph_query():
 
+    result = []
+    skip = 0
+    while True:
     # Initialize subgraph
-    subgraph_url = "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-v2"
-    balancer_transport=RequestsHTTPTransport(
-        url=subgraph_url,
-        verify=True,
-        retries=3
-    )
-    client = Client(transport=balancer_transport)
+        subgraph_url = "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-v2"
+        balancer_transport=RequestsHTTPTransport(
+            url=subgraph_url,
+            verify=True,
+            retries=3
+        )
+        client = Client(transport=balancer_transport)
 
-    query_string = '''
-    query {{
-    pools(first: {first}, skip: {skip}) {{
-        id
-        address
-        poolType
-        strategyType
-        swapFee
-        amp
-    }}
-    }}
-    '''
-    num_pools_to_query = 1000
-    formatted_query_string = query_string.format(first=num_pools_to_query, skip=0)
-    response = client.execute(gql(formatted_query_string))
+        query_string = '''
+        query {{
+        pools(first: {first}, skip: {skip}) {{
+            id
+            address
+            poolType
+            strategyType
+            swapFee
+            amp
+        }}
+        }}
+        '''
+        num_pools_to_query = 1000
+        formatted_query_string = query_string.format(first=num_pools_to_query, skip=skip)
+        response = client.execute(gql(formatted_query_string))
+        result.extend(response['pools'])
 
-    return response
+        if len(response['pools']) < 1000:
+            break
+        else:
+            skip = 1000
+
+    return result
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -50,7 +59,7 @@ def transactions_data(blockchain):
 
     web3 = get_node(blockchain)
 
-    response = subgraph_query()
+    pools = subgraph_query()
 
     vault_contract = get_contract(Balancer.VAULT, blockchain, web3=web3, abi=Balancer.ABI_VAULT, block='latest')
 
@@ -58,7 +67,7 @@ def transactions_data(blockchain):
     gauge_factory_contract = get_contract(gauge_factory_address, blockchain, web3=web3, abi=Balancer.ABI_LIQUIDITY_GAUGE_FACTORY,  block='latest')
 
     j = 0
-    for pool in response['pools']:
+    for pool in pools:
 
         lptoken_address = vault_contract.functions.getPool(pool['id']).call()[0]
         
@@ -243,9 +252,9 @@ def pool_data(lptoken_address):
         json.dump(txn_balancer, txn_balancer_file)
 
 
-pool_data('0x32296969Ef14EB0c6d29669C550D4a0449130230')
+#pool_data('0x32296969Ef14EB0c6d29669C550D4a0449130230')
 #pool_data('0xfF083f57A556bfB3BBe46Ea1B4Fa154b2b1FBe88')
-#transactions_data(ETHEREUM)
+transactions_data(ETHEREUM)
 
 # result = {}
 # response = api_call()
