@@ -2,7 +2,7 @@ from txn_uniswapv3_helpers import *
 from defi_protocols.UniswapV3 import ABI_POSITIONS_NFT, ABI_POOL, ABI_FACTORY, FEES, POSITIONS_NFT, FACTORY, get_rate_uniswap_v3, get_fee
 from defi_protocols.prices.prices import get_price
 from defi_protocols.functions import get_contract, get_symbol, get_data, get_node, get_decimals
-from defi_protocols.constants import ETHEREUM, WBTC_ETH, WETH_ETH, ZERO_ADDRESS
+from defi_protocols.constants import ETHEREUM, SETH2_ETH, WBTC_ETH, WETH_ETH, ZERO_ADDRESS
 from datetime import datetime
 import math
 
@@ -437,7 +437,7 @@ while True:
         
         if pool_option == '1':
             token0 = WETH_ETH
-            token1 = SETH2
+            token1 = SETH2_ETH
             token0_decimals = 18
             token1_decimals = 18
             token0_symbol = 'WETH'

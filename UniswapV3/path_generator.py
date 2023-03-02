@@ -1,42 +1,40 @@
-from defi_protocols.functions import get_symbol, balance_of, get_node, get_data, get_decimals
+from defi_protocols.constants import COMP_ETH, RETH2_ETH, SWISE_ETH, SETH2_ETH, AAVE
 from defi_protocols.UniswapV3 import FEES
 from defi_protocols.constants import USDC_ETH, USDT_ETH, DAI_ETH, WETH_ETH, WBTC_ETH
-from txn_uniswapv3_helpers import COMP, AAVE, RETH2, SWISE, SETH2
 import itertools
-from datetime import datetime
-import math
+
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # LITERALS
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TOKENS = [SETH2, COMP, AAVE, RETH2, SWISE, WETH_ETH, USDC_ETH, USDT_ETH, DAI_ETH, WBTC_ETH]
+TOKENS = [SETH2_ETH, COMP_ETH, AAVE, RETH2_ETH, SWISE_ETH, WETH_ETH, USDC_ETH, USDT_ETH, DAI_ETH, WBTC_ETH]
 
 PATHS = {
-    COMP: {
-        USDC_ETH: [COMP, WETH_ETH, USDC_ETH],
-        DAI_ETH: [COMP, WETH_ETH, DAI_ETH],
-        WETH_ETH: [COMP, WETH_ETH]
+    COMP_ETH: {
+        USDC_ETH: [COMP_ETH, WETH_ETH, USDC_ETH],
+        DAI_ETH: [COMP_ETH, WETH_ETH, DAI_ETH],
+        WETH_ETH: [COMP_ETH, WETH_ETH]
     },
     AAVE: {
         USDC_ETH: [AAVE, WETH_ETH, USDC_ETH],
         DAI_ETH: [AAVE, WETH_ETH, DAI_ETH],
         WETH_ETH: [AAVE, WETH_ETH]
     },
-    RETH2: {
-        USDC_ETH: [RETH2, SETH2, WETH_ETH, USDC_ETH],
-        DAI_ETH: [RETH2, SETH2, WETH_ETH, DAI_ETH],
-        WETH_ETH: [RETH2, SETH2, WETH_ETH]
+    RETH2_ETH: {
+        USDC_ETH: [RETH2_ETH, SETH2_ETH, WETH_ETH, USDC_ETH],
+        DAI_ETH: [RETH2_ETH, SETH2_ETH, WETH_ETH, DAI_ETH],
+        WETH_ETH: [RETH2_ETH, SETH2_ETH, WETH_ETH]
     },
-    SWISE: {
-        USDC_ETH: [SWISE, SETH2, WETH_ETH, USDC_ETH],
-        DAI_ETH: [SWISE, SETH2, WETH_ETH, DAI_ETH],
-        WETH_ETH: [SWISE, SETH2, WETH_ETH]
+    SWISE_ETH: {
+        USDC_ETH: [SWISE_ETH, SETH2_ETH, WETH_ETH, USDC_ETH],
+        DAI_ETH: [SWISE_ETH, SETH2_ETH, WETH_ETH, DAI_ETH],
+        WETH_ETH: [SWISE_ETH, SETH2_ETH, WETH_ETH]
     },
-    SETH2: {
-        WETH_ETH: [SETH2, WETH_ETH]
+    SETH2_ETH: {
+        WETH_ETH: [SETH2_ETH, WETH_ETH]
     },
     WETH_ETH: {
-        SETH2: [WETH_ETH, SETH2],
+        SETH2_ETH: [WETH_ETH, SETH2_ETH],
         USDC_ETH: [WETH_ETH, USDC_ETH],
         USDT_ETH: [WETH_ETH, USDT_ETH],
         DAI_ETH: [WETH_ETH, DAI_ETH],
