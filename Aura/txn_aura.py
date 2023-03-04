@@ -105,6 +105,10 @@ def transactions_data():
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def pool_data(lptoken_address):
 
+    web3 = get_node(ETHEREUM)
+
+    lptoken_address = web3.toChecksumAddress(lptoken_address)
+
     try:
         with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/aura_data_final.json', 'r') as aura_data_file:
             # Reading from json file
@@ -131,8 +135,6 @@ def pool_data(lptoken_address):
         'approve': [],
         'functions': []
     }
-    
-    web3 = get_node(ETHEREUM)
     
     lptoken_data = Balancer.get_lptoken_data(lptoken_address, 'latest', ETHEREUM, web3=web3)
 
@@ -182,7 +184,7 @@ def pool_data(lptoken_address):
         json.dump(txn_aura, txn_aura_file)
 
 
-pool_data('0x32296969Ef14EB0c6d29669C550D4a0449130230')
+pool_data('0xa13a9247ea42d743238089903570127dda72fe44')
 
 #transactions_data()
 

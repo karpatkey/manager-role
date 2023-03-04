@@ -4,6 +4,10 @@
             {
                 "token": "0x6810e776880c02933d47db1b9fc05908e5386b96",
                 "spender": "0xD758500ddEc05172aaA035911387C8E0e789CF6a"
+            },
+            {
+                "token": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                "spender": "0xD758500ddEc05172aaA035911387C8E0e789CF6a"
             }
         ],
         "functions": [
