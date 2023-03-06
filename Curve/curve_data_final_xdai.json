@@ -1,0 +1,164 @@
+[
+    {
+        "name": "Curve WXDAI/USDC/USDT",
+        "type": "regular",
+        "meta": false,
+        "address": "0x7f90122BF0700F9E7e1F688fe926940E8839F353",
+        "token": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+        "tokens": [
+            "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
+            "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
+            "0x4ECaBa5870353805a9F068101A40E0f32ed605C6"
+        ]
+    },
+    {
+        "name": "Curve RAI/x3CRV",
+        "type": "regular",
+        "meta": true,
+        "address": "0x85bA9Dfb4a3E4541420Fc75Be02E2B42042D7e46",
+        "token": "0x36390a1Ae126f16C5D222CB1F2AB341dD09f2FEC",
+        "tokens": [
+            "0xd7a28Aa9c470e7e9D8c676BCd5dd2f40c5683afa",
+            "0x1337BedC9D22ecbe766dF105c9623922A27963EC"
+        ],
+        "underlying": [
+            "0xd7a28Aa9c470e7e9D8c676BCd5dd2f40c5683afa",
+            "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
+            "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
+            "0x4ECaBa5870353805a9F068101A40E0f32ed605C6"
+        ]
+    },
+    {
+        "name": "Curve sGNO/GNO",
+        "type": "factory",
+        "meta": false,
+        "address": "0xBdF4488Dcf7165788D438b62B4C8A333879B7078",
+        "token": "0xBdF4488Dcf7165788D438b62B4C8A333879B7078",
+        "tokens": [
+            "0xA4eF9Da5BA71Cc0D2e5E877a910A37eC43420445",
+            "0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb"
+        ]
+    },
+    {
+        "name": "Curve rGNO/sGNO",
+        "type": "factory",
+        "meta": false,
+        "address": "0x5D7309a01B727d6769153fCB1dF5587858d53B9C",
+        "token": "0x5D7309a01B727d6769153fCB1dF5587858d53B9C",
+        "tokens": [
+            "0x6aC78efae880282396a335CA2F79863A1e6831D4",
+            "0xA4eF9Da5BA71Cc0D2e5E877a910A37eC43420445"
+        ]
+    },
+    {
+        "name": "Curve USDC/AMIS",
+        "type": "factory",
+        "meta": false,
+        "address": "0xe5F32A099Eb90dDB97F3684fc6663dD253dfAe55",
+        "token": "0xe5F32A099Eb90dDB97F3684fc6663dD253dfAe55",
+        "tokens": [
+            "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
+            "0xD51e1ddD116fFF9A71C1B8FEEb58113aFa2B4d93"
+        ]
+    },
+    {
+        "name": "Curve yDAI+yUSDC+yUSDT+yTUSD/USDC/USDT/DAI",
+        "type": "factory",
+        "meta": false,
+        "address": "0xd7468E6c3C9259010D1148f79788bA631b94B506",
+        "token": "0xd7468E6c3C9259010D1148f79788bA631b94B506",
+        "tokens": [
+            "0x22Bd2A732b39dACe37AE7E8f50A186f3D9702e87",
+            "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
+            "0x4ECaBa5870353805a9F068101A40E0f32ed605C6",
+            "0x44fA8E6f47987339850636F88629646662444217"
+        ]
+    },
+    {
+        "name": "Curve MAI/x3CRV",
+        "type": "factory",
+        "meta": true,
+        "address": "0xA64D8025ddA09bCE94DA2cF2DC175d1831e2dF76",
+        "token": "0xA64D8025ddA09bCE94DA2cF2DC175d1831e2dF76",
+        "tokens": [
+            "0x3F56e0c36d275367b8C502090EDF38289b3dEa0d",
+            "0x1337BedC9D22ecbe766dF105c9623922A27963EC"
+        ]
+    },
+    {
+        "name": "Curve 50G$G-50L$G/33G$G-33USDC-33WXDAI/25DAI-25USDC-25L$G-25WXDAI",
+        "type": "factory",
+        "meta": false,
+        "address": "0x9a6a9F304232A8713F23188F9D6A0246df2504CB",
+        "token": "0x9a6a9F304232A8713F23188F9D6A0246df2504CB",
+        "tokens": [
+            "0x7228d7898a7fE0A24746Cf43B11A7fE004Fab2Ba",
+            "0x3aaA7BbFA7c07Daf746c570990254aD6646ABa81",
+            "0x330987C6712B4d969D3B2d91838509B74F124634"
+        ]
+    },
+    {
+        "name": "Curve EURe/jEUR",
+        "type": "factory",
+        "meta": false,
+        "address": "0x04e99f74951f2d5ebCA7e71AEE6B1BF9984eFBAc",
+        "token": "0x04e99f74951f2d5ebCA7e71AEE6B1BF9984eFBAc",
+        "tokens": [
+            "0xcB444e90D8198415266c6a2724b7900fb12FC56E",
+            "0x9fB1d52596c44603198fB0aee434fac3a679f702"
+        ]
+    },
+    {
+        "name": "Curve x3CRV/WBTC/WETH",
+        "type": "crypto v2",
+        "meta": true,
+        "address": "0x5633E00994896D0F472926050eCb32E38bef3e65",
+        "token": "0x02E7e2dd3BA409148A49D5cc9a9034D2f884F245",
+        "tokens": [
+            "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "0x8e5bBbb09Ed1ebdE8674Cda39A0c169401db4252",
+            "0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1"
+        ],
+        "gauge": {
+            "address": "0x3f7693797352A321f8D532A8B297F91DD31898D8",
+            "type": "ChildGauge"
+        },
+        "zap": {
+            "address": "0xF182926A64C0A19234E7E1FCDfE772aA7A1CA351",
+            "basePool": {
+                "address": "0x7f90122BF0700F9E7e1F688fe926940E8839F353",
+                "tokens": [
+                    "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
+                    "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
+                    "0x4ECaBa5870353805a9F068101A40E0f32ed605C6"
+                ]
+            }
+        }
+    },
+    {
+        "name": "Curve EURe/x3CRV",
+        "type": "crypto v2",
+        "meta": true,
+        "address": "0x056C6C5e684CeC248635eD86033378Cc444459B0",
+        "token": "0x0CA1C1eC4EBf3CC67a9f545fF90a3795b318cA4a",
+        "tokens": [
+            "0xcB444e90D8198415266c6a2724b7900fb12FC56E",
+            "0x1337BedC9D22ecbe766dF105c9623922A27963EC"
+        ],
+        "gauge": {
+            "address": "0xd91770E868c7471a9585d1819143063A40c54D00",
+            "type": "ChildGauge"
+        },
+        "zap": {
+            "address": "0xE3FFF29d4DC930EBb787FeCd49Ee5963DADf60b6",
+            "basePool": {
+                "address": "0x7f90122BF0700F9E7e1F688fe926940E8839F353",
+                "tokens": [
+                    "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
+                    "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
+                    "0x4ECaBa5870353805a9F068101A40E0f32ed605C6"
+                ]
+            }
+        }
+    }
+]

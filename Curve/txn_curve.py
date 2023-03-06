@@ -76,7 +76,7 @@ def transactions_data(blockchain, all_pools=False):
     result = []
     
     try:
-        with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final_xdai.json', 'r') as curve_data_file:
+        with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final.json', 'r') as curve_data_file:
             # Reading from json file
             curve_data = json.load(curve_data_file)
             curve_data_file.close()
@@ -84,7 +84,7 @@ def transactions_data(blockchain, all_pools=False):
         curve_data = None
     
     try:
-        with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_zaps_xdai.json', 'r') as curve_zaps_file:
+        with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_zaps.json', 'r') as curve_zaps_file:
             # Reading from json file
             curve_zaps = json.load(curve_zaps_file)
             curve_zaps_file.close()
@@ -194,7 +194,7 @@ def transactions_data(blockchain, all_pools=False):
                                 'address': curve_zaps['regular'][lptoken_address]
                             }
                                 
-                            zap_contract = get_contract(pool_data['zap']['address'], ETHEREUM, web3=web3, abi=ABI_REGULAR_POOLS_ZAP)
+                            zap_contract = get_contract(pool_data['zap']['address'], blockchain, web3=web3, abi=ABI_REGULAR_POOLS_ZAP)
                             
                             try:
                                 # Has ZAP and the ZAP has the base_pool function
@@ -319,14 +319,18 @@ def transactions_data(blockchain, all_pools=False):
                             'type': Curve.get_gauge_version(gauge_address, 'latest', blockchain, web3 = web3)
                         }
                     
-                    zap_address = registry_contract.functions.get_zap(pool_address).call()
+                    try:
+                        zap_address = registry_contract.functions.get_zap(pool_address).call()
+                    except:
+                        zap_address = ZERO_ADDRESS
+
                     if zap_address != ZERO_ADDRESS:
                         pool_data['zap'] = {
                             'address': zap_address
                         }
 
                         try:
-                            zap_contract = get_contract(zap_address, ETHEREUM, web3=web3, abi=ABI_REGULAR_POOLS_ZAP)
+                            zap_contract = get_contract(zap_address, blockchain, web3=web3, abi=ABI_REGULAR_POOLS_ZAP)
                             
                             base_pool = zap_contract.functions.base_pool().call()
                             
@@ -381,7 +385,7 @@ def transactions_data(blockchain, all_pools=False):
                         }
                     
                     try: 
-                        zap_contract = get_contract(pool_data['zap']['address'], ETHEREUM, web3=web3, abi=ABI_REGULAR_POOLS_ZAP)
+                        zap_contract = get_contract(pool_data['zap']['address'], blockchain, web3=web3, abi=ABI_REGULAR_POOLS_ZAP)
                         
                         base_pool = zap_contract.functions.base_pool().call()
                         
@@ -400,14 +404,14 @@ def transactions_data(blockchain, all_pools=False):
 
             print(id, i)
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final_xdai.json', 'w') as curve_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final.json', 'w') as curve_data_file:
         json.dump(result, curve_data_file)
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # regular_pool_data
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def regular_pool_data(lptoken_address):
+def regular_pool_data(blockchain, lptoken_address):
 
     with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final.json', 'r') as curve_data_file:
         # Reading from json file
@@ -442,9 +446,9 @@ def regular_pool_data(lptoken_address):
         'functions': []
     }
 
-    web3 = get_node(ETHEREUM)
+    web3 = get_node(blockchain)
 
-    registry_contract = Curve.get_registry_contract(web3, 0, 'latest', ETHEREUM)
+    registry_contract = Curve.get_registry_contract(web3, 0, 'latest', blockchain)
 
     n_coins = registry_contract.functions.get_n_coins(pool['address']).call()[0]
 
@@ -673,7 +677,7 @@ def regular_pool_data(lptoken_address):
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # factory_pool_data
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def factory_pool_data(lptoken_address):
+def factory_pool_data(blockchain, lptoken_address):
 
     with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final.json', 'r') as curve_data_file:
         # Reading from json file
@@ -698,9 +702,9 @@ def factory_pool_data(lptoken_address):
         'functions': []
     }
 
-    web3 = get_node(ETHEREUM)
+    web3 = get_node(blockchain)
 
-    registry_contract = Curve.get_registry_contract(web3, 3, 'latest', ETHEREUM)
+    registry_contract = Curve.get_registry_contract(web3, 3, 'latest', blockchain)
 
     coins_data = registry_contract.functions.get_meta_n_coins(pool['address']).call()
 
@@ -808,7 +812,7 @@ def factory_pool_data(lptoken_address):
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # crypto_v2_pool_data
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def crypto_v2_pool_data(lptoken_address):
+def crypto_v2_pool_data(blockchain, lptoken_address):
 
     with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final.json', 'r') as curve_data_file:
         # Reading from json file
@@ -833,10 +837,10 @@ def crypto_v2_pool_data(lptoken_address):
         'functions': []
     }
 
-    web3 = get_node(ETHEREUM)
+    web3 = get_node(blockchain)
 
-    regular_registry_contract = Curve.get_registry_contract(web3, 0, 'latest', ETHEREUM)
-    registry_contract = Curve.get_registry_contract(web3, 5, 'latest', ETHEREUM)
+    regular_registry_contract = Curve.get_registry_contract(web3, 0, 'latest', blockchain)
+    registry_contract = Curve.get_registry_contract(web3, 5, 'latest', blockchain)
 
     n_coins = registry_contract.functions.get_n_coins(pool['address']).call()
 
@@ -949,7 +953,7 @@ def crypto_v2_pool_data(lptoken_address):
             pass
 
         try:
-            zap_contract = get_contract(zap_address, ETHEREUM, web3=web3, abi=ABI_REGULAR_POOLS_ZAP)
+            zap_contract = get_contract(zap_address, blockchain, web3=web3, abi=ABI_REGULAR_POOLS_ZAP)
             base_n_coins = regular_registry_contract.functions.get_n_coins(zap_contract.functions.base_pool().call()).call()[0]
             n_all_coins = n_coins + base_n_coins - 1
 
@@ -984,7 +988,7 @@ def crypto_v2_pool_data(lptoken_address):
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # crypto_factory_pool_data
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def crypto_factory_pool_data(lptoken_address):
+def crypto_factory_pool_data(blockchain, lptoken_address):
 
     with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final.json', 'r') as curve_data_file:
         # Reading from json file
@@ -1009,9 +1013,9 @@ def crypto_factory_pool_data(lptoken_address):
         'functions': []
     }
 
-    web3 = get_node(ETHEREUM)
+    web3 = get_node(blockchain)
 
-    regular_registry_contract = Curve.get_registry_contract(web3, 0, 'latest', ETHEREUM)
+    regular_registry_contract = Curve.get_registry_contract(web3, 0, 'latest', blockchain)
 
     n_coins = 2
 
@@ -1114,7 +1118,7 @@ def crypto_factory_pool_data(lptoken_address):
             pass
 
         try:
-            zap_contract = get_contract(zap_address, ETHEREUM, web3=web3, abi=ABI_REGULAR_POOLS_ZAP)
+            zap_contract = get_contract(zap_address, blockchain, web3=web3, abi=ABI_REGULAR_POOLS_ZAP)
             base_n_coins = regular_registry_contract.functions.get_n_coins(zap_contract.functions.base_pool().call()).call()[0]
             n_all_coins = n_coins + base_n_coins - 1
         
@@ -1172,7 +1176,7 @@ def crypto_factory_pool_data(lptoken_address):
 
 #regular_pool_data('0x06325440D014e39736583c165C2963BA99fAf14E')
 #factory_pool_data('0x67C7f0a63BA70a2dAc69477B716551FC921aed00')
-#crypto_v2_pool_data('0x70fc957eb90E37Af82ACDbd12675699797745F68')
+crypto_v2_pool_data(XDAI, '0x0CA1C1eC4EBf3CC67a9f545fF90a3795b318cA4a')
 #crypto_factory_pool_data('0xf985005a3793DbA4cCe241B3C19ddcd3Fe069ff4')
 #crypto_factory_pool_data('0xbE4f3AD6C9458b901C81b734CB22D9eaE9Ad8b50')
 
