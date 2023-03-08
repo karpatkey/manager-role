@@ -162,8 +162,8 @@ def pool_data(lptoken_address):
     
     if balancer_data[lptoken_address]['gauge'] != ZERO_ADDRESS:
         txn_balancer[lptoken_address]['approve'].append({
-            'token': balancer_data[lptoken_address]['gauge'],
-            'spender': lptoken_address
+            'token': lptoken_address,
+            'spender': balancer_data[lptoken_address]['gauge']
         })
     
     txn_balancer[lptoken_address]['functions'].append({
@@ -252,9 +252,9 @@ def pool_data(lptoken_address):
         json.dump(txn_balancer, txn_balancer_file)
 
 
-#pool_data('0x32296969Ef14EB0c6d29669C550D4a0449130230')
+pool_data('0x32296969Ef14EB0c6d29669C550D4a0449130230')
 #pool_data('0xfF083f57A556bfB3BBe46Ea1B4Fa154b2b1FBe88')
-transactions_data(ETHEREUM)
+#transactions_data(ETHEREUM)
 
 # result = {}
 # response = api_call()
