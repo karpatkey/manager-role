@@ -79,7 +79,7 @@ def add_txn_with_role(roles_mod_address, to_address, tx_data, eth_value, json_fi
             {
                 'to': roles_mod_address,
                 'data': exec_data,
-                'value': str(int(eth_value))
+                'value': str(int(0))
             }
         )
 
