@@ -4234,7 +4234,7 @@
         "pool id": "0x5f1f4e50ba51d723f12385a8a9606afc3a0555f5000200000000000000000465",
         "pool name": "Balancer LDO/wstETH",
         "pool type": "Weighted",
-        "gauge": "0x0000000000000000000000000000000000000000",
+        "gauge": "0x95201b61ef19c867da0d093df20021e1a559452c",
         "tokens": [
             "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
             "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"

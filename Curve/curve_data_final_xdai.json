@@ -37,7 +37,11 @@
         "tokens": [
             "0xA4eF9Da5BA71Cc0D2e5E877a910A37eC43420445",
             "0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb"
-        ]
+        ],
+        "gauge": {
+            "address": "0x2686d5E477d1AaA58BF8cE598fA95d97985c7Fb1",
+            "type": "ChildGauge"
+        }
     },
     {
         "name": "Curve rGNO/sGNO",

@@ -42,12 +42,12 @@ def add_gauge_functions(pool_txns, gauge_address, gauge_type):
             'target address': gauge_address
         })
     
-    if gauge_type != 'LiquidityGauge' and gauge_type != 'LiquidityGaugeReward' and gauge_type != 'LiquidityGaugeV2':
-        pool_txns['functions'].append({
-            'signature': 'deposit(uint256,address,bool)',
-            'target address': gauge_address,
-            'avatar address arguments': [1]
-        })
+    # if gauge_type != 'LiquidityGauge' and gauge_type != 'LiquidityGaugeReward' and gauge_type != 'LiquidityGaugeV2':
+    #     pool_txns['functions'].append({
+    #         'signature': 'deposit(uint256,address,bool)',
+    #         'target address': gauge_address,
+    #         'avatar address arguments': [1]
+    #     })
 
     pool_txns['functions'].append({
         'signature': 'withdraw(uint256)',
@@ -62,9 +62,8 @@ def add_gauge_functions(pool_txns, gauge_address, gauge_type):
 
     if gauge_type != 'LiquidityGauge':
         pool_txns['functions'].append({
-            'signature': 'claim_rewards(address)',
+            'signature': 'claim_rewards()',
             'target address': gauge_address,
-            'avatar address arguments': [0]
         })
 
 
@@ -590,10 +589,15 @@ def regular_pool_data(blockchain, lptoken_address):
 
         add_gauge_functions(txn_regular[lptoken_address], pool['gauge']['address'], pool['gauge']['type'])
 
+    if blockchain == ETHEREUM:
+        crv_minter = '0xd061D61a4d941c39E5453435B6345Dc261C2fcE0'
+    elif blockchain == XDAI:
+        crv_minter = '0xabC000d88f23Bb45525E447528DBF656A9D55bf5'
+
     txn_regular[lptoken_address]['functions'].append({
         'signature': 'mint(address)',
-        'target address': '0xd061D61a4d941c39E5453435B6345Dc261C2fcE0',
-        'avatar address arguments': [0]
+        'target address': crv_minter,
+        'address': gauge_address
     })
     
     if zap_address != ZERO_ADDRESS:
@@ -679,7 +683,7 @@ def regular_pool_data(blockchain, lptoken_address):
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def factory_pool_data(blockchain, lptoken_address):
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final.json', 'r') as curve_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final_xdai.json', 'r') as curve_data_file:
         # Reading from json file
         curve_data = json.load(curve_data_file)
         curve_data_file.close()
@@ -762,11 +766,16 @@ def factory_pool_data(blockchain, lptoken_address):
         })
 
         add_gauge_functions(txn_factory[lptoken_address], pool['gauge']['address'], pool['gauge']['type'])
+    
+    if blockchain == ETHEREUM:
+        crv_minter = '0xd061D61a4d941c39E5453435B6345Dc261C2fcE0'
+    elif blockchain == XDAI:
+        crv_minter = '0xabC000d88f23Bb45525E447528DBF656A9D55bf5'
 
     txn_factory[lptoken_address]['functions'].append({
         'signature': 'mint(address)',
-        'target address': '0xd061D61a4d941c39E5453435B6345Dc261C2fcE0',
-        'avatar address arguments': [0]
+        'target address': crv_minter,
+        'address': gauge_address
     })
 
     try:
@@ -814,7 +823,7 @@ def factory_pool_data(blockchain, lptoken_address):
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def crypto_v2_pool_data(blockchain, lptoken_address):
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final.json', 'r') as curve_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final_xdai.json', 'r') as curve_data_file:
         # Reading from json file
         curve_data = json.load(curve_data_file)
         curve_data_file.close()
@@ -922,11 +931,16 @@ def crypto_v2_pool_data(blockchain, lptoken_address):
         })
 
         add_gauge_functions(txn_crypto_v2[lptoken_address], pool['gauge']['address'], pool['gauge']['type'])
+    
+    if blockchain == ETHEREUM:
+        crv_minter = '0xd061D61a4d941c39E5453435B6345Dc261C2fcE0'
+    elif blockchain == XDAI:
+        crv_minter = '0xabC000d88f23Bb45525E447528DBF656A9D55bf5'
 
     txn_crypto_v2[lptoken_address]['functions'].append({
         'signature': 'mint(address)',
-        'target address': '0xd061D61a4d941c39E5453435B6345Dc261C2fcE0',
-        'avatar address arguments': [0]
+        'target address': crv_minter,
+        'address': gauge_address
     })
 
     try:
@@ -1095,10 +1109,15 @@ def crypto_factory_pool_data(blockchain, lptoken_address):
 
         add_gauge_functions(txn_crypto_factory[lptoken_address], pool['gauge']['address'], pool['gauge']['type'])
 
+    if blockchain == ETHEREUM:
+        crv_minter = '0xd061D61a4d941c39E5453435B6345Dc261C2fcE0'
+    elif blockchain == XDAI:
+        crv_minter = '0xabC000d88f23Bb45525E447528DBF656A9D55bf5'
+
     txn_crypto_factory[lptoken_address]['functions'].append({
         'signature': 'mint(address)',
-        'target address': '0xd061D61a4d941c39E5453435B6345Dc261C2fcE0',
-        'avatar address arguments': [0]
+        'target address': crv_minter,
+        'address': gauge_address
     })
 
     try:
@@ -1176,7 +1195,7 @@ def crypto_factory_pool_data(blockchain, lptoken_address):
 
 #regular_pool_data('0x06325440D014e39736583c165C2963BA99fAf14E')
 #factory_pool_data('0x67C7f0a63BA70a2dAc69477B716551FC921aed00')
-crypto_v2_pool_data(XDAI, '0x0CA1C1eC4EBf3CC67a9f545fF90a3795b318cA4a')
+crypto_v2_pool_data(XDAI, '0x02E7e2dd3BA409148A49D5cc9a9034D2f884F245')
 #crypto_factory_pool_data('0xf985005a3793DbA4cCe241B3C19ddcd3Fe069ff4')
 #crypto_factory_pool_data('0xbE4f3AD6C9458b901C81b734CB22D9eaE9Ad8b50')
 
