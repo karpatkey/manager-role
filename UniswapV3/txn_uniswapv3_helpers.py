@@ -1,6 +1,6 @@
 from defi_protocols.functions import get_node, get_data, balance_of, get_symbol
 from defi_protocols.constants import ETHEREUM, ZERO_ADDRESS
-from defi_protocols.UniswapV3 import FEES, UNISWAPV3_ROUTER2, get_rate_uniswap_v3, underlying
+from defi_protocols.UniswapV3 import FEES, UNISWAPV3_ROUTER2, UNISWAPV3_QUOTER, ABI_QUOTER_V3, get_rate_uniswap_v3, underlying
 from helper_functions.helper_functions import *
 # thegraph queries
 from gql import gql, Client
@@ -8,6 +8,7 @@ from gql.transport.requests import RequestsHTTPTransport
 import time
 from decimal import Decimal
 from tqdm import tqdm
+
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # subgraph_query_pool
@@ -240,22 +241,30 @@ def select_path(paths, web3=None):
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# set_min_amount_out
+# set_min_amount_out_and_fee
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def set_min_amount_out(web3=None):
+def set_min_amount_out_and_fee(selected_token, selected_swap_token, amount, web3=None):
 
     if web3 is None:
         web3 = get_node(ETHEREUM)
 
-    amount_out_min = input('Enter the MIN amount out: ')
-    while True:
-        try:
-            amount_out_min = float(amount_out_min)
+    # amount_out_min = input('Enter the MIN amount out: ')
+    # while True:
+    #     try:
+    #         amount_out_min = float(amount_out_min)
 
-            return amount_out_min
-        except:
-            amount_out_min = input('Enter a valid amount: ')
+    #         return amount_out_min
+    #     except:
+    #         amount_out_min = input('Enter a valid amount: ')
+    
+    quoter_contract = get_contract(UNISWAPV3_QUOTER, ETHEREUM, web3=web3, abi=ABI_QUOTER_V3)
 
+    amounts_out = []
+    for fee in FEES:
+        amounts_out.append(quoter_contract.functions.quoteExactInputSingle(selected_token, selected_swap_token, int(fee), int(amount), 0).call())
+    
+    amount_out = max(amounts_out)
+    return [amount_out, FEES[amounts_out.index(amount_out)]]
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # select_fee
