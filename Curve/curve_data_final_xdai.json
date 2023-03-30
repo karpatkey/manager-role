@@ -9,7 +9,11 @@
             "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
             "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
             "0x4ECaBa5870353805a9F068101A40E0f32ed605C6"
-        ]
+        ],
+        "gauge": {
+            "address": "0xb721cc32160ab0da2614cc6ab16ed822aeebc101",
+            "type": "ChildGauge"
+        }
     },
     {
         "name": "Curve RAI/x3CRV",
@@ -87,7 +91,20 @@
         "tokens": [
             "0x3F56e0c36d275367b8C502090EDF38289b3dEa0d",
             "0x1337BedC9D22ecbe766dF105c9623922A27963EC"
-        ]
+        ],
+        "gauge": {
+            "address": "0xa6DF868420232698c1D0bF9Aa8677D4873307A6a",
+            "type": "ChildGauge"
+        },
+        "zap": {
+            "address": "0x87C067fAc25f123554a0E76596BF28cFa37fD5E9",
+            "underlying": [
+                "0x3F56e0c36d275367b8C502090EDF38289b3dEa0d",
+                "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
+                "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
+                "0x4ECaBa5870353805a9F068101A40E0f32ed605C6"
+            ]
+        }
     },
     {
         "name": "Curve 50G$G-50L$G/33G$G-33USDC-33WXDAI/25DAI-25USDC-25L$G-25WXDAI",

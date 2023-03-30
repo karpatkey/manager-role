@@ -72,12 +72,6 @@
     "rewarder": "0xa50e9071aCaD20b31cd2bbe4dAa816882De82BBe"
   },
   {
-    "name": "Convex usdn3CRV",
-    "LPtoken": "0x4f3E8F405CF5aFC05D68142F3783bDfE13811522",
-    "wrappedToken": "0x3689f325E88c2363274E5F3d44b6DaB8f9e1f524",
-    "rewarder": "0x4a2631d090e8b40bBDe245e687BF09e5e534A239"
-  },
-  {
     "name": "Convex musd3CRV",
     "LPtoken": "0x1AEf73d49Dedc4b1778d0706583995958Dc862e6",
     "wrappedToken": "0xd34d466233c5195193dF712936049729140DBBd7",
@@ -94,24 +88,6 @@
     "LPtoken": "0x3a664Ab939FD8482048609f652f9a0B0677337B9",
     "wrappedToken": "0x06f4fFa5C3636AaA5C30B3DB97bfd1cd9Ac24A19",
     "rewarder": "0x1992b82A8cCFC8f89785129D6403b13925d6226E"
-  },
-  {
-    "name": "Convex pBTC/sbtcCRV",
-    "LPtoken": "0xDE5331AC4B3630f94853Ff322B66407e0D6331E8",
-    "wrappedToken": "0x21Cce64289407081744F087950b9DB32906470fC",
-    "rewarder": "0x2d3C90AEB11D1393CA839Afc9587515B1325D77A"
-  },
-  {
-    "name": "Convex bBTC/sbtcCRV",
-    "LPtoken": "0x410e3E86ef427e30B9235497143881f717d93c2A",
-    "wrappedToken": "0x2E1f902b9067b5fDd7AF29ef05D4fF6212588388",
-    "rewarder": "0x61D741045cCAA5a215cF4E5e55f20E1199B4B843"
-  },
-  {
-    "name": "Convex oBTC/sbtcCRV",
-    "LPtoken": "0x2fE94ea3d5d4a175184081439753DE15AeF9d614",
-    "wrappedToken": "0xc1C030139eEc070Ed8FD092CC8C273C638A18bBe",
-    "rewarder": "0xeeeCE77e0bc5e59c77fc408789A9A172A504bD2f"
   },
   {
     "name": "Convex eursCRV",
@@ -276,18 +252,6 @@
     "rewarder": "0x48Bc302d8295FeA1f8c3e7F57D4dDC9981FEE410"
   },
   {
-    "name": "Convex EURN/EURT-f",
-    "LPtoken": "0x3Fb78e61784C9c637D560eDE23Ad57CA1294c14a",
-    "wrappedToken": "0x3c5208849fa77Aaa98483527f20303cAF25a1Ad8",
-    "rewarder": "0x7CDA2a83D29d7Fc2ccb8F7716b5c1c34781aeb12"
-  },
-  {
-    "name": "Convex ibbtc/sbtcCRV-f",
-    "LPtoken": "0xFbdCA68601f835b27790D98bbb8eC7f05FDEaA9B",
-    "wrappedToken": "0xb43ed35B5A3a9544BBEd8039c67AB04AD428deEa",
-    "rewarder": "0x4F2b8a15d0Dd58c1eB60bd53e966872828519Cee"
-  },
-  {
     "name": "Convex crvEURSUSDC",
     "LPtoken": "0x3D229E1B4faab62F621eF2F6A610961f7BD7b23B",
     "wrappedToken": "0x18F320B124A80ee2FA491e1438CdA771c3d8c84b",
@@ -400,12 +364,6 @@
     "LPtoken": "0xbcb91E689114B9Cc865AD7871845C95241Df4105",
     "wrappedToken": "0x80D68884f425f73395EA0a7476a786De38Ca1306",
     "rewarder": "0xC4d009E61a904BfDf39144295F12870E8305D4d9"
-  },
-  {
-    "name": "Convex pbtc/sbtcCRV-f",
-    "LPtoken": "0xC9467E453620f16b57a34a770C6bceBECe002587",
-    "wrappedToken": "0x518AbdbEe7B2e1D62d3C7435B8FEE56AED7dcE53",
-    "rewarder": "0x589761B61D8d1C8ecc36F3cFE35932670749015a"
   },
   {
     "name": "Convex silofrax-f",
@@ -552,12 +510,6 @@
     "rewarder": "0x053e1dad223A206e6BCa24C77786bb69a10e427d"
   },
   {
-    "name": "Convex APEUSDBP3CRV-f",
-    "LPtoken": "0x04b727C7e246CA70d496ecF52E6b6280f3c8077D",
-    "wrappedToken": "0x5eC62baD0Fa0C6b7F87b3b86EdfE1BcD2A3139e2",
-    "rewarder": "0x51e6B84968D56a1E5BC93Ee264e95b1Ea577339c"
-  },
-  {
     "name": "Convex GUSDFRAXBP3CRV-f",
     "LPtoken": "0x4e43151b78b5fbb16298C1161fcbF7531d5F8D93",
     "wrappedToken": "0xfbd79471A12929De8379a6CbaF320E150f139ac4",
@@ -598,12 +550,6 @@
     "LPtoken": "0x70fc957eb90E37Af82ACDbd12675699797745F68",
     "wrappedToken": "0x3b2fC527D63d291Bdd1b9efb7E81d74f6FD7b5B9",
     "rewarder": "0x7d955C7076566550f6B35357E7cdDF95272333F5"
-  },
-  {
-    "name": "Convex tbtc2/sbtcCRV-f",
-    "LPtoken": "0xfa65aa60a9D45623c57D383fb4cf8Fb8b854cC4D",
-    "wrappedToken": "0x15666462c68d3e90e57c29038D565241c2122aCb",
-    "rewarder": "0x455AC43CcE0E17774C0bF240ba709DD5822102f3"
   },
   {
     "name": "Convex europool-f",
@@ -706,5 +652,185 @@
     "LPtoken": "0xf43211935C781D5ca1a41d2041F397B8A7366C7A",
     "wrappedToken": "0xC07e540DbFecCF7431EA2478Eb28A03918c1C30E",
     "rewarder": "0xbD5445402B0a287cbC77cb67B2a52e2FC635dce4"
+  },
+  {
+    "name": "Convex XAIFRAXBP3CRV-f",
+    "LPtoken": "0x326290A1B0004eeE78fa6ED4F1d8f4b2523ab669",
+    "wrappedToken": "0xEbB0Dd1AfE63813AdD4c38EEbd71CE7354dd9b7e",
+    "rewarder": "0x4a866fE20A442Dff55FAA010684A5C1379151458"
+  },
+  {
+    "name": "Convex JPEGpETH-f",
+    "LPtoken": "0x23E7817bC73645063FB2fa85c1d098EfFE84bE90",
+    "wrappedToken": "0xd862f6E6CEBc20dCab5f73Ca6D003415A5824011",
+    "rewarder": "0x820EFA9a92b2317D39D18cf5C964890dD8f9B6bE"
+  },
+  {
+    "name": "Convex sdtfraxbp-f",
+    "LPtoken": "0x893DA8A02b487FEF2F7e3F35DF49d7625aE549a3",
+    "wrappedToken": "0x95B051E97957f1D48C622Bf73225E3d4c2B189fb",
+    "rewarder": "0xc3df9cC2B8FFdB801E8e6E8FF9C1245E2dEcdA98"
+  },
+  {
+    "name": "Convex bLUSDLUSD3-f",
+    "LPtoken": "0x5ca0313D44551e32e0d7a298EC024321c4BC59B4",
+    "wrappedToken": "0xf04fF142d4B036Df35e64F386A4038b0bbBb768a",
+    "rewarder": "0xe5ba5E48114ecF21dF6d0Ba958372ce878592705"
+  },
+  {
+    "name": "Convex sdYFIYFI-f",
+    "LPtoken": "0x79E281BC69A03DaBCcD66858c65EF6724e50aebe",
+    "wrappedToken": "0x6b9B3f3a03D89855A890A3eC1AD873515c217D87",
+    "rewarder": "0xF3bAc69b98301Eacae38CEAB97166a4d78F731BC"
+  },
+  {
+    "name": "Convex crvWSBTC",
+    "LPtoken": "0x051d7e5609917Bd9b73f04BAc0DED8Dd46a74301",
+    "wrappedToken": "0x7b55160e5199ec3BEdEED13C701a7B462dcBb41c",
+    "rewarder": "0x2a7b6a16Cf7Be51968b69768c3feCaA7E27524A5"
+  },
+  {
+    "name": "Convex crvGEARETH-f",
+    "LPtoken": "0x5Be6C45e2d074fAa20700C49aDA3E88a1cc0025d",
+    "wrappedToken": "0xE2C373862297Fb0926B2a6C004445D58406Da3a8",
+    "rewarder": "0x502Cc0d946e79CeA4DaafCf21F374C6bce763067"
+  },
+  {
+    "name": "Convex multibtc3CRV-f",
+    "LPtoken": "0x2863a328A0B7fC6040f11614FA0728587DB8e353",
+    "wrappedToken": "0xFb62D1eb76Af3A9e50FC7517B2e8e13376F685f9",
+    "rewarder": "0x41EAB7eB43b7b055B2Bf508cAcE932b11003029f"
+  },
+  {
+    "name": "Convex OHMFRAXBP-f",
+    "LPtoken": "0x5271045F7B73c17825A7A7aee6917eE46b0B7520",
+    "wrappedToken": "0xd8F1B275c320819c7D752ef79988d0780bf00446",
+    "rewarder": "0x27A8c58e3DE84280826d615D80ddb33930383fE9"
+  },
+  {
+    "name": "Convex clevCVX-f",
+    "LPtoken": "0xF9078Fb962A7D13F55d40d49C8AA6472aBD1A5a6",
+    "wrappedToken": "0x921cF78e9A06B97D60C4Bd6546D672B90594dBa7",
+    "rewarder": "0x706f34D0aB8f4f9838F15b0D155C8Ef42229294B"
+  },
+  {
+    "name": "Convex clevUSD3CRV-f",
+    "LPtoken": "0x84C333e94AEA4a51a21F6cf0C7F528C50Dc7592C",
+    "wrappedToken": "0xD7C886B9486db22c06121BFb912F73E1ce8B6a5e",
+    "rewarder": "0x710e85B2793b3AE88Cb1Da3cb25b3d62D810d180"
+  },
+  {
+    "name": "Convex TRYB3POOL-f",
+    "LPtoken": "0x6E0e681441BE6cB1d8405752462488BD4D691E3A",
+    "wrappedToken": "0x419E3790B0c7494fA6b86c54b71523CDC67C91C2",
+    "rewarder": "0x2A80d1B0aEC088cb447491c177bB0fD117e3C698"
+  },
+  {
+    "name": "Convex CLEVETH-f",
+    "LPtoken": "0x6C280dB098dB673d30d5B34eC04B6387185D3620",
+    "wrappedToken": "0xDf2Ae52e241167d3d144Dee6eEd0F08dE04bFCb3",
+    "rewarder": "0x6be96D00B50375AF852D63DB7d55656B306f398e"
+  },
+  {
+    "name": "Convex agEUREURe-f",
+    "LPtoken": "0x413928a25D6ea1A26F2625d633207755f67Bf97c",
+    "wrappedToken": "0x604A16dA0c13bF0Ce2099ECa0A873A21479aE5dD",
+    "rewarder": "0x40fAF3f0205c32a00398E2e7826946356F42a76B"
+  },
+  {
+    "name": "Convex msUSDFRAX3CRV-f",
+    "LPtoken": "0xc3b19502F8c02be75F3f77fd673503520DEB51dD",
+    "wrappedToken": "0xD396ebBa2348CC35ef93eF2C9F81422305e6dC0F",
+    "rewarder": "0xF189A4a1E845Fd62944F93De497409798523B397"
+  },
+  {
+    "name": "Convex msETH-ETH-f",
+    "LPtoken": "0xc897b98272AA23714464Ea2A0Bd5180f1B8C0025",
+    "wrappedToken": "0x1FF2f5ac73Cc4Dc06705F48CFbf503f440BDBf6D",
+    "rewarder": "0x14DC104D74372527fEC45b86E87Fe263C7215369"
+  },
+  {
+    "name": "Convex TBTCSBTC23CRV-f",
+    "LPtoken": "0xF95AAa7EBB1620e46221B73588502960Ef63dBa0",
+    "wrappedToken": "0x1aD807CaFbb7D5fd02D47b066ADeaFC78Cd8546b",
+    "rewarder": "0xcD491E40849a0E3c2fF84093bbbaAa25C1eF8dE6"
+  },
+  {
+    "name": "Convex CTRETH-f",
+    "LPtoken": "0x3f0e7916681452D23Cd36B1281457DA721F2E5dF",
+    "wrappedToken": "0x1f9c1817B5607c4a41cC916a505ccB9B3e3755C8",
+    "rewarder": "0xE1d8E3625c5C54b9dcbb52c2c8E4264c3A01450c"
+  },
+  {
+    "name": "Convex ETH MATIC-f",
+    "LPtoken": "0xD8eb58D76aF99547333cfEeb6a0f9bd1A63b6492",
+    "wrappedToken": "0x8CB1e13Dcb548D7c3F90e8C06B227E92b5A58D73",
+    "rewarder": "0x77C43369E50D68B7B3288EEFa7D7ab1F0F6D66b3"
+  },
+  {
+    "name": "Convex LDOETH-f",
+    "LPtoken": "0xb79565c01b7Ae53618d9B847b9443aAf4f9011e7",
+    "wrappedToken": "0x4eBE557ae39F87D2a014719777FD4cF4d01Dc8Ee",
+    "rewarder": "0x8CA990E954611E5E3d2cc51C013fCC372c8c1D38"
+  },
+  {
+    "name": "Convex STG/FRAXBP-f",
+    "LPtoken": "0x9de1c3D446237ab9BaFF74127eb4F303802a2683",
+    "wrappedToken": "0x61ff639743EE7e0c7319fC639D2B92F8B49dDd3f",
+    "rewarder": "0xAa57A289Bb22a1A0C583db306F6566AE2c0CAf21"
+  },
+  {
+    "name": "Convex DYDXETH-f",
+    "LPtoken": "0x4aCc1BF7D6a591016641325aA6664A1Cd178F002",
+    "wrappedToken": "0x2e91C07f2b558Ad90DFE9052C0F38fCC7A175247",
+    "rewarder": "0x034cFd508d978018c93C5b91FbF7e927d6F5a780"
+  },
+  {
+    "name": "Convex CNCETH-f",
+    "LPtoken": "0xF9835375f6b268743Ea0a54d742Aa156947f8C06",
+    "wrappedToken": "0xA16d4df116e1B2D5A0917409c13D1e98A3700D8b",
+    "rewarder": "0x1A3c8B2F89B1C2593fa46C30ADA0b4E3D0133fF8"
+  },
+  {
+    "name": "Convex OGVETH-f",
+    "LPtoken": "0x8109A51542294cDBB489AE5516f42FfBD92177aa",
+    "wrappedToken": "0x49A4C796F939243ae82Ba6a188216247Eb253858",
+    "rewarder": "0x702F4f9d17d5A5D35Aa2a94AE9A7E6682bab04a7"
+  },
+  {
+    "name": "Convex rETH-f",
+    "LPtoken": "0x6c38cE8984a890F5e46e6dF6117C26b3F1EcfC9C",
+    "wrappedToken": "0x96C01B43853bE9E27363B15bE620769437cBa345",
+    "rewarder": "0x65C8aa24db76e870DEDfC35701eff84de405D1ba"
+  },
+  {
+    "name": "Convex STETHETH_C-f",
+    "LPtoken": "0x828b154032950C8ff7CF8085D841723Db2696056",
+    "wrappedToken": "0x2Fa3DbB59EaFFaf32A310717728C7c800A8F1fb4",
+    "rewarder": "0xA61b57C452dadAF252D2f101f5Ba20aA86152992"
+  },
+  {
+    "name": "Convex eUSD3CRV-f",
+    "LPtoken": "0xAEda92e6A3B1028edc139A4ae56Ec881f3064D4F",
+    "wrappedToken": "0x8e074d44aaBC1b3b4406fE03Da7ceF787ea85938",
+    "rewarder": "0xB468dB2E478885B87D7ce0C8DA1D4373A756C138"
+  },
+  {
+    "name": "Convex cvxcrv-crv-f",
+    "LPtoken": "0x971add32Ea87f10bD192671630be3BE8A11b8623",
+    "wrappedToken": "0x0148CF564318272c2Bad048488F90dF4e3769f32",
+    "rewarder": "0x39D78f11b246ea4A1f68573c3A5B64E83Cff2cAe"
+  },
+  {
+    "name": "Convex UZDFRAXBP3CRV-f",
+    "LPtoken": "0x68934F60758243eafAf4D2cFeD27BF8010bede3a",
+    "wrappedToken": "0xe6c0fAA19A7fB6A0a2C01e0BBC1a782b9e4a7B48",
+    "rewarder": "0x820Fad75512c8C3E57Ad021d016846CEEB5F7105"
+  },
+  {
+    "name": "Convex cvxFpis-f",
+    "LPtoken": "0xfBB481A443382416357fA81F16dB5A725DC6ceC8",
+    "wrappedToken": "0x445C9bB48F2673A16f9CDE4ceac73E282503Bc65",
+    "rewarder": "0x929c7Ac52ef6D2bB03b9d6c2131BE94E2a1cf5e3"
   }
 ]

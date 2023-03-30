@@ -823,7 +823,7 @@ def factory_pool_data(blockchain, lptoken_address):
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def crypto_v2_pool_data(blockchain, lptoken_address):
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final_xdai.json', 'r') as curve_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final.json', 'r') as curve_data_file:
         # Reading from json file
         curve_data = json.load(curve_data_file)
         curve_data_file.close()
@@ -1195,7 +1195,8 @@ def crypto_factory_pool_data(blockchain, lptoken_address):
 
 #regular_pool_data('0x06325440D014e39736583c165C2963BA99fAf14E')
 #factory_pool_data('0x67C7f0a63BA70a2dAc69477B716551FC921aed00')
-crypto_v2_pool_data(XDAI, '0x02E7e2dd3BA409148A49D5cc9a9034D2f884F245')
+#crypto_v2_pool_data(XDAI, '0x02E7e2dd3BA409148A49D5cc9a9034D2f884F245')
+regular_pool_data(ETHEREUM, '0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2')
 #crypto_factory_pool_data('0xf985005a3793DbA4cCe241B3C19ddcd3Fe069ff4')
 #crypto_factory_pool_data('0xbE4f3AD6C9458b901C81b734CB22D9eaE9Ad8b50')
 

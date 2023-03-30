@@ -7,7 +7,7 @@
             },
             {
                 "token": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
-                "spender": "0x3Fe65692bfCD0e6CF84cB1E7d24108E434A7587e"
+                "spender": "0xaa0C3f5F7DFD688C6E646F66CD2a6B66ACdbE434"
             },
             {
                 "token": "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b",
@@ -30,8 +30,9 @@
                 "target address": "0x8014595f2ab54cd7c604b00e9fb932176fdc86ae"
             },
             {
-                "signature": "stake(uint256)",
-                "target address": "0x3Fe65692bfCD0e6CF84cB1E7d24108E434A7587e"
+                "signature": "stake(uint256,address)",
+                "target address": "0xaa0C3f5F7DFD688C6E646F66CD2a6B66ACdbE434",
+                "avatar address arguments": [1]
             },
             {
                 "signature": "stake(uint256)",
@@ -55,16 +56,20 @@
                 "target address": "0x469788fE6E9E9681C6ebF3bF78e7Fd26Fc015446"
             },
             {
-                "signature": "withdraw(uint256,bool)",
-                "target address": "0x3Fe65692bfCD0e6CF84cB1E7d24108E434A7587e"
+                "signature": "withdraw(uint256)",
+                "target address": "0xaa0C3f5F7DFD688C6E646F66CD2a6B66ACdbE434"
             },
             {
                 "signature": "withdraw(uint256,bool)",
                 "target address": "0xCF50b810E57Ac33B91dCF525C6ddd9881B139332"
             },
             {
-                "signature": "getReward(address,bool)",
-                "target address": "0x3fe65692bfcd0e6cf84cb1e7d24108e434a7587e",
+                "signature": "setRewardWeight(uint256)",
+                "target address": "0xaa0C3f5F7DFD688C6E646F66CD2a6B66ACdbE434"
+            },
+            {
+                "signature": "getReward(address)",
+                "target address": "0xaa0C3f5F7DFD688C6E646F66CD2a6B66ACdbE434",
                 "avatar address arguments": [0]
             },
             {
@@ -78,7 +83,7 @@
             },
             {
                 "signature": "claimRewards(address[],address[],address[],address[],uint256,uint256,uint256,uint256,uint256)",
-                "target address": "0xDd49A93FDcae579AE50B4b9923325e9e335ec82B"
+                "target address": "0xDd49A93FDcae579AE50B4b9923325e9e335ec82B o 0x3f29cb4111cbda8081642da1f75b3c12decf2516"
             }
         ]
     }
