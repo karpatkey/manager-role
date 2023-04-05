@@ -1,6 +1,6 @@
 from defi_protocols.functions import get_symbol, balance_of, get_node, get_data, get_decimals
 from defi_protocols.constants import AAVE_ETH, COMP_ETH, DAI_ETH, RETH2_ETH, SETH2_ETH, SWISE_ETH, USDC_ETH, USDT_ETH, WETH_ETH, WBTC_ETH, ZERO_ADDRESS, ETHEREUM
-from txn_uniswapv3_helpers import bcolors, select_path, set_min_amount_out, select_fee, swap_selected_token_v2, swap_selected_token_v3, json_file_download, continue_execution, add_txn_with_role
+from txn_uniswapv3_helpers import bcolors, select_path, set_min_amount_out_and_fee, select_fee, swap_selected_token_v2, swap_selected_token_v3, json_file_download, continue_execution, add_txn_with_role
 from datetime import datetime
 import math
 
@@ -190,19 +190,18 @@ while True:
             selected_swap_token_symbol = get_symbol(selected_swap_token, ETHEREUM, web3=web3)
 
             if uniswap_option == '1':
-            # rate = get_best_rate(PATHS[selected_token][selected_swap_token], web3=web3)
-                path = select_path(PATHS[selected_token][selected_swap_token], web3=web3)
+                # rate = get_best_rate(PATHS[selected_token][selected_swap_token], web3=web3)
+                path = select_path(PATHS[selected_token][selected_swap_token], amount, web3=web3)
             else:
-                fee = select_fee(token_symbol, selected_swap_token_symbol, web3=web3)
-
-            amount_out_min = set_min_amount_out(web3=web3)
-            amount_out_min = amount_out_min * (10**get_decimals(selected_swap_token, ETHEREUM, web3=web3))
+                # fee = select_fee(token_symbol, selected_swap_token_symbol, web3=web3)
+                amount_out_min, fee = set_min_amount_out_and_fee(selected_token, selected_swap_token, amount, web3=web3)
+                # amount_out_min = amount_out_min * (10**get_decimals(selected_swap_token, ETHEREUM, web3=web3))
             
             if uniswap_option == '1':
                 # swap_selected_token(avatar_address, roles_mod_address, rate, selected_token, token_balance, token_symbol, selected_swap_token, selected_swap_token_symbol, json_file, web3=web3)
                 swap_selected_token_v2(avatar_address, roles_mod_address, path, amount_out_min, selected_token, amount, selected_swap_token, json_file, web3=web3)
             else:
-                swap_selected_token_v3(avatar_address, roles_mod_address, fee,  amount_out_min, selected_token, amount, selected_swap_token, json_file, web3=web3)
+                swap_selected_token_v3(avatar_address, roles_mod_address, fee, amount_out_min, selected_token, amount, selected_swap_token, json_file, web3=web3)
             
         else:
             print()
