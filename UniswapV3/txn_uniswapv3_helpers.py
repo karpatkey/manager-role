@@ -1,6 +1,7 @@
 from defi_protocols.functions import get_node, get_data, balance_of, get_symbol
 from defi_protocols.constants import ETHEREUM, ZERO_ADDRESS
-from defi_protocols.UniswapV3 import FEES, UNISWAPV3_ROUTER2, UNISWAPV3_QUOTER, ABI_QUOTER_V3, get_rate_uniswap_v3, underlying
+from defi_protocols import *
+# from defi_protocols.UniswapV3 import FEES, UNISWAPV3_ROUTER2, UNISWAPV3_QUOTER, ABI_QUOTER_V3, get_rate_uniswap_v3, underlying
 from helper_functions.helper_functions import *
 # thegraph queries
 from gql import gql, Client
