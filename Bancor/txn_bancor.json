@@ -1,0 +1,75 @@
+[
+    {
+        "approve": [
+            {   
+                "token": "tokenAddress",
+                "spender": "0xeEF417e1D5CC832e619ae18D2F140De2999dD4fB (Bancor Network V3)"
+            },
+            {   
+                "token": "bnTokenAddress",
+                "spender": "0xeEF417e1D5CC832e619ae18D2F140De2999dD4fB (Bancor Network V3)"
+            },
+            {   
+                "token": "tokenAddress",
+                "spender": "0xb0B958398ABB0b5DB4ce4d7598Fb868f5A00f372 (Standard Rewards V3)"
+            },
+            {   
+                "token": "bnTokenAddress",
+                "spender": "0xb0B958398ABB0b5DB4ce4d7598Fb868f5A00f372 (Standard Rewards V3)"
+            },
+            {   
+                "token": "TokenIn",
+                "spender": "0xeEF417e1D5CC832e619ae18D2F140De2999dD4fB (Bancor Network V3) Swap"
+            }
+        ]
+    },
+    {
+        "functions": [
+            {
+                "signature": "deposit(address,uint256)",
+                "target address": "0xeEF417e1D5CC832e619ae18D2F140De2999dD4fB",
+                "address[0]": "tokenAddress"
+            },
+            {
+                "signature": "initWithdrawal(address,uint256) (This function returns a requestId than is then used to withdraw the tokens. It starts a 7 days cooldown process)",
+                "target address": "0xeEF417e1D5CC832e619ae18D2F140De2999dD4fB",
+                "address[0]": "bnTokenAddress"
+            },
+            {
+                "signature": "cancelWithdrawal(uint256)",
+                "target address": "0xeEF417e1D5CC832e619ae18D2F140De2999dD4fB",
+                "uint256[0]": "requestId"
+            },
+            {
+                "signature": "withdraw(uint256)",
+                "target address": "0xeEF417e1D5CC832e619ae18D2F140De2999dD4fB",
+                "uint256[0]": "requestId"
+            },
+            {
+                "signature": "depositAndJoin(uint256,uint256)",
+                "target address": "0xb0b958398abb0b5db4ce4d7598fb868f5a00f372 (Standard Rewards V3)",
+                "uint256[0]": "programId",
+                "uint256[1]": "TokenAmount"
+            },
+            {
+                "signature": "join(uint256,uint256)",
+                "target address": "0xb0b958398abb0b5db4ce4d7598fb868f5a00f372 (Standard Rewards V3)",
+                "uint256[0]": "programId",
+                "uint256[1]": "bnTokenAmount"
+            },
+            {
+                "signature": "leave(uint256,uint256)",
+                "target address": "0xb0b958398abb0b5db4ce4d7598fb868f5a00f372 (Standard Rewards V3)",
+                "uint256[0]": "programId",
+                "uint256[1]": "the bnToken in BNT Amount"
+            },
+            {
+                "signature": "tradeBySourceAmount(address,address,uint256,uint256,uint256,address)",
+                "target address": "0xeEF417e1D5CC832e619ae18D2F140De2999dD4fB",
+                "address[0]": "TokenIn",
+                "address[1]": "TokenOut",
+                "address[5]": "avatar"
+            }
+        ]
+    }
+]
