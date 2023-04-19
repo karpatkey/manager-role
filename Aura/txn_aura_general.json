@@ -14,6 +14,10 @@
                 "spender": "0xeAd792B55340Aa20181A80d6a16db6A0ECd1b827"
             },
             {
+                "token": "0x616e8BfA43F920657B3497DBf40D6b1A02D4608d",
+                "spender": "0xfAA2eD111B4F580fCb85C48E6DC6782Dc5FCD7a6"
+            },
+            {
                 "token": "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF",
                 "spender": "0x3Fa73f1E5d8A792C80F426fc8F84FBF7Ce9bBCAC"
             }
@@ -32,16 +36,31 @@
             {
                 "signature": "deposit(uint256,uint256,bool,address)",
                 "target address": "0x68655AD9852a99C87C0934c7290BB62CFa5D4123",
-                "address[3]": "0x00A7BA8Ae7bca0B10A32Ea1f8e2a1Da980c6CAd2"
+                "address[3]": "0x (mint) or 0x00A7BA8Ae7bca0B10A32Ea1f8e2a1Da980c6CAd2 (staking) or 0xa3fCaFCa8150636C3B736A16Cd73d49cC8A7E10E (compounding)"
             },
             {
                 "signature": "deposit(uint256,bool,address)",
                 "target address": "0xeAd792B55340Aa20181A80d6a16db6A0ECd1b827",
-                "address[2]": "0x00A7BA8Ae7bca0B10A32Ea1f8e2a1Da980c6CAd2"
+                "address[2]": "0x (mint) or 0x00A7BA8Ae7bca0B10A32Ea1f8e2a1Da980c6CAd2 (staking) or 0xa3fCaFCa8150636C3B736A16Cd73d49cC8A7E10E (compounding)"
             },
             {
-                "signature": "claimRewards(address[],address[],address[],address[],uint256,uint256,uint256,uint256)",
-                "target address": "0x623B83755a39B12161A63748f3f595A530917Ab2"
+                "signature": "deposit(uint256,address)",
+                "target address": "0xfAA2eD111B4F580fCb85C48E6DC6782Dc5FCD7a6",
+                "avatar address arguments": [1]
+            },
+            {
+                "signature": "withdraw(uint256,address,address)",
+                "target address": "0xfAA2eD111B4F580fCb85C48E6DC6782Dc5FCD7a6",
+                "avatar address arguments": [1, 2]
+            },
+            {
+                "signature": "redeem(uint256,address,address)",
+                "target address": "0xfAA2eD111B4F580fCb85C48E6DC6782Dc5FCD7a6",
+                "avatar address arguments": [1, 2]
+            },
+            {
+                "signature": "claimRewards(address[],address[],address[],address[],(uint256,uint256,uint256,uint256),(bool,bool,bool,bool,bool,bool,bool))",
+                "target address": "0x5b2364fD757E262253423373E4D57C5c011Ad7F4"
             },
             {
                 "signature": "getReward(address)",
