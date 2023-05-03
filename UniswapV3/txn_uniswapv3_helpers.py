@@ -1,4 +1,4 @@
-from defi_protocols.functions import get_node, get_data, balance_of, get_symbol
+from defi_protocols.functions import get_node, get_data, balance_of, get_symbol, get_decimals
 from defi_protocols.constants import ETHEREUM, ZERO_ADDRESS
 from defi_protocols.UniswapV3 import FEES, UNISWAPV3_ROUTER2, UNISWAPV3_QUOTER, ABI_QUOTER_V3, get_rate_uniswap_v3, underlying
 from helper_functions.helper_functions import *
@@ -243,7 +243,7 @@ def select_path(paths, web3=None):
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # set_min_amount_out_and_fee
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def set_min_amount_out_and_fee(selected_token, selected_swap_token, amount, web3=None):
+def set_min_amount_out_and_fee(selected_token, selected_swap_token, amount, selected_swap_token_symbol, web3=None):
 
     if web3 is None:
         web3 = get_node(ETHEREUM)
@@ -261,9 +261,43 @@ def set_min_amount_out_and_fee(selected_token, selected_swap_token, amount, web3
 
     amounts_out = []
     for fee in FEES:
-        amounts_out.append(quoter_contract.functions.quoteExactInputSingle(selected_token, selected_swap_token, int(fee), int(amount), 0).call())
+        try:
+            amounts_out.append(quoter_contract.functions.quoteExactInputSingle(selected_token, selected_swap_token, int(fee), int(amount), int(0)).call())
+        except:
+            amounts_out.append(0)
     
     amount_out = max(amounts_out)
+    fee = FEES[amounts_out.index(amount_out)]
+
+    selected_swap_token_decimals = get_decimals(selected_swap_token, ETHEREUM, web3=web3)
+
+    print(f"{bcolors.OKBLUE}{bcolors.BOLD}Best quote results:{bcolors.ENDC}")
+    message = str('Amount Out: %.18f' % (amount_out/10**selected_swap_token_decimals)).rstrip('0').rstrip('.')
+    message += '\nFee: %s%%\n' % (str(fee/10000))
+    print(f"{bcolors.OKGREEN}{bcolors.BOLD}{message}{bcolors.ENDC}")
+
+    message = 'If you want to select the MAX Amount Out of %s enter \"max\"' % selected_swap_token_symbol
+    print(f"{bcolors.WARNING}{bcolors.BOLD}{message}{bcolors.ENDC}")
+    input_amount_out = input('Enter the Amount Out of %s: ' % selected_swap_token_symbol)
+    while True:
+        try:
+            if input_amount_out == 'max':
+                input_amount_out = amount_out
+            else:
+                input_amount_out = float(input_amount_out)
+                input_amount_out = input_amount_out * (10**selected_swap_token_decimals)
+                if input_amount_out > amount_out:
+                    print()
+                    message = str('Input Amount Out must be lower than %.18f' % (amount_out/10**selected_swap_token_decimals)).rstrip('0').rstrip('.')
+                    message += (' %s\n') % selected_swap_token_symbol
+                    print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
+                    raise Exception
+                else:
+                    amount_out = input_amount_out
+            break
+        except:
+            input_amount_out = input('Enter a valid amount: ')
+
     return [amount_out, FEES[amounts_out.index(amount_out)]]
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------

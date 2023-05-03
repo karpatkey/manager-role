@@ -181,7 +181,7 @@ while True:
                 path = select_path(PATHS[selected_token][selected_swap_token], amount, web3=web3)
             else:
                 # fee = select_fee(token_symbol, selected_swap_token_symbol, web3=web3)
-                amount_out_min, fee = set_min_amount_out_and_fee(selected_token, selected_swap_token, amount, web3=web3)
+                amount_out_min, fee = set_min_amount_out_and_fee(selected_token, selected_swap_token, amount, selected_swap_token_symbol, web3=web3)
                 # amount_out_min = amount_out_min * (10**get_decimals(selected_swap_token, ETHEREUM, web3=web3))
             
             if uniswap_option == '1':
