@@ -1,6 +1,6 @@
 from defi_protocols.functions import get_node, get_data, balance_of, get_symbol, get_decimals
 from defi_protocols.constants import ETHEREUM, ZERO_ADDRESS
-from defi_protocols.UniswapV3 import FEES, UNISWAPV3_ROUTER2, UNISWAPV3_QUOTER, ABI_QUOTER_V3, get_rate_uniswap_v3, underlying
+from defi_protocols.UniswapV3 import UNISWAPV3_ROUTER2, UNISWAPV3_QUOTER, ABI_QUOTER_V3, get_rate_uniswap_v3, underlying
 from helper_functions.helper_functions import *
 # thegraph queries
 from gql import gql, Client
@@ -9,6 +9,11 @@ import time
 from decimal import Decimal
 from tqdm import tqdm
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# FEES
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Possible Fees for Uniwsap v3 Pools
+FEES: list = [100, 500, 3000, 10000]
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # subgraph_query_pool

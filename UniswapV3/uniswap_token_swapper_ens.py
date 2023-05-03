@@ -1,6 +1,6 @@
 from defi_protocols.functions import get_symbol, balance_of, get_node, get_data, get_decimals
 from defi_protocols.constants import COMP_ETH, CRV_ETH, DAI_ETH, LDO_ETH, RETH2_ETH, SETH2_ETH, SWISE_ETH, USDC_ETH, USDT_ETH, WETH_ETH, ZERO_ADDRESS, ETHEREUM
-from txn_uniswapv3_helpers import bcolors, select_path, set_min_amount_out_and_fee, select_fee, swap_selected_token_v2, swap_selected_token_v3, json_file_download, continue_execution, add_txn_with_role
+from txn_uniswapv3_helpers import bcolors, select_path, set_min_amount_out_and_fee, swap_selected_token_v2, swap_selected_token_v3, json_file_download, continue_execution, add_txn_with_role
 from datetime import datetime
 import math
 

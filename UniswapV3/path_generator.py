@@ -1,5 +1,5 @@
 from defi_protocols.constants import COMP_ETH, RETH2_ETH, SWISE_ETH, SETH2_ETH, AAVE
-from defi_protocols.UniswapV3 import FEES
+from txn_uniswapv3_helpers import FEES
 from defi_protocols.constants import USDC_ETH, USDT_ETH, DAI_ETH, WETH_ETH, WBTC_ETH
 import itertools
 
