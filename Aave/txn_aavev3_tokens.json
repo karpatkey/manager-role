@@ -1,0 +1,26 @@
+[
+    {
+        "approve": [
+            {
+                "token": "tokenAddress",
+                "spender": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2 (AAVE POOL V3)"
+            }
+        ]
+    },
+    {
+        "functions": [
+            {
+                "signature": "supply(address,uint256,address,uint16)",
+                "target address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+                "address[0]": "tokenAddress",
+                "avatar address arguments": [2]
+            },
+            {
+                "signature": "withdraw(address,uint256,address)",
+                "target address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+                "address[0]": "tokenAddress",
+                "avatar address arguments": [2]
+            }
+        ]
+    }
+]
