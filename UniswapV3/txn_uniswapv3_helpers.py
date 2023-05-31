@@ -303,7 +303,7 @@ def set_min_amount_out_and_fee(selected_token, selected_swap_token, amount, sele
         except:
             input_amount_out = input('Enter a valid amount: ')
 
-    return [amount_out, FEES[amounts_out.index(amount_out)]]
+    return [amount_out, fee]
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # select_fee
