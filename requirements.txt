@@ -8,3 +8,4 @@ gql>=3.4.0
 web3>=5.29.0
 requests-toolbelt>=0.10.0
 tqdm>=4.64.1
+eth_abi>=4.0.0

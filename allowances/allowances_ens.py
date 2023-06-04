@@ -65,6 +65,7 @@ CRV_MINTER = "0xd061D61a4d941c39E5453435B6345Dc261C2fcE0"
 CURVE_STAKE_DEPOSIT_ZAP = "0x271fbE8aB7f1fB262f81C77Ea5303F03DA9d3d6A"
 
 # Aura contracts
+AURA_BOOSTER = "0xA57b8d98dAE62B26Ec3bcC4a365338157060B234"
 AURA_REWARD_POOL_DEPOSIT_WRAPPER = "0xB188b1CB84Fb0bA13cb9ee1292769F903A9feC59"
 AURA_BALANCER_stETH_VAULT = "0xe4683Fe8F53da14cA5DAc4251EaDFb3aa614d528"
 AURA = "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF"
@@ -73,6 +74,11 @@ AURA = "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF"
 BALANCER_VAULT = "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
 B_stETH_STABLE = "0x32296969Ef14EB0c6d29669C550D4a0449130230"
 B_stETH_STABLE_GAUGE = "0xcD4722B7c24C29e0413BDCd9e51404B4539D14aE"
+bb_aV3_USD = "0xfeBb0bbf162E64fb9D0dfe186E517d84C395f016"
+bb_aV3_DAI = "0x6667c6fa9f2b3Fc1Cc8D85320b62703d938E4385"
+bb_aV3_USDT = "0xA1697F9Af0875B63DdC472d6EeBADa8C1fAB8568"
+bb_aV3_USDC = "0xcbFA4532D8B2ade2C261D3DD5ef2A2284f792692"
+bb_aV3_USD_GAUGE = "0x0052688295413b32626D226a205b95cDB337DE86"
 BAL = "0xba100000625a3754423978a60c9317c58a424e3D"
 
 # SushiSwap contracts
@@ -83,6 +89,34 @@ ALLOWANCES = [
         "token": USDC,
         "spender": cUSDCv3
 
+    },
+    {
+        "token": bb_aV3_USD,
+        "spender": AURA_BOOSTER
+    },
+    {
+        "token": DAI,
+        "spender": BALANCER_VAULT
+    },
+    {
+        "token": bb_aV3_DAI,
+        "spender": BALANCER_VAULT
+    },
+    {
+        "token": USDT,
+        "spender": BALANCER_VAULT
+    },
+    {
+        "token": bb_aV3_USDT,
+        "spender": BALANCER_VAULT
+    },
+    {
+        "token": USDC,
+        "spender": BALANCER_VAULT
+    },
+    {
+        "token": bb_aV3_USDC,
+        "spender": BALANCER_VAULT
     },
     {
         "token": WETH,
@@ -171,7 +205,7 @@ ALLOWANCES = [
     {
         "token": CVX,
         "spender": UV3_ROUTER_2
-    }
+    },
 ]
 
 # ALLOWANCES = [

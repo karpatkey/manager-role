@@ -184,7 +184,7 @@ def pool_data(lptoken_address):
         json.dump(txn_aura, txn_aura_file)
 
 
-pool_data('0xa13a9247ea42d743238089903570127dda72fe44')
+#pool_data('0xa13a9247ea42d743238089903570127dda72fe44')
 
 #transactions_data()
 

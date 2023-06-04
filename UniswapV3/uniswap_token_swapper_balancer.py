@@ -100,7 +100,7 @@ while True:
 
     uniswap_option = input('Enter the option: ')
     while uniswap_option not in ['1','2']:
-        uniswap_option = input('Enter a valid option (1, 2): ')
+        message = input('Enter a valid option (1, 2): ')
         uniswap_option = input(message) 
     
     if uniswap_option == '1':

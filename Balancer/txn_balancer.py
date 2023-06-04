@@ -61,21 +61,34 @@ def transactions_data(blockchain):
 
     pools = subgraph_query()
 
-    vault_contract = get_contract(Balancer.VAULT, blockchain, web3=web3, abi=Balancer.ABI_VAULT, block='latest')
+    vault_contract = get_contract(Balancer.VAULT, blockchain, web3=web3, abi=Balancer.ABI_VAULT)
 
+    try:
+        with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/balancer_gauges_v2', 'r') as gauges_v2_file:
+            # Reading from json file
+            gauges_v2 = json.load(gauges_v2_file)
+    except:
+        gauges_v2 = {}
+    
     gauge_factory_address = Balancer.get_gauge_factory_address(blockchain)
-    gauge_factory_contract = get_contract(gauge_factory_address, blockchain, web3=web3, abi=Balancer.ABI_LIQUIDITY_GAUGE_FACTORY,  block='latest')
-
+    gauge_factory_contract = get_contract(gauge_factory_address, blockchain, web3=web3,
+                                          abi=Balancer.ABI_LIQUIDITY_GAUGE_FACTORY)
+    
     j = 0
     for pool in pools:
+        gauge_address = ZERO_ADDRESS
 
         lptoken_address = vault_contract.functions.getPool(pool['id']).call()[0]
         
-        gauge_address = gauge_factory_contract.functions.getPoolGauge(lptoken_address).call()
+        try:
+            gauge_address = gauges_v2[blockchain][lptoken_address]
+        except:
+            if blockchain == ETHEREUM:
+                gauge_address = gauge_factory_contract.functions.getPoolGauge(lptoken_address).call()
 
         lptoken_data = Balancer.get_lptoken_data(lptoken_address, 'latest', blockchain, web3=web3)
 
-        pool_tokens_data = vault_contract.functions.getPoolTokens(lptoken_data['poolId']).call(block_identifier='latest')
+        pool_tokens_data = vault_contract.functions.getPoolTokens(lptoken_data['poolId']).call()
         pool_tokens = pool_tokens_data[0]
 
         pool_id_hex = '0x' + lptoken_data['poolId'].hex()
@@ -90,7 +103,7 @@ def transactions_data(blockchain):
             token_address = pool_tokens[i]
             token_symbol = get_symbol(token_address, blockchain)
 
-            if i == 0:
+            if i == 0 or (lptoken_data['bptIndex'] == 0 and i == 1):
                 pool_name += ' %s' % token_symbol
             else:
                 pool_name += '/%s' % token_symbol
@@ -130,13 +143,11 @@ def pool_data(lptoken_address):
     with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/balancer_data.json', 'r') as balancer_data_file:
         # Reading from json file
         balancer_data = json.load(balancer_data_file)
-        balancer_data_file.close()
-    
+        
     try:
         with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/txn_balancer.json', 'r') as txn_balancer_file:
             # Reading from json file
             txn_balancer = json.load(txn_balancer_file)
-            txn_balancer_file.close()
     except:
         txn_balancer = {}
     
@@ -247,14 +258,86 @@ def pool_data(lptoken_address):
             'avatar address arguments': [0]
         })
 
-    
     with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/txn_balancer.json', 'w') as txn_balancer_file:
         json.dump(txn_balancer, txn_balancer_file)
 
 
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# get_gauges_v2
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def get_gauges_v2(blockchain):
+
+    web3 = get_node(blockchain)
+
+    try:
+        with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/balancer_gauges_v2', 'r') as gauges_v2_file:
+            # Reading from json file
+            gauges_v2 = json.load(gauges_v2_file)
+
+            try:
+                gauges_v2[blockchain]
+            except:
+                gauges_v2[blockchain] = {}
+    except:
+        gauges_v2 = {}
+        gauges_v2[blockchain] = {}
+
+    if blockchain == ETHEREUM:
+        gauge_factory_address = Balancer.LIQUIDITY_GAUGE_FACTORY_ETHEREUM_V2
+
+    elif blockchain == POLYGON:
+        gauge_factory_address =  Balancer.LIQUIDITY_GAUGE_FACTORY_POLYGON
+
+    elif blockchain == ARBITRUM:
+        gauge_factory_address =  Balancer.LIQUIDITY_GAUGE_FACTORY_ARBITRUM
+
+    elif blockchain == XDAI:
+        gauge_factory_address =  Balancer.LIQUIDITY_GAUGE_FACTORY_XDAI
+    
+    get_logs_bool = True
+    block_from = 0
+    block_to = last_block(blockchain, web3=web3)
+    hash_overlap = []
+
+    gauge_created_event = web3.keccak(text=Balancer.GAUGE_CREATED_EVENT_SIGNATURE).hex()
+
+    while get_logs_bool:
+        gauge_created_logs = get_logs(block_from, block_to, gauge_factory_address, gauge_created_event, blockchain)
+
+        log_count = len(gauge_created_logs)
+
+        if log_count != 0:
+            end_block = int(
+                gauge_created_logs[log_count - 1]['blockNumber'][2:len(gauge_created_logs[log_count - 1]['blockNumber'])], 16)
+
+            for gauge_created_log in gauge_created_logs:
+                block_number = int(gauge_created_log['blockNumber'][2:len(gauge_created_log['blockNumber'])], 16)
+
+                if gauge_created_log['transactionHash'] in hash_overlap:
+                    continue
+
+                if block_number == end_block:
+                    hash_overlap.append(gauge_created_log['transactionHash'])
+                
+                tx = web3.eth.get_transaction(gauge_created_log['transactionHash'])
+
+                lptoken_address = Web3.to_checksum_address('0x'+tx['input'][34:74])
+                gauge_address = Web3.to_checksum_address('0x' + gauge_created_log['topics'][1][-40:])
+                
+                gauges_v2[blockchain][lptoken_address] = gauge_address
+
+        if log_count < 1000:
+            get_logs_bool = False
+
+        else:
+            block_from = block_number
+
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/balancer_gauges_v2', 'w') as gauges_v2_file:
+        json.dump(gauges_v2, gauges_v2_file)
+
 #pool_data('0xA13a9247ea42D743238089903570127DdA72fE44')
 #pool_data('0xfF083f57A556bfB3BBe46Ea1B4Fa154b2b1FBe88')
-#transactions_data(ETHEREUM)
+transactions_data(ETHEREUM)
 
 # result = {}
 # response = api_call()
@@ -263,3 +346,5 @@ def pool_data(lptoken_address):
 #     result[pool['poolType']] = []
 
 # print(result)
+
+#get_gauges_v2(XDAI)
