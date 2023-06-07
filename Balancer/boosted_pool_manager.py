@@ -267,6 +267,8 @@ def exit_pool():
 
     user_data = '0x' + eth_abi.encode(abi, data).hex()
 
+    # IMPORTANT: the StablePool JoinKind and ExitKind enums in the Boosted AaveV3 Pool does not match the order in
+    # Balancer's documentation. Is very important to check the pools' contracts in orden to be sure.
     # https://docs.balancer.fi/reference/joins-and-exits/pool-exits.html
 
     balancer_queries = get_contract(BALANCER_QUERIES, ETHEREUM, web3=web3, abi=ABI_BALANCER_QUERIES)

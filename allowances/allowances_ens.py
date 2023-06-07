@@ -12,6 +12,7 @@ CVX = "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B"
 USDT = "0xdAC17F958D2ee523a2206206994597C13D831ec7"
 USDC = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
 DAI = "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+rETH = "0xae78736Cd615f374D3085123A210448E74Fc6393"
 stETH = "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"
 WETH = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
 wstETH = "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
@@ -79,10 +80,15 @@ bb_aV3_DAI = "0x6667c6fa9f2b3Fc1Cc8D85320b62703d938E4385"
 bb_aV3_USDT = "0xA1697F9Af0875B63DdC472d6EeBADa8C1fAB8568"
 bb_aV3_USDC = "0xcbFA4532D8B2ade2C261D3DD5ef2A2284f792692"
 bb_aV3_USD_GAUGE = "0x0052688295413b32626D226a205b95cDB337DE86"
+B_rETH_STABLE = "0x1E19CF2D73a72Ef1332C882F20534B6519Be0276"
+B_rETH_STABLE_GAUGE = "0x79eF6103A513951a3b25743DB509E267685726B7"
 BAL = "0xba100000625a3754423978a60c9317c58a424e3D"
 
 # SushiSwap contracts
 SUSHISWAP_ROUTER = "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F"
+
+# Rocket Pool contracts
+ROCKET_POOL_SWAP_ROUTER: "0x16d5a408e807db8ef7c578279beeee6b228f1c1c"
 
 ALLOWANCES = [
     {
@@ -93,6 +99,14 @@ ALLOWANCES = [
     {
         "token": bb_aV3_USD,
         "spender": AURA_BOOSTER
+    },
+    {
+        "token": B_rETH_STABLE,
+        "spender": AURA_BOOSTER
+    },
+    {
+        "token": rETH,
+        "spender": AURA_REWARD_POOL_DEPOSIT_WRAPPER
     },
     {
         "token": DAI,
@@ -127,8 +141,16 @@ ALLOWANCES = [
         "spender": BALANCER_VAULT
     },
     {
+        "token": rETH,
+        "spender": BALANCER_VAULT
+    },
+    {
         "token": B_stETH_STABLE,
         "spender": B_stETH_STABLE_GAUGE
+    },
+    {
+        "token": B_rETH_STABLE,
+        "spender": B_rETH_STABLE_GAUGE
     },
     {
         "token": stETH,
@@ -205,6 +227,10 @@ ALLOWANCES = [
     {
         "token": CVX,
         "spender": UV3_ROUTER_2
+    },
+    {
+        "token": rETH,
+        "spender": ROCKET_POOL_SWAP_ROUTER
     },
 ]
 

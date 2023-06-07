@@ -96,7 +96,7 @@ def transactions_data():
 
             print(i)
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/aura_data_final_.json', 'w') as aura_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/aura_data_final_.json_', 'w') as aura_data_file:
         json.dump(result, aura_data_file)
 
 
@@ -186,6 +186,6 @@ def pool_data(lptoken_address):
 
 #pool_data('0xa13a9247ea42d743238089903570127dda72fe44')
 
-#transactions_data()
+transactions_data()
 
 #claim_rewards_contracts()

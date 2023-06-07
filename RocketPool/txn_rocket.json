@@ -1,16 +1,31 @@
 [
     {
-        "approve": []
+        "approve": [
+            {
+                "token": "0xae78736Cd615f374D3085123A210448E74Fc6393",
+                "spender": "0x16d5a408e807db8ef7c578279beeee6b228f1c1c"
+            }
+        ]
     },
     {
         "functions": [
             {
                 "signature": "deposit()",
-                "target address": "0xDD3f50F8A6CafbE9b31a427582963f465E745AF8"
+                "target address": "0xDD3f50F8A6CafbE9b31a427582963f465E745AF8",
+                "send": "true"
             },
             {
                 "signature": "burn(uint256)",
                 "target address": "0xae78736Cd615f374D3085123A210448E74Fc6393"
+            },
+            {
+                "signature": "swapFrom(uint256,uint256,uint256,uint256,uint256)",
+                "target address": "0x16d5a408e807db8ef7c578279beeee6b228f1c1c"
+            },
+            {
+                "signature": "swapTo(uint256,uint256,uint256,uint256)",
+                "target address": "0x16d5a408e807db8ef7c578279beeee6b228f1c1c",
+                "send": "true"
             }
         ]
     }
