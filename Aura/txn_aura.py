@@ -107,7 +107,7 @@ def pool_data(lptoken_address):
 
     web3 = get_node(ETHEREUM)
 
-    lptoken_address = web3.toChecksumAddress(lptoken_address)
+    lptoken_address = web3.to_checksum_address(lptoken_address)
 
     try:
         with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/aura_data_final.json', 'r') as aura_data_file:

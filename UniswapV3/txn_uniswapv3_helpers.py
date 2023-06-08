@@ -138,7 +138,7 @@ def subgraph_query_all_pools(min_tvl_usd=0, min_volume_usd=0):
 
             # if volume_usd > 0 and tvl_usd > 100 and total_supply_token0 > 0 and total_supply_token1 > 0:
             if volume_usd >= min_volume_usd and tvl_usd >= min_tvl_usd:
-                pools[pool['id']] = [web3.toChecksumAddress(pool['token0']['id']), web3.toChecksumAddress(pool['token1']['id']), int(pool['feeTier']), volume_usd, tvl_usd]
+                pools[pool['id']] = [web3.to_checksum_address(pool['token0']['id']), web3.to_checksum_address(pool['token1']['id']), int(pool['feeTier']), volume_usd, tvl_usd]
 
         if len(response['pools']) < 1000:
             all_found = True
@@ -187,7 +187,7 @@ def subgraph_query_all_pools(min_tvl_usd=0, min_volume_usd=0):
 
                     # if volume_usd > 0 and tvl_usd > 100 and total_supply_token0 > 0 and total_supply_token1 > 0:
                     if volume_usd >= min_volume_usd and tvl_usd >= min_tvl_usd:
-                        pools[pool['id']] = [web3.toChecksumAddress(pool['token0']['id']), web3.toChecksumAddress(pool['token1']['id']), int(pool['feeTier']), volume_usd, tvl_usd]
+                        pools[pool['id']] = [web3.to_checksum_address(pool['token0']['id']), web3.to_checksum_address(pool['token1']['id']), int(pool['feeTier']), volume_usd, tvl_usd]
 
                 if len(response['pools']) < 1000:
                     all_found = True

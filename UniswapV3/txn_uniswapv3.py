@@ -191,8 +191,8 @@ def pool_data(pool_address):
 #     uniswapv3_data_file.close()
 
 # for pool in uniswapv3_data:
-#     pool['tokens'][0] = web3.toChecksumAddress(pool['tokens'][0])
-#     pool['tokens'][1] = web3.toChecksumAddress(pool['tokens'][1])
+#     pool['tokens'][0] = web3.to_checksum_address(pool['tokens'][0])
+#     pool['tokens'][1] = web3.to_checksum_address(pool['tokens'][1])
 
 #     result.append(pool)
 

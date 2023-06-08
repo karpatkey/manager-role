@@ -468,7 +468,7 @@ while True:
                 token0 = WETH_ETH
                 eth = True
             try:
-                token0 = web3.toChecksumAddress(token0)
+                token0 = web3.to_checksum_address(token0)
                 token0_decimals = get_decimals(token0, ETHEREUM, web3=web3)
                 if token0_decimals == None:
                     raise Exception
@@ -486,7 +486,7 @@ while True:
                 token1 = WETH_ETH
                 eth = True
             try:
-                token1 = web3.toChecksumAddress(token1)
+                token1 = web3.to_checksum_address(token1)
                 token1_decimals = get_decimals(token1, ETHEREUM, web3=web3)
                 if token1_decimals == None:
                     raise Exception

@@ -23,7 +23,7 @@ print()
 avatar_address = input('Enter the Avatar Safe address: ')
 while True:
     try:
-        avatar_address = web3.toChecksumAddress(avatar_address)
+        avatar_address = web3.to_checksum_address(avatar_address)
         avatar_contract = get_contract_proxy_abi(avatar_address, AVATAR_PROXY, ETHEREUM)
         avatar_contract.functions.VERSION().call()
         break

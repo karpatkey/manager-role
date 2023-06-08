@@ -41,7 +41,7 @@ def input_avatar_roles_module(web3=None):
     avatar_address = input('Enter the Avatar Safe address: ')
     while True:
         try:
-            avatar_address = web3.toChecksumAddress(avatar_address)
+            avatar_address = web3.to_checksum_address(avatar_address)
             avatar_contract = get_contract_proxy_abi(avatar_address, AVATAR_PROXY, ETHEREUM)
             avatar_contract.functions.VERSION().call()
             break
@@ -53,7 +53,7 @@ def input_avatar_roles_module(web3=None):
     roles_mod_address = input('Enter the Roles Module address: ')
     while True:
         try:
-            roles_mod_address = web3.toChecksumAddress(roles_mod_address)
+            roles_mod_address = web3.to_checksum_address(roles_mod_address)
             roles_mod_contract = get_contract_proxy_abi(roles_mod_address, ROLES_MOD_PROXY, ETHEREUM)
             roles_mod_contract.functions.avatar().call()
             break
