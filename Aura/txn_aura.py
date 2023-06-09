@@ -66,12 +66,13 @@ def transactions_data():
         pool_info = booster.functions.poolInfo(i).call()
 
         # pool_info[5] = shutdown
-        if pool_info[5] == False:
+        #if pool_info[5] == False:
 
-            lptoken_symbol = get_symbol(pool_info[0], ETHEREUM, web3=web3)
+        lptoken_symbol = get_symbol(pool_info[0], ETHEREUM, web3=web3)
 
-            lptoken_data = Balancer.get_lptoken_data(pool_info[0], 'latest', ETHEREUM, web3=web3)
-
+        lptoken_data = Balancer.get_lptoken_data(pool_info[0], 'latest', ETHEREUM, web3=web3)
+        
+        if lptoken_data['poolId'] is not None:
             if lptoken_data['isBoosted'] == False:
                 vault_contract = get_contract(Balancer.VAULT, ETHEREUM, web3=web3, abi=Balancer.ABI_VAULT)
                 pool_tokens = vault_contract.functions.getPoolTokens(lptoken_data['poolId']).call()[0]
@@ -81,7 +82,8 @@ def transactions_data():
                     'poolId': i,
                     'token': pool_info[0],
                     'tokens': pool_tokens,
-                    'rewarder':pool_info[3]
+                    'rewarder':pool_info[3],
+                    'shutdown': pool_info[5]
                 }
             
             else:
@@ -89,14 +91,15 @@ def transactions_data():
                     'name': 'Aura %s' % lptoken_symbol,
                     'poolId': i,
                     'token': pool_info[0],
-                    'rewarder':pool_info[3]
+                    'rewarder':pool_info[3],
+                    'shutdown': pool_info[5]
                 }
 
             result.append(pool_data)
 
-            print(i)
+        print(i)
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/aura_data_final_.json_', 'w') as aura_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/aura_data_final_all.json', 'w') as aura_data_file:
         json.dump(result, aura_data_file)
 
 
