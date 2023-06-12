@@ -121,7 +121,7 @@ def transactions_data(blockchain):
         print(j)
         j += 1
     
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/balancer_data.json_', 'w') as balancer_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/balancer_data_.json', 'w') as balancer_data_file:
         json.dump(result, balancer_data_file)
 
 

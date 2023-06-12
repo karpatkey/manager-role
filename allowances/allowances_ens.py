@@ -105,7 +105,15 @@ ALLOWANCES = [
         "spender": AURA_BOOSTER
     },
     {
+        "token": B_stETH_STABLE,
+        "spender": AURA_BOOSTER
+    },
+    {
         "token": rETH,
+        "spender": AURA_REWARD_POOL_DEPOSIT_WRAPPER
+    },
+    {
+        "token": wstETH,
         "spender": AURA_REWARD_POOL_DEPOSIT_WRAPPER
     },
     {
