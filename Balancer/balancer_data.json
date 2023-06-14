@@ -743,7 +743,7 @@
     },
     "0x0Bbc7B78Ff8453c40718E290b33F1d00ee67274E": {
         "pool id": "0x0bbc7b78ff8453c40718e290b33f1d00ee67274e000000000000000000000563",
-        "pool name": "Balancer B-bETH-ETHBP-BPT/B-baoETH-ETH-BPT/bETH",
+        "pool name": "Balancer B-baoETH-ETH-BPT/bETH",
         "pool type": "ComposableStable",
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
@@ -1580,6 +1580,16 @@
             "0xcd747366Bf5684F133FC019C61750e00624D8e87"
         ]
     },
+    "0x1da3899DfD9BC307D418E3D73768a266965d1F83": {
+        "pool id": "0x1da3899dfd9bc307d418e3d73768a266965d1f83000200000000000000000568",
+        "pool name": "Balancer HAVOC/WETH",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0x9C5Ff8E5981D2d12fEe1f226aDeDb6404eE7C9F2",
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
     "0x1E19CF2D73a72Ef1332C882F20534B6519Be0276": {
         "pool id": "0x1e19cf2d73a72ef1332c882f20534b6519be0276000200000000000000000112",
         "pool name": "Balancer rETH/WETH",
@@ -2346,6 +2356,16 @@
         "tokens": [
             "0x31b309c7704f9F9d6F02e6Ba00C392ba1CD1d64A",
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        ]
+    },
+    "0x2fCe09e5729f5c4DeCA773348146a6e8b7b9730f": {
+        "pool id": "0x2fce09e5729f5c4deca773348146a6e8b7b9730f000200000000000000000565",
+        "pool name": "Balancer WETH/BRCT",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xc1299e4D44f7252CFE72C7409B228794C34739D3"
         ]
     },
     "0x2FF1A9Dbdacd55297452cFD8a4d94724Bc22a5F7": {
@@ -4997,6 +5017,16 @@
             "0x1494CA1F11D487c2bBe4543E90080AeBa4BA3C2b",
             "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ]
+    },
+    "0x623bb6AE34B4D2bB0a228065DC72f7a6e7Bc6536": {
+        "pool id": "0x623bb6ae34b4d2bb0a228065dc72f7a6e7bc6536000200000000000000000566",
+        "pool name": "Balancer WETH/BRCPAD",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xc11047880C0C898Ae29Fd74dEd4f66a43E009b3c"
         ]
     },
     "0x627fC6995d92A38cE409950320d9412af5261578": {
@@ -8408,6 +8438,16 @@
         "tokens": [
             "0x0E29e5AbbB5FD88e28b2d355774e73BD47dE3bcd",
             "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2"
+        ]
+    },
+    "0xA061c901D59325611a6A2E55288CfA722af87984": {
+        "pool id": "0xa061c901d59325611a6a2e55288cfa722af87984000200000000000000000564",
+        "pool name": "Balancer WETH/BRCPAD",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xc11047880C0C898Ae29Fd74dEd4f66a43E009b3c"
         ]
     },
     "0xA0B7BE8336EaA4bA1c7bbc23A694dE3C0ff83a10": {
@@ -12761,6 +12801,16 @@
         "tokens": [
             "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
             "0xd084944d3c05CD115C09d072B9F44bA3E0E45921"
+        ]
+    },
+    "0xf437AffE97D02E6102fF891d323d68B2657E329B": {
+        "pool id": "0xf437affe97d02e6102ff891d323d68b2657e329b000200000000000000000567",
+        "pool name": "Balancer WETH/BRCT",
+        "pool type": "LiquidityBootstrapping",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "0xc1299e4D44f7252CFE72C7409B228794C34739D3"
         ]
     },
     "0xf461f2240B66D55Dcf9059e26C022160C06863BF": {

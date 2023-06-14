@@ -64,6 +64,7 @@ cDAIcUSDC_ZAP = "0xeB21209ae4C2c9FF2a86ACA31E123764A3B6Bc06"
 CRV = "0xD533a949740bb3306d119CC777fa900bA034cd52"
 CRV_MINTER = "0xd061D61a4d941c39E5453435B6345Dc261C2fcE0"
 CURVE_STAKE_DEPOSIT_ZAP = "0x271fbE8aB7f1fB262f81C77Ea5303F03DA9d3d6A"
+cvxETH_POOL = "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4"
 
 # Aura contracts
 AURA_BOOSTER = "0xA57b8d98dAE62B26Ec3bcC4a365338157060B234"
@@ -88,7 +89,7 @@ BAL = "0xba100000625a3754423978a60c9317c58a424e3D"
 SUSHISWAP_ROUTER = "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F"
 
 # Rocket Pool contracts
-ROCKET_POOL_SWAP_ROUTER: "0x16d5a408e807db8ef7c578279beeee6b228f1c1c"
+ROCKET_POOL_SWAP_ROUTER = "0x16D5A408e807db8eF7c578279BEeEe6b228f1c1C"
 
 ALLOWANCES = [
     {
@@ -207,6 +208,10 @@ ALLOWANCES = [
     {
         "token": USDC,
         "spender": CURVE_STAKE_DEPOSIT_ZAP
+    },
+    {
+        "token": CVX,
+        "spender": cvxETH_POOL
     },
     {
         "token": CURVE_stETH_ETH_LPTOKEN,
@@ -407,8 +412,6 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}--- Token Approvals ---{bcolors.ENDC}")
 print(f"{bcolors.HEADER}{bcolors.BOLD}-----------------------{bcolors.ENDC}")
 print()
 
-avatar_address = '0x4F2083f5fBede34C2714aFfb3105539775f7FE64'
-
 json_file = {
     'version': '1.0',
     'chainId': '1',
@@ -429,7 +432,7 @@ for i in allowance_range:
     json_file['transactions'].append(
         {
             'to': ALLOWANCES[i]['token'],
-            'data': get_data(ALLOWANCES[i]['token'], 'approve', [ALLOWANCES[i]['spender'], MAX_TOKEN_AMOUNT], ETHEREUM, abi_address=TOKEN_PROXY, web3=web3),
+            'data': get_data(web3.to_checksum_address(ALLOWANCES[i]['token']), 'approve', [web3.to_checksum_address(ALLOWANCES[i]['spender']), MAX_TOKEN_AMOUNT], ETHEREUM, abi_address=TOKEN_PROXY, web3=web3),
             'value': str(0)
         }
     )
