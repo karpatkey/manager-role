@@ -44,6 +44,7 @@ UV3_ROUTER_2 = "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45"
 stETH = "0xae7ab96520de3a18e5e111b5eaab095312d7fe84"
 wstETH = "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
 LDO = "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32"
+unstETH = "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1"
 
 # Convex contracts
 CONVEX_BOOSTER = "0xF403C135812408BFbE8713b5A23a04b3D48AAE31"
@@ -90,6 +91,9 @@ SUSHISWAP_ROUTER = "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F"
 
 # Rocket Pool contracts
 ROCKET_POOL_SWAP_ROUTER = "0x16D5A408e807db8eF7c578279BEeEe6b228f1c1C"
+
+# Maker - DSR
+DSR_MANAGER = "0x373238337Bfe1146fb49989fc222523f83081dDb"
 
 ALLOWANCES = [
     {
@@ -174,6 +178,14 @@ ALLOWANCES = [
         "spender": CURVE_STAKE_DEPOSIT_ZAP
     },
     {
+        "token": DAI,
+        "spender": cDAIcUSDC_POOL
+    },
+    {
+        "token": USDC,
+        "spender": cDAIcUSDC_POOL
+    },
+    {
         "token": cDAI,
         "spender": cDAIcUSDC_POOL
     },
@@ -245,6 +257,25 @@ ALLOWANCES = [
         "token": rETH,
         "spender": ROCKET_POOL_SWAP_ROUTER
     },
+    {
+        "token": stETH,
+        "spender": unstETH
+
+    },
+    {
+        "token": wstETH,
+        "spender": unstETH
+
+    },
+    {
+        "token": DAI,
+        "spender": DSR_MANAGER
+
+    },
+    {
+        "token": CVX,
+        "spender": UV3_ROUTER_2
+    }
 ]
 
 # ALLOWANCES = [
