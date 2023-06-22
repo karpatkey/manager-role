@@ -159,37 +159,42 @@ def join_pool():
             
             amounts.append(int(amount))
     
-    print()
-    slippage = input('Enter the Slippage Tolerance (%): ')
-    while True:
-        try:
-            slippage = int(slippage)
-            if slippage > 0 and slippage <= 100:
-                break
-            else:
-                raise Exception
-        except:
-            slippage = input('Enter a valid amount: ')
+    if amounts != []:
+        print()
+        slippage = input('Enter the Slippage Tolerance (%): ')
+        while True:
+            try:
+                slippage = float(slippage)
+                if slippage > 0 and slippage <= 100:
+                    break
+                else:
+                    raise Exception
+            except:
+                slippage = input('Enter a valid amount: ')
 
-    # https://docs.balancer.fi/reference/joins-and-exits/pool-joins.html#arguments-explained
+        # https://docs.balancer.fi/reference/joins-and-exits/pool-joins.html#arguments-explained
+        
+        join_kind = 1 # EXACT_TOKENS_IN_FOR_BPT_OUT
+        minimum_bpt = 0
+        abi = ['uint256', 'uint256[]', 'uint256']
+        data = [join_kind, amounts, minimum_bpt]
+        user_data = '0x' + eth_abi.encode(abi, data).hex()
+
+        balancer_queries = get_contract(BALANCER_QUERIES, ETHEREUM, web3=web3, abi=ABI_BALANCER_QUERIES)
+
+        join_pool = balancer_queries.functions.queryJoin(bb_a_USD_pid, avatar_address, avatar_address, [[bb_a_DAI, bb_a_USDT, bb_a_USDC, bb_a_USD], amounts, user_data, False]).call()
+
+        minimum_bpt = join_pool[0]
+        amounts = [int(amount * (1 + (slippage/100))) for amount in amounts]
+
+        amounts.append(0) # bb-a-USD amount
+        tx_data = get_data(VAULT, 'joinPool', [bb_a_USD_pid, avatar_address, avatar_address,[[bb_a_DAI, bb_a_USDT, bb_a_USDC, bb_a_USD], amounts, user_data, False]], ETHEREUM, web3=web3)
+        if tx_data is not None:
+            add_txn_with_role(roles_mod_address, VAULT, tx_data, 0, json_file, web3=web3)
     
-    join_kind = 1 # EXACT_TOKENS_IN_FOR_BPT_OUT
-    minimum_bpt = 0
-    abi = ['uint256', 'uint256[]', 'uint256']
-    data = [join_kind, amounts, minimum_bpt]
-    user_data = '0x' + eth_abi.encode(abi, data).hex()
-
-    balancer_queries = get_contract(BALANCER_QUERIES, ETHEREUM, web3=web3, abi=ABI_BALANCER_QUERIES)
-
-    join_pool = balancer_queries.functions.queryJoin(bb_a_USD_pid, avatar_address, avatar_address, [[bb_a_DAI, bb_a_USDT, bb_a_USDC, bb_a_USD], amounts, user_data, False]).call()
-
-    minimum_bpt = join_pool[0]
-    amounts = [int(amount * (1 + (slippage/100))) for amount in amounts]
-
-    amounts.append(0) # bb-a-USD amount
-    tx_data = get_data(VAULT, 'joinPool', [bb_a_USD_pid, avatar_address, avatar_address,[[bb_a_DAI, bb_a_USDT, bb_a_USDC, bb_a_USD], amounts, user_data, False]], ETHEREUM, web3=web3)
-    if tx_data is not None:
-        add_txn_with_role(roles_mod_address, VAULT, tx_data, 0, json_file, web3=web3)
+    else:
+        message = str('The Avatar Safe has none of the tokens needed to Join the Boosted Aave V3 pool')
+        print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
