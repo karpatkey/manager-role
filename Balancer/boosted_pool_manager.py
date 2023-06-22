@@ -238,65 +238,69 @@ def exit_pool():
             except:
                 bpt_amount = input('Enter a valid amount: ')
 
-    print()
-    print('Select the ExitKind to be executed: ')
-    print('1- EXACT_BPT_IN_FOR_ONE_TOKEN_OUT')
-    print('2- EXACT_BPT_IN_FOR_ALL_TOKENS_OUT')
-    print()
+        print()
+        print('Select the ExitKind to be executed: ')
+        print('1- EXACT_BPT_IN_FOR_ONE_TOKEN_OUT')
+        print('2- EXACT_BPT_IN_FOR_ALL_TOKENS_OUT')
+        print()
 
-    exit_kind_option = input('Enter the option: ')
-    while exit_kind_option not in ['1','2']:
-        message = input('Enter a valid option (1, 2): ')
-        exit_kind_option = input(message)
-    
-    if exit_kind_option == '1':
-        print()
-        print('Select the token to be withdrawn: ')
-        print('1- bb-a-DAI')
-        print('2- bb-a-USDT')
-        print('3- bb-a-USDC')
-        print()
+        exit_kind_option = input('Enter the option: ')
+        while exit_kind_option not in ['1','2']:
+            message = input('Enter a valid option (1, 2): ')
+            exit_kind_option = input(message)
         
-        token_option = input('Enter the option: ')
-        while token_option not in ['1','2', '3']:
-            message = input('Enter a valid option (1, 2, 3): ')
-            token_option = input(message)
+        if exit_kind_option == '1':
+            print()
+            print('Select the token to be withdrawn: ')
+            print('1- bb-a-DAI')
+            print('2- bb-a-USDT')
+            print('3- bb-a-USDC')
+            print()
+            
+            token_option = input('Enter the option: ')
+            while token_option not in ['1','2', '3']:
+                message = input('Enter a valid option (1, 2, 3): ')
+                token_option = input(message)
 
-        exit_kind = 0 # EXACT_BPT_IN_FOR_ONE_TOKEN_OUT
-        abi = ['uint256', 'uint256', 'uint256']
-        data = [exit_kind, bpt_amount, int(token_option)-1]
-    else:
-        exit_kind = 2 # EXACT_BPT_IN_FOR_ALL_TOKENS_OUT
-        abi = ['uint256', 'uint256']
-        data = [exit_kind, bpt_amount]
+            exit_kind = 0 # EXACT_BPT_IN_FOR_ONE_TOKEN_OUT
+            abi = ['uint256', 'uint256', 'uint256']
+            data = [exit_kind, bpt_amount, int(token_option)-1]
+        else:
+            exit_kind = 2 # EXACT_BPT_IN_FOR_ALL_TOKENS_OUT
+            abi = ['uint256', 'uint256']
+            data = [exit_kind, bpt_amount]
 
-    user_data = '0x' + eth_abi.encode(abi, data).hex()
+        user_data = '0x' + eth_abi.encode(abi, data).hex()
 
-    # IMPORTANT: the StablePool JoinKind and ExitKind enums in the Boosted AaveV3 Pool does not match the order in
-    # Balancer's documentation. Is very important to check the pools' contracts in orden to be sure.
-    # https://docs.balancer.fi/reference/joins-and-exits/pool-exits.html
+        # IMPORTANT: the StablePool JoinKind and ExitKind enums in the Boosted AaveV3 Pool does not match the order in
+        # Balancer's documentation. Is very important to check the pools' contracts in orden to be sure.
+        # https://docs.balancer.fi/reference/joins-and-exits/pool-exits.html
 
-    balancer_queries = get_contract(BALANCER_QUERIES, ETHEREUM, web3=web3, abi=ABI_BALANCER_QUERIES)
+        balancer_queries = get_contract(BALANCER_QUERIES, ETHEREUM, web3=web3, abi=ABI_BALANCER_QUERIES)
 
-    exit_pool = balancer_queries.functions.queryExit(bb_a_USD_pid, avatar_address, avatar_address, [[bb_a_DAI, bb_a_USDT, bb_a_USDC, bb_a_USD], [0, 0, 0, 0], user_data, False]).call()
+        exit_pool = balancer_queries.functions.queryExit(bb_a_USD_pid, avatar_address, avatar_address, [[bb_a_DAI, bb_a_USDT, bb_a_USDC, bb_a_USD], [0, 0, 0, 0], user_data, False]).call()
 
-    print()
-    slippage = input('Enter the Slippage Tolerance (%): ')
-    while True:
-        try:
-            slippage = int(slippage)
-            if slippage > 0 and slippage <= 100:
-                break
-            else:
-                raise Exception
-        except:
-            slippage = input('Enter a valid amount: ')
+        print()
+        slippage = input('Enter the Slippage Tolerance (%): ')
+        while True:
+            try:
+                slippage = int(slippage)
+                if slippage > 0 and slippage <= 100:
+                    break
+                else:
+                    raise Exception
+            except:
+                slippage = input('Enter a valid amount: ')
+        
+        amounts = [int(amount * (1 - (slippage/100))) for amount in exit_pool[1]]
+
+        tx_data = get_data(VAULT, 'exitPool', [bb_a_USD_pid, avatar_address, avatar_address,[[bb_a_DAI, bb_a_USDT, bb_a_USDC, bb_a_USD], amounts, user_data, False]], ETHEREUM, web3=web3)
+        if tx_data is not None:
+            add_txn_with_role(roles_mod_address, VAULT, tx_data, 0, json_file, web3=web3)
     
-    amounts = [int(amount * (1 - (slippage/100))) for amount in exit_pool[1]]
-
-    tx_data = get_data(VAULT, 'exitPool', [bb_a_USD_pid, avatar_address, avatar_address,[[bb_a_DAI, bb_a_USDT, bb_a_USDC, bb_a_USD], amounts, user_data, False]], ETHEREUM, web3=web3)
-    if tx_data is not None:
-        add_txn_with_role(roles_mod_address, VAULT, tx_data, 0, json_file, web3=web3)
+    else:
+        message = str('The Avatar Safe has no BPT amount to Exit the Boosted Aave V3 pool')
+        print(f"{bcolors.FAIL}{bcolors.BOLD}{message}{bcolors.ENDC}")
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
