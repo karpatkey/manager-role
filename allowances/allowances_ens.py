@@ -146,6 +146,10 @@ ALLOWANCES = [
         "spender": BALANCER_VAULT
     },
     {
+        "token": bb_aV3_USD,
+        "spender": bb_aV3_USD_GAUGE
+    },
+    {
         "token": WETH,
         "spender": BALANCER_VAULT
     },

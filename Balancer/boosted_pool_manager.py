@@ -224,6 +224,7 @@ def exit_pool():
             try:
                 if bpt_amount == 'max':
                     bpt_amount = bpt_balance
+                    bpt_amount = int(bpt_amount)
                 else:
                     bpt_amount = float(bpt_amount)
                     bpt_amount = bpt_amount * (10**bpt_decimals)
@@ -284,7 +285,7 @@ def exit_pool():
         slippage = input('Enter the Slippage Tolerance (%): ')
         while True:
             try:
-                slippage = int(slippage)
+                slippage = float(slippage)
                 if slippage > 0 and slippage <= 100:
                     break
                 else:
