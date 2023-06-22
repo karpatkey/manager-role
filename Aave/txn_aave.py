@@ -9,19 +9,21 @@ import os
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def reserves_tokens_data():
 
-    try:
-        with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/reserves_tokens_data.json', 'r') as reserves_tokens_file:
-            # Reading from json file
-            reserves_tokens_data = json.load(reserves_tokens_file)
-    except:
-        reserves_tokens_data = []
+    # try:
+    #     with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/reserves_tokens_data.json', 'r') as reserves_tokens_file:
+    #         # Reading from json file
+    #         reserves_tokens_data = json.load(reserves_tokens_file)
+    # except:
+    reserves_tokens_data = []
     
     web3 = get_node(ETHEREUM)
 
     pdp_contract = get_contract(Aave.PDP_ETHEREUM, ETHEREUM, web3=web3, abi=Aave.ABI_PDP)
 
     reserves_tokens = pdp_contract.functions.getAllReservesTokens().call()
-
+    
+    print(len(reserves_tokens))
+    i = 1
     for reserve_token in reserves_tokens:
         token_data = {}
 
@@ -44,8 +46,11 @@ def reserves_tokens_data():
 
         reserves_tokens_data.append(token_data)
 
+        print(i)
+        i += 1
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/reserves_tokens_data.json', 'w') as reserves_tokens_file:
+
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/reserves_tokens_data_.json', 'w') as reserves_tokens_file:
         json.dump(reserves_tokens_data, reserves_tokens_file)
 
 

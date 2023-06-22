@@ -102,7 +102,7 @@
         "borrowingEnabled": true,
         "stableBorrowRateEnabled": false,
         "isActive": true,
-        "isFrozen": false,
+        "isFrozen": true,
         "aTokenAddress": "0xA361718326c15715591c299427c62086F69923D9",
         "stableDebtTokenAddress": "0x4A7A63909A72D268b1D8a93a9395d098688e0e5C",
         "variableDebtTokenAddress": "0xbA429f7011c9fa04cDd46a2Da24dc0FF0aC6099c"
@@ -342,7 +342,7 @@
         "borrowingEnabled": false,
         "stableBorrowRateEnabled": false,
         "isActive": true,
-        "isFrozen": false,
+        "isFrozen": true,
         "aTokenAddress": "0x6F634c6135D2EBD550000ac92F494F9CB8183dAe",
         "stableDebtTokenAddress": "0xa3953F07f389d719F99FC378ebDb9276177d8A6e",
         "variableDebtTokenAddress": "0x4dDff5885a67E4EffeC55875a3977D7E60F82ae0"
