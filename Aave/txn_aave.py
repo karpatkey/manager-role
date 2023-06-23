@@ -4,10 +4,12 @@ from defi_protocols import Aave
 from pathlib import Path
 import os
 
+PDPV3_ETHEREUM = '0x7B4EB56E7CD4b454BA8ff71E4518426369a138a3'
+
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # reserves_tokens_data
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def reserves_tokens_data():
+def reserves_tokens_data(version=2):
 
     # try:
     #     with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/reserves_tokens_data.json', 'r') as reserves_tokens_file:
@@ -18,7 +20,12 @@ def reserves_tokens_data():
     
     web3 = get_node(ETHEREUM)
 
-    pdp_contract = get_contract(Aave.PDP_ETHEREUM, ETHEREUM, web3=web3, abi=Aave.ABI_PDP)
+    if version == 2:
+        pdp_contract = get_contract(Aave.PDP_ETHEREUM, ETHEREUM, web3=web3, abi=Aave.ABI_PDP)
+    elif version == 3:
+        pdp_contract = get_contract(PDPV3_ETHEREUM, ETHEREUM, web3=web3, abi=Aave.ABI_PDP)
+    else:
+        return "Error: wrong version!"
 
     reserves_tokens = pdp_contract.functions.getAllReservesTokens().call()
     
@@ -50,7 +57,7 @@ def reserves_tokens_data():
         i += 1
 
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/reserves_tokens_data_.json', 'w') as reserves_tokens_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/reserves_tokens_data_v' + str(version) + '.json', 'w') as reserves_tokens_file:
         json.dump(reserves_tokens_data, reserves_tokens_file)
 
 
