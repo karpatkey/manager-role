@@ -1,11 +1,12 @@
-from defi_protocols.functions import *
-from defi_protocols.constants import *
+from defi_protocols.functions import get_contract, get_symbol, get_node
+from defi_protocols.constants import ETHEREUM, B_80BAL_20_WETH_ETH, ZERO_ADDRESS
 from defi_protocols import Balancer
 # thegraph queries
 from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
 from pathlib import Path
 import os
+import json
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -121,7 +122,7 @@ def transactions_data(blockchain):
         print(j)
         j += 1
     
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/balancer_data_.json', 'w') as balancer_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/balancer_data.json', 'w') as balancer_data_file:
         json.dump(result, balancer_data_file)
 
 
