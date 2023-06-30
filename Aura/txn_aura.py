@@ -76,30 +76,40 @@ def transactions_data():
                 if lptoken_data['isBoosted'] == False:
                     vault_contract = get_contract(Balancer.VAULT, ETHEREUM, web3=web3, abi=Balancer.ABI_VAULT)
                     pool_tokens = vault_contract.functions.getPoolTokens(lptoken_data['poolId']).call()[0]
+
+                    tokens = []
+                    for pool_token in pool_tokens:
+                        tokens.append(
+                            {
+                                'address': pool_token,
+                                'symbol': get_symbol(pool_token, ETHEREUM, web3=web3)
+                            }
+                        )
                     
                     pool_data = {
-                        'name': 'Aura %s' % lptoken_symbol,
-                        'poolId': i,
-                        'token': pool_info[0],
-                        'tokens': pool_tokens,
+                        'name': lptoken_symbol,
+                        'id': str(i),
+                        'bpt': pool_info[0],
+                        'tokens': tokens,
                         'rewarder':pool_info[3],
-                        'shutdown': pool_info[5]
+                        # 'shutdown': pool_info[5]
                     }
                 
                 else:
                     pool_data = {
-                        'name': 'Aura %s' % lptoken_symbol,
-                        'poolId': i,
-                        'token': pool_info[0],
+                        'name': lptoken_symbol,
+                        'id': str(i),
+                        'bpt': pool_info[0],
+                        'tokens': [],
                         'rewarder':pool_info[3],
-                        'shutdown': pool_info[5]
+                        # 'shutdown': pool_info[5]
                     }
 
                 result.append(pool_data)
 
         print(i)
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/aura_data_final.json', 'w') as aura_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/aura_data.json', 'w') as aura_data_file:
         json.dump(result, aura_data_file)
 
 
