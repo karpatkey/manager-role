@@ -1,0 +1,98 @@
+[
+    {
+        "approve": [
+            {
+                "token": "Token",
+                "spender": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+            },
+            {
+                "token": "aToken",
+                "spender": "0x1809f186D680f239420B56948C58F8DbbCdf1E18"
+            },
+            {
+                "token": "aToken",
+                "spender": "0x872fBcb1B582e8Cd0D0DD4327fBFa0B4C2730995"
+            },
+            {
+                "signature": "approveDelegation(address,uint256) (for borrowing ETH with variable rate)",
+                "target address": "0xeA51d7853EEFb32b6ee06b1C12E6dcCA88Be0fFE",
+                "address[0]": "0xD322A49006FC828F9B5B37Ab215F99B4E5caB19C"
+            },
+            {
+                "signature": "approveDelegation(address,uint256) (for borrowing ETH with stable rate)",
+                "target address": "0x102633152313C81cD80419b6EcF66d14Ad68949A",
+                "address[0]": "0xD322A49006FC828F9B5B37Ab215F99B4E5caB19C"
+            }
+        ]
+    },
+    {
+        "functions": [
+            {
+                "signature": "deposit(address,uint256,address,uint16)",
+                "target address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+                "avatar address arguments": [2],
+                "address[0]": "Token"
+            },
+            {
+                "signature": "withdraw(address,uint256,address)",
+                "target address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+                "avatar address arguments": [2],
+                "address[0]": "Token"
+            },
+            {
+                "signature": "setUserUseReserveAsCollateral(address,bool)",
+                "target address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+                "address[0]": "Token"
+            },
+            {
+                "signature": "borrow(address,uint256,uint256,uint16,address)",
+                "target address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+                "avatar address arguments": [4],
+                "address[0]": "Token"
+            },
+            {
+                "signature": "repay(address,uint256,uint256,address)",
+                "target address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+                "avatar address arguments": [3],
+                "address[0]": "Token"
+            },
+            {
+                "signature": "depositETH(address,address,uint16)",
+                "target address": "0xD322A49006FC828F9B5B37Ab215F99B4E5caB19C",
+                "avatar address arguments": [1],
+                "address[0]": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+                "valueETH": true
+            },
+            {
+                "signature": "withdrawETH(address,uint256,address)",
+                "target address": "0xD322A49006FC828F9B5B37Ab215F99B4E5caB19C",
+                "avatar address arguments": [2],
+                "address[0]": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+            },
+            {
+                "signature": "borrowETH(address,uint256,uint256,uint16)",
+                "target address": "0xD322A49006FC828F9B5B37Ab215F99B4E5caB19C",
+                "address[0]": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+            },
+            {
+                "signature": "repayETH(address,uint256,uint256,address)",
+                "target address": "0xD322A49006FC828F9B5B37Ab215F99B4E5caB19C",
+                "avatar address arguments": [3],
+                "address[0]": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+                "valueETH": true
+            },
+            {
+                "signature": "swapBorrowRateMode(address,uint256)",
+                "target address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+            },
+            {
+                "signature": "swapAndRepay(address,address,uint256,uint256,uint256,uint256,bytes,(uint256,uint256,uint8,bytes32,bytes32))",
+                "target address": "0x1809f186D680f239420B56948C58F8DbbCdf1E18"
+            },
+            {
+                "signature": "swapAndDeposit(address,address,uint256,uint256,uint256,bytes,address,(uint256,uint256,uint8,bytes32,bytes32))",
+                "target address": "0x872fBcb1B582e8Cd0D0DD4327fBFa0B4C2730995"
+            }
+        ]
+    }
+]
