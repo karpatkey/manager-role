@@ -4,6 +4,14 @@
             {
                 "token": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
                 "spender": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+            },
+            {
+                "token": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+                "spender": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1"
+            },
+            {
+                "token": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+                "spender": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1"
             }
         ],
         "functions": [
@@ -20,6 +28,34 @@
             {
                 "signature": "unwrap(uint256)",
                 "target address": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"
+            },
+            {
+                "signature": "requestWithdrawals(uint256[],address)",
+                "target address": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+                "avatar address arguments": [1]
+            },
+            {
+                "signature": "requestWithdrawalsWithPermit(uint256[],address,(uint256,uint256,uint8,bytes32,bytes32))",
+                "target address": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+                "avatar address arguments": [1]
+            },
+            {
+                "signature": "requestWithdrawalsWstETH(uint256[], address)",
+                "target address": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+                "avatar address arguments": [1]
+            },
+            {
+                "signature": "requestWithdrawalsWstETHWithPermit(uint256[],address,(uint256,uint256,uint8,bytes32,bytes32))",
+                "target address": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+                "avatar address arguments": [1]
+            },
+            {
+                "signature": "claimWithdrawal(uint256)",
+                "target address": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1"
+            },
+            {
+                "signature": "claimWithdrawals(uint256[],uint256[])",
+                "target address": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1"
             }
         ]
     }
