@@ -2,6 +2,7 @@ from defi_protocols.functions import *
 from defi_protocols.constants import *
 from defi_protocols import Aave
 from pathlib import Path
+from helper_functions.helper_functions import * 
 import os
 
 PDPV3_ETHEREUM = '0x7B4EB56E7CD4b454BA8ff71E4518426369a138a3'
@@ -61,4 +62,25 @@ def reserves_tokens_data(version=2):
         json.dump(reserves_tokens_data, reserves_tokens_file)
 
 
-reserves_tokens_data()
+# reserves_tokens_data()
+
+# web3 = get_node(ETHEREUM)
+# avatar_address = '0x0EFcCBb9E2C09Ea29551879bd9Da32362b32fc89'
+# roles_mod_address = '0xd8dd9164E765bEF903E429c9462E51F0Ea8514F9'
+
+# json_file = {
+#     'version': '1.0',
+#     'chainId': '1',
+#     'meta': {
+#         'name': None,
+#         'description': '',
+#         'txBuilderVersion': '1.8.0'
+#     },
+#     'createdAt': math.floor(datetime.now().timestamp()*1000),
+#     'transactions': []
+# }
+# tx_data = get_data(STKAAVE_ETH, 'redeem', [avatar_address, 16907290000000000000002], ETHEREUM, web3=web3)
+# if tx_data is not None:
+#     add_txn_with_role(roles_mod_address, STKAAVE_ETH, tx_data, 0, json_file, web3=web3)
+
+# json_file_download(json_file)

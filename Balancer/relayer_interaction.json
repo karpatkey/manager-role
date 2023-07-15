@@ -1,0 +1,93 @@
+{
+    "approve": [
+        {
+            "token": "Token",
+            "spender": "Vault"
+        },
+        {
+            "token": "LP Token",
+            "spender": "Gauge"
+        }
+    ],
+    "functions": [
+        {
+            "signature": "multicall(bytes[])",
+            "target address": "0xfeA793Aa415061C483D2390414275AD314B3F621 (Relayer)",
+            "bytes[]": "Encoded Transaction/s"
+        },
+        {
+            "signature": "setRelayerApproval(address,address,bool)",
+            "target address": "Vault",
+            "avatar address arguments": [
+                0
+            ],
+            "address[1]": "0xfeA793Aa415061C483D2390414275AD314B3F621 (Relayer)"
+        },
+        {
+            "signature": "setRelayerApproval(address,bool,bytes)",
+            "target address": "0xfeA793Aa415061C483D2390414275AD314B3F621 (Relayer)",
+            "address[0]": "0xfeA793Aa415061C483D2390414275AD314B3F621 (Relayer)"
+        },
+        {
+            "signature": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+            "target address": "Vault",
+            "avatar address arguments": [
+                1,
+                2
+            ],
+            "bytes32": "poolId"
+        },
+        {
+            "signature": "joinPool(bytes32,uint8,address,address,(address[],uint256[],bytes,bool),uint256,uint256)",
+            "target address": "0xfeA793Aa415061C483D2390414275AD314B3F621 (Relayer)",
+            "bytes32": "poolId",
+            "address[2]": "0xfeA793Aa415061C483D2390414275AD314B3F621 (Relayer) or Avatar",
+            "address[3]": "0xfeA793Aa415061C483D2390414275AD314B3F621 (Relayer) or Avatar"
+        },
+        {
+            "signature": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+            "target address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+            "avatar address arguments": [
+                1,
+                2
+            ],
+            "bytes32": "poolId"
+        },
+        {
+            "signature": "exitPool(bytes32,uint8,address,address,(address[],uint256[],bytes,bool),(uint256,uint256)[])",
+            "target address": "0xfeA793Aa415061C483D2390414275AD314B3F621 (Relayer)",
+            "bytes32": "poolId",
+            "address[2]": "0xfeA793Aa415061C483D2390414275AD314B3F621 (Relayer) or Avatar",
+            "address[3]": "0xfeA793Aa415061C483D2390414275AD314B3F621 (Relayer) or Avatar"
+        },
+        {
+            "signature": "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",
+            "target address": "Vault",
+            "bytes32": "poolId",
+            "avatar address arguments": [[1,0],[1,2]]
+        },
+        {
+            "signature": "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256,uint256,uint256)",
+            "target address": "Vault",
+            "bytes32": "poolId",
+            "address [[1,0],[1,2]]": "0xfeA793Aa415061C483D2390414275AD314B3F621 (Relayer) or Avatar"
+        },
+        {
+            "signature": "deposit(uint256)",
+            "target address": "Gauge"
+        },
+        {
+            "signature": "withdraw(uint256)",
+            "target address": "Gauge"
+        },
+        {
+            "signature": "claim_rewards()",
+            "target address": "Gauge"
+        },
+        {
+            "signature": "mint(address)",
+            "target address": "BalancerMinter",
+            "address[0]": "Gauge"
+        }
+    ]
+}

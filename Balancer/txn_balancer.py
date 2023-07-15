@@ -76,6 +76,7 @@ def transactions_data(blockchain):
     #                                       abi=Balancer.ABI_LIQUIDITY_GAUGE_FACTORY)
     
     j = 0
+    print(len(pools))
     for pool in pools:
         gauge_address = ZERO_ADDRESS
 
@@ -169,10 +170,11 @@ def pool_data(lptoken_address):
     }
 
     for token in balancer_data[lptoken_address]['tokens']:
-        txn_balancer[lptoken_address]['approve'].append({
-            'token': token,
-            'spender': Balancer.VAULT
-        })
+        if token != lptoken_address:
+            txn_balancer[lptoken_address]['approve'].append({
+                'token': token,
+                'spender': Balancer.VAULT
+            })
     
     if balancer_data[lptoken_address]['gauge'] != ZERO_ADDRESS:
         txn_balancer[lptoken_address]['approve'].append({
@@ -339,8 +341,9 @@ def pool_data(lptoken_address):
 #         json.dump(gauges_v2, gauges_v2_file)
 
 #pool_data('0xA13a9247ea42D743238089903570127DdA72fE44')
-#pool_data('0xfF083f57A556bfB3BBe46Ea1B4Fa154b2b1FBe88')
-transactions_data(ETHEREUM)
+# pool_data('0xfeBb0bbf162E64fb9D0dfe186E517d84C395f016')
+pool_data('0x32296969ef14eb0c6d29669c550d4a0449130230')
+#transactions_data(ETHEREUM)
 
 # result = {}
 # response = api_call()

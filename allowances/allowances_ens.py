@@ -96,6 +96,9 @@ ROCKET_POOL_SWAP_ROUTER = "0x16D5A408e807db8eF7c578279BEeEe6b228f1c1C"
 # Maker - DSR
 DSR_MANAGER = "0x373238337Bfe1146fb49989fc222523f83081dDb"
 
+# Cowswap contracts
+GPv2_VAULT_RELAYER = "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110"
+
 ALLOWANCES = [
     {
         "token": USDC,
@@ -313,6 +316,58 @@ ALLOWANCES = [
         "token": USDT,
         "spender": SUSHISWAP_ROUTE_PROCESSOR_3
     },
+    {
+        "token": AURA,
+        "spender": GPv2_VAULT_RELAYER
+    },
+    {
+        "token": BAL,
+        "spender": GPv2_VAULT_RELAYER
+    },
+    {
+        "token": COMP,
+        "spender": GPv2_VAULT_RELAYER
+    },
+    {
+        "token": CRV,
+        "spender": GPv2_VAULT_RELAYER
+    },
+    {
+        "token": CVX,
+        "spender": GPv2_VAULT_RELAYER
+    },
+    {
+        "token": DAI,
+        "spender": GPv2_VAULT_RELAYER
+    },
+    {
+        "token": LDO,
+        "spender": GPv2_VAULT_RELAYER
+    },
+    {
+        "token": rETH,
+        "spender": GPv2_VAULT_RELAYER
+    },
+    {
+        "token": SWISE,
+        "spender": GPv2_VAULT_RELAYER
+    },
+    {
+        "token": USDC,
+        "spender": GPv2_VAULT_RELAYER
+    },
+    {
+        "token": USDT,
+        "spender": GPv2_VAULT_RELAYER
+    },
+    {
+        "token": WETH,
+        "spender": GPv2_VAULT_RELAYER
+    },
+    {
+        "token": wstETH,
+        "spender": GPv2_VAULT_RELAYER
+    }
 ]
 
 # ALLOWANCES = [
