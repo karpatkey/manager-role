@@ -28,13 +28,11 @@ def subgraph_query():
 
         query_string = '''
         query {{
-        pools(first: {first}, skip: {skip}) {{
+        pools(where: {{totalLiquidity_gte: 1000}}, first: {first}, skip: {skip}) {{
             id
             address
+            poolTypeVersion
             poolType
-            strategyType
-            swapFee
-            amp
         }}
         }}
         '''
@@ -56,24 +54,13 @@ def subgraph_query():
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def transactions_data(blockchain):
 
-    result = {}
+    result = []
 
     web3 = get_node(blockchain)
 
     pools = subgraph_query()
 
     vault_contract = get_contract(Balancer.VAULT, blockchain, web3=web3, abi=Balancer.ABI_VAULT)
-
-    # try:
-    #     with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/balancer_gauges_v2', 'r') as gauges_v2_file:
-    #         # Reading from json file
-    #         gauges_v2 = json.load(gauges_v2_file)
-    # except:
-    #     gauges_v2 = {}
-    
-    # gauge_factory_address = Balancer.get_gauge_factory_address(blockchain)
-    # gauge_factory_contract = get_contract(gauge_factory_address, blockchain, web3=web3,
-    #                                       abi=Balancer.ABI_LIQUIDITY_GAUGE_FACTORY)
     
     j = 0
     print(len(pools))
@@ -83,12 +70,6 @@ def transactions_data(blockchain):
         lptoken_address = vault_contract.functions.getPool(pool['id']).call()[0]
 
         gauge_address = Balancer.get_gauge_address(blockchain, 'latest', web3, lptoken_address)
-        
-        # try:
-        #     gauge_address = gauges_v2[blockchain][lptoken_address]
-        # except:
-        #     if blockchain == ETHEREUM:
-        #         gauge_address = gauge_factory_contract.functions.getPoolGauge(lptoken_address).call()
 
         lptoken_data = Balancer.get_lptoken_data(lptoken_address, 'latest', blockchain, web3=web3)
 
@@ -97,28 +78,27 @@ def transactions_data(blockchain):
 
         pool_id_hex = '0x' + lptoken_data['poolId'].hex()
 
-        pool_name = 'Balancer'
+        pool_name = get_symbol(lptoken_address, blockchain, web3=web3)
 
+        pool_tokens_array = []
         for i in range(len(pool_tokens)):
-
-            if i == lptoken_data['bptIndex']:
-                continue
 
             token_address = pool_tokens[i]
             token_symbol = get_symbol(token_address, blockchain)
 
-            if i == 0 or (lptoken_data['bptIndex'] == 0 and i == 1):
-                pool_name += ' %s' % token_symbol
-            else:
-                pool_name += '/%s' % token_symbol
+            pool_tokens_array.append({
+                'address': token_address,
+                'symbol': token_symbol
+            })
         
-        result[lptoken_address] = {
-            'pool id': pool_id_hex,
-            'pool name': pool_name, 
-            'pool type': pool['poolType'],
+        result.append({
+            'bpt': lptoken_address,
+            'id': pool_id_hex,
+            'name': pool_name, 
+            'type': pool['poolType'],
             'gauge': gauge_address,
-            'tokens': pool_tokens
-        }
+            'tokens': pool_tokens_array
+        })
 
         print(j)
         j += 1
@@ -342,8 +322,8 @@ def pool_data(lptoken_address):
 
 #pool_data('0xA13a9247ea42D743238089903570127DdA72fE44')
 # pool_data('0xfeBb0bbf162E64fb9D0dfe186E517d84C395f016')
-pool_data('0x32296969ef14eb0c6d29669c550d4a0449130230')
-#transactions_data(ETHEREUM)
+# pool_data('0x32296969ef14eb0c6d29669c550d4a0449130230')
+transactions_data(ETHEREUM)
 
 # result = {}
 # response = api_call()

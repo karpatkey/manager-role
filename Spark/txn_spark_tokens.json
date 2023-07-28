@@ -1,0 +1,96 @@
+[
+    {
+        "approve": [
+            {
+                "token": "Token",
+                "spender": "0xC13e21B648A5Ee794902342038FF3aDAB66BE987"
+            },
+            {
+                "signature": "approveDelegation(address,uint256) (for borrowing ETH with variable rate)",
+                "target address": "0x2e7576042566f8D6990e07A1B61Ad1efd86Ae70d",
+                "address[0]": "0xBD7D6a9ad7865463DE44B05F04559f65e3B11704"
+            },
+            {
+                "token": "0x6b175474e89094c44da98b954eedeac495271d0f (DAI)",
+                "spender": "0x83F20F44975D03b1b09e64809B757c47f942BEeA (to swap DAI for sDAI)"
+            },
+            {
+                "token": "0x6b175474e89094c44da98b954eedeac495271d0f (DAI)",
+                "spender": "0x89B78CfA322F6C5dE0aBcEecab66Aee45393cC5A (to swap DAI for USDC)"
+            }
+        ]
+    },
+    {
+        "functions": [
+            {
+                "signature": "supply(address,uint256,address,uint16)",
+                "target address": "0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
+                "avatar address arguments": [2],
+                "address[0]": "Token"
+            },
+            {
+                "signature": "withdraw(address,uint256,address)",
+                "target address": "0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
+                "avatar address arguments": [2],
+                "address[0]": "Token"
+            },
+            {
+                "signature": "setUserUseReserveAsCollateral(address,bool)",
+                "target address": "0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
+                "address[0]": "Token"
+            },
+            {
+                "signature": "borrow(address,uint256,uint256,uint16,address)",
+                "target address": "0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
+                "avatar address arguments": [4],
+                "address[0]": "Token"
+            },
+            {
+                "signature": "repay(address,uint256,uint256,address)",
+                "target address": "0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
+                "avatar address arguments": [3],
+                "address[0]": "Token"
+            },
+            {
+                "signature": "depositETH(address,address,uint16)",
+                "target address": "0xBD7D6a9ad7865463DE44B05F04559f65e3B11704",
+                "avatar address arguments": [1],
+                "address[0]": "0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
+                "valueETH": true
+            },
+            {
+                "signature": "withdrawETH(address,uint256,address)",
+                "target address": "0xBD7D6a9ad7865463DE44B05F04559f65e3B11704",
+                "avatar address arguments": [2],
+                "address[0]": "0xC13e21B648A5Ee794902342038FF3aDAB66BE987"
+            },
+            {
+                "signature": "borrowETH(address,uint256,uint256,uint16)",
+                "target address": "0xBD7D6a9ad7865463DE44B05F04559f65e3B11704",
+                "address[0]": "0xC13e21B648A5Ee794902342038FF3aDAB66BE987"
+            },
+            {
+                "signature": "repayETH(address,uint256,uint256,address)",
+                "target address": "0xBD7D6a9ad7865463DE44B05F04559f65e3B11704",
+                "avatar address arguments": [3],
+                "address[0]": "0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
+                "valueETH": true
+            },
+            {
+                "signature": "deposit(address,uint256)",
+                "target address": "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
+                "avatar address arguments": [0]
+            },
+            {
+                "signature": "redeem(uint256,address,address)",
+                "target address": "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
+                "avatar address arguments": [1,2]
+            },
+            {
+                "signature": "buyGem(address,uint256)",
+                "target address": "0x89B78CfA322F6C5dE0aBcEecab66Aee45393cC5A",
+                "avatar address arguments": [0]
+            }
+        ]
+    }
+]
