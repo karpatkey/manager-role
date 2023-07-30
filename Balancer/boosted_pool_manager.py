@@ -158,6 +158,9 @@ def join_pool():
                     amount = input('Enter a valid amount: ')
             
             amounts.append(int(amount))
+        
+        else:
+            amounts.append(0)
     
     if amounts != []:
         print()
@@ -315,9 +318,9 @@ print(f"{bcolors.HEADER}{bcolors.BOLD}--- Balancer Boosted Aave V3 USD Manager -
 print(f"{bcolors.HEADER}{bcolors.BOLD}--------------------------------------------{bcolors.ENDC}")
 print()
 
-avatar_address = '0xC01318baB7ee1f5ba734172bF7718b5DC6Ec90E1' # '0x4F2083f5fBede34C2714aFfb3105539775f7FE64'
+# avatar_address = '0xC01318baB7ee1f5ba734172bF7718b5DC6Ec90E1' # '0x4F2083f5fBede34C2714aFfb3105539775f7FE64'
 # avatar_address = '0x7f272451089Bf04797E33506D8831781d86A95f4'
-# avatar_address = '0x854B004700885A61107B458f11eCC169A019b764'
+avatar_address = '0x854B004700885A61107B458f11eCC169A019b764'
 roles_mod_address = '0x1ffAdc16726dd4F91fF275b4bF50651801B06a86' # '0xf20325cf84b72e8BBF8D8984B8f0059B984B390B'
 
 json_file = {

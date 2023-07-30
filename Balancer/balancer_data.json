@@ -7,16 +7,19 @@
         "gauge": "0x11Ff498C7c2A29fc4638BF45D9fF995C3297fcA5",
         "tokens": [
             {
-                "address": "0x02D928E68D8F10C0358566152677Db51E1e2Dc8C",
-                "symbol": "swETH-bb-a-WETH-BPT"
+                "address": "0x60D604890feaa0b5460B28A424407c24fe89374a",
+                "symbol": "bb-a-WETH",
+                "id": "0x60d604890feaa0b5460b28a424407c24fe89374a0000000000000000000004fc"
             },
             {
-                "address": "0x60D604890feaa0b5460B28A424407c24fe89374a",
-                "symbol": "bb-a-WETH"
+                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xf951E335afb289353dc249e82926178EaC7DEd78",
-                "symbol": "swETH"
+                "symbol": "swETH",
+                "id": "0x"
             }
         ]
     },
@@ -28,16 +31,19 @@
         "gauge": "0xb61bEFF1243315562Af3deC2Ec94fC18D006c723",
         "tokens": [
             {
-                "address": "0x04248AAbca09E9a1a3D5129a7ba05b7F17DE7684",
-                "symbol": "qETH-bb-a-WETH-BPT"
+                "address": "0x60D604890feaa0b5460B28A424407c24fe89374a",
+                "symbol": "bb-a-WETH",
+                "id": "0x60d604890feaa0b5460b28a424407c24fe89374a0000000000000000000004fc"
             },
             {
-                "address": "0x60D604890feaa0b5460B28A424407c24fe89374a",
-                "symbol": "bb-a-WETH"
+                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0x93ef1Ea305D11A9b2a3EbB9bB4FCc34695292E7d",
-                "symbol": "qETH"
+                "symbol": "qETH",
+                "id": "0x"
             }
         ]
     },
@@ -50,15 +56,18 @@
         "tokens": [
             {
                 "address": "0x616e8BfA43F920657B3497DBf40D6b1A02D4608d",
-                "symbol": "auraBAL"
+                "symbol": "auraBAL",
+                "id": "0x"
             },
             {
                 "address": "0xBA485b556399123261a5F9c95d413B4f93107407",
-                "symbol": "graviAURA"
+                "symbol": "graviAURA",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -71,15 +80,18 @@
         "tokens": [
             {
                 "address": "0x24C19F7101c1731b85F1127EaA0407732E36EcDD",
-                "symbol": "SGT"
+                "symbol": "SGT",
+                "id": "0x"
             },
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "DAI",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -92,15 +104,18 @@
         "tokens": [
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "DAI",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-                "symbol": "USDT"
+                "symbol": "USDT",
+                "id": "0x"
             }
         ]
     },
@@ -113,28 +128,13 @@
         "tokens": [
             {
                 "address": "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",
-                "symbol": "SNX"
+                "symbol": "SNX",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x081650db8297690B60a0Fac6C32a304401653b7e",
-        "id": "0x081650db8297690b60a0fac6c32a304401653b7e000200000000000000000208",
-        "name": "LCH_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x8D195F646B2834c2CDe76952D5f30211A1f84036",
-                "symbol": "LCH"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -147,11 +147,28 @@
         "tokens": [
             {
                 "address": "0x79c58f70905F734641735BC61e45c19dD9Ad60bC",
-                "symbol": "USDC-DAI-USDT"
+                "symbol": "USDC-DAI-USDT",
+                "id": "0x79c58f70905f734641735bc61e45c19dd9ad60bc0000000000000000000004e7"
+            },
+            {
+                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                "symbol": "DAI",
+                "id": "0x"
+            },
+            {
+                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                "symbol": "USDC",
+                "id": "0x"
+            },
+            {
+                "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+                "symbol": "USDT",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -164,11 +181,13 @@
         "tokens": [
             {
                 "address": "0x7E9AfD25F5Ec0eb24d7d4b089Ae7EcB9651c8b1F",
-                "symbol": "B-baoUSD-LUSD-BPT"
+                "symbol": "B-baoUSD-LUSD-BPT",
+                "id": "0x7e9afd25f5ec0eb24d7d4b089ae7ecb9651c8b1f000000000000000000000511"
             },
             {
                 "address": "0xCe391315b414D4c7555956120461D21808A69F3A",
-                "symbol": "BAO"
+                "symbol": "BAO",
+                "id": "0x"
             }
         ]
     },
@@ -181,11 +200,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xf5f06fFa53Ad7F5914F493F16E57B56C8dd2eA80",
-                "symbol": "JELLY"
+                "symbol": "JELLY",
+                "id": "0x"
             }
         ]
     },
@@ -198,11 +219,13 @@
         "tokens": [
             {
                 "address": "0x4b13006980aCB09645131b91D259eaA111eaF5Ba",
-                "symbol": "MYC"
+                "symbol": "MYC",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -215,11 +238,13 @@
         "tokens": [
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "DAI",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -231,16 +256,14 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             {
-                "address": "0x0Bbc7B78Ff8453c40718E290b33F1d00ee67274E",
-                "symbol": "B-bETH-ETHBP-BPT"
-            },
-            {
                 "address": "0x1A44E35d5451E0b78621A1B3e7a53DFaA306B1D0",
-                "symbol": "B-baoETH-ETH-BPT"
+                "symbol": "B-baoETH-ETH-BPT",
+                "id": "0x1a44e35d5451e0b78621a1b3e7a53dfaa306b1d000000000000000000000051b"
             },
             {
                 "address": "0xa1e3F062CE5825c1e19207cd93CEFdaD82A8A631",
-                "symbol": "bETH"
+                "symbol": "bETH",
+                "id": "0x"
             }
         ]
     },
@@ -253,11 +276,13 @@
         "tokens": [
             {
                 "address": "0x333A4823466879eeF910A04D473505da62142069",
-                "symbol": "NATION"
+                "symbol": "NATION",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -270,11 +295,13 @@
         "tokens": [
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xa41A879bcFdd75983a987FD6b68fae37777e8b28",
-                "symbol": "XEX"
+                "symbol": "XEX",
+                "id": "0x"
             }
         ]
     },
@@ -287,11 +314,13 @@
         "tokens": [
             {
                 "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
-                "symbol": "rETH"
+                "symbol": "rETH",
+                "id": "0x"
             },
             {
                 "address": "0xD33526068D116cE69F19A9ee46F0bd304F21A51f",
-                "symbol": "RPL"
+                "symbol": "RPL",
+                "id": "0x"
             }
         ]
     },
@@ -304,70 +333,13 @@
         "tokens": [
             {
                 "address": "0x06C985FF69F7257e212a89828f79497a3c8B6eDf",
-                "symbol": "COIN"
+                "symbol": "COIN",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x10a2F8bd81Ee2898D7eD18fb8f114034a549FA59",
-        "id": "0x10a2f8bd81ee2898d7ed18fb8f114034a549fa59000200000000000000000090",
-        "name": "LPePyvUSDC-28JAN22",
-        "type": "Element",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x8a2228705ec979961F0e16df311dEbcf097A2766",
-                "symbol": "ePyvUSDC-28JAN22"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            }
-        ]
-    },
-    {
-        "bpt": "0x126e7643235ec0ab9c103c507642dC3F4cA23C66",
-        "id": "0x126e7643235ec0ab9c103c507642dc3f4ca23c66000000000000000000000468",
-        "name": "bb-t-stkAPE",
-        "type": "ERC4626Linear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x126e7643235ec0ab9c103c507642dC3F4cA23C66",
-                "symbol": "bb-t-stkAPE"
-            },
-            {
-                "address": "0x4d224452801ACEd8B2F0aebE155379bb5D594381",
-                "symbol": "APE"
-            },
-            {
-                "address": "0x7966C5BAe631294D7cFFcEA5430b78C2F76DB6Fa",
-                "symbol": "sAPE"
-            }
-        ]
-    },
-    {
-        "bpt": "0x133d241F225750D2c92948E464A5a80111920331",
-        "id": "0x133d241f225750d2c92948e464a5a80111920331000000000000000000000476",
-        "name": "DOLA-bb-e-USD-BPT",
-        "type": "ComposableStable",
-        "gauge": "0x5FbEAa96c9D8d0e839780433aA0B3B4d35b049d8",
-        "tokens": [
-            {
-                "address": "0x133d241F225750D2c92948E464A5a80111920331",
-                "symbol": "DOLA-bb-e-USD-BPT"
-            },
-            {
-                "address": "0x50Cf90B954958480b8DF7958A9E965752F627124",
-                "symbol": "bb-euler-USD-BPT"
-            },
-            {
-                "address": "0x865377367054516e17014CcdED1e7d814EDC9ce4",
-                "symbol": "DOLA"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -380,19 +352,23 @@
         "tokens": [
             {
                 "address": "0x6810e776880C02933D47DB1b9fc05908e5386b96",
-                "symbol": "GNO"
+                "symbol": "GNO",
+                "id": "0x"
             },
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "DAI",
+                "id": "0x"
             },
             {
                 "address": "0xba100000625a3754423978a60c9317c58a424e3D",
-                "symbol": "BAL"
+                "symbol": "BAL",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -404,16 +380,14 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             {
-                "address": "0x156C02f3f7fEf64a3A9D80CCF7085f23ccE91D76",
-                "symbol": "vETH/WETH BPT"
-            },
-            {
                 "address": "0x4Bc3263Eb5bb2Ef7Ad9aB6FB68be80E43b43801F",
-                "symbol": "vETH"
+                "symbol": "vETH",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -426,11 +400,13 @@
         "tokens": [
             {
                 "address": "0x875773784Af8135eA0ef43b5a374AaD105c5D39e",
-                "symbol": "IDLE"
+                "symbol": "IDLE",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -439,15 +415,17 @@
         "id": "0x15c1cdacd3da1e1c1304200b1beb080d50bbbc0f00020000000000000000045f",
         "name": "50TRYB-50USDC",
         "type": "Weighted",
-        "gauge": "0x41962010E675E8f4951777A518B0E43dBab3e874",
+        "gauge": "0x36365dA262dB3965Ba2E1C4411409Bf22508e0A1",
         "tokens": [
             {
                 "address": "0x2C537E5624e4af88A7ae4060C022609376C8D0EB",
-                "symbol": "TRYB"
+                "symbol": "TRYB",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -460,15 +438,18 @@
         "tokens": [
             {
                 "address": "0x586Aa273F262909EEF8fA02d90Ab65F5015e0516",
-                "symbol": "FIAT"
+                "symbol": "FIAT",
+                "id": "0x"
             },
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "DAI",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -481,11 +462,13 @@
         "tokens": [
             {
                 "address": "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
-                "symbol": "YFI"
+                "symbol": "YFI",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -498,11 +481,13 @@
         "tokens": [
             {
                 "address": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
-                "symbol": "LUSD"
+                "symbol": "LUSD",
+                "id": "0x"
             },
             {
                 "address": "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
-                "symbol": "OHM"
+                "symbol": "OHM",
+                "id": "0x"
             }
         ]
     },
@@ -514,16 +499,14 @@
         "gauge": "0xD449Efa0A587f2cb6BE3AE577Bc167a774525810",
         "tokens": [
             {
-                "address": "0x1A44E35d5451E0b78621A1B3e7a53DFaA306B1D0",
-                "symbol": "B-baoETH-ETH-BPT"
-            },
-            {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xf4edfad26EE0D23B69CA93112eccE52704E0006f",
-                "symbol": "baoETH"
+                "symbol": "baoETH",
+                "id": "0x"
             }
         ]
     },
@@ -536,11 +519,13 @@
         "tokens": [
             {
                 "address": "0xA5B947687163FE88C3e6af5b17Ae69896F4abccf",
-                "symbol": "PSDN"
+                "symbol": "PSDN",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -553,11 +538,13 @@
         "tokens": [
             {
                 "address": "0x79c71D3436F39Ce382D0f58F1B011D88100B9D91",
-                "symbol": "XNS"
+                "symbol": "XNS",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -570,11 +557,13 @@
         "tokens": [
             {
                 "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
-                "symbol": "rETH"
+                "symbol": "rETH",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -587,11 +576,13 @@
         "tokens": [
             {
                 "address": "0x3472A5A71965499acd81997a54BBA8D852C6E53d",
-                "symbol": "BADGER"
+                "symbol": "BADGER",
+                "id": "0x"
             },
             {
                 "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
-                "symbol": "rETH"
+                "symbol": "rETH",
+                "id": "0x"
             }
         ]
     },
@@ -604,15 +595,13 @@
         "tokens": [
             {
                 "address": "0x183015a9bA6fF60230fdEaDc3F43b3D788b13e21",
-                "symbol": "R"
-            },
-            {
-                "address": "0x20a61B948E33879ce7F23e535CC7BAA3BC66c5a9",
-                "symbol": "R-DAI-BLP"
+                "symbol": "R",
+                "id": "0x"
             },
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "DAI",
+                "id": "0x"
             }
         ]
     },
@@ -625,52 +614,43 @@
         "tokens": [
             {
                 "address": "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
-                "symbol": "AAVE"
+                "symbol": "AAVE",
+                "id": "0x"
             },
             {
                 "address": "0xba100000625a3754423978a60c9317c58a424e3D",
-                "symbol": "BAL"
+                "symbol": "BAL",
+                "id": "0x"
             },
             {
                 "address": "0xba5BDe662c17e2aDFF1075610382B9B691296350",
-                "symbol": "RARE"
+                "symbol": "RARE",
+                "id": "0x"
             },
             {
                 "address": "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72",
-                "symbol": "ENS"
+                "symbol": "ENS",
+                "id": "0x"
             },
             {
                 "address": "0xD33526068D116cE69F19A9ee46F0bd304F21A51f",
-                "symbol": "RPL"
+                "symbol": "RPL",
+                "id": "0x"
             },
             {
                 "address": "0xDe30da39c46104798bB5aA3fe8B9e0e1F348163F",
-                "symbol": "GTC"
+                "symbol": "GTC",
+                "id": "0x"
             },
             {
                 "address": "0xf2051511B9b121394FA75B8F7d4E7424337af687",
-                "symbol": "HAUS"
+                "symbol": "HAUS",
+                "id": "0x"
             },
             {
                 "address": "0xfb5453340C03db5aDe474b27E68B6a9c6b2823Eb",
-                "symbol": "ROBOT"
-            }
-        ]
-    },
-    {
-        "bpt": "0x2291627599A7441d53c4645d7B12720026C33618",
-        "id": "0x2291627599a7441d53c4645d7b12720026c336180002000000000000000002a5",
-        "name": "PRT_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            },
-            {
-                "address": "0xC318c2d897283852f6f20ebEAd6b605907d911fd",
-                "symbol": "PRT"
+                "symbol": "ROBOT",
+                "id": "0x"
             }
         ]
     },
@@ -683,11 +663,13 @@
         "tokens": [
             {
                 "address": "0x83E9F223e1edb3486F876EE888d76bFba26c475A",
-                "symbol": "GUILD"
+                "symbol": "GUILD",
+                "id": "0x"
             },
             {
                 "address": "0x949D48EcA67b17269629c7194F4b727d4Ef9E5d6",
-                "symbol": "MC"
+                "symbol": "MC",
+                "id": "0x"
             }
         ]
     },
@@ -700,11 +682,32 @@
         "tokens": [
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xA13a9247ea42D743238089903570127DdA72fE44",
-                "symbol": "bb-a-USD"
+                "symbol": "bb-a-USD",
+                "id": "0xa13a9247ea42d743238089903570127dda72fe4400000000000000000000035d"
+            }
+        ]
+    },
+    {
+        "bpt": "0x26Cc136e9b8FD65466F193a8e5710661Ed9A9827",
+        "id": "0x26cc136e9b8fd65466f193a8e5710661ed9a98270002000000000000000005ad",
+        "name": "80BETS/20wstETH",
+        "type": "Weighted",
+        "gauge": "0x0000000000000000000000000000000000000000",
+        "tokens": [
+            {
+                "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+                "symbol": "wstETH",
+                "id": "0x"
+            },
+            {
+                "address": "0x94025780a1aB58868D9B2dBBB775f44b32e8E6e5",
+                "symbol": "BETS",
+                "id": "0x"
             }
         ]
     },
@@ -713,15 +716,17 @@
         "id": "0x27c9f71cc31464b906e0006d4fcbc8900f48f15f00020000000000000000010f",
         "name": "80D2D-20USDC",
         "type": "Weighted",
-        "gauge": "0x5A481455E62D5825429C8c416f3B8D2938755B64",
+        "gauge": "0x1249c510e066731FF14422500466A7102603da9e",
         "tokens": [
             {
                 "address": "0x43D4A3cd90ddD2F8f4f693170C9c8098163502ad",
-                "symbol": "D2D"
+                "symbol": "D2D",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -734,32 +739,13 @@
         "tokens": [
             {
                 "address": "0x68037790A0229e9Ce6EaA8A99ea92964106C4703",
-                "symbol": "PAR"
+                "symbol": "PAR",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x2BBf681cC4eb09218BEe85EA2a5d3D13Fa40fC0C",
-        "id": "0x2bbf681cc4eb09218bee85ea2a5d3d13fa40fc0c0000000000000000000000fd",
-        "name": "bb-a-USDT",
-        "type": "AaveLinear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x2BBf681cC4eb09218BEe85EA2a5d3D13Fa40fC0C",
-                "symbol": "bb-a-USDT"
-            },
-            {
-                "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-                "symbol": "USDT"
-            },
-            {
-                "address": "0xf8Fd466F12e236f4c96F7Cce6c79EAdB819abF58",
-                "symbol": "aUSDT"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -772,11 +758,13 @@
         "tokens": [
             {
                 "address": "0x5c6Ee304399DBdB9C8Ef030aB642B10820DB8F56",
-                "symbol": "B-80BAL-20WETH"
+                "symbol": "B-80BAL-20WETH",
+                "id": "0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014"
             },
             {
                 "address": "0xF24d8651578a55b0C119B9910759a351A3458895",
-                "symbol": "sdBal"
+                "symbol": "sdBal",
+                "id": "0x"
             }
         ]
     },
@@ -785,15 +773,17 @@
         "id": "0x2d344a84bac123660b021eebe4eb6f12ba25fe8600020000000000000000018a",
         "name": "20WETH-80FDT",
         "type": "Weighted",
-        "gauge": "0xbD0DAe90cb4a0e08f1101929C2A01eB165045660",
+        "gauge": "0x59E7DBfF74B2B76957E6a3f25cCEe40b2f3421D0",
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xEd1480d12bE41d92F36f5f7bDd88212E381A3677",
-                "symbol": "FDT"
+                "symbol": "FDT",
+                "id": "0x"
             }
         ]
     },
@@ -806,11 +796,13 @@
         "tokens": [
             {
                 "address": "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
-                "symbol": "OHM"
+                "symbol": "OHM",
+                "id": "0x"
             },
             {
                 "address": "0xc55126051B22eBb829D00368f4B12Bde432de5Da",
-                "symbol": "BTRFLY"
+                "symbol": "BTRFLY",
+                "id": "0x"
             }
         ]
     },
@@ -822,58 +814,14 @@
         "gauge": "0xd1c070eBc7Ec77f2134b3Ef75283b6C1fb31a157",
         "tokens": [
             {
-                "address": "0x2E848426AEc6dbF2260535a5bEa048ed94d9FF3D",
-                "symbol": "wbETH-wstETH"
-            },
-            {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xa2E3356610840701BDf5611a53974510Ae27E2e1",
-                "symbol": "wBETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x2F4eb100552ef93840d5aDC30560E5513DFfFACb",
-        "id": "0x2f4eb100552ef93840d5adc30560e5513dfffacb000000000000000000000334",
-        "name": "bb-a-USDT",
-        "type": "AaveLinear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x2F4eb100552ef93840d5aDC30560E5513DFfFACb",
-                "symbol": "bb-a-USDT"
-            },
-            {
-                "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-                "symbol": "USDT"
-            },
-            {
-                "address": "0xf8Fd466F12e236f4c96F7Cce6c79EAdB819abF58",
-                "symbol": "aUSDT"
-            }
-        ]
-    },
-    {
-        "bpt": "0x2FF1A9Dbdacd55297452cFD8a4d94724Bc22a5F7",
-        "id": "0x2ff1a9dbdacd55297452cfd8a4d94724bc22a5f7000000000000000000000484",
-        "name": "bb-i-USDT",
-        "type": "ERC4626Linear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x2FF1A9Dbdacd55297452cFD8a4d94724Bc22a5F7",
-                "symbol": "bb-i-USDT"
-            },
-            {
-                "address": "0x544897A3B944fdEB1f94A0ed973eA31A80ae18E1",
-                "symbol": "idleUSDTJunior4626"
-            },
-            {
-                "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-                "symbol": "USDT"
+                "symbol": "wBETH",
+                "id": "0x"
             }
         ]
     },
@@ -886,11 +834,13 @@
         "tokens": [
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xbe1936A67f503e0eaF2434b0cf9f4e3d7100008A",
-                "symbol": "PROS"
+                "symbol": "PROS",
+                "id": "0x"
             }
         ]
     },
@@ -903,11 +853,13 @@
         "tokens": [
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -916,15 +868,17 @@
         "id": "0x350196326aeaa9b98f1903fb5e8fc2686f85318c000200000000000000000084",
         "name": "VBPT",
         "type": "Weighted",
-        "gauge": "0xb154d9D7f6C5d618c08D276f94239c03CFBF4575",
+        "gauge": "0xc2D343E2C9498E905F53C818B88eB8064B42D036",
         "tokens": [
             {
                 "address": "0x81f8f0bb1cB2A06649E51913A151F0E7Ef6FA321",
-                "symbol": "VITA"
+                "symbol": "VITA",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -937,11 +891,13 @@
         "tokens": [
             {
                 "address": "0x44108f0223A3C3028F5Fe7AEC7f9bb2E66beF82F",
-                "symbol": "ACX"
+                "symbol": "ACX",
+                "id": "0x"
             },
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             }
         ]
     },
@@ -954,11 +910,13 @@
         "tokens": [
             {
                 "address": "0x183015a9bA6fF60230fdEaDc3F43b3D788b13e21",
-                "symbol": "R"
+                "symbol": "R",
+                "id": "0x"
             },
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             }
         ]
     },
@@ -971,31 +929,38 @@
         "tokens": [
             {
                 "address": "0x0AbdAce70D3790235af448C88547603b945604ea",
-                "symbol": "DNT"
+                "symbol": "DNT",
+                "id": "0x"
             },
             {
                 "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                "symbol": "WBTC"
+                "symbol": "WBTC",
+                "id": "0x"
             },
             {
                 "address": "0x340D2bdE5Eb28c1eed91B2f790723E3B160613B7",
-                "symbol": "VEE"
+                "symbol": "VEE",
+                "id": "0x"
             },
             {
                 "address": "0x4CC19356f2D37338b9802aa8E8fc58B0373296E7",
-                "symbol": "KEY"
+                "symbol": "KEY",
+                "id": "0x"
             },
             {
                 "address": "0x744d70FDBE2Ba4CF95131626614a1763DF805B9E",
-                "symbol": "SNT"
+                "symbol": "SNT",
+                "id": "0x"
             },
             {
                 "address": "0x99ea4dB9EE77ACD40B119BD1dC4E33e1C070b80d",
-                "symbol": "QSP"
+                "symbol": "QSP",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1008,11 +973,13 @@
         "tokens": [
             {
                 "address": "0x865377367054516e17014CcdED1e7d814EDC9ce4",
-                "symbol": "DOLA"
+                "symbol": "DOLA",
+                "id": "0x"
             },
             {
                 "address": "0xC285B7E09A4584D027E5BC36571785B515898246",
-                "symbol": "CUSD"
+                "symbol": "CUSD",
+                "id": "0x"
             }
         ]
     },
@@ -1025,32 +992,13 @@
         "tokens": [
             {
                 "address": "0x1A44E35d5451E0b78621A1B3e7a53DFaA306B1D0",
-                "symbol": "B-baoETH-ETH-BPT"
+                "symbol": "B-baoETH-ETH-BPT",
+                "id": "0x1a44e35d5451e0b78621a1b3e7a53dfaa306b1d000000000000000000000051b"
             },
             {
                 "address": "0xCe391315b414D4c7555956120461D21808A69F3A",
-                "symbol": "BAO"
-            }
-        ]
-    },
-    {
-        "bpt": "0x3C640f0d3036Ad85Afa2D5A9E32bE651657B874F",
-        "id": "0x3c640f0d3036ad85afa2d5a9e32be651657b874f00000000000000000000046b",
-        "name": "bb-e-USDT",
-        "type": "EulerLinear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x3C640f0d3036Ad85Afa2D5A9E32bE651657B874F",
-                "symbol": "bb-e-USDT"
-            },
-            {
-                "address": "0x4d19F33948b99800B6113Ff3e83beC9b537C85d2",
-                "symbol": "eUSDT"
-            },
-            {
-                "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-                "symbol": "USDT"
+                "symbol": "BAO",
+                "id": "0x"
             }
         ]
     },
@@ -1063,11 +1011,13 @@
         "tokens": [
             {
                 "address": "0x5c6Ee304399DBdB9C8Ef030aB642B10820DB8F56",
-                "symbol": "B-80BAL-20WETH"
+                "symbol": "B-80BAL-20WETH",
+                "id": "0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014"
             },
             {
                 "address": "0x616e8BfA43F920657B3497DBf40D6b1A02D4608d",
-                "symbol": "auraBAL"
+                "symbol": "auraBAL",
+                "id": "0x"
             }
         ]
     },
@@ -1080,11 +1030,13 @@
         "tokens": [
             {
                 "address": "0x8888801aF4d980682e47f1A9036e589479e835C5",
-                "symbol": "MPH"
+                "symbol": "MPH",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1097,28 +1049,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-                "symbol": "USDT"
-            }
-        ]
-    },
-    {
-        "bpt": "0x3E87048A3bd97C8Cd9ca84Ed2bF6Ba88495226e5",
-        "id": "0x3e87048a3bd97c8cd9ca84ed2bf6ba88495226e500020000000000000000030f",
-        "name": "ALBERT_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x217AfE231818Ae8dBB384A95F92d252f9D26A7b0",
-                "symbol": "ALBERT"
-            },
-            {
-                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "USDT",
+                "id": "0x"
             }
         ]
     },
@@ -1131,11 +1068,13 @@
         "tokens": [
             {
                 "address": "0xba100000625a3754423978a60c9317c58a424e3D",
-                "symbol": "BAL"
+                "symbol": "BAL",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1144,15 +1083,17 @@
         "id": "0x3f7c10701b14197e2695dec6428a2ca4cf7fc3b800020000000000000000023c",
         "name": "50DFX-50WETH",
         "type": "Weighted",
-        "gauge": "0x7CDc9dC877b69328ca8b1Ff11ebfBe2a444Cf350",
+        "gauge": "0x27Fd581E9D0b2690C2f808cd40f7fe667714b575",
         "tokens": [
             {
                 "address": "0x888888435FDe8e7d4c54cAb67f206e4199454c60",
-                "symbol": "DFX"
+                "symbol": "DFX",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1164,16 +1105,14 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             {
-                "address": "0x3FA8C89704e5d07565444009e5d9e624B40Be813",
-                "symbol": "GHO/LUSD"
-            },
-            {
                 "address": "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f",
-                "symbol": "GHO"
+                "symbol": "GHO",
+                "id": "0x"
             },
             {
                 "address": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
-                "symbol": "LUSD"
+                "symbol": "LUSD",
+                "id": "0x"
             }
         ]
     },
@@ -1185,16 +1124,19 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             {
-                "address": "0x41503C9D499ddbd1dCdf818a1b05e9774203Bf46",
-                "symbol": "wstETH-bb-a-WETH-BPT"
-            },
-            {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xbB6881874825E60e1160416D6C426eae65f2459E",
-                "symbol": "bb-a-WETH"
+                "symbol": "bb-a-WETH",
+                "id": "0xbb6881874825e60e1160416d6c426eae65f2459e000000000000000000000592"
+            },
+            {
+                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1206,20 +1148,19 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             {
-                "address": "0x42ED016F826165C2e5976fe5bC3df540C5aD0Af7",
-                "symbol": "wstETH-rETH-sfrxETH-BPT"
-            },
-            {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xac3E018457B222d93114458476f3E3416Abbe38F",
-                "symbol": "sfrxETH"
+                "symbol": "sfrxETH",
+                "id": "0x"
             },
             {
                 "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
-                "symbol": "rETH"
+                "symbol": "rETH",
+                "id": "0x"
             }
         ]
     },
@@ -1232,11 +1173,13 @@
         "tokens": [
             {
                 "address": "0x823E1B82cE1Dc147Bbdb25a203f046aFab1CE918",
-                "symbol": "COIL"
+                "symbol": "COIL",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -1245,15 +1188,17 @@
         "id": "0x441b8a1980f2f2e43a9397099d15cc2fe6d3625000020000000000000000035f",
         "name": "50INV-50DOLA",
         "type": "Weighted",
-        "gauge": "0x422CF6D2cBa89b8D0af259e508Ffd6AddA1d821a",
+        "gauge": "0x46804462f147fF96e9CAFB20cA35A3B2600656DF",
         "tokens": [
             {
                 "address": "0x41D5D79431A913C4aE7d69a668ecdfE5fF9DFB68",
-                "symbol": "INV"
+                "symbol": "INV",
+                "id": "0x"
             },
             {
                 "address": "0x865377367054516e17014CcdED1e7d814EDC9ce4",
-                "symbol": "DOLA"
+                "symbol": "DOLA",
+                "id": "0x"
             }
         ]
     },
@@ -1266,11 +1211,13 @@
         "tokens": [
             {
                 "address": "0x758B4684BE769E92eeFeA93f60DDA0181eA303Ec",
-                "symbol": "PHONON"
+                "symbol": "PHONON",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1279,15 +1226,17 @@
         "id": "0x48607651416a943bf5ac71c41be1420538e78f87000200000000000000000327",
         "name": "50Silo-50WETH",
         "type": "Weighted",
-        "gauge": "0xC545aa66cdd9Cf172568dC8ebFdDa1CE9a60e0CB",
+        "gauge": "0x75cAceBb5b4a73a530EdcdFdE7cFfbfea44c026E",
         "tokens": [
             {
                 "address": "0x6f80310CA7F2C654691D1383149Fa1A57d8AB1f8",
-                "symbol": "Silo"
+                "symbol": "Silo",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1300,49 +1249,13 @@
         "tokens": [
             {
                 "address": "0x4730fB1463A6F1F44AEB45F6c5c422427f37F4D0",
-                "symbol": "FOUR"
+                "symbol": "FOUR",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x4A82b580365Cff9B146281Ab72500957a849ABDC",
-        "id": "0x4a82b580365cff9b146281ab72500957a849abdc000000000000000000000494",
-        "name": "bb-g-USDC",
-        "type": "GearboxLinear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x4A82b580365Cff9B146281Ab72500957a849ABDC",
-                "symbol": "bb-g-USDC"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            },
-            {
-                "address": "0xc411dB5f5Eb3f7d552F9B8454B2D74097ccdE6E3",
-                "symbol": "dUSDC"
-            }
-        ]
-    },
-    {
-        "bpt": "0x4bd6D86dEBdB9F5413e631Ad386c4427DC9D01B2",
-        "id": "0x4bd6d86debdb9f5413e631ad386c4427dc9d01b20002000000000000000000ec",
-        "name": "LPePyvWBTC-29APR22",
-        "type": "Element",
-        "gauge": "0xaB5ea78c8323212cC5736bfe4874557Bc778Bfbf",
-        "tokens": [
-            {
-                "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                "symbol": "WBTC"
-            },
-            {
-                "address": "0x49e9e169f0B661Ea0A883f490564F4CC275123Ed",
-                "symbol": "ePyvWBTC-29APR22"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1354,33 +1267,19 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             {
-                "address": "0x4CbdE5C4B4B53EBE4aF4adB85404725985406163",
-                "symbol": "B-ETHx/bb-a-WETH "
-            },
-            {
                 "address": "0xA35b1B31Ce002FBF2058D22F30f95D405200A15b",
-                "symbol": "ETHx"
+                "symbol": "ETHx",
+                "id": "0x"
             },
             {
                 "address": "0xbB6881874825E60e1160416D6C426eae65f2459E",
-                "symbol": "bb-a-WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x4Db9024fc9F477134e00Da0DA3c77DE98d9836aC",
-        "id": "0x4db9024fc9f477134e00da0da3c77de98d9836ac000200000000000000000086",
-        "name": "LPePyvWBTC-26NOV21",
-        "type": "Element",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                "symbol": "WBTC"
+                "symbol": "bb-a-WETH",
+                "id": "0xbb6881874825e60e1160416d6c426eae65f2459e000000000000000000000592"
             },
             {
-                "address": "0x6BF924137E769C0A5c443dcE6eC885552d31D579",
-                "symbol": "ePyvWBTC-26NOV21"
+                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1392,41 +1291,14 @@
         "gauge": "0xe624E9E85A5728072313c4F4720cDF8fD4FFdAFC",
         "tokens": [
             {
-                "address": "0x4EdcB2B46377530Bc18BB4D2c7Fe46a992c73e10",
-                "symbol": "cbETH-wstETH-BPT"
-            },
-            {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704",
-                "symbol": "cbETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x50Cf90B954958480b8DF7958A9E965752F627124",
-        "id": "0x50cf90b954958480b8df7958a9e965752f62712400000000000000000000046f",
-        "name": "bb-euler-USD-BPT",
-        "type": "ComposableStable",
-        "gauge": "0xf53f2fEE2A34f7f8d1BFe1B774A95Cc79C121B34",
-        "tokens": [
-            {
-                "address": "0x3C640f0d3036Ad85Afa2D5A9E32bE651657B874F",
-                "symbol": "bb-e-USDT"
-            },
-            {
-                "address": "0x50Cf90B954958480b8DF7958A9E965752F627124",
-                "symbol": "bb-euler-USD-BPT"
-            },
-            {
-                "address": "0xD4e7C1F3DA1144c9E2CfD1b015eDA7652b4a4399",
-                "symbol": "bb-e-USDC"
-            },
-            {
-                "address": "0xeB486AF868AeB3b6e53066abc9623b1041b42bc0",
-                "symbol": "bb-e-DAI"
+                "symbol": "cbETH",
+                "id": "0x"
             }
         ]
     },
@@ -1435,15 +1307,17 @@
         "id": "0x5122e01d819e58bb2e22528c0d68d310f0aa6fd7000200000000000000000163",
         "name": "sNOTE-BPT",
         "type": "Weighted",
-        "gauge": "0x40AC67ea5bD1215D99244651CC71a03468bce6c0",
+        "gauge": "0x09AFEc27F5A6201617aAd014CeEa8deb572B0608",
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xCFEAead4947f0705A14ec42aC3D44129E1Ef3eD5",
-                "symbol": "NOTE"
+                "symbol": "NOTE",
+                "id": "0x"
             }
         ]
     },
@@ -1456,11 +1330,13 @@
         "tokens": [
             {
                 "address": "0xA36FDBBAE3c9d55a1d67EE5821d53B50B63A1aB9",
-                "symbol": "TEMP"
+                "symbol": "TEMP",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1473,28 +1349,13 @@
         "tokens": [
             {
                 "address": "0x226f7b842E0F0120b7E194D05432b3fd14773a9D",
-                "symbol": "UNN"
+                "symbol": "UNN",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x54030dCDAaA0B03F52DF13fe4b479f362cF95dCA",
-        "id": "0x54030dcdaaa0b03f52df13fe4b479f362cf95dca00020000000000000000052e",
-        "name": "F9_F9_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x38A94e92A19E970c144DEd0B2DD47278CA11CC1F",
-                "symbol": "F9"
-            },
-            {
-                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1503,19 +1364,22 @@
         "id": "0x5512a4bbe7b3051f92324bacf25c02b9000c4a500001000000000000000003d7",
         "name": "33LUSD-33LQTY-33WETH",
         "type": "Weighted",
-        "gauge": "0x9Cc382125f19539EcEB2f607A57bBcac459cb097",
+        "gauge": "0x63E3951212cCCAFE3eDC7588FD4D20Ee5e7Ad73f",
         "tokens": [
             {
                 "address": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
-                "symbol": "LUSD"
+                "symbol": "LUSD",
+                "id": "0x"
             },
             {
                 "address": "0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D",
-                "symbol": "LQTY"
+                "symbol": "LQTY",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1528,11 +1392,13 @@
         "tokens": [
             {
                 "address": "0x10010078a54396F62c96dF8532dc2B4847d47ED3",
-                "symbol": "HND"
+                "symbol": "HND",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1545,11 +1411,13 @@
         "tokens": [
             {
                 "address": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
-                "symbol": "UNI"
+                "symbol": "UNI",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1561,20 +1429,19 @@
         "gauge": "0xA2a9Ebd6f4dEA4802083F2C8D08066A4e695e64B",
         "tokens": [
             {
-                "address": "0x5aEe1e99fE86960377DE9f88689616916D5DcaBe",
-                "symbol": "wstETH-rETH-sfrxETH-BPT"
-            },
-            {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xac3E018457B222d93114458476f3E3416Abbe38F",
-                "symbol": "sfrxETH"
+                "symbol": "sfrxETH",
+                "id": "0x"
             },
             {
                 "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
-                "symbol": "rETH"
+                "symbol": "rETH",
+                "id": "0x"
             }
         ]
     },
@@ -1587,11 +1454,13 @@
         "tokens": [
             {
                 "address": "0x68037790A0229e9Ce6EaA8A99ea92964106C4703",
-                "symbol": "PAR"
+                "symbol": "PAR",
+                "id": "0x"
             },
             {
                 "address": "0x90B831fa3Bebf58E9744A14D638E25B4eE06f9Bc",
-                "symbol": "MIMO"
+                "symbol": "MIMO",
+                "id": "0x"
             }
         ]
     },
@@ -1604,11 +1473,13 @@
         "tokens": [
             {
                 "address": "0xba100000625a3754423978a60c9317c58a424e3D",
-                "symbol": "BAL"
+                "symbol": "BAL",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1621,11 +1492,13 @@
         "tokens": [
             {
                 "address": "0x68037790A0229e9Ce6EaA8A99ea92964106C4703",
-                "symbol": "PAR"
+                "symbol": "PAR",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -1638,11 +1511,13 @@
         "tokens": [
             {
                 "address": "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
-                "symbol": "LDO"
+                "symbol": "LDO",
+                "id": "0x"
             },
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             }
         ]
     },
@@ -1651,15 +1526,17 @@
         "id": "0x5f7fa48d765053f8dd85e052843e12d23e3d7bc50002000000000000000000c0",
         "name": "NWWP",
         "type": "Weighted",
-        "gauge": "0xC5f8B1de80145e3a74524a3d1a772a31eD2B50cc",
+        "gauge": "0x96d7e549eA1d810725e4Cd1f51ed6b4AE8496338",
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xCFEAead4947f0705A14ec42aC3D44129E1Ef3eD5",
-                "symbol": "NOTE"
+                "symbol": "NOTE",
+                "id": "0x"
             }
         ]
     },
@@ -1672,19 +1549,33 @@
         "tokens": [
             {
                 "address": "0x2FF1A9Dbdacd55297452cFD8a4d94724Bc22a5F7",
-                "symbol": "bb-i-USDT"
+                "symbol": "bb-i-USDT",
+                "id": "0x2ff1a9dbdacd55297452cfd8a4d94724bc22a5f7000000000000000000000484"
             },
             {
-                "address": "0x60683B05e9a39E3509D8fdb9C959f23170f8A0fa",
-                "symbol": "bb-i-USD"
+                "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+                "symbol": "USDT",
+                "id": "0x"
             },
             {
                 "address": "0xbc0F2372008005471874e426e86CCFae7B4De79d",
-                "symbol": "bb-i-USDC"
+                "symbol": "bb-i-USDC",
+                "id": "0xbc0f2372008005471874e426e86ccfae7b4de79d000000000000000000000485"
+            },
+            {
+                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xDbA274B4D04097b90A72b62467d828cEFD708037",
-                "symbol": "bb-i-DAI"
+                "symbol": "bb-i-DAI",
+                "id": "0xdba274b4d04097b90a72b62467d828cefd708037000000000000000000000486"
+            },
+            {
+                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                "symbol": "DAI",
+                "id": "0x"
             }
         ]
     },
@@ -1697,32 +1588,13 @@
         "tokens": [
             {
                 "address": "0x89045d0Af6A12782Ec6f701eE6698bEaF17d0eA2",
-                "symbol": "PIXEL"
+                "symbol": "PIXEL",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x60D604890feaa0b5460B28A424407c24fe89374a",
-        "id": "0x60d604890feaa0b5460b28a424407c24fe89374a0000000000000000000004fc",
-        "name": "bb-a-WETH",
-        "type": "ERC4626Linear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x60D604890feaa0b5460B28A424407c24fe89374a",
-                "symbol": "bb-a-WETH"
-            },
-            {
-                "address": "0x59463BB67dDD04fe58ED291ba36C26d99A39fbc6",
-                "symbol": "waWETH"
-            },
-            {
-                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1735,11 +1607,13 @@
         "tokens": [
             {
                 "address": "0x5c6Ee304399DBdB9C8Ef030aB642B10820DB8F56",
-                "symbol": "B-80BAL-20WETH"
+                "symbol": "B-80BAL-20WETH",
+                "id": "0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014"
             },
             {
                 "address": "0x98E86Ed5b0E48734430BfBe92101156C75418cad",
-                "symbol": "yBAL"
+                "symbol": "yBAL",
+                "id": "0x"
             }
         ]
     },
@@ -1752,15 +1626,18 @@
         "tokens": [
             {
                 "address": "0x1494CA1F11D487c2bBe4543E90080AeBa4BA3C2b",
-                "symbol": "DPI"
+                "symbol": "DPI",
+                "id": "0x"
             },
             {
                 "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                "symbol": "WBTC"
+                "symbol": "WBTC",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1773,32 +1650,43 @@
         "tokens": [
             {
                 "address": "0xAf5191B0De278C7286d6C7CC6ab6BB8A73bA2Cd6",
-                "symbol": "STG"
+                "symbol": "STG",
+                "id": "0x"
             },
             {
                 "address": "0xfeBb0bbf162E64fb9D0dfe186E517d84C395f016",
-                "symbol": "bb-a-USD"
-            }
-        ]
-    },
-    {
-        "bpt": "0x6667c6fa9f2b3Fc1Cc8D85320b62703d938E4385",
-        "id": "0x6667c6fa9f2b3fc1cc8d85320b62703d938e43850000000000000000000004fb",
-        "name": "bb-a-DAI",
-        "type": "ERC4626Linear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x6667c6fa9f2b3Fc1Cc8D85320b62703d938E4385",
-                "symbol": "bb-a-DAI"
+                "symbol": "bb-a-USD",
+                "id": "0xfebb0bbf162e64fb9d0dfe186e517d84c395f016000000000000000000000502"
             },
             {
-                "address": "0x098256c06ab24F5655C5506A6488781BD711c14b",
-                "symbol": "waDAI"
+                "address": "0x6667c6fa9f2b3Fc1Cc8D85320b62703d938E4385",
+                "symbol": "bb-a-DAI",
+                "id": "0x6667c6fa9f2b3fc1cc8d85320b62703d938e43850000000000000000000004fb"
             },
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "DAI",
+                "id": "0x"
+            },
+            {
+                "address": "0xA1697F9Af0875B63DdC472d6EeBADa8C1fAB8568",
+                "symbol": "bb-a-USDT",
+                "id": "0xa1697f9af0875b63ddc472d6eebada8c1fab85680000000000000000000004f9"
+            },
+            {
+                "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+                "symbol": "USDT",
+                "id": "0x"
+            },
+            {
+                "address": "0xcbFA4532D8B2ade2C261D3DD5ef2A2284f792692",
+                "symbol": "bb-a-USDC",
+                "id": "0xcbfa4532d8b2ade2c261d3dd5ef2a2284f7926920000000000000000000004fa"
+            },
+            {
+                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -1811,11 +1699,13 @@
         "tokens": [
             {
                 "address": "0x88ACDd2a6425c3FaAE4Bc9650Fd7E27e0Bebb7aB",
-                "symbol": "\u2697\ufe0f"
+                "symbol": "\u2697\ufe0f",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1828,19 +1718,23 @@
         "tokens": [
             {
                 "address": "0x6F9C26Fa731C7Ea4139Fa669962Cf8F1CE6C8b0B",
-                "symbol": "OATH"
+                "symbol": "OATH",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xF88Baf18FAB7e330fa0C4F83949E23F52FECECce",
-                "symbol": "GRAIN"
+                "symbol": "GRAIN",
+                "id": "0x"
             }
         ]
     },
@@ -1853,11 +1747,13 @@
         "tokens": [
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xA415e9E13820cb373E40B6994D8a10E97356F917",
-                "symbol": "LEVEN"
+                "symbol": "LEVEN",
+                "id": "0x"
             }
         ]
     },
@@ -1870,11 +1766,13 @@
         "tokens": [
             {
                 "address": "0x198d7387Fa97A73F05b8578CdEFf8F2A1f34Cd1F",
-                "symbol": "wjAURA"
+                "symbol": "wjAURA",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1887,62 +1785,13 @@
         "tokens": [
             {
                 "address": "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
-                "symbol": "LDO"
+                "symbol": "LDO",
+                "id": "0x"
             },
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x6b7c875b3bbB29eCc69807aC540dC7F05CBCBD10",
-        "id": "0x6b7c875b3bbb29ecc69807ac540dc7f05cbcbd10000200000000000000000173",
-        "name": "BEEF_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x7660BD4dD73d97a045872A3377f0C78f66005897",
-                "symbol": "BEEF"
-            },
-            {
-                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x6d39e85025fdC6FD7b1333454a2E18B873583f7C",
-        "id": "0x6d39e85025fdc6fd7b1333454a2e18b873583f7c0002000000000000000001c5",
-        "name": "ASTEROID_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x72b734e6046304A78734937Da869638e7e5b51d0",
-                "symbol": "ASTEROID"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            }
-        ]
-    },
-    {
-        "bpt": "0x6Dec8d0496590521C8F4f1deE7Cfe9c7A6B7a480",
-        "id": "0x6dec8d0496590521c8f4f1dee7cfe9c7a6b7a4800002000000000000000001d5",
-        "name": "First Order Token Copper LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x57b5920A4C057c6206589b03656F933e24e97F1C",
-                "symbol": "FORCE"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "wstETH",
+                "id": "0x"
             }
         ]
     },
@@ -1955,28 +1804,13 @@
         "tokens": [
             {
                 "address": "0x3Ec8798B81485A254928B70CDA1cf0A2BB0B74D7",
-                "symbol": "GRO"
+                "symbol": "GRO",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x71628c66C502F988Fbb9e17081F2bD14e361FAF4",
-        "id": "0x71628c66c502f988fbb9e17081f2bd14e361faf4000200000000000000000078",
-        "name": "LPePyvDAI-16OCT21",
-        "type": "Element",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
-            },
-            {
-                "address": "0xb1cc77e701de60FE246607565CF7eDC9D9b6b963",
-                "symbol": "ePyvDAI-16OCT21"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -1989,45 +1823,13 @@
         "tokens": [
             {
                 "address": "0x29Cca1dbA3f2DB3C2708608d2676ff8044c14073",
-                "symbol": "eYyvUSDC-29APR22"
+                "symbol": "eYyvUSDC-29APR22",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            }
-        ]
-    },
-    {
-        "bpt": "0x72803e91e990d7E5BA65C790EAA05eCbA75b25F2",
-        "id": "0x72803e91e990d7e5ba65c790eaa05ecba75b25f20002000000000000000003c5",
-        "name": "Gasless_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x47ffb498FDff28E21a3a10E9F42536959f8B986B",
-                "symbol": "Gasless"
-            },
-            {
-                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x73D3cCf5EF15a3d6139532aB93FBAc71C755d8Fb",
-        "id": "0x73d3ccf5ef15a3d6139532ab93fbac71c755d8fb0002000000000000000000ba",
-        "name": "HUB_FLA",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x21fC7E70b85Cba3995d5eafE5049F3e1405C9b73",
-                "symbol": "HUB"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -2040,35 +1842,43 @@
         "tokens": [
             {
                 "address": "0x41e5560054824eA6B0732E656E3Ad64E20e94E45",
-                "symbol": "CVC"
+                "symbol": "CVC",
+                "id": "0x"
             },
             {
                 "address": "0x89Ab32156e46F46D02ade3FEcbe5Fc4243B9AAeD",
-                "symbol": "PNT"
+                "symbol": "PNT",
+                "id": "0x"
             },
             {
                 "address": "0x8f693ca8D21b157107184d29D398A8D082b38b76",
-                "symbol": "DATA"
+                "symbol": "DATA",
+                "id": "0x"
             },
             {
                 "address": "0x967da4048cD07aB37855c090aAF366e4ce1b9F48",
-                "symbol": "OCEAN"
+                "symbol": "OCEAN",
+                "id": "0x"
             },
             {
                 "address": "0x9992eC3cF6A55b00978cdDF2b27BC6882d88D1eC",
-                "symbol": "POLY"
+                "symbol": "POLY",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xF629cBd94d3791C9250152BD8dfBDF380E2a3B9c",
-                "symbol": "ENJ"
+                "symbol": "ENJ",
+                "id": "0x"
             }
         ]
     },
@@ -2081,11 +1891,13 @@
         "tokens": [
             {
                 "address": "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
-                "symbol": "OHM"
+                "symbol": "OHM",
+                "id": "0x"
             },
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "DAI",
+                "id": "0x"
             }
         ]
     },
@@ -2098,11 +1910,13 @@
         "tokens": [
             {
                 "address": "0x13C99770694f07279607A6274F28a28c33086424",
-                "symbol": "MTRL"
+                "symbol": "MTRL",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -2115,11 +1929,13 @@
         "tokens": [
             {
                 "address": "0x9E3c6575f674BdeE85731d23259971Aa6ddA7b9b",
-                "symbol": "BREWSKI"
+                "symbol": "BREWSKI",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -2132,28 +1948,13 @@
         "tokens": [
             {
                 "address": "0x900dB999074d9277c5DA2A43F252D74366230DA0",
-                "symbol": "GIV"
+                "symbol": "GIV",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x787546Bf2c05e3e19e2b6BDE57A203da7f682efF",
-        "id": "0x787546bf2c05e3e19e2b6bde57a203da7f682eff00020000000000000000007c",
-        "name": "LPePyvUSDC-29OCT21",
-        "type": "Element",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            },
-            {
-                "address": "0xf38c3E836Be9cD35072055Ff6a9Ba570e0B70797",
-                "symbol": "ePyvUSDC-29OCT21"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -2166,15 +1967,13 @@
         "tokens": [
             {
                 "address": "0x4Bc3263Eb5bb2Ef7Ad9aB6FB68be80E43b43801F",
-                "symbol": "vETH"
-            },
-            {
-                "address": "0x793F2D5Cd52dfafe7a1a1B0B3988940Ba2d6a63D",
-                "symbol": "B-vETH-STABLE"
+                "symbol": "vETH",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -2187,11 +1986,13 @@
         "tokens": [
             {
                 "address": "0x44108f0223A3C3028F5Fe7AEC7f9bb2E66beF82F",
-                "symbol": "ACX"
+                "symbol": "ACX",
+                "id": "0x"
             },
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             }
         ]
     },
@@ -2204,44 +2005,18 @@
         "tokens": [
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
-            },
-            {
-                "address": "0x79c58f70905F734641735BC61e45c19dD9Ad60bC",
-                "symbol": "USDC-DAI-USDT"
+                "symbol": "DAI",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-                "symbol": "USDT"
-            }
-        ]
-    },
-    {
-        "bpt": "0x7B50775383d3D6f0215A8F290f2C9e2eEBBEceb2",
-        "id": "0x7b50775383d3d6f0215a8f290f2c9e2eebbeceb20000000000000000000000fe",
-        "name": "bb-a-USD",
-        "type": "StablePhantom",
-        "gauge": "0x68d019f64A7aa97e2D4e7363AEE42251D08124Fb",
-        "tokens": [
-            {
-                "address": "0x2BBf681cC4eb09218BEe85EA2a5d3D13Fa40fC0C",
-                "symbol": "bb-a-USDT"
-            },
-            {
-                "address": "0x7B50775383d3D6f0215A8F290f2C9e2eEBBEceb2",
-                "symbol": "bb-a-USD"
-            },
-            {
-                "address": "0x804CdB9116a10bB78768D3252355a1b18067bF8f",
-                "symbol": "bb-a-DAI"
-            },
-            {
-                "address": "0x9210F1204b5a24742Eba12f710636D76240dF3d0",
-                "symbol": "bb-a-USDC"
+                "symbol": "USDT",
+                "id": "0x"
             }
         ]
     },
@@ -2254,11 +2029,13 @@
         "tokens": [
             {
                 "address": "0x33Dde19C163cDccE4E5a81f04a2Af561b9Ef58d7",
-                "symbol": "eYyvUSDC-17DEC21"
+                "symbol": "eYyvUSDC-17DEC21",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -2271,11 +2048,13 @@
         "tokens": [
             {
                 "address": "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f",
-                "symbol": "GHO"
+                "symbol": "GHO",
+                "id": "0x"
             },
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             }
         ]
     },
@@ -2288,53 +2067,13 @@
         "tokens": [
             {
                 "address": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
-                "symbol": "LUSD"
+                "symbol": "LUSD",
+                "id": "0x"
             },
             {
                 "address": "0x7945b0A6674b175695e5d1D08aE1e6F13744Abb0",
-                "symbol": "BaoUSD"
-            },
-            {
-                "address": "0x7E9AfD25F5Ec0eb24d7d4b089Ae7EcB9651c8b1F",
-                "symbol": "B-baoUSD-LUSD-BPT"
-            }
-        ]
-    },
-    {
-        "bpt": "0x7Edde0CB05ED19e03A9a47CD5E53fC57FDe1c80c",
-        "id": "0x7edde0cb05ed19e03a9a47cd5e53fc57fde1c80c0002000000000000000000c8",
-        "name": "LPePyvUSDC-29APR22",
-        "type": "Element",
-        "gauge": "0x78DF155d6d75Ca2a1b1B2027f37414Ac1e7A1Ed8",
-        "tokens": [
-            {
-                "address": "0x52C9886d5D87B0f06EbACBEff750B5Ffad5d17d9",
-                "symbol": "ePyvUSDC-29APR22"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            }
-        ]
-    },
-    {
-        "bpt": "0x804CdB9116a10bB78768D3252355a1b18067bF8f",
-        "id": "0x804cdb9116a10bb78768d3252355a1b18067bf8f0000000000000000000000fb",
-        "name": "bb-a-DAI",
-        "type": "AaveLinear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x02d60b84491589974263d922D9cC7a3152618Ef6",
-                "symbol": "aDAI"
-            },
-            {
-                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
-            },
-            {
-                "address": "0x804CdB9116a10bB78768D3252355a1b18067bF8f",
-                "symbol": "bb-a-DAI"
+                "symbol": "BaoUSD",
+                "id": "0x"
             }
         ]
     },
@@ -2343,36 +2082,17 @@
         "id": "0x8167a1117691f39e05e9131cfa88f0e3a620e96700020000000000000000038c",
         "name": "20WETH-80T",
         "type": "Weighted",
-        "gauge": "0x1946d851eA9FfBFE9081E3DB4DC70E9f73BC9f5B",
+        "gauge": "0x7Fc115BF013844D6eF988837F7ae6398af153532",
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5",
-                "symbol": "T"
-            }
-        ]
-    },
-    {
-        "bpt": "0x82698aeCc9E28e9Bb27608Bd52cF57f704BD1B83",
-        "id": "0x82698aecc9e28e9bb27608bd52cf57f704bd1b83000000000000000000000336",
-        "name": "bb-a-USDC",
-        "type": "AaveLinear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x82698aeCc9E28e9Bb27608Bd52cF57f704BD1B83",
-                "symbol": "bb-a-USDC"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            },
-            {
-                "address": "0xd093fA4Fb80D09bB30817FDcd442d4d02eD3E5de",
-                "symbol": "aUSDC"
+                "symbol": "T",
+                "id": "0x"
             }
         ]
     },
@@ -2385,11 +2105,13 @@
         "tokens": [
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xD5a14081a34d256711B02BbEf17E567da48E80b5",
-                "symbol": "wUSDR"
+                "symbol": "wUSDR",
+                "id": "0x"
             }
         ]
     },
@@ -2402,28 +2124,13 @@
         "tokens": [
             {
                 "address": "0x92915c346287DdFbcEc8f86c8EB52280eD05b3A3",
-                "symbol": "EEFI"
+                "symbol": "EEFI",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x84d9288a62132b9E9097aAEFd2caeA7d5cE966c5",
-        "id": "0x84d9288a62132b9e9097aaefd2caea7d5ce966c50002000000000000000005ac",
-        "name": "NHI_F9_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x1BEf0D587Dde09d4cee9b13d4d38b5bEc57A1397",
-                "symbol": "NHI"
-            },
-            {
-                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -2436,11 +2143,13 @@
         "tokens": [
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -2453,11 +2162,13 @@
         "tokens": [
             {
                 "address": "0x2d94AA3e47d9D5024503Ca8491fcE9A2fB4DA198",
-                "symbol": "BANK"
+                "symbol": "BANK",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -2470,11 +2181,13 @@
         "tokens": [
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xc00e94Cb662C3520282E6f5717214004A7f26888",
-                "symbol": "COMP"
+                "symbol": "COMP",
+                "id": "0x"
             }
         ]
     },
@@ -2487,11 +2200,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xE95A203B1a91a908F9B9CE46459d101078c2c3cb",
-                "symbol": "ankrETH"
+                "symbol": "ankrETH",
+                "id": "0x"
             }
         ]
     },
@@ -2504,11 +2219,13 @@
         "tokens": [
             {
                 "address": "0x40370aEd88933021e20CF7C4D67E00417CdA2202",
-                "symbol": "XAV"
+                "symbol": "XAV",
+                "id": "0x"
             },
             {
                 "address": "0xA13a9247ea42D743238089903570127DdA72fE44",
-                "symbol": "bb-a-USD"
+                "symbol": "bb-a-USD",
+                "id": "0xa13a9247ea42d743238089903570127dda72fe4400000000000000000000035d"
             }
         ]
     },
@@ -2521,11 +2238,13 @@
         "tokens": [
             {
                 "address": "0x470EBf5f030Ed85Fc1ed4C2d36B9DD02e77CF1b7",
-                "symbol": "TEMPLE"
+                "symbol": "TEMPLE",
+                "id": "0x"
             },
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "DAI",
+                "id": "0x"
             }
         ]
     },
@@ -2538,11 +2257,13 @@
         "tokens": [
             {
                 "address": "0x744d70FDBE2Ba4CF95131626614a1763DF805B9E",
-                "symbol": "SNT"
+                "symbol": "SNT",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -2555,11 +2276,13 @@
         "tokens": [
             {
                 "address": "0x219A56e6056c6e72005bDA1F967aF5D626Af4501",
-                "symbol": "LE"
+                "symbol": "LE",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -2572,19 +2295,18 @@
         "tokens": [
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
-            },
-            {
-                "address": "0x8e85e97ed19C0fa13B2549309965291fbbc0048b",
-                "symbol": "sfrxETH-stETH-rETH-BPT"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xac3E018457B222d93114458476f3E3416Abbe38F",
-                "symbol": "sfrxETH"
+                "symbol": "sfrxETH",
+                "id": "0x"
             },
             {
                 "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
-                "symbol": "rETH"
+                "symbol": "rETH",
+                "id": "0x"
             }
         ]
     },
@@ -2597,11 +2319,13 @@
         "tokens": [
             {
                 "address": "0x11C1a6B3Ed6Bb362954b29d3183cfA97A0c806Aa",
-                "symbol": "STR"
+                "symbol": "STR",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -2610,19 +2334,22 @@
         "id": "0x8eb6c82c3081bbbd45dcac5afa631aac53478b7c000100000000000000000270",
         "name": "40WBTC-40DIGG-20graviAURA",
         "type": "Weighted",
-        "gauge": "0x5204f813cF58a4722E481b3b1cDfBBa45088fE36",
+        "gauge": "0xE5f24cD43f77fadF4dB33Dab44EB25774159AC66",
         "tokens": [
             {
                 "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                "symbol": "WBTC"
+                "symbol": "WBTC",
+                "id": "0x"
             },
             {
                 "address": "0x798D1bE841a82a273720CE31c822C61a67a601C3",
-                "symbol": "DIGG"
+                "symbol": "DIGG",
+                "id": "0x"
             },
             {
                 "address": "0xBA485b556399123261a5F9c95d413B4f93107407",
-                "symbol": "graviAURA"
+                "symbol": "graviAURA",
+                "id": "0x"
             }
         ]
     },
@@ -2631,15 +2358,17 @@
         "id": "0x8f4205e1604133d1875a3e771ae7e4f2b086563900020000000000000000010e",
         "name": "50N/A-50N/A",
         "type": "Weighted",
-        "gauge": "0xc43d32BC349cea7e0fe829F53E26096c184756fa",
+        "gauge": "0xf46FD013Acc2c6988BB2f773bd879101eB5d4573",
         "tokens": [
             {
                 "address": "0x43D4A3cd90ddD2F8f4f693170C9c8098163502ad",
-                "symbol": "D2D"
+                "symbol": "D2D",
+                "id": "0x"
             },
             {
                 "address": "0xba100000625a3754423978a60c9317c58a424e3D",
-                "symbol": "BAL"
+                "symbol": "BAL",
+                "id": "0x"
             }
         ]
     },
@@ -2652,11 +2381,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xd9Fcd98c322942075A5C3860693e9f4f03AAE07b",
-                "symbol": "EUL"
+                "symbol": "EUL",
+                "id": "0x"
             }
         ]
     },
@@ -2669,32 +2400,18 @@
         "tokens": [
             {
                 "address": "0x60D604890feaa0b5460B28A424407c24fe89374a",
-                "symbol": "bb-a-WETH"
+                "symbol": "bb-a-WETH",
+                "id": "0x60d604890feaa0b5460b28a424407c24fe89374a0000000000000000000004fc"
             },
             {
-                "address": "0x9001cBbD96F54a658FF4e6E65AB564DED76a5431",
-                "symbol": "cbETH-bb-a-WETH-BPT"
+                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704",
-                "symbol": "cbETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x90CA5cEf5B29342b229Fb8AE2DB5d8f4F894D652",
-        "id": "0x90ca5cef5b29342b229fb8ae2db5d8f4f894d6520002000000000000000000b5",
-        "name": "LPePyvUSDC-17DEC21",
-        "type": "Element",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x76a34D72b9CF97d972fB0e390eB053A37F211c74",
-                "symbol": "ePyvUSDC-17DEC21"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "cbETH",
+                "id": "0x"
             }
         ]
     },
@@ -2707,11 +2424,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xF17e65822b568B3903685a7c9F496CF7656Cc6C2",
-                "symbol": "BICO"
+                "symbol": "BICO",
+                "id": "0x"
             }
         ]
     },
@@ -2724,32 +2443,13 @@
         "tokens": [
             {
                 "address": "0x8290333ceF9e6D528dD5618Fb97a76f268f3EDD4",
-                "symbol": "ANKR"
+                "symbol": "ANKR",
+                "id": "0x"
             },
             {
                 "address": "0xE95A203B1a91a908F9B9CE46459d101078c2c3cb",
-                "symbol": "ankrETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0x9210F1204b5a24742Eba12f710636D76240dF3d0",
-        "id": "0x9210f1204b5a24742eba12f710636d76240df3d00000000000000000000000fc",
-        "name": "bb-a-USDC",
-        "type": "AaveLinear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x9210F1204b5a24742Eba12f710636D76240dF3d0",
-                "symbol": "bb-a-USDC"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            },
-            {
-                "address": "0xd093fA4Fb80D09bB30817FDcd442d4d02eD3E5de",
-                "symbol": "aUSDC"
+                "symbol": "ankrETH",
+                "id": "0x"
             }
         ]
     },
@@ -2762,11 +2462,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xfd0205066521550D7d7AB19DA8F72bb004b4C341",
-                "symbol": "LIT"
+                "symbol": "LIT",
+                "id": "0x"
             }
         ]
     },
@@ -2775,32 +2477,17 @@
         "id": "0x92762b42a06dcdddc5b7362cfb01e631c4d44b40000200000000000000000182",
         "name": "50COW-50GNO",
         "type": "Weighted",
-        "gauge": "0xA6468eca7633246Dcb24E5599681767D27d1F978",
+        "gauge": "0x57AB3b673878C3fEaB7f8FF434C40Ab004408c4c",
         "tokens": [
             {
                 "address": "0x6810e776880C02933D47DB1b9fc05908e5386b96",
-                "symbol": "GNO"
+                "symbol": "GNO",
+                "id": "0x"
             },
             {
                 "address": "0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB",
-                "symbol": "COW"
-            }
-        ]
-    },
-    {
-        "bpt": "0x92a6A387add0528463B69EfC063708870483986a",
-        "id": "0x92a6a387add0528463b69efc063708870483986a0002000000000000000001cf",
-        "name": "BALLOON_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x0146714490AE3C9b1c4B68d96b4C6A1BA0f38949",
-                "symbol": "BALLOON"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "COW",
+                "id": "0x"
             }
         ]
     },
@@ -2813,11 +2500,13 @@
         "tokens": [
             {
                 "address": "0x965d79F1A1016B574a62986e13Ca8Ab04DfdD15C",
-                "symbol": "M2"
+                "symbol": "M2",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -2830,11 +2519,18 @@
         "tokens": [
             {
                 "address": "0x126e7643235ec0ab9c103c507642dC3F4cA23C66",
-                "symbol": "bb-t-stkAPE"
+                "symbol": "bb-t-stkAPE",
+                "id": "0x126e7643235ec0ab9c103c507642dc3f4ca23c66000000000000000000000468"
+            },
+            {
+                "address": "0x4d224452801ACEd8B2F0aebE155379bb5D594381",
+                "symbol": "APE",
+                "id": "0x"
             },
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             }
         ]
     },
@@ -2847,11 +2543,13 @@
         "tokens": [
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -2864,15 +2562,18 @@
         "tokens": [
             {
                 "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                "symbol": "WBTC"
+                "symbol": "WBTC",
+                "id": "0x"
             },
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xaA7a9CA87d3694B5755f213B5D04094b8d0F0A6F",
-                "symbol": "TRAC"
+                "symbol": "TRAC",
+                "id": "0x"
             }
         ]
     },
@@ -2885,11 +2586,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xd084944d3c05CD115C09d072B9F44bA3E0E45921",
-                "symbol": "FOLD"
+                "symbol": "FOLD",
+                "id": "0x"
             }
         ]
     },
@@ -2902,15 +2605,33 @@
         "tokens": [
             {
                 "address": "0x4A82b580365Cff9B146281Ab72500957a849ABDC",
-                "symbol": "bb-g-USDC"
+                "symbol": "bb-g-USDC",
+                "id": "0x4a82b580365cff9b146281ab72500957a849abdc000000000000000000000494"
             },
             {
-                "address": "0x99c88AD7dc566616548adde8ED3eFfa730eB6C34",
-                "symbol": "bb-g-USD"
+                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                "symbol": "USDC",
+                "id": "0x"
+            },
+            {
+                "address": "0xc411dB5f5Eb3f7d552F9B8454B2D74097ccdE6E3",
+                "symbol": "dUSDC",
+                "id": "0x"
             },
             {
                 "address": "0xe03aF00faBe8401560c1FF7d242d622a5b601573",
-                "symbol": "bb-g-DAI"
+                "symbol": "bb-g-DAI",
+                "id": "0xe03af00fabe8401560c1ff7d242d622a5b601573000000000000000000000493"
+            },
+            {
+                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                "symbol": "DAI",
+                "id": "0x"
+            },
+            {
+                "address": "0x6CFaF95457d7688022FC53e7AbE052ef8DFBbdBA",
+                "symbol": "dDAI",
+                "id": "0x"
             }
         ]
     },
@@ -2923,11 +2644,13 @@
         "tokens": [
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xba100000625a3754423978a60c9317c58a424e3D",
-                "symbol": "BAL"
+                "symbol": "BAL",
+                "id": "0x"
             }
         ]
     },
@@ -2940,11 +2663,13 @@
         "tokens": [
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704",
-                "symbol": "cbETH"
+                "symbol": "cbETH",
+                "id": "0x"
             }
         ]
     },
@@ -2957,11 +2682,13 @@
         "tokens": [
             {
                 "address": "0x6f80310CA7F2C654691D1383149Fa1A57d8AB1f8",
-                "symbol": "Silo"
+                "symbol": "Silo",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -2974,11 +2701,13 @@
         "tokens": [
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xF1294E805B992320A3515682c6aB0Fe6251067E5",
-                "symbol": "eYyvUSDC-28JAN22"
+                "symbol": "eYyvUSDC-28JAN22",
+                "id": "0x"
             }
         ]
     },
@@ -2991,11 +2720,13 @@
         "tokens": [
             {
                 "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                "symbol": "WBTC"
+                "symbol": "WBTC",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3008,11 +2739,13 @@
         "tokens": [
             {
                 "address": "0xa279dab6ec190eE4Efce7Da72896EB58AD533262",
-                "symbol": "YFU"
+                "symbol": "YFU",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3025,11 +2758,13 @@
         "tokens": [
             {
                 "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
-                "symbol": "rETH"
+                "symbol": "rETH",
+                "id": "0x"
             },
             {
                 "address": "0xD33526068D116cE69F19A9ee46F0bd304F21A51f",
-                "symbol": "RPL"
+                "symbol": "RPL",
+                "id": "0x"
             }
         ]
     },
@@ -3042,11 +2777,13 @@
         "tokens": [
             {
                 "address": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
-                "symbol": "MATIC"
+                "symbol": "MATIC",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3059,40 +2796,33 @@
         "tokens": [
             {
                 "address": "0x2F4eb100552ef93840d5aDC30560E5513DFfFACb",
-                "symbol": "bb-a-USDT"
-            },
-            {
-                "address": "0x82698aeCc9E28e9Bb27608Bd52cF57f704BD1B83",
-                "symbol": "bb-a-USDC"
-            },
-            {
-                "address": "0xA13a9247ea42D743238089903570127DdA72fE44",
-                "symbol": "bb-a-USD"
-            },
-            {
-                "address": "0xae37D54Ae477268B9997d4161B96b8200755935c",
-                "symbol": "bb-a-DAI"
-            }
-        ]
-    },
-    {
-        "bpt": "0xA1697F9Af0875B63DdC472d6EeBADa8C1fAB8568",
-        "id": "0xa1697f9af0875b63ddc472d6eebada8c1fab85680000000000000000000004f9",
-        "name": "bb-a-USDT",
-        "type": "ERC4626Linear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xA1697F9Af0875B63DdC472d6EeBADa8C1fAB8568",
-                "symbol": "bb-a-USDT"
-            },
-            {
-                "address": "0xa7E0e66F38b8ad8343CFF67118C1f33e827D1455",
-                "symbol": "waUSDT"
+                "symbol": "bb-a-USDT",
+                "id": "0x2f4eb100552ef93840d5adc30560e5513dfffacb000000000000000000000334"
             },
             {
                 "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-                "symbol": "USDT"
+                "symbol": "USDT",
+                "id": "0x"
+            },
+            {
+                "address": "0x82698aeCc9E28e9Bb27608Bd52cF57f704BD1B83",
+                "symbol": "bb-a-USDC",
+                "id": "0x82698aecc9e28e9bb27608bd52cf57f704bd1b83000000000000000000000336"
+            },
+            {
+                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                "symbol": "USDC",
+                "id": "0x"
+            },
+            {
+                "address": "0xae37D54Ae477268B9997d4161B96b8200755935c",
+                "symbol": "bb-a-DAI",
+                "id": "0xae37d54ae477268b9997d4161b96b8200755935c000000000000000000000337"
+            },
+            {
+                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                "symbol": "DAI",
+                "id": "0x"
             }
         ]
     },
@@ -3105,28 +2835,13 @@
         "tokens": [
             {
                 "address": "0x0f2D719407FdBeFF09D87557AbB7232601FD9F29",
-                "symbol": "SYN"
+                "symbol": "SYN",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0xA47D1251CF21AD42685Cc6B8B3a186a73Dbd06cf",
-        "id": "0xa47d1251cf21ad42685cc6b8b3a186a73dbd06cf000200000000000000000097",
-        "name": "LPePyvDAI-28JAN22",
-        "type": "Element",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x449D7C2e096E9f867339078535b15440d42F78E8",
-                "symbol": "ePyvDAI-28JAN22"
-            },
-            {
-                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3139,11 +2854,13 @@
         "tokens": [
             {
                 "address": "0x68037790A0229e9Ce6EaA8A99ea92964106C4703",
-                "symbol": "PAR"
+                "symbol": "PAR",
+                "id": "0x"
             },
             {
                 "address": "0x90B831fa3Bebf58E9744A14D638E25B4eE06f9Bc",
-                "symbol": "MIMO"
+                "symbol": "MIMO",
+                "id": "0x"
             }
         ]
     },
@@ -3156,11 +2873,13 @@
         "tokens": [
             {
                 "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                "symbol": "WBTC"
+                "symbol": "WBTC",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3169,15 +2888,17 @@
         "id": "0xa7ff759dbef9f3efdd1d59beee44b966acafe214000200000000000000000180",
         "name": "USDC-PAL",
         "type": "Weighted",
-        "gauge": "0xe3A3Ca91794a995fe0bB24060987e73931B15f3D",
+        "gauge": "0xe2b680A8d02fbf48C7D9465398C4225d7b7A7f87",
         "tokens": [
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xAB846Fb6C81370327e784Ae7CbB6d6a6af6Ff4BF",
-                "symbol": "PAL"
+                "symbol": "PAL",
+                "id": "0x"
             }
         ]
     },
@@ -3190,49 +2911,13 @@
         "tokens": [
             {
                 "address": "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2",
-                "symbol": "MKR"
+                "symbol": "MKR",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0xAd0e5e0778cAC28f1ff459602b31351871B5754a",
-        "id": "0xad0e5e0778cac28f1ff459602b31351871b5754a0002000000000000000003ce",
-        "name": "BPT",
-        "type": "FX",
-        "gauge": "0xB381D8923feff930b7AaeDF9563f1496ce0aCe36",
-        "tokens": [
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            },
-            {
-                "address": "0xdB25f211AB05b1c97D595516F45794528a807ad8",
-                "symbol": "EURS"
-            }
-        ]
-    },
-    {
-        "bpt": "0xae37D54Ae477268B9997d4161B96b8200755935c",
-        "id": "0xae37d54ae477268b9997d4161b96b8200755935c000000000000000000000337",
-        "name": "bb-a-DAI",
-        "type": "AaveLinear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x02d60b84491589974263d922D9cC7a3152618Ef6",
-                "symbol": "aDAI"
-            },
-            {
-                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
-            },
-            {
-                "address": "0xae37D54Ae477268B9997d4161B96b8200755935c",
-                "symbol": "bb-a-DAI"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3245,11 +2930,13 @@
         "tokens": [
             {
                 "address": "0x24E79e946dEa5482212c38aaB2D0782F04cdB0E0",
-                "symbol": "palStkAAVE"
+                "symbol": "palStkAAVE",
+                "id": "0x"
             },
             {
                 "address": "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
-                "symbol": "AAVE"
+                "symbol": "AAVE",
+                "id": "0x"
             }
         ]
     },
@@ -3261,16 +2948,19 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             {
-                "address": "0xaE8535c23afeDdA9304B03c68a3563B75fc8f92b",
-                "symbol": "swETH-bb-a-WETH-BPT"
+                "address": "0xbB6881874825E60e1160416D6C426eae65f2459E",
+                "symbol": "bb-a-WETH",
+                "id": "0xbb6881874825e60e1160416d6c426eae65f2459e000000000000000000000592"
             },
             {
-                "address": "0xbB6881874825E60e1160416D6C426eae65f2459E",
-                "symbol": "bb-a-WETH"
+                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xf951E335afb289353dc249e82926178EaC7DEd78",
-                "symbol": "swETH"
+                "symbol": "swETH",
+                "id": "0x"
             }
         ]
     },
@@ -3283,11 +2973,13 @@
         "tokens": [
             {
                 "address": "0x9559Aaa82d9649C7A7b220E7c461d2E74c9a3593",
-                "symbol": "rETH"
+                "symbol": "rETH",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3296,15 +2988,17 @@
         "id": "0xb460daa847c45f1c4a41cb05bfb3b51c92e41b36000200000000000000000194",
         "name": "20WBTC-80BADGER",
         "type": "Weighted",
-        "gauge": "0xAF50825B010Ae4839Ac444f6c12D44b96819739B",
+        "gauge": "0x3F29e69955E5202759208DD0C5E0BA55ff934814",
         "tokens": [
             {
                 "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                "symbol": "WBTC"
+                "symbol": "WBTC",
+                "id": "0x"
             },
             {
                 "address": "0x3472A5A71965499acd81997a54BBA8D852C6E53d",
-                "symbol": "BADGER"
+                "symbol": "BADGER",
+                "id": "0x"
             }
         ]
     },
@@ -3317,11 +3011,13 @@
         "tokens": [
             {
                 "address": "0x057acee6DF29EcC20e87A77783838d90858c5E83",
-                "symbol": "wARRR"
+                "symbol": "wARRR",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3334,15 +3030,18 @@
         "tokens": [
             {
                 "address": "0xa71d0588EAf47f12B13cF8eC750430d21DF04974",
-                "symbol": "QOM"
+                "symbol": "QOM",
+                "id": "0x"
             },
             {
                 "address": "0xb53ecF1345caBeE6eA1a65100Ebb153cEbcac40f",
-                "symbol": "O"
+                "symbol": "O",
+                "id": "0x"
             },
             {
                 "address": "0xf3b9569F82B18aEf890De263B84189bd33EBe452",
-                "symbol": "CAW"
+                "symbol": "CAW",
+                "id": "0x"
             }
         ]
     },
@@ -3355,11 +3054,13 @@
         "tokens": [
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "DAI",
+                "id": "0x"
             },
             {
                 "address": "0xF6d2699b035FC8fD5E023D4a6Da216112ad8A985",
-                "symbol": "eYyvDAI-28JAN22"
+                "symbol": "eYyvDAI-28JAN22",
+                "id": "0x"
             }
         ]
     },
@@ -3372,23 +3073,28 @@
         "tokens": [
             {
                 "address": "0x03ab458634910AaD20eF5f1C8ee96F1D6ac54919",
-                "symbol": "RAI"
+                "symbol": "RAI",
+                "id": "0x"
             },
             {
                 "address": "0x6243d8CEA23066d098a15582d81a598b4e8391F4",
-                "symbol": "FLX"
+                "symbol": "FLX",
+                "id": "0x"
             },
             {
                 "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
-                "symbol": "rETH"
+                "symbol": "rETH",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xD33526068D116cE69F19A9ee46F0bd304F21A51f",
-                "symbol": "RPL"
+                "symbol": "RPL",
+                "id": "0x"
             }
         ]
     },
@@ -3401,11 +3107,13 @@
         "tokens": [
             {
                 "address": "0x9E3c6575f674BdeE85731d23259971Aa6ddA7b9b",
-                "symbol": "BREWSKI"
+                "symbol": "BREWSKI",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3414,15 +3122,17 @@
         "id": "0xbaeec99c90e3420ec6c1e7a769d2a856d2898e4d00020000000000000000008a",
         "name": "B-50VITA-50WETH",
         "type": "Weighted",
-        "gauge": "0x055d483D00b0FFe0c1123c96363889Fb03fa13a4",
+        "gauge": "0x777C45BD0a2AF1dA5fe4a532AD6B207D3CEd8b2d",
         "tokens": [
             {
                 "address": "0x81f8f0bb1cB2A06649E51913A151F0E7Ef6FA321",
-                "symbol": "VITA"
+                "symbol": "VITA",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3435,53 +3145,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xf65B5C5104c4faFD4b709d9D60a185eAE063276c",
-                "symbol": "TRU"
-            }
-        ]
-    },
-    {
-        "bpt": "0xbB6881874825E60e1160416D6C426eae65f2459E",
-        "id": "0xbb6881874825e60e1160416d6c426eae65f2459e000000000000000000000592",
-        "name": "bb-a-WETH",
-        "type": "ERC4626Linear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xbB6881874825E60e1160416D6C426eae65f2459E",
-                "symbol": "bb-a-WETH"
-            },
-            {
-                "address": "0x03928473f25bb2da6Bc880b07eCBaDC636822264",
-                "symbol": "stataEthWETH"
-            },
-            {
-                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0xbc0F2372008005471874e426e86CCFae7B4De79d",
-        "id": "0xbc0f2372008005471874e426e86ccfae7b4de79d000000000000000000000485",
-        "name": "bb-i-USDC",
-        "type": "ERC4626Linear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xbc0F2372008005471874e426e86CCFae7B4De79d",
-                "symbol": "bb-i-USDC"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            },
-            {
-                "address": "0xc3dA79e0De523eEf7AC1e4ca9aBFE3aAc9973133",
-                "symbol": "idleUSDCJunior4626"
+                "symbol": "TRU",
+                "id": "0x"
             }
         ]
     },
@@ -3494,28 +3164,13 @@
         "tokens": [
             {
                 "address": "0x961dD84059505D59f82cE4fb87D3c09bec65301d",
-                "symbol": "TXJP"
+                "symbol": "TXJP",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0xBD52970e2d38Ce00283BbeeF558e4eF0Ec42725c",
-        "id": "0xbd52970e2d38ce00283bbeef558e4ef0ec42725c0002000000000000000001c0",
-        "name": "TRILLLBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x3593dA74a0AdB6B3504e677b8fA40c3E77Ba90Ec",
-                "symbol": "TRILL"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3528,11 +3183,13 @@
         "tokens": [
             {
                 "address": "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
-                "symbol": "LDO"
+                "symbol": "LDO",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3544,16 +3201,14 @@
         "gauge": "0xd1566767047Dd97395f0Ec1d88Ec614d0A93ADF0",
         "tokens": [
             {
-                "address": "0xbFCe47224B4A938865E3e2727DC34E0fAA5b1D82",
-                "symbol": "uniETH-WETH"
-            },
-            {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xF1376bceF0f78459C0Ed0ba5ddce976F1ddF51F4",
-                "symbol": "uniETH"
+                "symbol": "uniETH",
+                "id": "0x"
             }
         ]
     },
@@ -3566,28 +3221,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF",
-                "symbol": "AURA"
-            }
-        ]
-    },
-    {
-        "bpt": "0xc2a71921D945BE82dC6371096300422c1cC422Cf",
-        "id": "0xc2a71921d945be82dc6371096300422c1cc422cf00020000000000000000019e",
-        "name": "HOOT_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x1bE686D5bE49A44BDaA1104d89509AD6860ab779",
-                "symbol": "HOOT"
-            },
-            {
-                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "AURA",
+                "id": "0x"
             }
         ]
     },
@@ -3600,15 +3240,43 @@
         "tokens": [
             {
                 "address": "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f",
-                "symbol": "GHO"
-            },
-            {
-                "address": "0xc2B021133D1b0cF07dba696fd5DD89338428225B",
-                "symbol": "GHO/bb-a-USD"
+                "symbol": "GHO",
+                "id": "0x"
             },
             {
                 "address": "0xc443C15033FCB6Cf72cC24f1BDA0Db070DdD9786",
-                "symbol": "bb-a-USD"
+                "symbol": "bb-a-USD",
+                "id": "0xc443c15033fcb6cf72cc24f1bda0db070ddd9786000000000000000000000593"
+            },
+            {
+                "address": "0xc50d4347209F285247BDa8A09Fc1C12CE42031c3",
+                "symbol": "bb-a-USDC",
+                "id": "0xc50d4347209f285247bda8a09fc1c12ce42031c3000000000000000000000590"
+            },
+            {
+                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                "symbol": "USDC",
+                "id": "0x"
+            },
+            {
+                "address": "0xcfAE6E251369467F465f13836Ac8135bd42f8A56",
+                "symbol": "bb-a-USDT",
+                "id": "0xcfae6e251369467f465f13836ac8135bd42f8a56000000000000000000000591"
+            },
+            {
+                "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+                "symbol": "USDT",
+                "id": "0x"
+            },
+            {
+                "address": "0xfa24A90A3F2bBE5FEEA92B95cD0d14Ce709649f9",
+                "symbol": "bb-a-DAI",
+                "id": "0xfa24a90a3f2bbe5feea92b95cd0d14ce709649f900000000000000000000058f"
+            },
+            {
+                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                "symbol": "DAI",
+                "id": "0x"
             }
         ]
     },
@@ -3620,20 +3288,34 @@
         "gauge": "0x0000000000000000000000000000000000000000",
         "tokens": [
             {
-                "address": "0xc443C15033FCB6Cf72cC24f1BDA0Db070DdD9786",
-                "symbol": "bb-a-USD"
+                "address": "0xc50d4347209F285247BDa8A09Fc1C12CE42031c3",
+                "symbol": "bb-a-USDC",
+                "id": "0xc50d4347209f285247bda8a09fc1c12ce42031c3000000000000000000000590"
             },
             {
-                "address": "0xc50d4347209F285247BDa8A09Fc1C12CE42031c3",
-                "symbol": "bb-a-USDC"
+                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xcfAE6E251369467F465f13836Ac8135bd42f8A56",
-                "symbol": "bb-a-USDT"
+                "symbol": "bb-a-USDT",
+                "id": "0xcfae6e251369467f465f13836ac8135bd42f8a56000000000000000000000591"
+            },
+            {
+                "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+                "symbol": "USDT",
+                "id": "0x"
             },
             {
                 "address": "0xfa24A90A3F2bBE5FEEA92B95cD0d14Ce709649f9",
-                "symbol": "bb-a-DAI"
+                "symbol": "bb-a-DAI",
+                "id": "0xfa24a90a3f2bbe5feea92b95cd0d14ce709649f900000000000000000000058f"
+            },
+            {
+                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                "symbol": "DAI",
+                "id": "0x"
             }
         ]
     },
@@ -3646,23 +3328,28 @@
         "tokens": [
             {
                 "address": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
-                "symbol": "LUSD"
+                "symbol": "LUSD",
+                "id": "0x"
             },
             {
                 "address": "0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D",
-                "symbol": "LQTY"
+                "symbol": "LQTY",
+                "id": "0x"
             },
             {
                 "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
-                "symbol": "rETH"
+                "symbol": "rETH",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xD33526068D116cE69F19A9ee46F0bd304F21A51f",
-                "symbol": "RPL"
+                "symbol": "RPL",
+                "id": "0x"
             }
         ]
     },
@@ -3675,53 +3362,18 @@
         "tokens": [
             {
                 "address": "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
-                "symbol": "OHM"
+                "symbol": "OHM",
+                "id": "0x"
             },
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "DAI",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0xC48ce00B14BdBD1D1450D934D3996066b911D336",
-        "id": "0xc48ce00b14bdbd1d1450d934d3996066b911d3360002000000000000000005ab",
-        "name": "SHIBOT_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            },
-            {
-                "address": "0xEAf2F50fcefe0D3F24517b0d74a8049536e8C543",
-                "symbol": "SHIBOT"
-            }
-        ]
-    },
-    {
-        "bpt": "0xc50d4347209F285247BDa8A09Fc1C12CE42031c3",
-        "id": "0xc50d4347209f285247bda8a09fc1c12ce42031c3000000000000000000000590",
-        "name": "bb-a-USDC",
-        "type": "ERC4626Linear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xc50d4347209F285247BDa8A09Fc1C12CE42031c3",
-                "symbol": "bb-a-USDC"
-            },
-            {
-                "address": "0x02c2d189b45CE213a40097b62D311cf0dD16eC92",
-                "symbol": "stataEthUSDC"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3734,11 +3386,13 @@
         "tokens": [
             {
                 "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "DAI",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3747,19 +3401,17 @@
         "id": "0xc9c5ff67bb2fae526ae2467c359609d6bcb4c5320000000000000000000003cc",
         "name": "qETH-BPT",
         "type": "ComposableStable",
-        "gauge": "0xBE05c851c0D84ba94Ec10ec75DF59175C77169B2",
+        "gauge": "0xE7ec5216ff485abffd9d390B82A5D742155f3A6f",
         "tokens": [
             {
                 "address": "0x93ef1Ea305D11A9b2a3EbB9bB4FCc34695292E7d",
-                "symbol": "qETH"
+                "symbol": "qETH",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            },
-            {
-                "address": "0xC9C5Ff67bB2Fae526aE2467C359609D6BCb4c532",
-                "symbol": "qETH-BPT"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3772,32 +3424,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xcAfE001067cDEF266AfB7Eb5A286dCFD277f3dE5",
-                "symbol": "PSP"
-            }
-        ]
-    },
-    {
-        "bpt": "0xcbFA4532D8B2ade2C261D3DD5ef2A2284f792692",
-        "id": "0xcbfa4532d8b2ade2c261d3dd5ef2a2284f7926920000000000000000000004fa",
-        "name": "bb-a-USDC",
-        "type": "ERC4626Linear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xcbFA4532D8B2ade2C261D3DD5ef2A2284f792692",
-                "symbol": "bb-a-USDC"
-            },
-            {
-                "address": "0x57d20c946A7A3812a7225B881CdcD8431D23431C",
-                "symbol": "waUSDC"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "PSP",
+                "id": "0x"
             }
         ]
     },
@@ -3810,32 +3443,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xfb5453340C03db5aDe474b27E68B6a9c6b2823Eb",
-                "symbol": "ROBOT"
-            }
-        ]
-    },
-    {
-        "bpt": "0xcfAE6E251369467F465f13836Ac8135bd42f8A56",
-        "id": "0xcfae6e251369467f465f13836ac8135bd42f8a56000000000000000000000591",
-        "name": "bb-a-USDT",
-        "type": "ERC4626Linear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xcfAE6E251369467F465f13836Ac8135bd42f8A56",
-                "symbol": "bb-a-USDT"
-            },
-            {
-                "address": "0x65799b9fD4206CdaA4A1DB79254FCbc2Fd2fFEe6",
-                "symbol": "stataEthUSDT"
-            },
-            {
-                "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-                "symbol": "USDT"
+                "symbol": "ROBOT",
+                "id": "0x"
             }
         ]
     },
@@ -3848,11 +3462,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF",
-                "symbol": "AURA"
+                "symbol": "AURA",
+                "id": "0x"
             }
         ]
     },
@@ -3865,11 +3481,13 @@
         "tokens": [
             {
                 "address": "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
-                "symbol": "OHM"
+                "symbol": "OHM",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -3882,11 +3500,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xE60779CC1b2c1d0580611c526a8DF0E3f870EC48",
-                "symbol": "USH"
+                "symbol": "USH",
+                "id": "0x"
             }
         ]
     },
@@ -3899,36 +3519,18 @@
         "tokens": [
             {
                 "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                "symbol": "WBTC"
+                "symbol": "WBTC",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xEDB171C18cE90B633DB442f2A6F72874093b49Ef",
-                "symbol": "WAMPL"
-            }
-        ]
-    },
-    {
-        "bpt": "0xD4e7C1F3DA1144c9E2CfD1b015eDA7652b4a4399",
-        "id": "0xd4e7c1f3da1144c9e2cfd1b015eda7652b4a439900000000000000000000046a",
-        "name": "bb-e-USDC",
-        "type": "EulerLinear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xD4e7C1F3DA1144c9E2CfD1b015eDA7652b4a4399",
-                "symbol": "bb-e-USDC"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            },
-            {
-                "address": "0xEb91861f8A4e1C12333F42DCE8fB0Ecdc28dA716",
-                "symbol": "eUSDC"
+                "symbol": "WAMPL",
+                "id": "0x"
             }
         ]
     },
@@ -3941,11 +3543,13 @@
         "tokens": [
             {
                 "address": "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
-                "symbol": "OHM"
+                "symbol": "OHM",
+                "id": "0x"
             },
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             }
         ]
     },
@@ -3958,11 +3562,13 @@
         "tokens": [
             {
                 "address": "0x6123B0049F904d730dB3C36a31167D9d4121fA6B",
-                "symbol": "RBN"
+                "symbol": "RBN",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -3975,11 +3581,13 @@
         "tokens": [
             {
                 "address": "0x0Ae38f7E10A43B5b2fB064B42a2f4514cbA909ef",
-                "symbol": "unshETH"
+                "symbol": "unshETH",
+                "id": "0x"
             },
             {
                 "address": "0xE60779CC1b2c1d0580611c526a8DF0E3f870EC48",
-                "symbol": "USH"
+                "symbol": "USH",
+                "id": "0x"
             }
         ]
     },
@@ -3992,11 +3600,13 @@
         "tokens": [
             {
                 "address": "0xA53e968b8d8a5Be52d66e5BB35d9b6B6B5A5CD2F",
-                "symbol": "BIDS"
+                "symbol": "BIDS",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4009,19 +3619,23 @@
         "tokens": [
             {
                 "address": "0x114f1388fAB456c4bA31B1850b244Eedcd024136",
-                "symbol": "COOL"
+                "symbol": "COOL",
+                "id": "0x"
             },
             {
                 "address": "0x269616D549D7e8Eaa82DFb17028d0B212D11232A",
-                "symbol": "PUNK"
+                "symbol": "PUNK",
+                "id": "0x"
             },
             {
                 "address": "0xe1406825186D63980fd6e2eC61888f7B91C4bAe4",
-                "symbol": "VBTC"
+                "symbol": "VBTC",
+                "id": "0x"
             },
             {
                 "address": "0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5",
-                "symbol": "BAYC"
+                "symbol": "BAYC",
+                "id": "0x"
             }
         ]
     },
@@ -4034,11 +3648,13 @@
         "tokens": [
             {
                 "address": "0x4E9e4Ab99Cfc14B852f552f5Fb3Aa68617825B6c",
-                "symbol": "SLR"
+                "symbol": "SLR",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4051,32 +3667,13 @@
         "tokens": [
             {
                 "address": "0x30D20208d987713f46DFD34EF128Bb16C404D10f",
-                "symbol": "SD"
+                "symbol": "SD",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            }
-        ]
-    },
-    {
-        "bpt": "0xDbA274B4D04097b90A72b62467d828cEFD708037",
-        "id": "0xdba274b4d04097b90a72b62467d828cefd708037000000000000000000000486",
-        "name": "bb-i-DAI",
-        "type": "ERC4626Linear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xDbA274B4D04097b90A72b62467d828cEFD708037",
-                "symbol": "bb-i-DAI"
-            },
-            {
-                "address": "0x0c80F31B840C6564e6c5E18f386FaD96b63514cA",
-                "symbol": "idleDAIJunior4626"
-            },
-            {
-                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -4089,28 +3686,13 @@
         "tokens": [
             {
                 "address": "0x4a220E6096B25EADb88358cb44068A3248254675",
-                "symbol": "QNT"
+                "symbol": "QNT",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            }
-        ]
-    },
-    {
-        "bpt": "0xddC7cc73D315d5c28dF8ffE4f756B918fE46F5E5",
-        "id": "0xddc7cc73d315d5c28df8ffe4f756b918fe46f5e5000200000000000000000368",
-        "name": "IP_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0x987Fd7AB5001F31A893b1f6E44c61e02ccc6c47D",
-                "symbol": "IP"
-            },
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -4123,11 +3705,13 @@
         "tokens": [
             {
                 "address": "0x0D8775F648430679A709E98d2b0Cb6250d2887EF",
-                "symbol": "BAT"
+                "symbol": "BAT",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4136,15 +3720,17 @@
         "id": "0xde8c195aa41c11a0c4787372defbbddaa31306d2000200000000000000000181",
         "name": "50COW-50WETH",
         "type": "Weighted",
-        "gauge": "0x158772F59Fe0d3b75805fC11139b46CBc89F70e5",
+        "gauge": "0x7C777eEA1dC264e71E567Fcc9B6DdaA9064Eff51",
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB",
-                "symbol": "COW"
+                "symbol": "COW",
+                "id": "0x"
             }
         ]
     },
@@ -4157,11 +3743,13 @@
         "tokens": [
             {
                 "address": "0x73C69d24ad28e2d43D03CBf35F79fE26EBDE1011",
-                "symbol": "ARCH"
+                "symbol": "ARCH",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4174,36 +3762,13 @@
         "tokens": [
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
-            },
-            {
-                "address": "0xdfE6e7e18f6Cc65FA13C8D8966013d4FdA74b6ba",
-                "symbol": "ankrETH/wstETH"
+                "symbol": "wstETH",
+                "id": "0x"
             },
             {
                 "address": "0xE95A203B1a91a908F9B9CE46459d101078c2c3cb",
-                "symbol": "ankrETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0xe03aF00faBe8401560c1FF7d242d622a5b601573",
-        "id": "0xe03af00fabe8401560c1ff7d242d622a5b601573000000000000000000000493",
-        "name": "bb-g-DAI",
-        "type": "GearboxLinear",
-        "gauge": "0xE5d4B82e1386163d179B2e2c5cEc2656ad87e780",
-        "tokens": [
-            {
-                "address": "0xe03aF00faBe8401560c1FF7d242d622a5b601573",
-                "symbol": "bb-g-DAI"
-            },
-            {
-                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
-            },
-            {
-                "address": "0x6CFaF95457d7688022FC53e7AbE052ef8DFBbdBA",
-                "symbol": "dDAI"
+                "symbol": "ankrETH",
+                "id": "0x"
             }
         ]
     },
@@ -4216,15 +3781,18 @@
         "tokens": [
             {
                 "address": "0x60D604890feaa0b5460B28A424407c24fe89374a",
-                "symbol": "bb-a-WETH"
+                "symbol": "bb-a-WETH",
+                "id": "0x60d604890feaa0b5460b28a424407c24fe89374a0000000000000000000004fc"
+            },
+            {
+                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-                "symbol": "wstETH"
-            },
-            {
-                "address": "0xE0fCBf4d98F0aD982DB260f86cf28b49845403C5",
-                "symbol": "wstETH-bb-a-WETH-BPT"
+                "symbol": "wstETH",
+                "id": "0x"
             }
         ]
     },
@@ -4237,11 +3805,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xd075e95423C5c4BA1E122CaE0f4CdFA19b82881b",
-                "symbol": "wPE"
+                "symbol": "wPE",
+                "id": "0x"
             }
         ]
     },
@@ -4254,11 +3824,13 @@
         "tokens": [
             {
                 "address": "0xa3BeD4E1c75D00fa6f4E5E6922DB7261B5E9AcD2",
-                "symbol": "MTA"
+                "symbol": "MTA",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4267,15 +3839,17 @@
         "id": "0xe340ebfcaa544da8bb1ee9005f1a346d50ec422e000200000000000000000396",
         "name": "50BADGER-50rETH",
         "type": "Weighted",
-        "gauge": "0xcAb1921E4fc9f4C26B877B58D9713CD19E9eADD1",
+        "gauge": "0xb32Ae42524d38be7E7eD9E02b5F9330fCEf07f3F",
         "tokens": [
             {
                 "address": "0x3472A5A71965499acd81997a54BBA8D852C6E53d",
-                "symbol": "BADGER"
+                "symbol": "BADGER",
+                "id": "0x"
             },
             {
                 "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
-                "symbol": "rETH"
+                "symbol": "rETH",
+                "id": "0x"
             }
         ]
     },
@@ -4288,11 +3862,13 @@
         "tokens": [
             {
                 "address": "0x30D20208d987713f46DFD34EF128Bb16C404D10f",
-                "symbol": "SD"
+                "symbol": "SD",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4305,11 +3881,13 @@
         "tokens": [
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xd084944d3c05CD115C09d072B9F44bA3E0E45921",
-                "symbol": "FOLD"
+                "symbol": "FOLD",
+                "id": "0x"
             }
         ]
     },
@@ -4322,23 +3900,28 @@
         "tokens": [
             {
                 "address": "0x123151402076fc819B7564510989e475c9cD93CA",
-                "symbol": "wDGLD"
+                "symbol": "wDGLD",
+                "id": "0x"
             },
             {
                 "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                "symbol": "WBTC"
+                "symbol": "WBTC",
+                "id": "0x"
             },
             {
                 "address": "0x68037790A0229e9Ce6EaA8A99ea92964106C4703",
-                "symbol": "PAR"
+                "symbol": "PAR",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4347,15 +3930,17 @@
         "id": "0xe8cc7e765647625b95f59c15848379d10b9ab4af0002000000000000000001de",
         "name": "20WETH-80WNCG",
         "type": "Weighted",
-        "gauge": "0x86EC8Bd97622dc80B4a7346bc853760d99D14C7F",
+        "gauge": "0x47c56A900295df5224EC5e6751dC31eb900321D5",
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xf203Ca1769ca8e9e8FE1DA9D147DB68B6c919817",
-                "symbol": "WNCG"
+                "symbol": "WNCG",
+                "id": "0x"
             }
         ]
     },
@@ -4368,11 +3953,13 @@
         "tokens": [
             {
                 "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
-                "symbol": "LINK"
+                "symbol": "LINK",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4385,32 +3972,13 @@
         "tokens": [
             {
                 "address": "0x1Cf0f3AaBE4D12106B27Ab44df5473974279C524",
-                "symbol": "xSNXa"
+                "symbol": "xSNXa",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0xeB486AF868AeB3b6e53066abc9623b1041b42bc0",
-        "id": "0xeb486af868aeb3b6e53066abc9623b1041b42bc000000000000000000000046c",
-        "name": "bb-e-DAI",
-        "type": "EulerLinear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xeB486AF868AeB3b6e53066abc9623b1041b42bc0",
-                "symbol": "bb-e-DAI"
-            },
-            {
-                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
-            },
-            {
-                "address": "0xe025E3ca2bE02316033184551D4d3Aa22024D9DC",
-                "symbol": "eDAI"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4423,15 +3991,18 @@
         "tokens": [
             {
                 "address": "0x60D604890feaa0b5460B28A424407c24fe89374a",
-                "symbol": "bb-a-WETH"
+                "symbol": "bb-a-WETH",
+                "id": "0x60d604890feaa0b5460b28a424407c24fe89374a0000000000000000000004fc"
+            },
+            {
+                "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xE95A203B1a91a908F9B9CE46459d101078c2c3cb",
-                "symbol": "ankrETH"
-            },
-            {
-                "address": "0xEb567DDE03F3DA7FE185BDaCD5AB495AB220769d",
-                "symbol": "ankrETH-bb-a-WETH-BPT"
+                "symbol": "ankrETH",
+                "id": "0x"
             }
         ]
     },
@@ -4444,28 +4015,13 @@
         "tokens": [
             {
                 "address": "0x408e41876cCCDC0F92210600ef50372656052a38",
-                "symbol": "REN"
+                "symbol": "REN",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
-            }
-        ]
-    },
-    {
-        "bpt": "0xEdf085f65b4F6c155e13155502Ef925c9a756003",
-        "id": "0xedf085f65b4f6c155e13155502ef925c9a756003000200000000000000000123",
-        "name": "LPePyvDAI-29APR22",
-        "type": "Element",
-        "gauge": "0x78259f2e946B11a0bE404d29d3cc017eCddE84C6",
-        "tokens": [
-            {
-                "address": "0x2c72692E94E757679289aC85d3556b2c0f717E0E",
-                "symbol": "ePyvDAI-29APR22"
-            },
-            {
-                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4478,11 +4034,13 @@
         "tokens": [
             {
                 "address": "0xc00e94Cb662C3520282E6f5717214004A7f26888",
-                "symbol": "COMP"
+                "symbol": "COMP",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4495,11 +4053,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72",
-                "symbol": "ENS"
+                "symbol": "ENS",
+                "id": "0x"
             }
         ]
     },
@@ -4512,11 +4072,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xdBdb4d16EdA451D0503b854CF79D55697F90c8DF",
-                "symbol": "ALCX"
+                "symbol": "ALCX",
+                "id": "0x"
             }
         ]
     },
@@ -4529,11 +4091,13 @@
         "tokens": [
             {
                 "address": "0x13C99770694f07279607A6274F28a28c33086424",
-                "symbol": "MTRL"
+                "symbol": "MTRL",
+                "id": "0x"
             },
             {
                 "address": "0xe6fd75ff38Adca4B97FBCD938c86b98772431867",
-                "symbol": "ELA"
+                "symbol": "ELA",
+                "id": "0x"
             }
         ]
     },
@@ -4546,11 +4110,13 @@
         "tokens": [
             {
                 "address": "0x478bBC744811eE8310B461514BDc29D03739084D",
-                "symbol": "sdveCRV-DAO"
+                "symbol": "sdveCRV-DAO",
+                "id": "0x"
             },
             {
                 "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
-                "symbol": "CRV"
+                "symbol": "CRV",
+                "id": "0x"
             }
         ]
     },
@@ -4563,11 +4129,13 @@
         "tokens": [
             {
                 "address": "0x8D6CeBD76f18E1558D4DB88138e2DeFB3909fAD6",
-                "symbol": "MAI"
+                "symbol": "MAI",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -4580,11 +4148,13 @@
         "tokens": [
             {
                 "address": "0x6810e776880C02933D47DB1b9fc05908e5386b96",
-                "symbol": "GNO"
+                "symbol": "GNO",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4597,11 +4167,13 @@
         "tokens": [
             {
                 "address": "0x35e78b3982E87ecfD5b3f3265B601c046cDBe232",
-                "symbol": "XAI"
+                "symbol": "XAI",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -4614,11 +4186,13 @@
         "tokens": [
             {
                 "address": "0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828",
-                "symbol": "UMA"
+                "symbol": "UMA",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -4631,11 +4205,13 @@
         "tokens": [
             {
                 "address": "0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828",
-                "symbol": "UMA"
+                "symbol": "UMA",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4648,11 +4224,13 @@
         "tokens": [
             {
                 "address": "0x51Fa2efd62ee56a493f24AE963eAce7D0051929E",
-                "symbol": "psdnOCEAN"
+                "symbol": "psdnOCEAN",
+                "id": "0x"
             },
             {
                 "address": "0x967da4048cD07aB37855c090aAF366e4ce1b9F48",
-                "symbol": "OCEAN"
+                "symbol": "OCEAN",
+                "id": "0x"
             }
         ]
     },
@@ -4665,36 +4243,18 @@
         "tokens": [
             {
                 "address": "0x0C10bF8FcB7Bf5412187A595ab97a3609160b5c6",
-                "symbol": "USDD"
+                "symbol": "USDD",
+                "id": "0x"
             },
             {
                 "address": "0x853d955aCEf822Db058eb8505911ED77F175b99e",
-                "symbol": "FRAX"
+                "symbol": "FRAX",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            }
-        ]
-    },
-    {
-        "bpt": "0xfa24A90A3F2bBE5FEEA92B95cD0d14Ce709649f9",
-        "id": "0xfa24a90a3f2bbe5feea92b95cd0d14ce709649f900000000000000000000058f",
-        "name": "bb-a-DAI",
-        "type": "ERC4626Linear",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xfa24A90A3F2bBE5FEEA92B95cD0d14Ce709649f9",
-                "symbol": "bb-a-DAI"
-            },
-            {
-                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                "symbol": "DAI"
-            },
-            {
-                "address": "0xEb708639E8e518B86a916db3685f90216b1C1c67",
-                "symbol": "stataEthDAI"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -4707,11 +4267,13 @@
         "tokens": [
             {
                 "address": "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
-                "symbol": "OHM"
+                "symbol": "OHM",
+                "id": "0x"
             },
             {
                 "address": "0xEd1480d12bE41d92F36f5f7bDd88212E381A3677",
-                "symbol": "FDT"
+                "symbol": "FDT",
+                "id": "0x"
             }
         ]
     },
@@ -4720,15 +4282,17 @@
         "id": "0xfd1cf6fd41f229ca86ada0584c63c49c3d66bbc9000200000000000000000438",
         "name": "50PENDLE-50WETH",
         "type": "Weighted",
-        "gauge": "0xD36a379342eCd2dDCb05ed1b2CdFBA8A1f0E36Fd",
+        "gauge": "0x190AE1f6EE5c0B7bc193fA9CD9bBe9b335F69C65",
         "tokens": [
             {
                 "address": "0x808507121B80c02388fAd14726482e061B8da827",
-                "symbol": "PENDLE"
+                "symbol": "PENDLE",
+                "id": "0x"
             },
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             }
         ]
     },
@@ -4741,15 +4305,18 @@
         "tokens": [
             {
                 "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                "symbol": "WBTC"
+                "symbol": "WBTC",
+                "id": "0x"
             },
             {
                 "address": "0xEB4C2781e4ebA804CE9a9803C67d0893436bB27D",
-                "symbol": "renBTC"
+                "symbol": "renBTC",
+                "id": "0x"
             },
             {
                 "address": "0xfE18be6b3Bd88A2D2A7f928d00292E7a9963CfC6",
-                "symbol": "sBTC"
+                "symbol": "sBTC",
+                "id": "0x"
             }
         ]
     },
@@ -4762,19 +4329,33 @@
         "tokens": [
             {
                 "address": "0x6667c6fa9f2b3Fc1Cc8D85320b62703d938E4385",
-                "symbol": "bb-a-DAI"
+                "symbol": "bb-a-DAI",
+                "id": "0x6667c6fa9f2b3fc1cc8d85320b62703d938e43850000000000000000000004fb"
+            },
+            {
+                "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                "symbol": "DAI",
+                "id": "0x"
             },
             {
                 "address": "0xA1697F9Af0875B63DdC472d6EeBADa8C1fAB8568",
-                "symbol": "bb-a-USDT"
+                "symbol": "bb-a-USDT",
+                "id": "0xa1697f9af0875b63ddc472d6eebada8c1fab85680000000000000000000004f9"
+            },
+            {
+                "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+                "symbol": "USDT",
+                "id": "0x"
             },
             {
                 "address": "0xcbFA4532D8B2ade2C261D3DD5ef2A2284f792692",
-                "symbol": "bb-a-USDC"
+                "symbol": "bb-a-USDC",
+                "id": "0xcbfa4532d8b2ade2c261d3dd5ef2a2284f7926920000000000000000000004fa"
             },
             {
-                "address": "0xfeBb0bbf162E64fb9D0dfe186E517d84C395f016",
-                "symbol": "bb-a-USD"
+                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     },
@@ -4787,11 +4368,13 @@
         "tokens": [
             {
                 "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                "symbol": "WETH"
+                "symbol": "WETH",
+                "id": "0x"
             },
             {
                 "address": "0xDe30da39c46104798bB5aA3fe8B9e0e1F348163F",
-                "symbol": "GTC"
+                "symbol": "GTC",
+                "id": "0x"
             }
         ]
     },
@@ -4800,32 +4383,17 @@
         "id": "0xff4ce5aaab5a627bf82f4a571ab1ce94aa365ea6000200000000000000000426",
         "name": "DOLA-USDC BSP",
         "type": "Stable",
-        "gauge": "0x9298faE35169D51714D6F9462B5f1BB2eD36165a",
+        "gauge": "0xBC02eF87f4E15EF78A571f3B2aDcC726Fee70d8b",
         "tokens": [
             {
                 "address": "0x865377367054516e17014CcdED1e7d814EDC9ce4",
-                "symbol": "DOLA"
+                "symbol": "DOLA",
+                "id": "0x"
             },
             {
                 "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            }
-        ]
-    },
-    {
-        "bpt": "0xFFA3209e32658e48fcDFC0c918e4678d61ee07c1",
-        "id": "0xffa3209e32658e48fcdfc0c918e4678d61ee07c1000200000000000000000298",
-        "name": "ULTRA_LBP",
-        "type": "LiquidityBootstrapping",
-        "gauge": "0x0000000000000000000000000000000000000000",
-        "tokens": [
-            {
-                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                "symbol": "USDC"
-            },
-            {
-                "address": "0xbd72aE3BB5da3CB770c75D217B83f4d838306565",
-                "symbol": "ULTRA"
+                "symbol": "USDC",
+                "id": "0x"
             }
         ]
     }
