@@ -38,9 +38,10 @@ def transactions_data():
             lptoken_symbol = get_symbol(pool_info[0], ETHEREUM, web3=web3)
             
             pool_data = {
-                'name': 'Convex %s' % lptoken_symbol,
-                'LPtoken': pool_info[0],
-                'wrappedToken': pool_info[1],
+                'name': lptoken_symbol,
+                'id': str(i),
+                'crvLPToken': pool_info[0],
+                'cvxDepositToken': pool_info[1],
                 'rewarder':pool_info[3]
             }
 
@@ -147,6 +148,6 @@ def pool_data(lptoken_address):
         json.dump(txn_convex, txn_convex_file)
 
 
-pool_data('0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2')
+# pool_data('0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2')
 
-#transactions_data()
+transactions_data()

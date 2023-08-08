@@ -106,7 +106,7 @@ def is_deprecated(pool_id, lptoken_address, pool_tokens, blockchain, web3):
     try:
         join_pool = balancer_queries.functions.queryJoin(pool_id, ZERO_ADDRESS, ZERO_ADDRESS, [pool_tokens, amounts, user_data, False]).call()
     except Exception as e:
-        print(e)
+        print(str(e) + ': ' + pool_id)
         return True
     
     if join_pool[0] == 0:
