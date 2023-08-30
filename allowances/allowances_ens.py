@@ -75,8 +75,8 @@ AURA = "0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF"
 
 # Balancer contracts
 BALANCER_VAULT = "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
-B_stETH_STABLE = "0x32296969Ef14EB0c6d29669C550D4a0449130230"
-B_stETH_STABLE_GAUGE = "0xcD4722B7c24C29e0413BDCd9e51404B4539D14aE"
+B_stETH_STABLE = "0x93d199263632a4EF4Bb438F1feB99e57b4b5f0BD"
+B_stETH_STABLE_GAUGE = "0x5C0F23A5c1be65Fa710d385814a7Fd1Bda480b1C"
 bb_aV3_USD = "0xfeBb0bbf162E64fb9D0dfe186E517d84C395f016"
 bb_aV3_DAI = "0x6667c6fa9f2b3Fc1Cc8D85320b62703d938E4385"
 bb_aV3_USDT = "0xA1697F9Af0875B63DdC472d6EeBADa8C1fAB8568"
@@ -100,274 +100,274 @@ DSR_MANAGER = "0x373238337Bfe1146fb49989fc222523f83081dDb"
 GPv2_VAULT_RELAYER = "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110"
 
 ALLOWANCES = [
-    {
-        "token": USDC,
-        "spender": cUSDCv3
+    # {
+    #     "token": USDC,
+    #     "spender": cUSDCv3
 
-    },
-    {
-        "token": bb_aV3_USD,
-        "spender": AURA_BOOSTER
-    },
-    {
-        "token": B_rETH_STABLE,
-        "spender": AURA_BOOSTER
-    },
+    # },
+    # {
+    #     "token": bb_aV3_USD,
+    #     "spender": AURA_BOOSTER
+    # },
+    # {
+    #     "token": B_rETH_STABLE,
+    #     "spender": AURA_BOOSTER
+    # },
     {
         "token": B_stETH_STABLE,
         "spender": AURA_BOOSTER
     },
-    {
-        "token": rETH,
-        "spender": AURA_REWARD_POOL_DEPOSIT_WRAPPER
-    },
-    {
-        "token": wstETH,
-        "spender": AURA_REWARD_POOL_DEPOSIT_WRAPPER
-    },
-    {
-        "token": DAI,
-        "spender": BALANCER_VAULT
-    },
-    {
-        "token": bb_aV3_DAI,
-        "spender": BALANCER_VAULT
-    },
-    {
-        "token": USDT,
-        "spender": BALANCER_VAULT
-    },
-    {
-        "token": bb_aV3_USDT,
-        "spender": BALANCER_VAULT
-    },
-    {
-        "token": USDC,
-        "spender": BALANCER_VAULT
-    },
-    {
-        "token": bb_aV3_USDC,
-        "spender": BALANCER_VAULT
-    },
-    {
-        "token": bb_aV3_USD,
-        "spender": bb_aV3_USD_GAUGE
-    },
-    {
-        "token": WETH,
-        "spender": BALANCER_VAULT
-    },
-    {
-        "token": wstETH,
-        "spender": BALANCER_VAULT
-    },
-    {
-        "token": rETH,
-        "spender": BALANCER_VAULT
-    },
+    # {
+    #     "token": rETH,
+    #     "spender": AURA_REWARD_POOL_DEPOSIT_WRAPPER
+    # },
+    # {
+    #     "token": wstETH,
+    #     "spender": AURA_REWARD_POOL_DEPOSIT_WRAPPER
+    # },
+    # {
+    #     "token": DAI,
+    #     "spender": BALANCER_VAULT
+    # },
+    # {
+    #     "token": bb_aV3_DAI,
+    #     "spender": BALANCER_VAULT
+    # },
+    # {
+    #     "token": USDT,
+    #     "spender": BALANCER_VAULT
+    # },
+    # {
+    #     "token": bb_aV3_USDT,
+    #     "spender": BALANCER_VAULT
+    # },
+    # {
+    #     "token": USDC,
+    #     "spender": BALANCER_VAULT
+    # },
+    # {
+    #     "token": bb_aV3_USDC,
+    #     "spender": BALANCER_VAULT
+    # },
+    # {
+    #     "token": bb_aV3_USD,
+    #     "spender": bb_aV3_USD_GAUGE
+    # },
+    # {
+    #     "token": WETH,
+    #     "spender": BALANCER_VAULT
+    # },
+    # {
+    #     "token": wstETH,
+    #     "spender": BALANCER_VAULT
+    # },
+    # {
+    #     "token": rETH,
+    #     "spender": BALANCER_VAULT
+    # },
     {
         "token": B_stETH_STABLE,
         "spender": B_stETH_STABLE_GAUGE
     },
-    {
-        "token": B_rETH_STABLE,
-        "spender": B_rETH_STABLE_GAUGE
-    },
-    {
-        "token": stETH,
-        "spender": CURVE_stETH_ETH_POOL
-    },
-    {
-        "token": CURVE_stETH_ETH_LPTOKEN,
-        "spender": CURVE_stETH_ETH_GAUGE
-    },
-    {
-        "token": stETH,
-        "spender": CURVE_STAKE_DEPOSIT_ZAP
-    },
-    {
-        "token": DAI,
-        "spender": cDAIcUSDC_POOL
-    },
-    {
-        "token": USDC,
-        "spender": cDAIcUSDC_POOL
-    },
-    {
-        "token": cDAI,
-        "spender": cDAIcUSDC_POOL
-    },
-    {
-        "token": cUSDC,
-        "spender": cDAIcUSDC_POOL
-    },
-    {
-        "token": crvcDAIcUSDC,
-        "spender": cDAIcUSDC_GAUGE
-    },
-    {
-        "token": DAI,
-        "spender": cDAIcUSDC_ZAP
-    },
-    {
-        "token": USDC,
-        "spender": cDAIcUSDC_ZAP
-    },
-    {
-        "token": cDAI,
-        "spender": CURVE_STAKE_DEPOSIT_ZAP
-    },
-    {
-        "token": cUSDC,
-        "spender": CURVE_STAKE_DEPOSIT_ZAP
-    },
-    {
-        "token": DAI,
-        "spender": CURVE_STAKE_DEPOSIT_ZAP
-    },
-    {
-        "token": USDC,
-        "spender": CURVE_STAKE_DEPOSIT_ZAP
-    },
-    {
-        "token": CVX,
-        "spender": cvxETH_POOL
-    },
-    {
-        "token": CURVE_stETH_ETH_LPTOKEN,
-        "spender": CONVEX_BOOSTER
-    },
-    {
-        "token": cvxsteCRV,
-        "spender": cvxsteCRV_REWARDER
-    },
-    {
-        "token": crvcDAIcUSDC,
-        "spender": CONVEX_BOOSTER
-    },
-    {
-        "token": cvxcDAIcUSDC,
-        "spender": cvxcDAIcUSDC_REWARDER
-    },
-    {
-        "token": DAI,
-        "spender": AAVE_POOL_V3
-    },
-    {
-        "token": USDC,
-        "spender": AAVE_POOL_V3
-    },
-    {
-        "token": CVX,
-        "spender": UV3_ROUTER_2
-    },
-    {
-        "token": rETH,
-        "spender": ROCKET_POOL_SWAP_ROUTER
-    },
-    {
-        "token": stETH,
-        "spender": unstETH
+    # {
+    #     "token": B_rETH_STABLE,
+    #     "spender": B_rETH_STABLE_GAUGE
+    # },
+    # {
+    #     "token": stETH,
+    #     "spender": CURVE_stETH_ETH_POOL
+    # },
+    # {
+    #     "token": CURVE_stETH_ETH_LPTOKEN,
+    #     "spender": CURVE_stETH_ETH_GAUGE
+    # },
+    # {
+    #     "token": stETH,
+    #     "spender": CURVE_STAKE_DEPOSIT_ZAP
+    # },
+    # {
+    #     "token": DAI,
+    #     "spender": cDAIcUSDC_POOL
+    # },
+    # {
+    #     "token": USDC,
+    #     "spender": cDAIcUSDC_POOL
+    # },
+    # {
+    #     "token": cDAI,
+    #     "spender": cDAIcUSDC_POOL
+    # },
+    # {
+    #     "token": cUSDC,
+    #     "spender": cDAIcUSDC_POOL
+    # },
+    # {
+    #     "token": crvcDAIcUSDC,
+    #     "spender": cDAIcUSDC_GAUGE
+    # },
+    # {
+    #     "token": DAI,
+    #     "spender": cDAIcUSDC_ZAP
+    # },
+    # {
+    #     "token": USDC,
+    #     "spender": cDAIcUSDC_ZAP
+    # },
+    # {
+    #     "token": cDAI,
+    #     "spender": CURVE_STAKE_DEPOSIT_ZAP
+    # },
+    # {
+    #     "token": cUSDC,
+    #     "spender": CURVE_STAKE_DEPOSIT_ZAP
+    # },
+    # {
+    #     "token": DAI,
+    #     "spender": CURVE_STAKE_DEPOSIT_ZAP
+    # },
+    # {
+    #     "token": USDC,
+    #     "spender": CURVE_STAKE_DEPOSIT_ZAP
+    # },
+    # {
+    #     "token": CVX,
+    #     "spender": cvxETH_POOL
+    # },
+    # {
+    #     "token": CURVE_stETH_ETH_LPTOKEN,
+    #     "spender": CONVEX_BOOSTER
+    # },
+    # {
+    #     "token": cvxsteCRV,
+    #     "spender": cvxsteCRV_REWARDER
+    # },
+    # {
+    #     "token": crvcDAIcUSDC,
+    #     "spender": CONVEX_BOOSTER
+    # },
+    # {
+    #     "token": cvxcDAIcUSDC,
+    #     "spender": cvxcDAIcUSDC_REWARDER
+    # },
+    # {
+    #     "token": DAI,
+    #     "spender": AAVE_POOL_V3
+    # },
+    # {
+    #     "token": USDC,
+    #     "spender": AAVE_POOL_V3
+    # },
+    # {
+    #     "token": CVX,
+    #     "spender": UV3_ROUTER_2
+    # },
+    # {
+    #     "token": rETH,
+    #     "spender": ROCKET_POOL_SWAP_ROUTER
+    # },
+    # {
+    #     "token": stETH,
+    #     "spender": unstETH
 
-    },
-    {
-        "token": wstETH,
-        "spender": unstETH
+    # },
+    # {
+    #     "token": wstETH,
+    #     "spender": unstETH
 
-    },
-    {
-        "token": DAI,
-        "spender": DSR_MANAGER
+    # },
+    # {
+    #     "token": DAI,
+    #     "spender": DSR_MANAGER
 
-    },
-    {
-        "token": CVX,
-        "spender": UV3_ROUTER_2
-    },
-    {
-        "token": COMP,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3
-    },
-    {
-        "token": BAL,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3
-    },
-    {
-        "token": LDO,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3
-    },
-    {
-        "token": CRV,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3
-    },
-    {
-        "token": WETH,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3
-    },
-    {
-        "token": USDC,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3
-    },
-    {
-        "token": DAI,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3
-    },
-    {
-        "token": USDT,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3
-    },
-    {
-        "token": AURA,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": BAL,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": COMP,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": CRV,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": CVX,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": DAI,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": LDO,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": rETH,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": SWISE,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": USDC,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": USDT,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": WETH,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": wstETH,
-        "spender": GPv2_VAULT_RELAYER
-    }
+    # },
+    # {
+    #     "token": CVX,
+    #     "spender": UV3_ROUTER_2
+    # },
+    # {
+    #     "token": COMP,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3
+    # },
+    # {
+    #     "token": BAL,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3
+    # },
+    # {
+    #     "token": LDO,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3
+    # },
+    # {
+    #     "token": CRV,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3
+    # },
+    # {
+    #     "token": WETH,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3
+    # },
+    # {
+    #     "token": USDC,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3
+    # },
+    # {
+    #     "token": DAI,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3
+    # },
+    # {
+    #     "token": USDT,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3
+    # },
+    # {
+    #     "token": AURA,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": BAL,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": COMP,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": CRV,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": CVX,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": DAI,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": LDO,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": rETH,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": SWISE,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": USDC,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": USDT,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": WETH,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": wstETH,
+    #     "spender": GPv2_VAULT_RELAYER
+    # }
 ]
 
 # ALLOWANCES = [

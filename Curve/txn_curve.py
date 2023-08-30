@@ -17,7 +17,7 @@ TRICRYPTO_V2_POOL_ADDRESS = '0xD51a44d3FaE010294C616388b506AcdA1bfAAE46'
 # Regular Pools ZAP ABI - base_pool
 ABI_REGULAR_POOLS_ZAP = '[{"name":"base_pool","outputs":[{"type":"address","name":""}],"inputs":[],"stateMutability":"view","type":"function","gas":1301}]'
 
-# IMPORTANT: Gauges and ZAPs for Regular Pools can be found in https://curve.fi/contracts
+# IMPORTANT: Gauges and ZAPs for Regular Pools can be found in https://classic.curve.fi/contracts
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ def transactions_data(blockchain, all_pools=False):
             pool_address = registry_contract.functions.pool_list(i).call()
             pool_contract = get_contract(pool_address, blockchain, web3=web3, block='latest', abi=Curve.ABI_POOL)
 
-            pool_name = 'Curve'
+            # pool_name = 'Curve'
             pool_tokens = []
             next_token = True
             j = 0
@@ -132,12 +132,12 @@ def transactions_data(blockchain, all_pools=False):
                     continue
                 
                 pool_tokens.append(token_address)
-                token_symbol = get_symbol(token_address, blockchain)
+                # token_symbol = get_symbol(token_address, blockchain)
 
-                if j == 0:
-                    pool_name += ' %s' % token_symbol
-                else:
-                    pool_name += '/%s' % token_symbol
+                # if j == 0:
+                #     pool_name += ' %s' % token_symbol
+                # else:
+                #     pool_name += '/%s' % token_symbol
                 
                 j += 1
 
@@ -158,6 +158,7 @@ def transactions_data(blockchain, all_pools=False):
                 
                 gauge_address = registry_contract.functions.get_gauge(pool_address).call()
             
+            pool_name = get_symbol(lptoken_address, blockchain, web3=web3)
             lptoken_total_supply = total_supply(lptoken_address, 'latest', blockchain, web3=web3)
 
             if lptoken_total_supply > 0 or all_pools == True:
@@ -403,7 +404,7 @@ def transactions_data(blockchain, all_pools=False):
 
             print(id, i)
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final.json', 'w') as curve_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data_final_.json', 'w') as curve_data_file:
         json.dump(result, curve_data_file)
 
 
@@ -1196,7 +1197,7 @@ def crypto_factory_pool_data(blockchain, lptoken_address):
 #regular_pool_data('0x06325440D014e39736583c165C2963BA99fAf14E')
 #factory_pool_data('0x67C7f0a63BA70a2dAc69477B716551FC921aed00')
 #crypto_v2_pool_data(XDAI, '0x02E7e2dd3BA409148A49D5cc9a9034D2f884F245')
-regular_pool_data(ETHEREUM, '0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2')
+#regular_pool_data(ETHEREUM, '0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2')
 #crypto_factory_pool_data('0xf985005a3793DbA4cCe241B3C19ddcd3Fe069ff4')
 #crypto_factory_pool_data('0xbE4f3AD6C9458b901C81b734CB22D9eaE9Ad8b50')
 
@@ -1207,7 +1208,7 @@ regular_pool_data(ETHEREUM, '0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2')
 
 #print(len(curve_data['regular']), len(curve_data['factory']), len(curve_data['crypto v2']), len(curve_data['crypto factory']))
 
-#transactions_data(XDAI)
+transactions_data(ETHEREUM)
 
 # with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/curve_data.json', 'r') as curve_data_file:
 #     # Reading from json file

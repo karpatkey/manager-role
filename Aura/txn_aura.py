@@ -110,7 +110,7 @@ def transactions_data():
 
         print(i)
 
-    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/aura_data_.json', 'w') as aura_data_file:
+    with open(str(Path(os.path.abspath(__file__)).resolve().parents[0])+'/aura_data.json', 'w') as aura_data_file:
         json.dump(result, aura_data_file)
 
 

@@ -1,6 +1,6 @@
-from defi_protocols.functions import get_contract, get_symbol, get_node, get_decimals
+from defi_protocols.functions import get_contract, get_symbol, get_node, get_decimals, last_block
 from defi_protocols.constants import ETHEREUM, B_80BAL_20_WETH_ETH, ZERO_ADDRESS
-from defi_protocols.Balancer import (VAULT, VEBAL, ABI_VAULT, get_gauge_addresses, get_lptoken_data) 
+from defi_protocols.Balancer import VAULT, VEBAL, ABI_VAULT, get_gauge_addresses
 # thegraph queries
 from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
