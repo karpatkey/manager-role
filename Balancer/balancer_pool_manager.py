@@ -236,7 +236,7 @@ print()
 
 avatar_address, roles_mod_address = input_avatar_roles_module_no_checks(web3=web3)
 # avatar_address = '0xC01318baB7ee1f5ba734172bF7718b5DC6Ec90E1' # '0x4F2083f5fBede34C2714aFfb3105539775f7FE64'
-# avatar_address = '0x7f272451089Bf04797E33506D8831781d86A95f4'
+# avatar_address = '0x7f272451089Bf04797E33506D8831781d86A95f4' # 0x53EB19C3A0443b5a12Ed2C7B32d4a27088842E6D
 # avatar_address = '0xa7dB55e153C0c71Ff35432a9aBe2A853f886Ce0D' # 0xF63F5FCC54f5fd11f3c098053F330E032E4D9259
 # roles_mod_address = '0x1ffAdc16726dd4F91fF275b4bF50651801B06a86' # '0xf20325cf84b72e8BBF8D8984B8f0059B984B390B'
 
@@ -257,8 +257,7 @@ vault = get_contract(VAULT, ETHEREUM, web3=web3)
 while True:
 
     while True:
-        print(f"{bcolors.OKBLUE}{bcolors.BOLD}Enter the BPT:{bcolors.ENDC}")
-        bpt = input()
+        bpt = input(f"{bcolors.OKBLUE}{bcolors.BOLD}Enter the BPT:{bcolors.ENDC}")
         if web3.is_address(bpt):
             bpt = web3.to_checksum_address(bpt)
             bpt_contract = get_contract(bpt, ETHEREUM, web3=web3, abi=ABI_LPTOKEN)
