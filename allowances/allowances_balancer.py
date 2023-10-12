@@ -15,7 +15,7 @@ COMP = "0xc00e94Cb662C3520282E6f5717214004A7f26888"
 AAVE = "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9"
 rETH = "0xae78736Cd615f374D3085123A210448E74Fc6393"
 rETH2 = "0x20BC832ca081b91433ff6c17f85701B6e92486c5"
-SWISE = "0x48e5413b73add2434e47504E2a22d14940dBFe78"
+SWISE = "0x48C3399719B582dD63eB5AADf12A40B4C3f52FA2"
 sETH2 = "0xFe2e637202056d30016725477c5da089Ab0A043A"
 WETH = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
 USDC = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
@@ -55,6 +55,9 @@ MAKER_DSR_MANAGER = "0x373238337Bfe1146fb49989fc222523f83081dDb"
 # Lido contracts
 unstETH = "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1"
 
+# SushiSwap contracts
+SUSHISWAP_ROUTE_PROCESSOR_3_2 = "0x5550D13389bB70F45fCeF58f19f6b6e87F6e747d"
+
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # LITERALS
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -92,6 +95,10 @@ ALLOWANCES = [
         "spender": MAKER_DSR_MANAGER
     },
     # {
+    #     "token": COMP,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    # },
+    # {
     #     "token": BAL,
     #     "spender": AAVE_POOL_V3
     # },
@@ -115,59 +122,59 @@ ALLOWANCES = [
     #     "token": D2D,
     #     "spender": BALANCER_VAULT
     # },
-    {
-        "token": AAVE,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": COMP,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": DAI,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": rETH,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": rETH2,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": sETH2,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": stETH,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": SWISE,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": USDC,
-        "spender": GPv2_VAULT_RELAYER
-    },
+    # {
+    #     "token": AAVE,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": COMP,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": DAI,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": rETH,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": rETH2,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": sETH2,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": stETH,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": SWISE,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": USDC,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
     
-    {
-        "token": USDT,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": WETH,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": WBTC,
-        "spender": GPv2_VAULT_RELAYER
-    },
-    {
-        "token": wstETH,
-        "spender": GPv2_VAULT_RELAYER
-    }
+    # {
+    #     "token": USDT,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": WETH,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": WBTC,
+    #     "spender": GPv2_VAULT_RELAYER
+    # },
+    # {
+    #     "token": wstETH,
+    #     "spender": GPv2_VAULT_RELAYER
+    # }
 ]
 
 

@@ -19,6 +19,8 @@ wstETH = "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
 
 # Aave V3 contracts
 AAVE_POOL_V3 = "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"
+AAVE_WRAPPED_TOKEN_GATEWAY_V3 = "0xD322A49006FC828F9B5B37Ab215F99B4E5caB19C"
+aEthWETH = "0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8"
 
 # Compound V2 contracts
 COMPTROLLER = "0x3d9819210a31b4961b30ef54be2aed79b9c9cd3b"
@@ -99,11 +101,26 @@ DSR_MANAGER = "0x373238337Bfe1146fb49989fc222523f83081dDb"
 # Cowswap contracts
 GPv2_VAULT_RELAYER = "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110"
 
+# Ankr contracts
+ankrETH = "0xE95A203B1a91a908F9B9CE46459d101078c2c3cb"
+ANKR_SWAP_POOL = "0xf047f23ACFdB1315cF63Ad8aB5146d5fDa4267Af"
+
 ALLOWANCES = [
+    {
+        "token": aEthWETH,
+        "spender": AAVE_WRAPPED_TOKEN_GATEWAY_V3
+    },
+    {
+        "token": WETH,
+        "spender": AAVE_POOL_V3
+    },
+    {
+        "token": ankrETH,
+        "spender": ANKR_SWAP_POOL
+    },
     # {
     #     "token": USDC,
     #     "spender": cUSDCv3
-
     # },
     # {
     #     "token": bb_aV3_USD,
@@ -113,10 +130,10 @@ ALLOWANCES = [
     #     "token": B_rETH_STABLE,
     #     "spender": AURA_BOOSTER
     # },
-    {
-        "token": B_stETH_STABLE,
-        "spender": AURA_BOOSTER
-    },
+    # {
+    #     "token": B_stETH_STABLE,
+    #     "spender": AURA_BOOSTER
+    # },
     # {
     #     "token": rETH,
     #     "spender": AURA_REWARD_POOL_DEPOSIT_WRAPPER
@@ -165,10 +182,10 @@ ALLOWANCES = [
     #     "token": rETH,
     #     "spender": BALANCER_VAULT
     # },
-    {
-        "token": B_stETH_STABLE,
-        "spender": B_stETH_STABLE_GAUGE
-    },
+    # {
+    #     "token": B_stETH_STABLE,
+    #     "spender": B_stETH_STABLE_GAUGE
+    # },
     # {
     #     "token": B_rETH_STABLE,
     #     "spender": B_rETH_STABLE_GAUGE

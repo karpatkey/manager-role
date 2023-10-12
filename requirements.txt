@@ -1,7 +1,7 @@
 #git+https://github.com/KarpatkeyDAO/defi-protocols-kpk.git#egg=defi_protocols
 #git+ssh://git@github.com/KarpatkeyDAO/defi-protocols-kpk.git#egg=defi_protocols
 
-git+https://github.com/KarpatkeyDAO/defi-protocols.git
+git+https://github.com/KarpatkeyDAO/defi-protocols.git@a5a33b42a7559ca73e67bfa4b7a76ae7df6130e2
 
 
 gql>=3.4.0

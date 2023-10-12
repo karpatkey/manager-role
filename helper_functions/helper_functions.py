@@ -66,6 +66,37 @@ def input_avatar_roles_module(web3=None):
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# input_avatar_roles_module_no_checks
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def input_avatar_roles_module_no_checks(web3=None):
+
+    if web3 is None:
+        web3 = get_node(ETHEREUM)
+
+    avatar_address = input('Enter the Avatar Safe address: ')
+    while True:
+        try:
+            avatar_address = web3.to_checksum_address(avatar_address)
+            break
+        except:
+            avatar_address = input('Enter a valid address: ')
+
+    print()
+
+    roles_mod_address = input('Enter the Roles Module address: ')
+    while True:
+        try:
+            roles_mod_address = web3.to_checksum_address(roles_mod_address)
+            break
+        except:
+            roles_mod_address = input('Enter a valid address: ')
+
+    print()
+
+    return avatar_address, roles_mod_address
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # add_txn_with_role
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def add_txn_with_role(roles_mod_address, to_address, tx_data, eth_value, json_file, web3=None):
