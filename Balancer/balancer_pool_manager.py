@@ -257,7 +257,7 @@ vault = get_contract(VAULT, ETHEREUM, web3=web3)
 while True:
 
     while True:
-        bpt = input(f"{bcolors.OKBLUE}{bcolors.BOLD}Enter the BPT:{bcolors.ENDC}")
+        bpt = input(f"{bcolors.OKBLUE}{bcolors.BOLD}Enter the BPT: {bcolors.ENDC}")
         if web3.is_address(bpt):
             bpt = web3.to_checksum_address(bpt)
             bpt_contract = get_contract(bpt, ETHEREUM, web3=web3, abi=ABI_LPTOKEN)
