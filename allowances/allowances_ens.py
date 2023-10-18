@@ -91,6 +91,7 @@ BAL = "0xba100000625a3754423978a60c9317c58a424e3D"
 # SushiSwap contracts
 SUSHISWAP_ROUTER = "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F"
 SUSHISWAP_ROUTE_PROCESSOR_3 = "0x827179dD56d07A7eeA32e3873493835da2866976"
+SUSHISWAP_ROUTE_PROCESSOR_3_2 = "0x5550D13389bB70F45fCeF58f19f6b6e87F6e747d"
 
 # Rocket Pool contracts
 ROCKET_POOL_SWAP_ROUTER = "0x16D5A408e807db8eF7c578279BEeEe6b228f1c1C"
@@ -105,6 +106,15 @@ GPv2_VAULT_RELAYER = "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110"
 ankrETH = "0xE95A203B1a91a908F9B9CE46459d101078c2c3cb"
 ANKR_SWAP_POOL = "0xf047f23ACFdB1315cF63Ad8aB5146d5fDa4267Af"
 
+# Stader contracts
+ETHx = "0xA35b1B31Ce002FBF2058D22F30f95D405200A15b"
+STADER_USER_WITHDRAWAL_MANAGER = "0x9F0491B32DBce587c50c4C43AB303b06478193A7"
+
+# Spark contracts
+SPARK_LENDING_POOL = "0xC13e21B648A5Ee794902342038FF3aDAB66BE987"
+SPARK_WRAPPED_TOKEN_GATEWAY_V3 = "0xBD7D6a9ad7865463DE44B05F04559f65e3B11704"
+spWETH = "0x59cD1C87501baa753d0B5B5Ab5D8416A45cD71DB"
+
 ALLOWANCES = [
     {
         "token": aEthWETH,
@@ -117,6 +127,90 @@ ALLOWANCES = [
     {
         "token": ankrETH,
         "spender": ANKR_SWAP_POOL
+    },
+    {
+        "token": ETHx,
+        "spender": STADER_USER_WITHDRAWAL_MANAGER
+    },
+    {
+        "token": spWETH,
+        "spender": SPARK_WRAPPED_TOKEN_GATEWAY_V3
+    },
+    {
+        "token": WETH,
+        "spender": SPARK_LENDING_POOL
+    },
+    {
+        "token": COMP,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3,
+        "amount": 0
+    },
+    {
+        "token": BAL,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3,
+        "amount": 0
+    },
+    {
+        "token": LDO,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3,
+        "amount": 0
+    },
+    {
+        "token": CRV,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3,
+        "amount": 0
+    },
+    {
+        "token": WETH,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3,
+        "amount": 0
+    },
+    {
+        "token": USDC,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3,
+        "amount": 0
+    },
+    {
+        "token": DAI,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3,
+        "amount": 0
+    },
+    {
+        "token": USDT,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3,
+        "amount": 0
+    },
+    {
+        "token": COMP,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
+    {
+        "token": BAL,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
+    {
+        "token": LDO,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
+    {
+        "token": CRV,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
+    {
+        "token": WETH,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
+    {
+        "token": USDC,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
+    {
+        "token": DAI,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
+    {
+        "token": USDT,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
     },
     # {
     #     "token": USDC,
@@ -569,10 +663,15 @@ allowance_range = tqdm(range(len(ALLOWANCES)), desc='')
 i = 0
 for i in allowance_range:
     allowance_range.set_description('Approving spender in token %s' % get_symbol(ALLOWANCES[i]['token'], ETHEREUM, web3=web3))
+    try:
+        amount = ALLOWANCES[i]['amount']
+    except:
+        amount = MAX_TOKEN_AMOUNT
+
     json_file['transactions'].append(
         {
             'to': ALLOWANCES[i]['token'],
-            'data': get_data(web3.to_checksum_address(ALLOWANCES[i]['token']), 'approve', [web3.to_checksum_address(ALLOWANCES[i]['spender']), MAX_TOKEN_AMOUNT], ETHEREUM, abi_address=TOKEN_PROXY, web3=web3),
+            'data': get_data(web3.to_checksum_address(ALLOWANCES[i]['token']), 'approve', [web3.to_checksum_address(ALLOWANCES[i]['spender']), amount], ETHEREUM, abi_address=TOKEN_PROXY, web3=web3),
             'value': str(0)
         }
     )

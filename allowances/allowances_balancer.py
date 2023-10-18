@@ -94,10 +94,26 @@ ALLOWANCES = [
         "token": DAI,
         "spender": MAKER_DSR_MANAGER
     },
-    # {
-    #     "token": COMP,
-    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
-    # },
+    {
+        "token": COMP,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
+    {
+        "token": DAI,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
+    {
+        "token": USDC,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
+    {
+        "token": USDT,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
+    {
+        "token": WETH,
+        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
     # {
     #     "token": BAL,
     #     "spender": AAVE_POOL_V3
@@ -207,10 +223,15 @@ allowance_range = tqdm(range(len(ALLOWANCES)), desc='')
 i = 0
 for i in allowance_range:
     allowance_range.set_description('Approving spender in token %s' % get_symbol(ALLOWANCES[i]['token'], ETHEREUM, web3=web3))
+    try:
+        amount = ALLOWANCES[i]['amount']
+    except:
+        amount = MAX_TOKEN_AMOUNT
+
     json_file['transactions'].append(
         {
             'to': ALLOWANCES[i]['token'],
-            'data': get_data(ALLOWANCES[i]['token'], 'approve', [ALLOWANCES[i]['spender'], MAX_TOKEN_AMOUNT], ETHEREUM, abi_address=TOKEN_PROXY, web3=web3),
+            'data': get_data(ALLOWANCES[i]['token'], 'approve', [ALLOWANCES[i]['spender'], amount], ETHEREUM, abi_address=TOKEN_PROXY, web3=web3),
             'value': str(0)
         }
     )
