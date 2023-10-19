@@ -58,6 +58,12 @@ unstETH = "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1"
 # SushiSwap contracts
 SUSHISWAP_ROUTE_PROCESSOR_3_2 = "0x5550D13389bB70F45fCeF58f19f6b6e87F6e747d"
 
+# Uniswap V3 contracts
+UV3_ROUTER_2 = "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45"
+
+# Curve contracts
+CURVE_stETH_ETH_POOL = "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022"
+
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # LITERALS
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -113,6 +119,18 @@ ALLOWANCES = [
     {
         "token": WETH,
         "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    },
+    {
+        "token": rETH,
+        "spender": UV3_ROUTER_2
+    },
+    {
+        "token": rETH,
+        "spender": BALANCER_VAULT
+    },
+    {
+        "token": stETH,
+        "spender": CURVE_stETH_ETH_POOL
     },
     # {
     #     "token": BAL,

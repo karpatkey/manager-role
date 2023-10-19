@@ -4,11 +4,13 @@ from txn_uniswapv3_helpers import bcolors, select_path, set_min_amount_out_and_f
 from datetime import datetime
 import math
 
+RETH_ETH = "0xae78736Cd615f374D3085123A210448E74Fc6393"
+
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # LITERALS
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # UniswapV3
-TOKENS_IN = [SETH2_ETH, COMP_ETH, AAVE_ETH, RETH2_ETH, SWISE_ETH, WETH_ETH, USDC_ETH, USDT_ETH, DAI_ETH, WBTC_ETH]
+TOKENS_IN = [SETH2_ETH, COMP_ETH, AAVE_ETH, RETH_ETH, RETH2_ETH, SWISE_ETH, WETH_ETH, USDC_ETH, USDT_ETH, DAI_ETH, WBTC_ETH]
 TOKENS_OUT = [SETH2_ETH, USDC_ETH, DAI_ETH, USDT_ETH, WETH_ETH]
 
 # UniswapV2

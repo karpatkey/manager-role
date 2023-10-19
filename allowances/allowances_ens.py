@@ -68,6 +68,7 @@ CRV = "0xD533a949740bb3306d119CC777fa900bA034cd52"
 CRV_MINTER = "0xd061D61a4d941c39E5453435B6345Dc261C2fcE0"
 CURVE_STAKE_DEPOSIT_ZAP = "0x271fbE8aB7f1fB262f81C77Ea5303F03DA9d3d6A"
 cvxETH_POOL = "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4"
+CURVE_ankrETH_POOL = "0xA96A65c051bF88B4095Ee1f2451C2A9d43F53Ae2"
 
 # Aura contracts
 AURA_BOOSTER = "0xA57b8d98dAE62B26Ec3bcC4a365338157060B234"
@@ -115,6 +116,9 @@ SPARK_LENDING_POOL = "0xC13e21B648A5Ee794902342038FF3aDAB66BE987"
 SPARK_WRAPPED_TOKEN_GATEWAY_V3 = "0xBD7D6a9ad7865463DE44B05F04559f65e3B11704"
 spWETH = "0x59cD1C87501baa753d0B5B5Ab5D8416A45cD71DB"
 
+# Pancakeswap contracts
+PANCAKESWAP_SMART_ROUTER = "0x13f4EA83D0bd40E75C8222255bc855a974568Dd4"
+
 ALLOWANCES = [
     {
         "token": aEthWETH,
@@ -139,6 +143,30 @@ ALLOWANCES = [
     {
         "token": WETH,
         "spender": SPARK_LENDING_POOL
+    },
+    {
+        "token": rETH,
+        "spender": UV3_ROUTER_2
+    },
+    {
+        "token": ankrETH,
+        "spender": BALANCER_VAULT
+    },
+    {
+        "token": ETHx,
+        "spender": BALANCER_VAULT
+    },
+    {
+        "token": ankrETH,
+        "spender": CURVE_ankrETH_POOL
+    },
+    {
+        "token": ETHx,
+        "spender": PANCAKESWAP_SMART_ROUTER
+    },
+    {
+        "token": WETH,
+        "spender": PANCAKESWAP_SMART_ROUTER
     },
     {
         "token": COMP,
