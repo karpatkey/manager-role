@@ -19,6 +19,7 @@ ROCKET_STORAGE = '0x1d8f8f00cfa6758d7bE78336684788Fb0ee0Fa46'
 LAST_DEPOSIT_POOL = '0xDD3f50F8A6CafbE9b31a427582963f465E745AF8'
 
 web3 = get_node(ETHEREUM)
+# https://docs.rocketpool.net/developers/usage/contracts/contracts.html
 # https://web3py.readthedocs.io/en/stable/web3.main.html -> see Web3.solidity_keccak
 rocket_pool_key = web3.solidity_keccak(["string", "string"],["contract.address", "rocketDepositPool"]).hex()
 
