@@ -1,5 +1,6 @@
-from defi_protocols.functions import get_node, get_data, get_contract, get_contract_proxy_abi
-from defi_protocols.constants import ETHEREUM, WETH_ETH
+from defi_protocols.functions import get_node, get_data, get_contract, get_contract_proxy_abi, search_proxy_impl_address
+from defi_protocols.constants import ETHEREUM, WETH_ETH, ZERO_ADDRESS
+import requests
 import json
 from pathlib import Path
 import os
@@ -146,12 +147,12 @@ def json_file_download(json_file):
     file_path = str(Path(os.path.abspath(__file__)).resolve().parents[1])+'/%s.json' % file_name
     print()
     try:
-        with open(file_path, 'w') as uniswapv3_txn_builder:
-            json.dump(json_file, uniswapv3_txn_builder)
+        with open(file_path, 'w') as file:
+            json.dump(json_file, file, indent=4)
         
         message = 'JSON file %s was succesfully downloaded to the path: %s' % ('%s.json' % file_name, file_path)
         print(f"{bcolors.OKGREEN}{message}{bcolors.ENDC}")
-    except:
+    except Exception as e:
         message = 'ERROR: JSON file %s download fail' % ('%s.json' % file_name)
         print(f"{bcolors.FAIL}{message}{bcolors.ENDC}")
 
@@ -200,3 +201,32 @@ def continue_execution(json_has_txns=False):
 #         exit()
 #     else:
 #         print()
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# decode_data
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def decode_data(contract_address, data, blockchain):
+    web3 = get_node(blockchain)
+    
+    # If the contract does not have the function, it checks if there is a proxy implementation
+    proxy_impl_address = search_proxy_impl_address(contract_address, blockchain, web3=web3)
+
+    if proxy_impl_address != ZERO_ADDRESS and proxy_impl_address != '':
+        contract = get_contract_proxy_abi(contract_address, proxy_impl_address, blockchain, web3=web3)
+    else:
+        contract = get_contract(contract_address, blockchain)
+
+    func_obj, func_params = contract.decode_function_input(data)
+
+    func_name = requests.get("https://api.openchain.xyz/signature-database/v1/lookup?function=%s&filter=true" % data[:10]).json()['result']['function'][data[:10]][0]['name']
+
+    for func_param in func_params:
+        if isinstance(func_params[func_param], bytes):
+            func_params[func_param] = '0x' + func_params[func_param].hex()
+        elif isinstance(func_params[func_param], tuple) or isinstance(func_params[func_param], list):
+            func_params[func_param] = list(func_params[func_param])
+            for i in range(len(func_params[func_param])):
+                if isinstance(func_params[func_param][i], bytes):
+                    func_params[func_param][i] = '0x' + func_params[func_param][i].hex()
+
+    return [func_name, func_params]
