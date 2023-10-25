@@ -1,6 +1,7 @@
 from defi_protocols.functions import get_node, get_data, get_contract, get_contract_proxy_abi, search_proxy_impl_address
-from defi_protocols.constants import ETHEREUM, WETH_ETH, ZERO_ADDRESS
+from defi_protocols.constants import ETHEREUM, WETH_ETH, ZERO_ADDRESS, POLYGON, XDAI, BINANCE, AVALANCHE, FANTOM, OPTIMISM, ARBITRUM, API_ETHERSCAN_GETSOURCECODE, API_POLYGONSCAN_GETSOURCECODE, API_GNOSISSCAN_GETSOURCECODE, API_BINANCE_GETSOURCECODE, API_AVALANCHE_GETSOURCECODE, API_FANTOM_GETSOURCECODE, API_OPTIMISM_GETSOURCECODE, API_ARBITRUM_GETSOURCECODE, API_KEY_ETHERSCAN, API_KEY_POLSCAN, API_KEY_GNOSISSCAN, API_KEY_BINANCE, API_KEY_AVALANCHE, API_KEY_FANTOM, API_KEY_OPTIMISM, API_KEY_ARBITRUM
 import requests
+from web3 import Web3
 import json
 from pathlib import Path
 import os
@@ -24,6 +25,18 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
+ParameterType = {
+    0: 'Static',
+    1: 'Dynamic',
+    2: 'Dynamic32'
+}
+Comparison = {
+    0: 'EqualTo',
+    1: 'GreaterThan',
+    2: 'LessThan',
+    3: 'OneOf'
+}
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # ABIS
@@ -202,6 +215,38 @@ def continue_execution(json_has_txns=False):
 #     else:
 #         print()
 
+def get_contract_name_from_scan(contract_address, blockchain):
+    contract_name = ''
+
+    if blockchain == ETHEREUM:
+        data = requests.get(API_ETHERSCAN_GETSOURCECODE % (contract_address, API_KEY_ETHERSCAN)).json()
+
+    elif blockchain == POLYGON:
+        data = requests.get(API_POLYGONSCAN_GETSOURCECODE % (contract_address, API_KEY_POLSCAN)).json()
+
+    elif blockchain == XDAI:
+        data = requests.get(API_GNOSISSCAN_GETSOURCECODE % (contract_address, API_KEY_GNOSISSCAN)).json()
+
+    elif blockchain == BINANCE:
+        data = requests.get(API_BINANCE_GETSOURCECODE % (contract_address, API_KEY_BINANCE)).json()
+
+    elif blockchain == AVALANCHE:
+        data = requests.get(API_AVALANCHE_GETSOURCECODE % (contract_address, API_KEY_AVALANCHE)).json()
+
+    elif blockchain == FANTOM:
+        data = requests.get(API_FANTOM_GETSOURCECODE % (contract_address, API_KEY_FANTOM)).json()
+
+    elif blockchain == OPTIMISM:
+        data = requests.get(API_OPTIMISM_GETSOURCECODE % (contract_address, API_KEY_OPTIMISM)).json()
+
+    elif blockchain == ARBITRUM:
+        data = requests.get(API_ARBITRUM_GETSOURCECODE % (contract_address, API_KEY_ARBITRUM)).json()
+
+    if data["message"] == "OK":
+        contract_name = data["result"][0]["ContractName"]
+
+    return contract_name
+
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # decode_data
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -223,10 +268,56 @@ def decode_data(contract_address, data, blockchain):
     for func_param in func_params:
         if isinstance(func_params[func_param], bytes):
             func_params[func_param] = '0x' + func_params[func_param].hex()
+            if func_param == 'functionSig':
+                selector = func_params[func_param]
+                selector_names = requests.get("https://api.openchain.xyz/signature-database/v1/lookup?function=%s&filter=true" % selector).json()['result']['function'][selector]
+                
+                # If the contract does not have the function, it checks if there is a proxy implementation
+                proxy_impl_address = search_proxy_impl_address(func_params['targetAddress'], blockchain, web3=web3)
+
+                if proxy_impl_address != ZERO_ADDRESS and proxy_impl_address != '':
+                    target_contract = get_contract_proxy_abi(func_params['targetAddress'], proxy_impl_address, blockchain, web3=web3)
+                else:
+                    target_contract = get_contract(func_params['targetAddress'], blockchain)
+                
+                signature = ''
+                for selector_name in selector_names:
+                    try:
+                        getattr(target_contract.functions, selector_name['name'][:selector_name['name'].index('(')])
+                        signature = selector_name['name']
+                        break
+                    except:
+                        continue
+                    
+                func_params[func_param] = {
+                    'selector': selector,
+                    'signature': signature,
+                }
+
         elif isinstance(func_params[func_param], tuple) or isinstance(func_params[func_param], list):
             func_params[func_param] = list(func_params[func_param])
             for i in range(len(func_params[func_param])):
+                if func_param == 'paramType':
+                    func_params[func_param][i] = str(func_params[func_param][i]) + ': ' + ParameterType[func_params[func_param][i]]
+                elif func_param == 'paramComp':
+                    func_params[func_param][i] = str(func_params[func_param][i]) + ': ' + Comparison[func_params[func_param][i]]
                 if isinstance(func_params[func_param][i], bytes):
                     func_params[func_param][i] = '0x' + func_params[func_param][i].hex()
+        
+        else:
+            if func_param == 'paramType':
+                func_params[func_param] = str(func_params[func_param]) + ': ' + ParameterType[func_params[func_param]]
+    
+    try:
+        contract_name = contract.functions.symbol().call()
+    except:
+        contract_name = get_contract_name_from_scan(contract_address, blockchain)
 
-    return [func_name, func_params]
+    entry = {
+        'target': contract_address,
+        'contractName': contract_name,
+        'functionName': func_name,
+        'params': func_params,
+    }
+
+    return entry
