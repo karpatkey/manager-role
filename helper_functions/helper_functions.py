@@ -1,4 +1,4 @@
-from defi_protocols.functions import get_node, get_data, get_contract, get_contract_proxy_abi, search_proxy_impl_address
+from defi_protocols.functions import get_node, get_data, get_contract, get_contract_proxy_abi, search_proxy_impl_address, get_abi_function_signatures
 from defi_protocols.constants import ETHEREUM, WETH_ETH, ZERO_ADDRESS, POLYGON, XDAI, BINANCE, AVALANCHE, FANTOM, OPTIMISM, ARBITRUM, API_ETHERSCAN_GETSOURCECODE, API_POLYGONSCAN_GETSOURCECODE, API_GNOSISSCAN_GETSOURCECODE, API_BINANCE_GETSOURCECODE, API_AVALANCHE_GETSOURCECODE, API_FANTOM_GETSOURCECODE, API_OPTIMISM_GETSOURCECODE, API_ARBITRUM_GETSOURCECODE, API_KEY_ETHERSCAN, API_KEY_POLSCAN, API_KEY_GNOSISSCAN, API_KEY_BINANCE, API_KEY_AVALANCHE, API_KEY_FANTOM, API_KEY_OPTIMISM, API_KEY_ARBITRUM
 import requests
 from web3 import Web3
@@ -248,6 +248,33 @@ def get_contract_name_from_scan(contract_address, blockchain):
     return contract_name
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# get_function_description
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def get_function_description(function_signature, components_names):
+    parts = function_signature.split(",")
+
+    func_desc = ''
+    if len(parts) == 1:
+        if len(components_names) == 1:
+            part = parts[0]
+            index = part.find(')')
+            func_desc += f"{part[:index]} {components_names[0]}{part[index:]}"
+        else:
+            func_desc = function_signature
+    else:    
+        for i, part in enumerate(parts):
+            if part.find(')') == -1:
+                func_desc += part + f" {components_names[i]}"
+            else:
+                index = part.find(')')
+                func_desc += f"{part[:index]} {components_names[i]}{part[index:]}"
+            
+            if i < len(parts) - 1:
+                func_desc += ", "
+    
+    return func_desc
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # decode_data
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def decode_data(contract_address, data, blockchain):
@@ -256,14 +283,17 @@ def decode_data(contract_address, data, blockchain):
     # If the contract does not have the function, it checks if there is a proxy implementation
     proxy_impl_address = search_proxy_impl_address(contract_address, blockchain, web3=web3)
 
-    if proxy_impl_address != ZERO_ADDRESS and proxy_impl_address != '':
+    if proxy_impl_address != ZERO_ADDRESS:
         contract = get_contract_proxy_abi(contract_address, proxy_impl_address, blockchain, web3=web3)
     else:
         contract = get_contract(contract_address, blockchain)
 
     func_obj, func_params = contract.decode_function_input(data)
 
-    func_name = requests.get("https://api.openchain.xyz/signature-database/v1/lookup?function=%s&filter=true" % data[:10]).json()['result']['function'][data[:10]][0]['name']
+    func_sig = requests.get("https://api.openchain.xyz/signature-database/v1/lookup?function=%s&filter=true" % data[:10]).json()['result']['function'][data[:10]][0]['name']
+    components_names = [func_param for func_param in func_params]
+    
+    func_desc = get_function_description(func_sig, components_names)
 
     for func_param in func_params:
         if isinstance(func_params[func_param], bytes):
@@ -275,7 +305,7 @@ def decode_data(contract_address, data, blockchain):
                 # If the contract does not have the function, it checks if there is a proxy implementation
                 proxy_impl_address = search_proxy_impl_address(func_params['targetAddress'], blockchain, web3=web3)
 
-                if proxy_impl_address != ZERO_ADDRESS and proxy_impl_address != '':
+                if proxy_impl_address != ZERO_ADDRESS:
                     target_contract = get_contract_proxy_abi(func_params['targetAddress'], proxy_impl_address, blockchain, web3=web3)
                 else:
                     target_contract = get_contract(func_params['targetAddress'], blockchain)
@@ -288,10 +318,29 @@ def decode_data(contract_address, data, blockchain):
                         break
                     except:
                         continue
-                    
-                func_params[func_param] = {
+                        
+                description = ''
+                if signature != '':
+                    # A function can have multiple version with the same name but different amount of parameters.
+                    matching_functions = get_abi_function_signatures(func_params['targetAddress'], blockchain, func_names=[signature[:signature.index('(')]])
+                    for matching_function in matching_functions:
+                        if matching_function['signature'] == signature:
+                            break
+                    description = get_function_description(signature, matching_function['components_names'])
+                else:
+                    # Special cases where the function is not in the proxy nor in the implementation. 
+                    # Example: Compound v3 Comets function allow(address,bool) which is in the cUSDCv3 Ext contract.
+                    if selector_names[0]['name'] == 'allow(address,bool)':
+                        signature = 'allow(address,bool)'
+                        description = 'allow(address manager, bool isAllowed_)'
+                    else:
+                        signature = 'not found'
+                        description = 'not found'
+
+                func_params['functionSig'] = {
                     'selector': selector,
                     'signature': signature,
+                    'description': description
                 }
 
         elif isinstance(func_params[func_param], tuple) or isinstance(func_params[func_param], list):
@@ -314,9 +363,10 @@ def decode_data(contract_address, data, blockchain):
         contract_name = get_contract_name_from_scan(contract_address, blockchain)
 
     entry = {
-        'target': contract_address,
+        'targetAddress': contract_address,
         'contractName': contract_name,
-        'functionName': func_name,
+        'functionSignature': func_sig,
+        'functionDescription': func_desc,
         'params': func_params,
     }
 
