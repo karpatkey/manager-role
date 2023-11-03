@@ -92,7 +92,7 @@ BAL = "0xba100000625a3754423978a60c9317c58a424e3D"
 # SushiSwap contracts
 SUSHISWAP_ROUTER = "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F"
 SUSHISWAP_ROUTE_PROCESSOR_3 = "0x827179dD56d07A7eeA32e3873493835da2866976"
-SUSHISWAP_ROUTE_PROCESSOR_3_2 = "0x5550D13389bB70F45fCeF58f19f6b6e87F6e747d"
+#SUSHISWAP_ROUTE_PROCESSOR_3_2 = "0x5550D13389bB70F45fCeF58f19f6b6e87F6e747d"
 
 # Rocket Pool contracts
 ROCKET_POOL_SWAP_ROUTER = "0x16D5A408e807db8eF7c578279BEeEe6b228f1c1C"
@@ -208,38 +208,38 @@ ALLOWANCES = [
         "spender": SUSHISWAP_ROUTE_PROCESSOR_3,
         "amount": 0
     },
-    {
-        "token": COMP,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
-    },
-    {
-        "token": BAL,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
-    },
-    {
-        "token": LDO,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
-    },
-    {
-        "token": CRV,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
-    },
-    {
-        "token": WETH,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
-    },
-    {
-        "token": USDC,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
-    },
-    {
-        "token": DAI,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
-    },
-    {
-        "token": USDT,
-        "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
-    },
+    # {
+    #     "token": COMP,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    # },
+    # {
+    #     "token": BAL,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    # },
+    # {
+    #     "token": LDO,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    # },
+    # {
+    #     "token": CRV,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    # },
+    # {
+    #     "token": WETH,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    # },
+    # {
+    #     "token": USDC,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    # },
+    # {
+    #     "token": DAI,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    # },
+    # {
+    #     "token": USDT,
+    #     "spender": SUSHISWAP_ROUTE_PROCESSOR_3_2
+    # },
     # {
     #     "token": USDC,
     #     "spender": cUSDCv3
