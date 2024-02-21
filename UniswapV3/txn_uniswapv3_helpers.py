@@ -827,6 +827,8 @@ def get_removed_liquidity(
 
     try:
         nft_position_balances[0]
+        if nft_position_balances[0][0] == token1:
+            nft_position_balances.insert(0, [token0, Decimal(0)])
     except IndexError:
         nft_position_balances.append([token0, Decimal(0)])
 
