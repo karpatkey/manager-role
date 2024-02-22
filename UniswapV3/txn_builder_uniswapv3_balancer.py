@@ -456,8 +456,8 @@ def add_liquidity():
             )
 
     # mint
-    amount0_min = 0.9 * amount0_desired
-    amount1_min = 0.95 * amount1_desired
+    amount0_min = Decimal(0.9) * amount0_desired
+    amount1_min = Decimal(0.95) * amount1_desired
     deadline = math.floor(datetime.now().timestamp() + 1800)
     tx_data = get_data(
         POSITIONS_NFT,
@@ -522,8 +522,8 @@ def increase_liquidity():
 
     eth_value = get_eth_value()
 
-    amount0_min = 0.9 * amount0_desired
-    amount1_min = 0.95 * amount1_desired
+    amount0_min = Decimal(0.9) * amount0_desired
+    amount1_min = Decimal(0.95) * amount1_desired
     deadline = math.floor(datetime.now().timestamp() + 1800)
 
     tx_data = get_data(
