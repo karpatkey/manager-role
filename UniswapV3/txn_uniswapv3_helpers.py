@@ -618,7 +618,7 @@ def get_amount1(
     sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
 
     amount1_desired = Decimal(
-        amount0_desired
+        Decimal(amount0_desired)
         * Decimal(
             sqrt_price_x96
             * 1.0001 ** (tick_upper / 2)
@@ -646,7 +646,7 @@ def get_amount0(
     sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
 
     amount0_desired = Decimal(
-        amount1_desired
+        Decimal(amount1_desired)
         * Decimal((2**96) * (1.0001 ** (tick_upper / 2) * (2**96) - sqrt_price_x96))
     ) / (
         Decimal(
@@ -697,7 +697,7 @@ def get_amount1_mint(
     else:
         sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
         amount1_desired = Decimal(
-            amount0_desired
+            Decimal(amount0_desired)
             * Decimal(
                 sqrt_price_x96
                 * 1.0001 ** (tick_upper / 2)
@@ -751,7 +751,7 @@ def get_amount0_mint(
     else:
         sqrt_price_x96 = pool_contract.functions.slot0().call()[0]
         amount0_desired = Decimal(
-            amount1_desired
+            Decimal(amount1_desired)
             * (2**96)
             * (1.0001 ** (tick_upper / 2) * (2**96) - sqrt_price_x96)
         ) / (
